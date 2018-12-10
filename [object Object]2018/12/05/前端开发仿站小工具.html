@@ -194,6 +194,21 @@
     <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
     <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
     
+        <!-- algolia -->
+        <script>
+            
+            var hits = JSON.parse('{"per_page":10}')
+            var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
+
+            var algolia = {
+                applicationID: 'GX48388M0Z',
+                apiKey: '24910416df90ea04217402b818109cef',
+                indexName: 'index',
+                hits: hits,
+                labels: labels
+            }
+        </script>
+    
     <!-- fancybox -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
@@ -401,7 +416,7 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>仿站小工具是通过网址下载静态网页的工具。从输入的网址下载html代码，提取出JS、Css、Image、Picture、Flash等静态文件网址，再从下载完好的Css代码中提取出Image静态文件网址，通过网址下载静态文件，根据软件设置好的保存规则，自动修正html和css代码链接路径，最终这些静态文件被按分类保存到电脑文件夹。</p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>仿站小工具是通过网址下载静态网页的工具。从输入的网址下载html代码，提取出JS、Css、Image、Picture、Flash等静态文件网址，再从下载完好的Css代码中提取出Image静态文件网址，通过网址下载静态文件，根据软件设置好的保存规则，自动修正html和css代码链接路径，最终这些静态文件被按分类保存到电脑文件夹。<a id="more"></a></p>
 <h2 id="如何使用？"><a href="#如何使用？" class="headerlink" title="如何使用？"></a>如何使用？</h2><p>比如我想仿写OPPO官网，那么我可以把oppo网址复制并添加到仿站小工具中，然后下载即可。</p>
 <p><img src="http://wx1.sinaimg.cn/mw690/006ttwEMgy1fy0xzatdfuj30iv0egt8z.jpg" alt=""></p>
 <p><img src="http://wx1.sinaimg.cn/mw690/006ttwEMgy1fy0xzaffrdj30iv0egq38.jpg" alt=""></p>
@@ -425,7 +440,7 @@ height:50vh;
             <p>原文作者：<a href="http://yoursite.com">O.G.園長</a>
             </p><p>原文链接：<a href="http://yoursite.com/[object Object]2018/12/05/前端开发仿站小工具.html">http://yoursite.com/[object Object]2018/12/05/前端开发仿站小工具.html</a>
             </p><p>发表日期：<a href="http://yoursite.com/[object Object]2018/12/05/前端开发仿站小工具.html">December 5th 2018, 1:27:31 pm</a>
-            </p><p>更新日期：<a href="http://yoursite.com/[object Object]2018/12/05/前端开发仿站小工具.html">December 10th 2018, 1:24:28 am</a>
+            </p><p>更新日期：<a href="http://yoursite.com/[object Object]2018/12/05/前端开发仿站小工具.html">December 10th 2018, 2:28:46 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -625,6 +640,10 @@ top:50vh;
         </div>
         <!-- search  -->
         
+            <div class="site-search popup-trigger">
+                <span class="iconfont-archer search-icon">&#xe627;</span>
+            </div>
+        
     </div>
     
     <div class="post-archive">
@@ -729,6 +748,29 @@ jsonContent:
     </script>
     <script src="/scripts/main.js"></script>
     <!-- algolia -->
+    
+        <div class="site-search">
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="iconfont-archer">&#xe609;</i>
+    </span>
+  </div>
+</div>
+        <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.0/dist/instantsearch.min.js" defer></script>
+        <script src="/scripts/search.js" defer></script>
     
     <!-- busuanzi  -->
     

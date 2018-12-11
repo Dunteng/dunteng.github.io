@@ -458,7 +458,7 @@ height:50vh;
 <p>缺点：  内容增多时候容易造成不会自动换行导致内容被隐藏掉，无法显示需要溢出的元素。<br></p>
 <h3 id="3-父级标签使用after伪元素清除浮动"><a href="#3-父级标签使用after伪元素清除浮动" class="headerlink" title="3. 父级标签使用after伪元素清除浮动"></a>3. 父级标签使用after伪元素清除浮动</h3><p><strong>:after 方式为空元素的升级版，好处是不用单独加标签了</strong> </p>
 <p>使用方法：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;  <span class="attribute">content</span>: <span class="string">""</span>; <span class="attribute">display</span>: block; <span class="attribute">height</span>: <span class="number">0</span>; <span class="attribute">clear</span>: both; <span class="attribute">visibility</span>: hidden;  &#125;   </span><br><span class="line"></span><br><span class="line">.clearfix &#123;*zoom: 1;&#125;   /* IE6、7 专有 */</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">     <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">     <span class="attribute">display</span>: block;</span><br><span class="line">     <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">     <span class="attribute">clear</span>: both;</span><br><span class="line">     <span class="attribute">visibility</span>: hidden;</span><br><span class="line">&#125;   </span><br><span class="line"></span><br><span class="line"> .clearfix &#123;*zoom: 1;&#125;   /* IE6、7 专有 */</span><br></pre></td></tr></table></figure>
 <p>优点： 符合闭合浮动思想  结构语义化正确</p>
 <p>缺点： 由于IE6-7不支持:after，使用 zoom:1触发 hasLayout。</p>
 <p>代表网站： 百度、淘宝网、网易等</p>
@@ -478,7 +478,7 @@ height:50vh;
             <p>原文作者：<a href="https://dunteng.github.io">O.G.園長</a>
             </p><p>原文链接：<a href="https://dunteng.github.io/[object Object]2018/12/05/浅谈清除（闭合）浮动.html">https://dunteng.github.io/[object Object]2018/12/05/浅谈清除（闭合）浮动.html</a>
             </p><p>发表日期：<a href="https://dunteng.github.io/[object Object]2018/12/05/浅谈清除（闭合）浮动.html">December 5th 2018, 1:27:31 pm</a>
-            </p><p>更新日期：<a href="https://dunteng.github.io/[object Object]2018/12/05/浅谈清除（闭合）浮动.html">December 11th 2018, 10:25:38 pm</a>
+            </p><p>更新日期：<a href="https://dunteng.github.io/[object Object]2018/12/05/浅谈清除（闭合）浮动.html">December 11th 2018, 10:33:35 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -487,16 +487,16 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href="/[object Object]2018/12/08/外边距塌陷问题.html" title="外边距塌陷问题">
-                    <div class="nextTitle">外边距塌陷问题</div>
+                <a href="/[object Object]2018/12/05/前端开发仿站小工具.html" title="前端开发仿站小工具">
+                    <div class="nextTitle">前端开发仿站小工具</div>
                 </a>
             
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/[object Object]2018/12/05/前端开发仿站小工具.html" title="前端开发仿站小工具">
-                    <div class="prevTitle">前端开发仿站小工具</div>
+                <a href="/[object Object]2018/11/30/hello-world.html" title="Hello World">
+                    <div class="prevTitle">Hello World</div>
                 </a>
             
         </li>
@@ -679,6 +679,8 @@ top:50vh;
     
     
     
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 5
@@ -706,12 +708,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/05</span><a class="archive-post-title" href="/[object Object]2018/12/05/前端开发仿站小工具.html">前端开发仿站小工具</a>
+            <span class="archive-post-date">12/05</span><a class="archive-post-title" href="/[object Object]2018/12/05/浅谈清除（闭合）浮动.html">浅谈清除（闭合）浮动</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/05</span><a class="archive-post-title" href="/[object Object]2018/12/05/浅谈清除（闭合）浮动.html">浅谈清除（闭合）浮动</a>
+            <span class="archive-post-date">12/05</span><a class="archive-post-title" href="/[object Object]2018/12/05/前端开发仿站小工具.html">前端开发仿站小工具</a>
         </li>
     
     
@@ -729,9 +731,9 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="html/css"><span class="iconfont-archer">&#xe606;</span>html/css</span>
-    
         <span class="sidebar-tag-name" data-tags="工具"><span class="iconfont-archer">&#xe606;</span>工具</span>
+    
+        <span class="sidebar-tag-name" data-tags="html/css"><span class="iconfont-archer">&#xe606;</span>html/css</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

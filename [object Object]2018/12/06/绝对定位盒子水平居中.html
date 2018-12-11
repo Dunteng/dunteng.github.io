@@ -422,7 +422,7 @@ height:50vh;
 <li><p>首先left 50%   父盒子的一半大小</p>
 </li>
 <li><p>然后margin-left的值设为负数的自己盒子宽度的一半值就可以了</p>
-<p>另外可以使用CSS3的translate来做更方便，避免了人工计算</p>
+<p>另外可以使用CSS3的translate来做更方便，避免了人工计算<a id="more"></a></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">499.9999px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">background</span>: pink;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>:<span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">top</span>:<span class="number">50%</span>;</span><br><span class="line">  <span class="comment">/* margin-left: -250px; */</span></span><br><span class="line">  <span class="attribute">transform</span>:<span class="built_in">translate</span>(-50%,-50%);  <span class="comment">/* 走的自己的一半 */</span></span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">    &lt;div class="box"&gt;&lt;/div&gt;   </span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
 <p><br><br><br><br><br></p>
 </li>
@@ -546,8 +546,8 @@ height:50vh;
     
     <div class="busuanzi-container">
     
-     
-    <span id="busuanzi_container_site_pv"><h3 style="color:#f75357;">本站访问次数: <span id="busuanzi_value_site_pv"></span> </h3></span>
+    
+    <span id="busuanzi_container_site_uv"><h3 style="color:#f75357;">本站访问次数: <span id="busuanzi_value_site_uv"></span> </h3></span>
     
     </div>
     
@@ -583,14 +583,6 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -704,9 +696,9 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="html/css"><span class="iconfont-archer">&#xe606;</span>html/css</span>
-    
         <span class="sidebar-tag-name" data-tags="工具"><span class="iconfont-archer">&#xe606;</span>工具</span>
+    
+        <span class="sidebar-tag-name" data-tags="html/css"><span class="iconfont-archer">&#xe606;</span>html/css</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

@@ -22,7 +22,7 @@
     <meta name="description" content="我的个人博客">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Dunteng&#39;s Blog</title>
+    <title>vertical-align · Dunteng&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -218,12 +218,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Dunteng&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">vertical-align</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">Dunteng's Blog.</a>
 </header>
@@ -235,24 +246,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(https://source.unsplash.com/random/1600x500)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            vertical-align
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">293</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2018/12/07</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -353,232 +414,65 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2018/12/08/外边距塌陷问题.html">
-            
-                <span>外边距塌陷问题</span>
-        </a>
-        <div class="abstract-content">
-            外边距合并使用margin定义块元素的垂直外边距时，可能会出现外边距的合并。
-相邻块元素垂直外边距的合并当上下相邻的两个块元素相遇时，如果上面的元素有下外边距margin-bottom，下面的元素有上外边距margin-top，则他们之间的垂直间距不是margin-bottom与margin-top之和，而是两者中的较大者。这种现象被称为相邻块元素垂直外边距的合并（也称外边距塌陷）。
-
-解决方案：  避免就好了。
-嵌套块元素垂直外边距的合并对于两个嵌套关系的块元素，如果父元素没有上内边距及边框，则父元素的上外边距会与子元素的上外边距发生合并，合并后的外边距为两者中的较大者，即使父元素的上...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2018/12/07/vertical-align.html">
-            
-                <span>vertical-align</span>
-        </a>
-        <div class="abstract-content">
-            让带有宽度的块级元素居中对齐，是margin: 0 auto;
-让文字居中对齐，是 text-align: center;
-本文讲一下垂直居中的属性.
-
-图片、表单和文字对齐vertical-align 垂直对齐， 这个看上去很美好的一个属性， 实际有着不可捉摸的脾气。
-
-1vertical-align : baseline |top |middle |bottom
-vertical-align 不影响块级元素中的内容对齐，它只针对于 行内元素或者行内块元素，特别是行内块元素， 通常用来控制图片/表单与文字的对齐。
-默认的图片会和文字基线对齐，我们可以通过vertical-align 控...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2018/12/06/绝对定位盒子水平居中.html">
-            
-                <span>绝对定位的盒子水平/垂直居中</span>
-        </a>
-        <div class="abstract-content">
-            <p>普通的盒子是左右margin 改为 auto就可， 但是对于绝对定位就无效了</p>
-<p>定位的盒子也可以水平或者垂直居中，有一个算法。</p>
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>让带有宽度的块级元素居中对齐，是margin: 0 auto;</p>
+<p>让文字居中对齐，是 text-align: center;</p>
+<p>本文讲一下垂直居中的属性.</p>
+<p><br></p>
+<h3 id="图片、表单和文字对齐"><a href="#图片、表单和文字对齐" class="headerlink" title="图片、表单和文字对齐"></a>图片、表单和文字对齐</h3><p>vertical-align 垂直对齐， 这个看上去很美好的一个属性， 实际有着不可捉摸的脾气。<br></p>
+<p><img src="http://wx2.sinaimg.cn/large/006ttwEMgy1fy4740ts24j30ku0410th.jpg" alt=""><br><br></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vertical-align : baseline |top |middle |bottom</span><br></pre></td></tr></table></figure>
+<p><strong>vertical-align 不影响块级元素中的内容对齐，它只针对于 行内元素或者行内块元素，特别是行内块元素， 通常用来控制图片/表单与文字的对齐</strong>。</p>
+<p>默认的图片会和文字基线对齐，我们可以通过vertical-align 控制图片和文字的垂直关系了。 </p>
+<p><br></p>
+<h3 id="去除图片底侧空白缝隙"><a href="#去除图片底侧空白缝隙" class="headerlink" title="去除图片底侧空白缝隙"></a>去除图片底侧空白缝隙</h3><p>有个很重要特性你要记住： 图片或者表单等行内块元素，他的底线会和父级盒子的基线对齐。这样会造成一个问题，就是图片底侧会有一个空白缝隙。</p>
+<p>解决的方法就是：  </p>
 <ol>
-<li><p>首先left 50%   父盒子的一半大小</p>
+<li><p>给img vertical-align:middle | top等等。  让图片不要和基线对齐。</p>
+<p><img src="http://wx2.sinaimg.cn/large/006ttwEMgy1fy47418d8ej30he08cab3.jpg" alt=""></p>
 </li>
-<li><p>然后margin-left的值设为负数的自己盒子宽度的一半值就可以了</p>
-<p>另外可以使用CSS3的translate来做更方便，避免了人工计算
-        </p></li></ol></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2018/12/05/前端开发仿站小工具.html">
-            
-                <span>前端开发仿站小工具</span>
-        </a>
-        <div class="abstract-content">
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>仿站小工具是通过网址下载静态网页的工具。从输入的网址下载html代码，提取出JS、Css、Image、Picture、Flash等静态文件网址，再从下载完好的Css代码中提取出Image静态文件网址，通过网址下载静态文件，根据软件设置好的保存规则，自动修正html和css代码链接路径，最终这些静态文件被按分类保存到电脑文件夹。
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="工具">工具</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2018/12/05/浅谈清除（闭合）浮动.html">
-            
-                <span>浅谈清除（闭合）浮动</span>
-        </a>
-        <div class="abstract-content">
-            为什么要清除浮动由于浮动元素不再占用原文档流的位置，所以它会对后面的元素排版产生影响，为了解决这些问题，此时就需要在该元素中清除浮动。
-准确地说，并不是清除浮动，而是清除浮动后造成的影响
-如果浮动一开始就是一个美丽的错误，那么请用正确的方法挽救它。
-清除浮动本质我们一般不直接给定父级元素的高度，更希望子元素可以撑起父级元素。
-清除浮动主要为了解决父级元素高度为0，因为子级浮动引起无法撑起父级元素的问题。
+</ol>
+<p>2.给img 添加 display：block; 转换为块级元素就不会存在问题了。</p>
+<p><img src="http://wx4.sinaimg.cn/large/006ttwEMgy1fy4741w8mnj30kp0a0404.jpg" alt=""></p>
+<p><br><br><br><br></p>
 
-
-清除浮动的方法其实本质叫做闭合浮动更好一些, 记住，清除浮动就是把浮动的盒子圈到里面，让父盒子闭合出口和入口不让他们出来影响其他元素。最最暴力的方法是给父级元素加上高度，但是这显然不...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
-    
-</div>
-            
-        </div>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2018/11/30/hello-world.html">
-            
-                <span>Hello World</span>
-        </a>
-        <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/30</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2018/11/30/ABOUT ME.html">
-            
-                <span>你好哇~</span>
-        </a>
-        <div class="abstract-content">
-            关于Dunteng’s Blog我叫Dunteng ！ O.G.園長是我的網絡ID，本意是Octopus‘s Garden園長，就是章魚花園園長啦！至於為什麼起這個ID，是因為我很喜歡Beatles樂隊的《Octopus’s Garden》這首歌哈哈哈！你可以稱呼我為園長或者Dunteng。
-我將在這里分享我的IT技術筆記和其他生活隨筆，let’s record and share together ！
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/30</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/[object Object]2018/12/08/外边距塌陷问题.html" title="外边距塌陷问题">
+                    <div class="nextTitle">外边距塌陷问题</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/[object Object]2018/12/06/绝对定位盒子水平居中.html" title="绝对定位的盒子水平/垂直居中">
+                    <div class="prevTitle">绝对定位的盒子水平/垂直居中</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -669,6 +563,24 @@ More...
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#图片、表单和文字对齐"><span class="toc-number">1.</span> <span class="toc-text">图片、表单和文字对齐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#去除图片底侧空白缝隙"><span class="toc-number">2.</span> <span class="toc-text">去除图片底侧空白缝隙</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -909,6 +821,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

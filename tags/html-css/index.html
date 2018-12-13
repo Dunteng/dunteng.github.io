@@ -431,20 +431,17 @@ display 属性为 block, l...
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2018/12/07/vertical-align.html">
+        <a class="abstract-title" href="/[object Object]2018/12/07/实现微信滑动门.html">
             
-                <span>vertical-align</span>
+                <span>实现微信滑动门</span>
         </a>
         <div class="abstract-content">
-            让带有宽度的块级元素居中对齐，是margin: 0 auto;
-让文字居中对齐，是 text-align: center;
-本文讲一下垂直居中的属性.
+            滑动门出现的背景制作网页时，为了美观，常常需要为网页元素设置特殊形状的背景，比如微信导航栏，有凸起和凹下去的感觉，最大的问题是里面的字数不一样多，按照传统思维，这就意味着要多张长度不同的背景图片，不过有更好的解决方法。
 
-图片、表单和文字对齐vertical-align 垂直对齐， 这个看上去很美好的一个属性， 实际有着不可捉摸的脾气。
-
-1vertical-align : baseline |top |middle |bottom
-vertical-align 不影响块级元素中的内容对齐，它只针对于 行内元素或者行内块元素，特别是行内块元素， 通常用来控制图片/表单与文字的对齐。
-默认的图片会和文字基线对齐，我们可以通过vertical-align 控...
+为了使各种特殊形状的背景能够自适应元素中文本内容的多少，出现了CSS滑动门技术。它从新的角度构建页面，使各种特殊形状的背景能够自由拉伸滑动，以适应元素内部的文本内容，可用性更强。 最常见于各种导航栏的滑动门。
+核心技术核心技术就是利用CSS精灵（主要是背景位置）和盒子padding撑开宽度, 以便能适应不同字数的导航栏。
+一般的经典布局都是这样的：
+12345&lt;l...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -468,17 +465,20 @@ vertical-align 不影响块级元素中的内容对齐，它只针对于 行内�
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2018/12/07/实现微信滑动门.html">
+        <a class="abstract-title" href="/[object Object]2018/12/07/vertical-align.html">
             
-                <span>实现微信滑动门</span>
+                <span>vertical-align</span>
         </a>
         <div class="abstract-content">
-            滑动门出现的背景制作网页时，为了美观，常常需要为网页元素设置特殊形状的背景，比如微信导航栏，有凸起和凹下去的感觉，最大的问题是里面的字数不一样多，按照传统思维，这就意味着要多张长度不同的背景图片，不过有更好的解决方法。
+            让带有宽度的块级元素居中对齐，是margin: 0 auto;
+让文字居中对齐，是 text-align: center;
+本文讲一下垂直居中的属性.
 
-为了使各种特殊形状的背景能够自适应元素中文本内容的多少，出现了CSS滑动门技术。它从新的角度构建页面，使各种特殊形状的背景能够自由拉伸滑动，以适应元素内部的文本内容，可用性更强。 最常见于各种导航栏的滑动门。
-核心技术核心技术就是利用CSS精灵（主要是背景位置）和盒子padding撑开宽度, 以便能适应不同字数的导航栏。
-一般的经典布局都是这样的：
-12345&lt;l...
+图片、表单和文字对齐vertical-align 垂直对齐， 这个看上去很美好的一个属性， 实际有着不可捉摸的脾气。
+
+1vertical-align : baseline |top |middle |bottom
+vertical-align 不影响块级元素中的内容对齐，它只针对于 行内元素或者行内块元素，特别是行内块元素， 通常用来控制图片/表单与文字的对齐。
+默认的图片会和文字基线对齐，我们可以通过vertical-align 控...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -788,20 +788,6 @@ vertical-align 不影响块级元素中的内容对齐，它只针对于 行内�
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 10
@@ -839,12 +825,12 @@ vertical-align 不影响块级元素中的内容对齐，它只针对于 行内�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/07</span><a class="archive-post-title" href="/[object Object]2018/12/07/实现微信滑动门.html">实现微信滑动门</a>
+            <span class="archive-post-date">12/07</span><a class="archive-post-title" href="/[object Object]2018/12/07/vertical-align.html">vertical-align</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/07</span><a class="archive-post-title" href="/[object Object]2018/12/07/vertical-align.html">vertical-align</a>
+            <span class="archive-post-date">12/07</span><a class="archive-post-title" href="/[object Object]2018/12/07/实现微信滑动门.html">实现微信滑动门</a>
         </li>
     
     

@@ -22,7 +22,7 @@
     <meta name="description" content="我的个人博客">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>绝对定位的盒子水平/垂直居中 · Dunteng&#39;s Blog</title>
+    <title>浅谈BFC · Dunteng&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -232,7 +232,7 @@
                 <a href="/">Dunteng&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">绝对定位的盒子水平/垂直居中</a>
+                <a href="#" class="post-name">浅谈BFC</a>
             </div>
     </div>
     
@@ -262,7 +262,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            绝对定位的盒子水平/垂直居中
+            浅谈BFC
             <!-- 404 -->
             
         </h1>
@@ -287,12 +287,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">155</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.4k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/12/06</span>
+                    <span class="post-intro-time">2018/12/10</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -416,17 +416,55 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>普通的盒子是左右margin 改为 auto就可， 但是对于绝对定位就无效了</p>
-<p>定位的盒子也可以水平或者垂直居中，有一个算法。</p>
-<ol>
-<li><p>首先left 50%   父盒子的一半大小</p>
-</li>
-<li><p>然后margin-left的值设为负数的自己盒子宽度的一半值就可以了</p>
-<p>另外可以使用CSS3的translate来做更方便，避免了人工计算<a id="more"></a></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">499.9999px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">background</span>: pink;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>:<span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">top</span>:<span class="number">50%</span>;</span><br><span class="line">  <span class="comment">/* margin-left: -250px; */</span></span><br><span class="line">  <span class="attribute">transform</span>:<span class="built_in">translate</span>(-50%,-50%);  <span class="comment">/* 走的自己的一半 */</span></span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">    &lt;div class="box"&gt;&lt;/div&gt;   </span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<p><br><br><br><br><br></p>
-</li>
-</ol>
+        <p><strong>BFC(Block formatting context)</strong></p>
+<p>直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。</p>
+<p>白话文： 孩子在家里愿意怎么折腾都行，但是出了家门口，你就的乖乖的，不能影响外面的任何人。</p>
+<p><br></p>
+<h3 id="元素的显示模式"><a href="#元素的显示模式" class="headerlink" title="元素的显示模式"></a>元素的显示模式</h3><p>我们前面讲过 元素的显示模式 display。 </p>
+<p>分为 块级元素   行内元素  行内块元素 ，其实，它还有很多其他显示模式。</p>
+<p><img src="http://wx3.sinaimg.cn/large/006ttwEMgy1fy5juu4ov4j30a20dkjrx.jpg" alt=""><br></p>
+<h3 id="哪些元素会具有BFC的条件"><a href="#哪些元素会具有BFC的条件" class="headerlink" title="哪些元素会具有BFC的条件"></a>哪些元素会具有BFC的条件</h3><p>不是所有的元素模式都能产生BFC，w3c 规范： </p>
+<p>display 属性为 block, list-item, table 的元素，会产生BFC.</p>
+<p>这个三个都是用来布局最为合理的元素，因为他们就是用来可视化布局。</p>
+<p>注意其他的，display属性，比如 line 等等，他们创建的是 IFC ，我们暂且不研究。</p>
+<p>这个BFC 有着具体的布局特性： </p>
+<p><img src="http://wx1.sinaimg.cn/large/006ttwEMgy1fy5juujfrkg30dw0dwt8n.gif" alt=""></p>
+<p>有宽度和高度 ， 有 外边距margin  有内边距padding 有边框 border。<br></p>
+<h3 id="什么情况下可以让元素产生BFC"><a href="#什么情况下可以让元素产生BFC" class="headerlink" title="什么情况下可以让元素产生BFC"></a>什么情况下可以让元素产生BFC</h3><p>以上盒子具有BFC条件了，就是说有资质了，但是怎样触发才会产生BFC，从而创造这个封闭的环境呢？<br>同样，要给这些元素添加如下属性就可以触发BFC。</p>
+<blockquote>
+<p>-float属性不为none</p>
+<p>-position为absolute或fixed</p>
+<p>-display为inline-block, table-cell, table-caption, flex, inline-flex</p>
+<p>-overflow不为visible。</p>
+</blockquote>
+<p><br></p>
+<h3 id="BFC元素所具有的特性"><a href="#BFC元素所具有的特性" class="headerlink" title="BFC元素所具有的特性"></a>BFC元素所具有的特性</h3><p>BFC布局规则特性：</p>
+<p>1.在BFC中，盒子从顶端开始垂直地一个接一个地排列.</p>
+<p>2.盒子垂直方向的距离由margin决定。属于同一个BFC的两个相邻盒子的margin会发生重叠，不属于同一个BFC的两个相邻盒子的margin不会发生重叠。（一般非BFC区域内的两个相邻盒子的margin也是会发生重叠）</p>
+<p>3.在BFC中，每一个盒子的左外边缘（margin-left）会触碰到容器的左边缘(border-left)内侧，只是接触不会压住border（对于从右到左的格式来说，则触碰到右边缘）。</p>
+<p>4.BFC的区域不会与浮动盒子产生交集，而是紧贴浮动边缘。</p>
+<p>5.计算BFC的高度时，自然也会检测浮动或者定位的盒子高度。</p>
+<p><br></p>
+<h3 id="BFC的主要用途"><a href="#BFC的主要用途" class="headerlink" title="BFC的主要用途"></a>BFC的主要用途</h3><p>BFC能用来做什么？</p>
+<p>(1) 清除元素内部浮动</p>
+<p>只要把父元素设为BFC就可以清理子元素的浮动了，最常见的用法就是在父元素上设置overflow: hidden样式，对于IE6加上zoom:1就可以了。</p>
+<p>主要用到 <strong>计算BFC的高度时，自然也会检测浮动或者定位的盒子高度</strong>这一特性</p>
+<p>清除浮动前：<img src="http://wx2.sinaimg.cn/large/006ttwEMgy1fy5jwcv0kuj30ah090q2p.jpg" alt=""></p>
+<p>清除浮动后：<img src="http://wx1.sinaimg.cn/large/006ttwEMgy1fy5jwdc1bkj309p08cmwx.jpg" alt=""></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">    &lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">        <span class="selector-class">.father</span> &#123;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">            <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">            <span class="comment">/* float: left;   给father 创建了BFC*/</span></span><br><span class="line">            <span class="comment">/*position: absolute; 给father 创建了BFC*/</span></span><br><span class="line">            <span class="comment">/*display: inline-block; 给father 创建了BFC*/</span></span><br><span class="line">            <span class="attribute">overflow</span>: hidden;   <span class="comment">/*给father创建了BFC*/</span></span><br><span class="line">            <span class="attribute">zoom</span>: <span class="number">1</span>; <span class="comment">/*兼容ie6 */</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.son1</span>, <span class="selector-class">.son2</span> &#123;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">            <span class="attribute">background-color</span>: pink;</span><br><span class="line">            <span class="attribute">float</span>: left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.son2</span> &#123;</span><br><span class="line">            <span class="attribute">background-color</span>: purple;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">&lt;div class="father"&gt;</span><br><span class="line">    &lt;div class="son1"&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class="son2"&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>(2) 解决外边距合并问题</p>
+<p>外边距合并的问题。</p>
+<p>主要用到 <strong>盒子垂直方向的距离由margin决定，属于同一个BFC的两个相邻盒子的margin会发生重叠，不属于统一BFC的相邻盒子不会margin重叠</strong>这一特性</p>
+<p>属于同一个BFC的两个相邻盒子的margin会发生重叠，那么我们创建不属于同一个BFC，就不会发生margin重叠了。<img src="http://wx3.sinaimg.cn/large/006ttwEMgy1fy5jwchk3tj30fk0caq2w.jpg" alt=""></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">    &lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">        <span class="selector-class">.father</span> &#123;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">500px</span>;</span><br><span class="line">            <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.son1</span>, <span class="selector-class">.son2</span> &#123;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">            <span class="attribute">background-color</span>: pink;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.son1</span> &#123;</span><br><span class="line">            <span class="attribute">margin-bottom</span>: <span class="number">50px</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.over</span> &#123;</span><br><span class="line">            <span class="attribute">overflow</span>: hidden;<span class="comment">/*形成BFC区域*/</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.son2</span> &#123;</span><br><span class="line">            <span class="attribute">background-color</span>: purple;</span><br><span class="line">            <span class="attribute">margin-top</span>: <span class="number">100px</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">&lt;div class="father"&gt;</span><br><span class="line">    &lt;div class="over"&gt; &lt;!--over隔开，那么 son1 就和son1 不是同一BFC--&gt;</span><br><span class="line">        &lt;div class="son1"&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class="son2"&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>(3) 制作右侧自适应的盒子问题</p>
+<p>主要用到<strong>普通流体元素BFC后，为了和浮动元素不产生任何交集，顺着浮动边缘形成自己的封闭上下文</strong></p>
+<p><img src="http://wx4.sinaimg.cn/large/006ttwEMgy1fy5jwdxel9j30d20f4t8z.jpg" alt=""></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">    &lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">        <span class="selector-class">.father</span> &#123;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">500px</span>;</span><br><span class="line">            <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</span><br><span class="line">            <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.box</span> &#123;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">            <span class="attribute">background-color</span>: pink;</span><br><span class="line">            <span class="attribute">float</span>: left;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="selector-class">.txt</span> &#123;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">            <span class="attribute">background-color</span>: purple;</span><br><span class="line">            <span class="attribute">overflow</span>: hidden;  <span class="comment">/*给txt 创建BFC 区域 在不和浮动产生交集 紧贴制浮动的边缘 */</span></span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">&lt;div class="father"&gt;</span><br><span class="line">    &lt;div class="box"&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class="txt"&gt;我可以制作右侧自适应的盒子我可以制作右侧自适应的盒子我可以制作右侧自适应的盒子</span><br><span class="line">        我可以制作右侧自适应的盒子我可以制作右侧自适应的盒子我可以制作右侧自适应的盒子我可以制作右侧自适应的盒子</span><br><span class="line">        我可以制作右侧自适应的盒子我可以制作右侧自适应的盒子我可以制作右侧自适应的盒子</span><br><span class="line">        我可以制作右侧自适应的盒子我可以制作右侧自适应的盒子我可以制作右侧自适应的盒子&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="BFC-总结"><a href="#BFC-总结" class="headerlink" title="BFC 总结"></a>BFC 总结</h3><p>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。包括浮动，和外边距合并等等，因此，有了这个特性，我们布局的时候就不会出现意外情况了。</p>
 
     </article>
     <!-- license  -->
@@ -435,17 +473,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/[object Object]2018/12/07/实现微信滑动门.html" title="实现微信滑动门">
-                    <div class="nextTitle">实现微信滑动门</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/[object Object]2018/12/05/前端开发仿站小工具.html" title="前端开发仿站小工具">
-                    <div class="prevTitle">前端开发仿站小工具</div>
+                <a href="/[object Object]2018/12/08/外边距塌陷问题.html" title="外边距塌陷问题">
+                    <div class="prevTitle">外边距塌陷问题</div>
                 </a>
             
         </li>
@@ -570,7 +603,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#元素的显示模式"><span class="toc-number">1.</span> <span class="toc-text">元素的显示模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#哪些元素会具有BFC的条件"><span class="toc-number">2.</span> <span class="toc-text">哪些元素会具有BFC的条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么情况下可以让元素产生BFC"><span class="toc-number">3.</span> <span class="toc-text">什么情况下可以让元素产生BFC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BFC元素所具有的特性"><span class="toc-number">4.</span> <span class="toc-text">BFC元素所具有的特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BFC的主要用途"><span class="toc-number">5.</span> <span class="toc-text">BFC的主要用途</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BFC-总结"><span class="toc-number">6.</span> <span class="toc-text">BFC 总结</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

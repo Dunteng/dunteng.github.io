@@ -381,13 +381,7 @@ height:50vh;
         <div class="abstract-content">
             伸缩布局(CSS3)CSS3在布局方面做了非常大的改进，使得我们对块级元素的布局排列变得十分灵活，适应性非常强，其强大的伸缩性，在响应式开中可以发挥极大的作用。
 
-主轴：Flex容器的主轴主要用来配置Flex项目，默认是水平方向
-侧轴：与主轴垂直的轴称作侧轴，默认是垂直方向的
-方向：默认主轴从左向右，侧轴默认从上到下
-主轴和侧轴并不是固定不变的，通过flex-direction可以互换。
-
-Flex布局的语法规范经过几年发生了很大的变化，也给Flexbox的使用带来一定的局限性，因为语法规范版本众多，浏览器支持不一致，致使Flexbox布局使用不多
-各属性详解1.flex子项目在主轴的缩...
+主轴：Flex容器的主轴主要用...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -417,14 +411,7 @@ Flex布局的语法规范经过几年发生了很大的变化，也给Flexbox的
         </a>
         <div class="abstract-content">
             BFC(Block formatting context)
-直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。
-白话文： 孩子在家里愿意怎么折腾都行，但是出了家门口，你就的乖乖的，不能影响外面的任何人。
-
-元素的显示模式我们前面讲过 元素的显示模式 display。 
-分为 块级元素   行内元素  行内块元素 ，其实，它还有很多其他显示模式。
-
-哪些元素会具有BFC的条件不是所有的元素模式都能产生BFC，w3c 规范： 
-display 属性为 block, l...
+直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level B...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -454,11 +441,7 @@ display 属性为 block, l...
         </a>
         <div class="abstract-content">
             外边距合并使用margin定义块元素的垂直外边距时，可能会出现外边距的合并。
-相邻块元素垂直外边距的合并当上下相邻的两个块元素相遇时，如果上面的元素有下外边距margin-bottom，下面的元素有上外边距margin-top，则他们之间的垂直间距不是margin-bottom与margin-top之和，而是两者中的较大者。这种现象被称为相邻块元素垂直外边距的合并（也称外边距塌陷）。
-
-解决方案一： 避免这样写就好了。。。。
-解决方案二：详见我的另一篇博文利用BFC机制解决外边距合并问题
-嵌套块元素垂直外边距的合并对于两个嵌套关系的块元素，如果父元素没有上内边距及边框，则父元素的上外边距...
+相邻块元素垂直外边距的合并当上下相邻的两个块元素相遇时，如果上面的元素有下外边距margin-bottom，下面的元...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -489,9 +472,7 @@ display 属性为 block, l...
         <div class="abstract-content">
             字体格式不同浏览器所支持的字体格式是不一样的，我们有必要了解一下有关字体格式的知识。
 1、TureType(.ttf)格式
-.ttf字体是Windows和Mac的最常见的字体，是一种RAW格式，支持这种字体的浏览器有IE9+、Firefox3.5+、Chrome4+、Safari3+、Opera10+、iOS Mobile、Safari4.2+；
-2、OpenType(.otf)格式
-.otf字体被认为是一种原始的字体格式，其内置在TureType的基础上，支持这种字体的浏览器有Firefox3.5+、Chrome4.0+、Safari3.1+、Opera10.0+、iOS Mobile...
+.ttf字体是Windows和Mac的最常见的字体，是一种RAW格式，...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -524,11 +505,7 @@ display 属性为 block, l...
 让文字居中对齐，是 text-align: center;
 本文讲一下垂直居中的属性.
 
-图片、表单和文字对齐vertical-align 垂直对齐， 这个看上去很美好的一个属性， 实际有着不可捉摸的脾气。
-
-1vertical-align : baseline |top |middle |bottom
-vertical-align 不影响块级元素中的内容对齐，它只针对于 行内元素或者行内块元素，特别是行内块元素， 通常用来控制图片/表单与文字的对齐。
-默认的图片会和文字基线对齐，我们可以通过vertical-align 控...
+图片、表单和文字对齐vertical-a...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -557,12 +534,7 @@ vertical-align 不影响块级元素中的内容对齐，它只针对于 行内�
                 <span>实现微信滑动门</span>
         </a>
         <div class="abstract-content">
-            滑动门出现的背景制作网页时，为了美观，常常需要为网页元素设置特殊形状的背景，比如微信导航栏，有凸起和凹下去的感觉，最大的问题是里面的字数不一样多，按照传统思维，这就意味着要多张长度不同的背景图片，不过有更好的解决方法。
-
-为了使各种特殊形状的背景能够自适应元素中文本内容的多少，出现了CSS滑动门技术。它从新的角度构建页面，使各种特殊形状的背景能够自由拉伸滑动，以适应元素内部的文本内容，可用性更强。 最常见于各种导航栏的滑动门。
-核心技术核心技术就是利用CSS精灵（主要是背景位置）和盒子padding撑开宽度, 以便能适应不同字数的导航栏。
-一般的经典布局都是这样的：
-12345&lt;l...
+            滑动门出现的背景制作网页时，为了美观，常常需要为网页元素设置特殊形状的背景，比如微信导航栏，有凸起和凹下去的感觉，最大的问题是里面的字数不一样多，按照传统思维，这就意味着要多张长度不同的背景图片...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -657,12 +629,7 @@ vertical-align 不影响块级元素中的内容对齐，它只针对于 行内�
         <div class="abstract-content">
             为什么要清除浮动由于浮动元素不再占用原文档流的位置，所以它会对后面的元素排版产生影响，为了解决这些问题，此时就需要在该元素中清除浮动。
 准确地说，并不是清除浮动，而是清除浮动后造成的影响
-如果浮动一开始就是一个美丽的错误，那么请用正确的方法挽救它。
-清除浮动本质我们一般不直接给定父级元素的高度，更希望子元素可以撑起父级元素。
-清除浮动主要为了解决父级元素高度为0，因为子级浮动引起无法撑起父级元素的问题。
-
-
-清除浮动的方法其实本质叫做闭合浮动更好一些, 记住，清除浮动就是把浮动的盒子圈到里面，让父盒子闭合出口和入口不让他们出来影响其他元素。最最暴力的方法是给父级元素加上高度，但是这显然不...
+如果浮...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -691,11 +658,7 @@ vertical-align 不影响块级元素中的内容对齐，它只针对于 行内�
                 <span>Hello World</span>
         </a>
         <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More...
+            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->

@@ -22,7 +22,7 @@
     <meta name="description" content="我的个人博客">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>实现微信滑动门 · Dunteng&#39;s Blog</title>
+    <title>Dunteng&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -218,23 +218,12 @@
 </head>
 
     
-        <body class="post-body">
-    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
-    
-    <div class="banner">
-            <div class="blog-title">
-                <a href="/">Dunteng&#39;s Blog.</a>
-            </div>
-            <div class="post-title">
-                <a href="#" class="post-name">实现微信滑动门</a>
-            </div>
-    </div>
     
     <a class="home-link" href="/">Dunteng's Blog.</a>
 </header>
@@ -246,74 +235,24 @@
 
 
 
-
-height:50vh;
 ">
     
     <!-- 主页  -->
-    
-    
-    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/photo-1543739839-be746050f5b7.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
-            
-            实现微信滑动门
-            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
-            
-            <!-- 404 -->
-            
         </p>
         <!-- 文章页meta -->
-        
-            <div class="post-intros">
-                <!-- 文章页标签  -->
-                
-                    <div class="post-intro-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
-    
-</div>
-                
-                
-                    <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">563</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
-                    </div>
-                
-                <div class="post-intro-meta">
-                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/12/07</span>
-                    
-                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                        <span class="iconfont-archer">&#xe602;</span>
-                        <span id="busuanzi_value_page_pv"></span>
-                    </span>
-                    
-                    <span class="shareWrapper">
-                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
-                        <span class="shareText">Share</span>
-                        <ul class="shareList">
-                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
-                                <div class="share-qrcode"></div>
-                            </li>
-                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
-                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
-                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
-                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
         
     </div>
 </div>
@@ -414,64 +353,44 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main post-page">
-    <article class="article-entry">
-        <h2 id="滑动门出现的背景"><a href="#滑动门出现的背景" class="headerlink" title="滑动门出现的背景"></a>滑动门出现的背景</h2><p>制作网页时，为了美观，常常需要为网页元素设置特殊形状的背景，比如微信导航栏，有凸起和凹下去的感觉，最大的问题是里面的字数不一样多，按照传统思维，这就意味着要多张长度不同的背景图片，不过有更好的解决方法。</p>
-<p><img src="http://wx4.sinaimg.cn/large/006ttwEMgy1fy49ltwng4j30xq0dcdi1.jpg" alt=""></p>
-<p>为了使各种特殊形状的背景能够自适应元素中文本内容的多少，出现了CSS滑动门技术。它从新的角度构建页面，使各种特殊形状的背景能够自由拉伸滑动，以适应元素内部的文本内容，可用性更强。 最常见于各种导航栏的滑动门。</p>
-<h2 id="核心技术"><a href="#核心技术" class="headerlink" title="核心技术"></a>核心技术</h2><p>核心技术就是利用CSS精灵（主要是背景位置）和盒子padding撑开宽度, 以便能适应不同字数的导航栏。</p>
-<p>一般的经典布局都是这样的：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>导航栏内容<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>两张背景图：</p>
-<p>一张是凸起的：</p>
-<p><img src="http://wx3.sinaimg.cn/large/006ttwEMgy1fy49gsni0vj30ao00x0bn.jpg" alt=""></p>
-<p>另一张是凹陷的：</p>
-<p><img src="http://wx4.sinaimg.cn/large/006ttwEMgy1fy49gs3rmtj30ao00x0az.jpg" alt=""></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">		<span class="attribute">background</span>: <span class="built_in">url</span>(images/wx.jpg)  repeat-x; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">		<span class="attribute">float</span>: left;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">		<span class="comment">/*1. a 左边放 左圆角   但是文字需要往右走 15px*/</span></span><br><span class="line">		<span class="attribute">height</span>: <span class="number">33px</span>;</span><br><span class="line">		<span class="attribute">line-height</span>: <span class="number">33px</span>;</span><br><span class="line">		<span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">		<span class="attribute">text-decoration</span>: none;</span><br><span class="line">		<span class="attribute">background</span>: <span class="built_in">url</span>(images/to.png) no-repeat;</span><br><span class="line">		<span class="attribute">display</span>: inline-block;</span><br><span class="line">		<span class="attribute">padding-left</span>: <span class="number">15px</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.nav</span>  <span class="selector-tag">span</span> &#123;</span><br><span class="line">		<span class="comment">/*2. span 右边放右圆角   但是文字需要往左走 15px*/</span></span><br><span class="line">		<span class="attribute">background</span>: <span class="built_in">url</span>(images/to.png) no-repeat right;</span><br><span class="line">		<span class="attribute">display</span>: inline-block;</span><br><span class="line">		<span class="attribute">height</span>: <span class="number">33px</span>;</span><br><span class="line">		<span class="attribute">padding-right</span>: <span class="number">15px</span>;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.nav</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>, <span class="selector-class">.nav</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">span</span> &#123;</span><br><span class="line">		<span class="attribute">background-image</span>: <span class="built_in">url</span>(images/ao.png);</span><br><span class="line">	&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">	&lt;ul class="nav"&gt;</span><br><span class="line">		&lt;<span class="selector-tag">li</span>&gt;</span><br><span class="line">		      &lt;a href="#"&gt;</span><br><span class="line">		      		&lt;span&gt;首页&lt;/span&gt;</span><br><span class="line">		      &lt;/a&gt;</span><br><span class="line">		&lt;/li&gt;</span><br><span class="line">		&lt;<span class="selector-tag">li</span>&gt;</span><br><span class="line">		      &lt;a href="#"&gt;</span><br><span class="line">		      		&lt;span&gt;三个字&lt;/span&gt;</span><br><span class="line">		      &lt;/a&gt;</span><br><span class="line">		&lt;/li&gt;</span><br><span class="line">		&lt;<span class="selector-tag">li</span>&gt;</span><br><span class="line">		      &lt;a href="#"&gt;</span><br><span class="line">		      		&lt;span&gt;新闻客户端&lt;/span&gt;</span><br><span class="line">		      &lt;/a&gt;</span><br><span class="line">		&lt;/li&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;/ul&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>实现效果：</strong></p>
-<p><img src="http://wx2.sinaimg.cn/large/006ttwEMgy1fy49v5c8vuj30a7069wen.jpg" alt=""></p>
-<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><ol>
-<li>a 设置 背景左侧，padding撑开合适宽度。    </li>
-<li>span 设置背景右侧， padding撑开合适宽度 剩下由文字继续撑开宽度。</li>
-<li>之所以a包含span就是因为 整个导航都是可以点击的。</li>
-</ol>
-
+            <main class="main index-page">
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/[object Object]2019/01/04/jiujiu.html">
+            
+                <span>JS实现九九乘法表</span>
+        </a>
+        <div class="abstract-content">
+            今天来水一篇。。。。
+用JavaScript实现九九乘法表，这是练习循环的经典题目。
+代码：
+123456789101112/*打印九九乘法表*/    var table = '';    v...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/04</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="算法">算法</a>
+    
+</div>
+            
+        </div>
     </article>
-    <!-- license  -->
     
     <!-- paginator  -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-                <div class="nextSlogan">Next Post</div>
-                <a href="/[object Object]2018/12/07/vertical-align.html" title="vertical-align">
-                    <div class="nextTitle">vertical-align</div>
-                </a>
-            
-        </li>
-        <li class="previous">
-            
-                <div class="prevSlogan">Previous Post</div>
-                <a href="/[object Object]2018/12/06/绝对定位盒子水平居中.html" title="绝对定位的盒子水平/垂直居中">
-                    <div class="prevTitle">绝对定位的盒子水平/垂直居中</div>
-                </a>
-            
-        </li>
-    </ul>
-    <!-- 评论插件 -->
-    <!-- 来必力City版安装代码 -->
-
-<!-- City版安装代码已完成 -->
     
-    
-    <!-- partial('_partial/comment/changyan') -->
-    <!--PC版-->
-
-
-    
-    
-
-    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -566,24 +485,6 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
-    
-    <div class="toc-wrapper" style=
-    
-
-
-
-
-
-
-
-top:50vh;
-
-    >
-        <div class="toc-catalog">
-            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
-        </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#滑动门出现的背景"><span class="toc-number">1.</span> <span class="toc-text">滑动门出现的背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#核心技术"><span class="toc-number">2.</span> <span class="toc-text">核心技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码实现"><span class="toc-number">3.</span> <span class="toc-text">代码实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结："><span class="toc-number">4.</span> <span class="toc-text">总结：</span></a></li></ol>
-    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -943,8 +844,6 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
-    
-        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

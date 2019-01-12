@@ -22,7 +22,7 @@
     <meta name="description" content="我的个人博客">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>实现微信滑动门 · Dunteng&#39;s Blog</title>
+    <title>浅谈js匿名函数 · Dunteng&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -232,7 +232,7 @@
                 <a href="/">Dunteng&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">实现微信滑动门</a>
+                <a href="#" class="post-name">浅谈js匿名函数</a>
             </div>
     </div>
     
@@ -256,13 +256,13 @@ height:50vh;
     <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/photo-1543739839-be746050f5b7.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/好色仙人.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            实现微信滑动门
+            浅谈js匿名函数
             <!-- 404 -->
             
         </h1>
@@ -281,18 +281,18 @@ height:50vh;
                 
                     <div class="post-intro-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">563</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">479</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/12/07</span>
+                    <span class="post-intro-time">2019/01/12</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -416,25 +416,23 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="滑动门出现的背景"><a href="#滑动门出现的背景" class="headerlink" title="滑动门出现的背景"></a>滑动门出现的背景</h2><p>制作网页时，为了美观，常常需要为网页元素设置特殊形状的背景，比如微信导航栏，有凸起和凹下去的感觉，最大的问题是里面的字数不一样多，按照传统思维，这就意味着要多张长度不同的背景图片，不过有更好的解决方法。</p>
-<p><img src="http://wx4.sinaimg.cn/large/006ttwEMgy1fy49ltwng4j30xq0dcdi1.jpg" alt=""></p>
-<p>为了使各种特殊形状的背景能够自适应元素中文本内容的多少，出现了CSS滑动门技术。它从新的角度构建页面，使各种特殊形状的背景能够自由拉伸滑动，以适应元素内部的文本内容，可用性更强。 最常见于各种导航栏的滑动门。</p>
-<h2 id="核心技术"><a href="#核心技术" class="headerlink" title="核心技术"></a>核心技术</h2><p>核心技术就是利用CSS精灵（主要是背景位置）和盒子padding撑开宽度, 以便能适应不同字数的导航栏。</p>
-<p>一般的经典布局都是这样的：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>导航栏内容<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>两张背景图：</p>
-<p>一张是凸起的：</p>
-<p><img src="http://wx3.sinaimg.cn/large/006ttwEMgy1fy49gsni0vj30ao00x0bn.jpg" alt=""></p>
-<p>另一张是凹陷的：</p>
-<p><img src="http://wx4.sinaimg.cn/large/006ttwEMgy1fy49gs3rmtj30ao00x0az.jpg" alt=""></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">		<span class="attribute">background</span>: <span class="built_in">url</span>(images/wx.jpg)  repeat-x; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">		<span class="attribute">float</span>: left;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">		<span class="comment">/*1. a 左边放 左圆角   但是文字需要往右走 15px*/</span></span><br><span class="line">		<span class="attribute">height</span>: <span class="number">33px</span>;</span><br><span class="line">		<span class="attribute">line-height</span>: <span class="number">33px</span>;</span><br><span class="line">		<span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">		<span class="attribute">text-decoration</span>: none;</span><br><span class="line">		<span class="attribute">background</span>: <span class="built_in">url</span>(images/to.png) no-repeat;</span><br><span class="line">		<span class="attribute">display</span>: inline-block;</span><br><span class="line">		<span class="attribute">padding-left</span>: <span class="number">15px</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.nav</span>  <span class="selector-tag">span</span> &#123;</span><br><span class="line">		<span class="comment">/*2. span 右边放右圆角   但是文字需要往左走 15px*/</span></span><br><span class="line">		<span class="attribute">background</span>: <span class="built_in">url</span>(images/to.png) no-repeat right;</span><br><span class="line">		<span class="attribute">display</span>: inline-block;</span><br><span class="line">		<span class="attribute">height</span>: <span class="number">33px</span>;</span><br><span class="line">		<span class="attribute">padding-right</span>: <span class="number">15px</span>;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.nav</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>, <span class="selector-class">.nav</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">span</span> &#123;</span><br><span class="line">		<span class="attribute">background-image</span>: <span class="built_in">url</span>(images/ao.png);</span><br><span class="line">	&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">	&lt;ul class="nav"&gt;</span><br><span class="line">		&lt;<span class="selector-tag">li</span>&gt;</span><br><span class="line">		      &lt;a href="#"&gt;</span><br><span class="line">		      		&lt;span&gt;首页&lt;/span&gt;</span><br><span class="line">		      &lt;/a&gt;</span><br><span class="line">		&lt;/li&gt;</span><br><span class="line">		&lt;<span class="selector-tag">li</span>&gt;</span><br><span class="line">		      &lt;a href="#"&gt;</span><br><span class="line">		      		&lt;span&gt;三个字&lt;/span&gt;</span><br><span class="line">		      &lt;/a&gt;</span><br><span class="line">		&lt;/li&gt;</span><br><span class="line">		&lt;<span class="selector-tag">li</span>&gt;</span><br><span class="line">		      &lt;a href="#"&gt;</span><br><span class="line">		      		&lt;span&gt;新闻客户端&lt;/span&gt;</span><br><span class="line">		      &lt;/a&gt;</span><br><span class="line">		&lt;/li&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;/ul&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>实现效果：</strong></p>
-<p><img src="http://wx2.sinaimg.cn/large/006ttwEMgy1fy49v5c8vuj30a7069wen.jpg" alt=""></p>
-<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><ol>
-<li>a 设置 背景左侧，padding撑开合适宽度。    </li>
-<li>span 设置背景右侧， padding撑开合适宽度 剩下由文字继续撑开宽度。</li>
-<li>之所以a包含span就是因为 整个导航都是可以点击的。</li>
-</ol>
+        <h2 id="匿名函数与函数表达式"><a href="#匿名函数与函数表达式" class="headerlink" title="匿名函数与函数表达式"></a>匿名函数与函数表达式</h2><p>​    与匿名函数相对的是命名函数——如果函数有名字就是命名函数，反之即为匿名函数。</p>
+<p>​    函数的一般定义方式为函数声明：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用方式为：函数名();</span></span><br></pre></td></tr></table></figure>
+<p>​    函数的另一种定义方式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">&#125;;<span class="comment">//由于是赋值过程所以结尾必须加分号</span></span><br><span class="line"><span class="comment">//调用方式为：fn();</span></span><br><span class="line"><span class="comment">//把一个匿名函数赋给一个变量，即为函数表达式</span></span><br></pre></td></tr></table></figure>
+<h2 id="函数声明与函数表达式"><a href="#函数声明与函数表达式" class="headerlink" title="函数声明与函数表达式"></a>函数声明与函数表达式</h2><p>​    乍一看会觉得函数声明的方式来定义函数比较方便，但是函数声明和函数表达式是存在区别的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">//函数声明</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"林深时见鹿"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    f1();<span class="comment">//输出“溪午不闻钟”而非“林深时见鹿”，因为f1被下面的函数声明覆盖了</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"溪午不闻钟"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    f1();<span class="comment">//输出“溪午不闻钟”</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//函数表达式</span></span><br><span class="line">    <span class="keyword">var</span> f2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"林深时见鹿"</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    f2();<span class="comment">//输出“林深时见鹿”</span></span><br><span class="line">    f2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"溪午不闻钟"</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    f2();<span class="comment">//输出“溪午不闻钟”</span></span><br><span class="line"><span class="comment">//函数表达式由于是变量赋值的形式，所以不存在函数覆盖的情况</span></span><br></pre></td></tr></table></figure>
+<h2 id="匿名函数自调用"><a href="#匿名函数自调用" class="headerlink" title="匿名函数自调用"></a>匿名函数自调用</h2><p>​    <strong>匿名函数自调用也叫做“立即执行函数”</strong>，在声明的同时立即直接执行，一次性。</p>
+<p>​    一般如以下两种形式：</p>
+<blockquote>
+<p>(function (){}());  W3C建议第一种</p>
+<p>(function (){})();</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//函数自调用</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"野竹分青霭"</span>);</span><br><span class="line">&#125;());</span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"飞泉挂碧峰"</span>)</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>立即执行函数，执行后即被释放。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子1</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">234</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a + b);</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line"><span class="comment">//例子2：带参数</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">a,b,c</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a+b+c*<span class="number">2</span>);</span><br><span class="line">&#125;(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//例子3：有返回值</span></span><br><span class="line"><span class="keyword">var</span> num = (<span class="function"><span class="keyword">function</span>(<span class="params">a,b,c,</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> d = a+b+c*<span class="number">2</span><span class="number">-2</span>;</span><br><span class="line">    <span class="keyword">return</span> d;</span><br><span class="line">&#125;(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>));</span><br></pre></td></tr></table></figure>
 
     </article>
     <!-- license  -->
@@ -443,17 +441,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/[object Object]2018/12/08/字体图标的使用.html" title="字体图标的使用">
-                    <div class="nextTitle">字体图标的使用</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/[object Object]2018/12/07/vertical-align.html" title="vertical-align">
-                    <div class="prevTitle">vertical-align</div>
+                <a href="/[object Object]2019/01/04/jiujiu.html" title="JS实现九九乘法表">
+                    <div class="prevTitle">JS实现九九乘法表</div>
                 </a>
             
         </li>
@@ -582,7 +575,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#滑动门出现的背景"><span class="toc-number">1.</span> <span class="toc-text">滑动门出现的背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#核心技术"><span class="toc-number">2.</span> <span class="toc-text">核心技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码实现"><span class="toc-number">3.</span> <span class="toc-text">代码实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结："><span class="toc-number">4.</span> <span class="toc-text">总结：</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#匿名函数与函数表达式"><span class="toc-number">1.</span> <span class="toc-text">匿名函数与函数表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数声明与函数表达式"><span class="toc-number">2.</span> <span class="toc-text">函数声明与函数表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#匿名函数自调用"><span class="toc-number">3.</span> <span class="toc-text">匿名函数自调用</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

@@ -443,7 +443,7 @@ height:50vh;
 <h3 id="复杂类型作为函数的参数"><a href="#复杂类型作为函数的参数" class="headerlink" title="复杂类型作为函数的参数"></a>复杂类型作为函数的参数</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgkchu8lhj30xb0lfwfm.jpg" alt=""></p>
 <h2 id="例题练习"><a href="#例题练习" class="headerlink" title="例题练习"></a>例题练习</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 下面代码输出的结果</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,salary</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.age = age;</span><br><span class="line">  <span class="keyword">this</span>.salary = salary;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">person</span>) </span>&#123;</span><br><span class="line">  person.name = <span class="string">"ls"</span>;</span><br><span class="line">  person = <span class="keyword">new</span> Person(<span class="string">"aa"</span>,<span class="number">18</span>,<span class="number">10</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person(<span class="string">"zs"</span>,<span class="number">18</span>,<span class="number">1000</span>);</span><br><span class="line"><span class="built_in">console</span>.log(p.name);<span class="comment">//zs</span></span><br><span class="line">f1(p);</span><br><span class="line"><span class="built_in">console</span>.log(p.name);<span class="comment">//ls</span></span><br></pre></td></tr></table></figure>
 <p><strong>答案：</strong></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgjz1hw08j309907gmx5.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgjz1hw08j309907gmx5.jpg" alt=""><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgkwqtyikj30y00fj0tw.jpg" alt=""></p>
 <p>思考：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. </span></span><br><span class="line"><span class="keyword">var</span> num1 = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> num2 = num1;</span><br><span class="line">num1 = <span class="number">20</span>;</span><br><span class="line"><span class="built_in">console</span>.log(num1);</span><br><span class="line"><span class="built_in">console</span>.log(num2);</span><br><span class="line"></span><br><span class="line"><span class="comment">//2. </span></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">50</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    num = <span class="number">60</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(num);</span><br><span class="line">&#125;</span><br><span class="line">f1(num);</span><br><span class="line"><span class="built_in">console</span>.log(num);</span><br><span class="line"></span><br><span class="line"><span class="comment">//3. 重点</span></span><br><span class="line"><span class="keyword">var</span> num1 = <span class="number">55</span>;</span><br><span class="line"><span class="keyword">var</span> num2 = <span class="number">66</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">num, num1</span>) </span>&#123;</span><br><span class="line">  num = <span class="number">100</span>;</span><br><span class="line">  num1 = <span class="number">100</span>;</span><br><span class="line">  num2 = <span class="number">100</span>;<span class="comment">//注意是隐式全局变量</span></span><br><span class="line">  <span class="built_in">console</span>.log(num);</span><br><span class="line">  <span class="built_in">console</span>.log(num1);</span><br><span class="line">  <span class="built_in">console</span>.log(num2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f1(num1, num2);</span><br><span class="line"><span class="built_in">console</span>.log(num1);</span><br><span class="line"><span class="built_in">console</span>.log(num2);</span><br><span class="line"><span class="built_in">console</span>.log(num);</span><br></pre></td></tr></table></figure>
 <p><strong>答案：</strong></p>
@@ -462,8 +462,8 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href="/[object Object]2019/01/12/浅谈js匿名函数.html" title="浅谈js匿名函数">
-                    <div class="nextTitle">浅谈js匿名函数</div>
+                <a href="/[object Object]2019/01/09/字符串小案例.html" title="字符串小练习">
+                    <div class="nextTitle">字符串小练习</div>
                 </a>
             
         </li>
@@ -789,24 +789,9 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 15
+        Total : 16
         </div>
         <!-- search  -->
         
@@ -827,6 +812,11 @@ top:50vh;
     
         <li class="archive-post-item">
             <span class="archive-post-date">01/12</span><a class="archive-post-title" href="/[object Object]2019/01/12/浅谈js匿名函数.html">浅谈js匿名函数</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/09</span><a class="archive-post-title" href="/[object Object]2019/01/09/字符串小案例.html">字符串小练习</a>
         </li>
     
     
@@ -869,11 +859,6 @@ top:50vh;
         </li>
     
     
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/07</span><a class="archive-post-title" href="/[object Object]2018/12/07/vertical-align.html">vertical-align</a>
-        </li>
-    
-    
     
     
     
@@ -899,6 +884,11 @@ top:50vh;
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/07</span><a class="archive-post-title" href="/[object Object]2018/12/07/实现微信滑动门.html">实现微信滑动门</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/07</span><a class="archive-post-title" href="/[object Object]2018/12/07/vertical-align.html">vertical-align</a>
         </li>
     
     
@@ -931,11 +921,11 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="html/css"><span class="iconfont-archer">&#xe606;</span>html/css</span>
-    
         <span class="sidebar-tag-name" data-tags="JavaScript"><span class="iconfont-archer">&#xe606;</span>JavaScript</span>
     
         <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
+    
+        <span class="sidebar-tag-name" data-tags="html/css"><span class="iconfont-archer">&#xe606;</span>html/css</span>
     
         <span class="sidebar-tag-name" data-tags="工具"><span class="iconfont-archer">&#xe606;</span>工具</span>
     

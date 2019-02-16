@@ -386,16 +386,45 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/01/13/自定义属性操作案例.html">
+        <a class="abstract-title" href="/[object Object]2019/01/13/绑定解绑事件兼容代码.html">
             
-                <span>自定义属性操作案例</span>
+                <span>绑定/解绑事件兼容代码</span>
         </a>
         <div class="abstract-content">
-            为了练习一下自定义属性操作，做了一个tab栏切换的demo
-自定义属性操作
-getAttribute() 获取标签行内属性
-setAttribute() 设置标签行内属性
-removeAttri...
+            为元素绑定( 多个 )事件(DOM)除了用对象.onclick=fn这类的方式（这种方式无法绑定多个事件，如果写了多个事件则会发生覆盖），还有：  1 对象.addEventListener(“...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/13</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/[object Object]2019/01/13/JS搜索框自动提示.html">
+            
+                <span>JS搜索框自动提示</span>
+        </a>
+        <div class="abstract-content">
+            
+效果展示：
+
+html部分：
+123456789101112131415161718192021222324252627282930313233343536  &lt;style&gt;   ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -409,8 +438,6 @@ removeAttri...
         <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="小案例">小案例</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
     
 </div>
             
@@ -455,12 +482,16 @@ removeAttri...
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/01/13/绑定解绑事件兼容代码.html">
+        <a class="abstract-title" href="/[object Object]2019/01/13/自定义属性操作案例.html">
             
-                <span>绑定/解绑事件兼容代码</span>
+                <span>自定义属性操作案例</span>
         </a>
         <div class="abstract-content">
-            为元素绑定( 多个 )事件(DOM)除了用对象.onclick=fn这类的方式（这种方式无法绑定多个事件，如果写了多个事件则会发生覆盖），还有：  1 对象.addEventListener(“...
+            为了练习一下自定义属性操作，做了一个tab栏切换的demo
+自定义属性操作
+getAttribute() 获取标签行内属性
+setAttribute() 设置标签行内属性
+removeAttri...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -472,6 +503,10 @@ removeAttri...
             <div class="abstract-tags">
     
         <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="小案例">小案例</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
     
 </div>
             
@@ -628,36 +663,6 @@ removeAttri...
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2018/12/10/浅谈BFC.html">
-            
-                <span>浅谈BFC</span>
-        </a>
-        <div class="abstract-content">
-            BFC(Block formatting context)
-直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level B...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/10</span>
             </div>
             <!-- tags  -->
             
@@ -994,9 +999,26 @@ removeAttri...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 19
+        Total : 20
         </div>
         <!-- search  -->
         
@@ -1016,17 +1038,22 @@ removeAttri...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/绑定解绑事件兼容代码.html">绑定/解绑事件兼容代码</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/JS实现全选与全不选.html">JS实现全选与全不选</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/绑定解绑事件兼容代码.html">绑定/解绑事件兼容代码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/自定义属性操作案例.html">自定义属性操作案例</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/JS搜索框自动提示.html">JS搜索框自动提示</a>
         </li>
     
     
@@ -1074,6 +1101,11 @@ removeAttri...
         </li>
     
     
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/08</span><a class="archive-post-title" href="/[object Object]2018/12/08/字体图标的使用.html">字体图标的使用</a>
+        </li>
+    
+    
     
     
     
@@ -1095,11 +1127,6 @@ removeAttri...
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/08</span><a class="archive-post-title" href="/[object Object]2018/12/08/字体图标的使用.html">字体图标的使用</a>
-        </li>
     
     
         <li class="archive-post-item">

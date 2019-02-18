@@ -22,7 +22,7 @@
     <meta name="description" content="我的个人博客">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>JavaScript中的值传递和地址传递（引用传递） · Dunteng&#39;s Blog</title>
+    <title>Dunteng&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,8 +77,6 @@
 
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
-    
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -218,23 +216,14 @@
 </head>
 
     
-        <body class="post-body">
+        <body class="home-body">
     
     
-<header class="header">
+<header class="header index-header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
-    
-    <div class="banner">
-            <div class="blog-title">
-                <a href="/">Dunteng&#39;s Blog.</a>
-            </div>
-            <div class="post-title">
-                <a href="#" class="post-name">JavaScript中的值传递和地址传递（引用传递）</a>
-            </div>
-    </div>
     
     <a class="home-link" href="/">Dunteng's Blog.</a>
 </header>
@@ -253,17 +242,17 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 404页  -->
+    <!-- 文章页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/zhichuandiyinyongchuandi.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/code.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            JavaScript中的值传递和地址传递（引用传递）
-            <!-- 404 -->
+            Dunteng's Blog.
+            <!-- 文章页  -->
             
         </h1>
         <!-- 副标题 -->
@@ -271,49 +260,12 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-            <!-- 404 -->
+                Go big or go home！
+            
+            <!-- 文章页  -->
             
         </p>
         <!-- 文章页meta -->
-        
-            <div class="post-intros">
-                <!-- 文章页标签  -->
-                
-                    <div class="post-intro-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-</div>
-                
-                
-                    <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">653</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
-                    </div>
-                
-                <div class="post-intro-meta">
-                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/01/07</span>
-                    
-                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                        <span class="iconfont-archer">&#xe602;</span>
-                        <span id="busuanzi_value_page_pv"></span>
-                    </span>
-                    
-                    <span class="shareWrapper">
-                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
-                        <span class="shareText">Share</span>
-                        <ul class="shareList">
-                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
-                                <div class="share-qrcode"></div>
-                            </li>
-                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
-                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
-                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
-                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
         
     </div>
 </div>
@@ -414,84 +366,142 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main post-page">
-    <article class="article-entry">
-        <h2 id="简单类型和复杂类型"><a href="#简单类型和复杂类型" class="headerlink" title="简单类型和复杂类型"></a>简单类型和复杂类型</h2><p>我们先来理清一下几种数据类型。原始的数据类型就有： number,string,boolean,undefined, null,object。进一步划分为值类型和引用类型。</p>
-<p><strong>值类型：</strong>简单数据类型，基本数据类型，在存储时，变量中存储的是值本身，因此叫做值类型。</p>
-<p><strong>引用类型：</strong>复杂数据类型，在存储时，变量中存储的仅仅是地址（引用），因此叫做引用数据类型。</p>
-<p>1、基本类型(又称简单类型、值类型): number,string,boolean</p>
-<p>2、复杂类型(引用类型):object</p>
-<p>3、空类型:undefined,null</p>
-<p>值类型的值在哪一块空间中存储? 栈中存储</p>
-<p>引用类型的值在哪一块空间中存储?对象在堆上存储,地址在栈上存储。</p>
-<p>var num=10;//值类型,值在栈上</p>
-<p>var obj={};//复杂类型,对象在堆,地址(引用)在栈</p>
-<p>值类型之间传递,传递的是值</p>
-<p>引用类型之间传递,传递的是地址(引用)</p>
-<p>值类型作为函数的参数,传递的是值</p>
-<p>引用类型作为函数的参数,传递的是地址</p>
-<h2 id="数据类型在内存中的存储"><a href="#数据类型在内存中的存储" class="headerlink" title="数据类型在内存中的存储"></a>数据类型在内存中的存储</h2><h3 id="堆和栈"><a href="#堆和栈" class="headerlink" title="堆和栈"></a>堆和栈</h3><ul>
-<li><p>堆和栈</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">堆栈空间分配区别：</span><br><span class="line">　　1、栈（操作系统）：由操作系统自动分配释放 ，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈；</span><br><span class="line">　　2、堆（操作系统）： 存储复杂类型(对象)，一般由程序员分配释放， 若程序员不释放，由垃圾回收机制回收，分配方式倒是类似于链表。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意：JavaScript中没有堆和栈的概念，此处我们用堆和栈来讲解，目的方便理解和方便以后的学习。</p>
-</li>
-</ul>
-<h3 id="基本类型在内存中的存储"><a href="#基本类型在内存中的存储" class="headerlink" title="基本类型在内存中的存储"></a>基本类型在内存中的存储</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgkaitpicj30n70fgt8v.jpg" alt=""></p>
-<h3 id="复杂类型在内存中的存储"><a href="#复杂类型在内存中的存储" class="headerlink" title="复杂类型在内存中的存储"></a>复杂类型在内存中的存储</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgkbgb44oj30p00cz3zh.jpg" alt=""></p>
-<h3 id="基本类型作为函数的参数"><a href="#基本类型作为函数的参数" class="headerlink" title="基本类型作为函数的参数"></a>基本类型作为函数的参数</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgkc4enzbj30o60g3jrv.jpg" alt=""></p>
-<h3 id="复杂类型作为函数的参数"><a href="#复杂类型作为函数的参数" class="headerlink" title="复杂类型作为函数的参数"></a>复杂类型作为函数的参数</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgkchu8lhj30xb0lfwfm.jpg" alt=""></p>
-<h2 id="例题练习"><a href="#例题练习" class="headerlink" title="例题练习"></a>例题练习</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 下面代码输出的结果</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,salary</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.age = age;</span><br><span class="line">  <span class="keyword">this</span>.salary = salary;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">person</span>) </span>&#123;</span><br><span class="line">  person.name = <span class="string">"ls"</span>;</span><br><span class="line">  person = <span class="keyword">new</span> Person(<span class="string">"aa"</span>,<span class="number">18</span>,<span class="number">10</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person(<span class="string">"zs"</span>,<span class="number">18</span>,<span class="number">1000</span>);</span><br><span class="line"><span class="built_in">console</span>.log(p.name);<span class="comment">//zs</span></span><br><span class="line">f1(p);</span><br><span class="line"><span class="built_in">console</span>.log(p.name);<span class="comment">//ls</span></span><br></pre></td></tr></table></figure>
-<p><strong>答案：</strong></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgjz1hw08j309907gmx5.jpg" alt=""><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgkwqtyikj30y00fj0tw.jpg" alt=""></p>
-<p>思考：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. </span></span><br><span class="line"><span class="keyword">var</span> num1 = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> num2 = num1;</span><br><span class="line">num1 = <span class="number">20</span>;</span><br><span class="line"><span class="built_in">console</span>.log(num1);</span><br><span class="line"><span class="built_in">console</span>.log(num2);</span><br><span class="line"></span><br><span class="line"><span class="comment">//2. </span></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">50</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    num = <span class="number">60</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(num);</span><br><span class="line">&#125;</span><br><span class="line">f1(num);</span><br><span class="line"><span class="built_in">console</span>.log(num);</span><br><span class="line"></span><br><span class="line"><span class="comment">//3. 重点</span></span><br><span class="line"><span class="keyword">var</span> num1 = <span class="number">55</span>;</span><br><span class="line"><span class="keyword">var</span> num2 = <span class="number">66</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">num, num1</span>) </span>&#123;</span><br><span class="line">  num = <span class="number">100</span>;</span><br><span class="line">  num1 = <span class="number">100</span>;</span><br><span class="line">  num2 = <span class="number">100</span>;<span class="comment">//注意是隐式全局变量</span></span><br><span class="line">  <span class="built_in">console</span>.log(num);</span><br><span class="line">  <span class="built_in">console</span>.log(num1);</span><br><span class="line">  <span class="built_in">console</span>.log(num2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f1(num1, num2);</span><br><span class="line"><span class="built_in">console</span>.log(num1);</span><br><span class="line"><span class="built_in">console</span>.log(num2);</span><br><span class="line"><span class="built_in">console</span>.log(num);</span><br></pre></td></tr></table></figure>
-<p><strong>答案：</strong></p>
-<p>1、</p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgjtae7g3j306p045q2r.jpg" alt=""></p>
-<p>2、</p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgjvexo2gj305i04fmwz.jpg" alt=""></p>
-<p>3、</p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgjqnz30gj30bf0ajaa5.jpg" alt=""></p>
-
+            <main class="main index-page">
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/[object Object]2018/11/30/ABOUT ME.html">
+            
+                <span>你好哇~</span>
+        </a>
+        <div class="abstract-content">
+            关于Dunteng’s Blog我叫Dunteng ！ O.G.園長是我的網絡ID，本意是Octopus‘s Garden園長，就是章魚花園園長啦！至於為什麼起這個ID，是因為我很喜歡Beatl...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/30</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
     </article>
-    <!-- license  -->
     
     <!-- paginator  -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-                <div class="nextSlogan">Next Post</div>
-                <a href="/[object Object]2019/01/09/字符串小案例.html" title="字符串小练习">
-                    <div class="nextTitle">字符串小练习</div>
-                </a>
-            
-        </li>
-        <li class="previous">
-            
-                <div class="prevSlogan">Previous Post</div>
-                <a href="/[object Object]2019/01/04/jiujiu.html" title="JS实现九九乘法表">
-                    <div class="prevTitle">JS实现九九乘法表</div>
-                </a>
-            
-        </li>
-    </ul>
-    <!-- 评论插件 -->
-    <!-- 来必力City版安装代码 -->
-
-<!-- City版安装代码已完成 -->
     
+    <nav class="page-nav">
+        <a class="extend prev" rel="prev" href="/page/2/">&#60; PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
     
-    <!-- partial('_partial/comment/changyan') -->
-    <!--PC版-->
-
-
-    
-    
-
-    <!-- 评论 -->
 </main>
             <!-- profile -->
+            
+            <div class="profile">
+    <img class="profile-avatar" alt="avatar" src="/avatar/dunteng.jpg">
+    <div class="profile-name">O.G.園長</div>
+    
+    <div class="profile-signature">
+        晚来天欲雪，能饮一杯无？
+    </div>
+    
+    
+    <div class="profile-social">
+        
+    
+        
+            
+                <a href="mailto:lindunteng@gmail.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/dunteng" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/WeChat.png">
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://www.zhihu.com/people/ten-20/activities" class="iconfont-archer zhihu" target="_blank" title="zhihu"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    
+        <div class="friends">
+            <div>FRIENDS</div>
+            
+                
+                    <span>
+                        <a href="https://lai.yuweining.cn/" target="_black">不死鸟</a>
+                    </span>
+                
+            
+                
+                    <span>
+                        <a href="http://zhangwei2222.github.io/" target="_black">zhangwei2222<br></a>
+                    </span>
+                
+            
+                
+                    <span>
+                        <a href="http://chenweilin.xin" target="_black">cwl-blog</a>
+                    </span>
+                
+            
+        </div>
+    
+    
+        <div class="about-me">
+            <a href="/about">ABOUT ME</a>
+        </div>
+    
+</div>
             
         </div>
         <footer class="footer footer-unloaded">
@@ -576,24 +586,6 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
-    
-    <div class="toc-wrapper" style=
-    
-
-
-
-
-
-
-
-top:50vh;
-
-    >
-        <div class="toc-catalog">
-            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
-        </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简单类型和复杂类型"><span class="toc-number">1.</span> <span class="toc-text">简单类型和复杂类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型在内存中的存储"><span class="toc-number">2.</span> <span class="toc-text">数据类型在内存中的存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#堆和栈"><span class="toc-number">2.1.</span> <span class="toc-text">堆和栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本类型在内存中的存储"><span class="toc-number">2.2.</span> <span class="toc-text">基本类型在内存中的存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂类型在内存中的存储"><span class="toc-number">2.3.</span> <span class="toc-text">复杂类型在内存中的存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本类型作为函数的参数"><span class="toc-number">2.4.</span> <span class="toc-text">基本类型作为函数的参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂类型作为函数的参数"><span class="toc-number">2.5.</span> <span class="toc-text">复杂类型作为函数的参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例题练习"><span class="toc-number">3.</span> <span class="toc-text">例题练习</span></a></li></ol>
-    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1129,8 +1121,6 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
-    
-        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

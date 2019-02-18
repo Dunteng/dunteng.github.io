@@ -22,7 +22,7 @@
     <meta name="description" content="我的个人博客">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>JavaScript中的值传递和地址传递（引用传递） · Dunteng&#39;s Blog</title>
+    <title>JS封装动画函数之匀速移动 · Dunteng&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -232,7 +232,7 @@
                 <a href="/">Dunteng&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">JavaScript中的值传递和地址传递（引用传递）</a>
+                <a href="#" class="post-name">JS封装动画函数之匀速移动</a>
             </div>
     </div>
     
@@ -256,13 +256,13 @@ height:50vh;
     <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/zhichuandiyinyongchuandi.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/photo-1544365664-906a1ca47ed9.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            JavaScript中的值传递和地址传递（引用传递）
+            JS封装动画函数之匀速移动
             <!-- 404 -->
             
         </h1>
@@ -283,16 +283,18 @@ height:50vh;
     
         <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
     
+        <a class="post-tag" href="javascript:void(0);" data-tags="小案例">小案例</a>
+    
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">653</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">399</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/01/07</span>
+                    <span class="post-intro-time">2019/01/14</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -416,43 +418,11 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="简单类型和复杂类型"><a href="#简单类型和复杂类型" class="headerlink" title="简单类型和复杂类型"></a>简单类型和复杂类型</h2><p>我们先来理清一下几种数据类型。原始的数据类型就有： number,string,boolean,undefined, null,object。进一步划分为值类型和引用类型。</p>
-<p><strong>值类型：</strong>简单数据类型，基本数据类型，在存储时，变量中存储的是值本身，因此叫做值类型。</p>
-<p><strong>引用类型：</strong>复杂数据类型，在存储时，变量中存储的仅仅是地址（引用），因此叫做引用数据类型。</p>
-<p>1、基本类型(又称简单类型、值类型): number,string,boolean</p>
-<p>2、复杂类型(引用类型):object</p>
-<p>3、空类型:undefined,null</p>
-<p>值类型的值在哪一块空间中存储? 栈中存储</p>
-<p>引用类型的值在哪一块空间中存储?对象在堆上存储,地址在栈上存储。</p>
-<p>var num=10;//值类型,值在栈上</p>
-<p>var obj={};//复杂类型,对象在堆,地址(引用)在栈</p>
-<p>值类型之间传递,传递的是值</p>
-<p>引用类型之间传递,传递的是地址(引用)</p>
-<p>值类型作为函数的参数,传递的是值</p>
-<p>引用类型作为函数的参数,传递的是地址</p>
-<h2 id="数据类型在内存中的存储"><a href="#数据类型在内存中的存储" class="headerlink" title="数据类型在内存中的存储"></a>数据类型在内存中的存储</h2><h3 id="堆和栈"><a href="#堆和栈" class="headerlink" title="堆和栈"></a>堆和栈</h3><ul>
-<li><p>堆和栈</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">堆栈空间分配区别：</span><br><span class="line">　　1、栈（操作系统）：由操作系统自动分配释放 ，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈；</span><br><span class="line">　　2、堆（操作系统）： 存储复杂类型(对象)，一般由程序员分配释放， 若程序员不释放，由垃圾回收机制回收，分配方式倒是类似于链表。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意：JavaScript中没有堆和栈的概念，此处我们用堆和栈来讲解，目的方便理解和方便以后的学习。</p>
-</li>
-</ul>
-<h3 id="基本类型在内存中的存储"><a href="#基本类型在内存中的存储" class="headerlink" title="基本类型在内存中的存储"></a>基本类型在内存中的存储</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgkaitpicj30n70fgt8v.jpg" alt=""></p>
-<h3 id="复杂类型在内存中的存储"><a href="#复杂类型在内存中的存储" class="headerlink" title="复杂类型在内存中的存储"></a>复杂类型在内存中的存储</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgkbgb44oj30p00cz3zh.jpg" alt=""></p>
-<h3 id="基本类型作为函数的参数"><a href="#基本类型作为函数的参数" class="headerlink" title="基本类型作为函数的参数"></a>基本类型作为函数的参数</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgkc4enzbj30o60g3jrv.jpg" alt=""></p>
-<h3 id="复杂类型作为函数的参数"><a href="#复杂类型作为函数的参数" class="headerlink" title="复杂类型作为函数的参数"></a>复杂类型作为函数的参数</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgkchu8lhj30xb0lfwfm.jpg" alt=""></p>
-<h2 id="例题练习"><a href="#例题练习" class="headerlink" title="例题练习"></a>例题练习</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 下面代码输出的结果</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,salary</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.age = age;</span><br><span class="line">  <span class="keyword">this</span>.salary = salary;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">person</span>) </span>&#123;</span><br><span class="line">  person.name = <span class="string">"ls"</span>;</span><br><span class="line">  person = <span class="keyword">new</span> Person(<span class="string">"aa"</span>,<span class="number">18</span>,<span class="number">10</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person(<span class="string">"zs"</span>,<span class="number">18</span>,<span class="number">1000</span>);</span><br><span class="line"><span class="built_in">console</span>.log(p.name);<span class="comment">//zs</span></span><br><span class="line">f1(p);</span><br><span class="line"><span class="built_in">console</span>.log(p.name);<span class="comment">//ls</span></span><br></pre></td></tr></table></figure>
-<p><strong>答案：</strong></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgjz1hw08j309907gmx5.jpg" alt=""><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgkwqtyikj30y00fj0tw.jpg" alt=""></p>
-<p>思考：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. </span></span><br><span class="line"><span class="keyword">var</span> num1 = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> num2 = num1;</span><br><span class="line">num1 = <span class="number">20</span>;</span><br><span class="line"><span class="built_in">console</span>.log(num1);</span><br><span class="line"><span class="built_in">console</span>.log(num2);</span><br><span class="line"></span><br><span class="line"><span class="comment">//2. </span></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">50</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    num = <span class="number">60</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(num);</span><br><span class="line">&#125;</span><br><span class="line">f1(num);</span><br><span class="line"><span class="built_in">console</span>.log(num);</span><br><span class="line"></span><br><span class="line"><span class="comment">//3. 重点</span></span><br><span class="line"><span class="keyword">var</span> num1 = <span class="number">55</span>;</span><br><span class="line"><span class="keyword">var</span> num2 = <span class="number">66</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">num, num1</span>) </span>&#123;</span><br><span class="line">  num = <span class="number">100</span>;</span><br><span class="line">  num1 = <span class="number">100</span>;</span><br><span class="line">  num2 = <span class="number">100</span>;<span class="comment">//注意是隐式全局变量</span></span><br><span class="line">  <span class="built_in">console</span>.log(num);</span><br><span class="line">  <span class="built_in">console</span>.log(num1);</span><br><span class="line">  <span class="built_in">console</span>.log(num2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f1(num1, num2);</span><br><span class="line"><span class="built_in">console</span>.log(num1);</span><br><span class="line"><span class="built_in">console</span>.log(num2);</span><br><span class="line"><span class="built_in">console</span>.log(num);</span><br></pre></td></tr></table></figure>
-<p><strong>答案：</strong></p>
-<p>1、</p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgjtae7g3j306p045q2r.jpg" alt=""></p>
-<p>2、</p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgjvexo2gj305i04fmwz.jpg" alt=""></p>
-<p>3、</p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgjqnz30gj30bf0ajaa5.jpg" alt=""></p>
+        <p>用 JavaScript 实现对象的水平匀速移动动画，效果如下：<img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0anhy7p0zg30to08qn5g.gif" alt=""></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    * &#123;</span></span><br><span class="line"><span class="undefined">      margin: 0;</span></span><br><span class="line"><span class="undefined">      padding: 0;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    input &#123;</span></span><br><span class="line"><span class="undefined">      margin-top: 20px;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    div &#123;</span></span><br><span class="line"><span class="undefined">      margin-top: 30px;</span></span><br><span class="line"><span class="undefined">      width: 200px;</span></span><br><span class="line"><span class="undefined">      height: 100px;</span></span><br><span class="line"><span class="undefined">      background-color: green;</span></span><br><span class="line"><span class="undefined">      position: absolute;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"移动到400px"</span> <span class="attr">id</span>=<span class="string">"btn1"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"移动到800px"</span> <span class="attr">id</span>=<span class="string">"btn2"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"dv"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>JavaScript代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">my$</span>(<span class="params">id</span>)</span>&#123;<span class="keyword">return</span> <span class="built_in">document</span>.getElementById(id);&#125;</span><br><span class="line">  <span class="comment">//div要移动,要脱离文档流---position:absolute</span></span><br><span class="line">  <span class="comment">//如果样式的代码是在style的标签中设置,外面是获取不到</span></span><br><span class="line">  <span class="comment">//如果样式的代码是在style的属性设置,外面是可以获取</span></span><br><span class="line">  <span class="comment">//获取div的当前位置</span></span><br><span class="line">  <span class="comment">//console.log(my$("dv").offsetLeft);</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">//点击第一个按钮移动到400px</span></span><br><span class="line"></span><br><span class="line">  my$(<span class="string">"btn1"</span>).onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    animate(my$(<span class="string">"dv"</span>), <span class="number">400</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">//点击第二个按钮移动到800px</span></span><br><span class="line"></span><br><span class="line">  my$(<span class="string">"btn2"</span>).onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    animate(my$(<span class="string">"dv"</span>), <span class="number">800</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">//动画函数---任意一个元素移动到指定的目标位置</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">animate</span>(<span class="params">element, target</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//先清理定时器</span></span><br><span class="line">    clearInterval(element.timeId);</span><br><span class="line">    <span class="comment">//一会要清理定时器(只产生一个定时器)</span></span><br><span class="line">    element.timeId = setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">//获取div的当前的位置</span></span><br><span class="line">      <span class="keyword">var</span> current = element.offsetLeft;<span class="comment">//数字类型,没有px</span></span><br><span class="line">      <span class="comment">//div每次移动多少像素---步数</span></span><br><span class="line">      <span class="keyword">var</span> step = <span class="number">10</span>;</span><br><span class="line">      step = current &lt; target ? step : -step;</span><br><span class="line">      <span class="comment">//每次移动后的距离</span></span><br><span class="line">      current += step;</span><br><span class="line">      <span class="comment">//判断当前移动后的位置是否到达目标位置</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">Math</span>.abs(target - current) &gt; <span class="built_in">Math</span>.abs(step)) &#123;</span><br><span class="line">        element.style.left = current + <span class="string">"px"</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//清理定时器</span></span><br><span class="line">        clearInterval( element.timeId );</span><br><span class="line">        element.style.left = target + <span class="string">"px"</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, <span class="number">20</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 
     </article>
     <!-- license  -->
@@ -462,16 +432,16 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href="/[object Object]2019/01/09/字符串小案例.html" title="字符串小练习">
-                    <div class="nextTitle">字符串小练习</div>
+                <a href="/[object Object]2019/01/21/a.html" title="">
+                    <div class="nextTitle">[Untitled Post]</div>
                 </a>
             
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/[object Object]2019/01/04/jiujiu.html" title="JS实现九九乘法表">
-                    <div class="prevTitle">JS实现九九乘法表</div>
+                <a href="/[object Object]2019/01/13/自定义属性操作案例.html" title="自定义属性操作案例">
+                    <div class="prevTitle">自定义属性操作案例</div>
                 </a>
             
         </li>
@@ -592,7 +562,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简单类型和复杂类型"><span class="toc-number">1.</span> <span class="toc-text">简单类型和复杂类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型在内存中的存储"><span class="toc-number">2.</span> <span class="toc-text">数据类型在内存中的存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#堆和栈"><span class="toc-number">2.1.</span> <span class="toc-text">堆和栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本类型在内存中的存储"><span class="toc-number">2.2.</span> <span class="toc-text">基本类型在内存中的存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂类型在内存中的存储"><span class="toc-number">2.3.</span> <span class="toc-text">复杂类型在内存中的存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本类型作为函数的参数"><span class="toc-number">2.4.</span> <span class="toc-text">基本类型作为函数的参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂类型作为函数的参数"><span class="toc-number">2.5.</span> <span class="toc-text">复杂类型作为函数的参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例题练习"><span class="toc-number">3.</span> <span class="toc-text">例题练习</span></a></li></ol>
+        
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

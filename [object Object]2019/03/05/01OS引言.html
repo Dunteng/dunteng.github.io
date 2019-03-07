@@ -22,7 +22,7 @@
     <meta name="description" content="我的个人博客">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>浅谈js匿名函数 · Dunteng&#39;s Blog</title>
+    <title>操作系统引言 · Dunteng&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -232,7 +232,7 @@
                 <a href="/">Dunteng&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">浅谈js匿名函数</a>
+                <a href="#" class="post-name">操作系统引言</a>
             </div>
     </div>
     
@@ -256,13 +256,13 @@ height:50vh;
     <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/photo-1548580392-8d9c772d854e.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/photo-1551433333-be636dd10463.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            浅谈js匿名函数
+            操作系统引言
             <!-- 404 -->
             
         </h1>
@@ -281,18 +281,18 @@ height:50vh;
                 
                     <div class="post-intro-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="操作系统">操作系统</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">869</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.1k</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/01/12</span>
+                    <span class="post-intro-time">2019/03/05</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -416,28 +416,37 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="匿名函数与函数表达式"><a href="#匿名函数与函数表达式" class="headerlink" title="匿名函数与函数表达式"></a>匿名函数与函数表达式</h2><p>​    与匿名函数相对的是命名函数——如果函数有名字就是命名函数，反之即为匿名函数。</p>
-<p>​    函数的一般定义方式为函数声明：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用方式为：函数名();</span></span><br></pre></td></tr></table></figure>
-<p>​    函数的另一种定义方式：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">&#125;;<span class="comment">//由于是赋值过程所以结尾必须加分号</span></span><br><span class="line"><span class="comment">//调用方式为：fn();</span></span><br><span class="line"><span class="comment">//把一个匿名函数赋给一个变量，即为函数表达式</span></span><br></pre></td></tr></table></figure>
-<h2 id="函数声明与函数表达式"><a href="#函数声明与函数表达式" class="headerlink" title="函数声明与函数表达式"></a>函数声明与函数表达式</h2><p>​    乍一看会觉得函数声明的方式来定义函数比较方便，但是函数声明和函数表达式是存在区别的。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">//函数声明</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"林深时见鹿"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    f1();<span class="comment">//输出“溪午不闻钟”而非“林深时见鹿”，因为f1被下面的函数声明覆盖了</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"溪午不闻钟"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    f1();<span class="comment">//输出“溪午不闻钟”</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//函数表达式</span></span><br><span class="line">    <span class="keyword">var</span> f2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"林深时见鹿"</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    f2();<span class="comment">//输出“林深时见鹿”</span></span><br><span class="line">    f2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"溪午不闻钟"</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    f2();<span class="comment">//输出“溪午不闻钟”</span></span><br><span class="line"><span class="comment">//函数表达式由于是变量赋值的形式，所以不存在函数覆盖的情况</span></span><br></pre></td></tr></table></figure>
-<h2 id="匿名函数自调用"><a href="#匿名函数自调用" class="headerlink" title="匿名函数自调用"></a>匿名函数自调用</h2><p>​    <strong>匿名函数自调用也叫做“立即执行函数”</strong>，在声明的同时立即直接执行，一次性。</p>
-<p>​    一般如以下两种形式：</p>
-<blockquote>
-<p>(function (){}());  W3C建议第一种</p>
-<p>(function (){})();</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//函数自调用</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"野竹分青霭"</span>);</span><br><span class="line">&#125;());</span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"飞泉挂碧峰"</span>)</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<p>立即执行函数，执行后即被释放。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子1</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">234</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a + b);</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line"><span class="comment">//例子2：带参数</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">a,b,c</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a+b+c*<span class="number">2</span>);</span><br><span class="line">&#125;(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//例子3：有返回值</span></span><br><span class="line"><span class="keyword">var</span> num = (<span class="function"><span class="keyword">function</span>(<span class="params">a,b,c,</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> d = a+b+c*<span class="number">2</span><span class="number">-2</span>;</span><br><span class="line">    <span class="keyword">return</span> d;</span><br><span class="line">&#125;(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>));</span><br></pre></td></tr></table></figure>
-<h2 id="循环添加事件时不宜使用匿名函数"><a href="#循环添加事件时不宜使用匿名函数" class="headerlink" title="循环添加事件时不宜使用匿名函数"></a>循环添加事件时不宜使用匿名函数</h2><p>在下面这个例子中要显示li的高亮，不推荐写这样的代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//为li添加鼠标进入事件</span><br><span class="line">   liObj.onmouseover = function()&#123;</span><br><span class="line">       this.style.backgroundColor = &quot;red&quot;;</span><br><span class="line">   &#125;;</span><br><span class="line">   //为li添加鼠标离开事件</span><br><span class="line">   liObj.onmouseout = function()&#123;</span><br><span class="line">       this.style.backgroundColor = &quot;&quot;;</span><br><span class="line">   &#125;;</span><br></pre></td></tr></table></figure>
-<p>这种匿名函数的写法不会错，但是每次循环都会产生一个匿名函数占用内存，这样子效率不高，浪费空间。</p>
-<p>所以我们推荐在循环添加事件的时候用命名函数：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">my$</span>(<span class="params">id</span>)</span>&#123;</span><br><span class="line">    	<span class="keyword">return</span> <span class="built_in">document</span>.getElementById(id);</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">  <span class="keyword">var</span> kungfu = [<span class="string">"降龙十八掌"</span>, <span class="string">"黯然销魂掌"</span>, <span class="string">"葵花宝典"</span>, <span class="string">"九阴真经"</span>, <span class="string">"吸星大法"</span>, <span class="string">"如来神掌"</span>, <span class="string">"化骨绵掌"</span>, <span class="string">"玉女心经"</span>, <span class="string">"极乐神功"</span>, <span class="string">"辟邪剑谱"</span>];</span><br><span class="line"></span><br><span class="line">  <span class="comment">//点击按钮动态的创建列表,把列表加到div中</span></span><br><span class="line">  my$(<span class="string">"btn"</span>).onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//创建ul,把ul立刻加入到父级元素div中</span></span><br><span class="line">    <span class="keyword">var</span> ulObj = <span class="built_in">document</span>.createElement(<span class="string">"ul"</span>);</span><br><span class="line">    my$(<span class="string">"dv"</span>).appendChild(ulObj);</span><br><span class="line">    <span class="comment">//动态的创建li,加到ul中</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; kungfu.length; i++) &#123;</span><br><span class="line">      <span class="keyword">var</span> liObj = <span class="built_in">document</span>.createElement(<span class="string">"li"</span>);</span><br><span class="line">      <span class="comment">//设置li中间的文字内容</span></span><br><span class="line">      liObj.innerHTML = kungfu[i];</span><br><span class="line">      ulObj.appendChild(liObj);</span><br><span class="line">      <span class="comment">//为li添加鼠标进入事件</span></span><br><span class="line">      liObj.onmouseover = mouseoverHandle;</span><br><span class="line">      <span class="comment">//为li添加鼠标离开事件</span></span><br><span class="line">      liObj.onmouseout = mouseoutHandle;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//此位置.按钮的点击事件的外面</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">mouseoverHandle</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.style.backgroundColor = <span class="string">"red"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">mouseoutHandle</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.style.backgroundColor = <span class="string">""</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//如果是循环的方式添加事件,推荐用命名函数</span></span><br><span class="line">  <span class="comment">//如果不是循环的方式添加事件,推荐使用匿名函数</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+        <h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><h2 id="1-操作系统的定义："><a href="#1-操作系统的定义：" class="headerlink" title="1. 操作系统的定义："></a>1. 操作系统的定义：</h2><p>​    操作系统是直接控制和管理计算机硬件、软件资源的最 基本的系统软件，用以方便用户充分、有效的利用这些资源 并增强整个计算机的处理能力</p>
+<h2 id="2-操作系统的目标-amp-作用"><a href="#2-操作系统的目标-amp-作用" class="headerlink" title="2. 操作系统的目标&amp;作用"></a>2. 操作系统的目标&amp;作用</h2><h3 id="2-1-目标："><a href="#2-1-目标：" class="headerlink" title="2.1 目标："></a>2.1 目标：</h3><p><strong>方便性、有效性、</strong>可扩充性、开放性</p>
+<h3 id="2-2-作用："><a href="#2-2-作用：" class="headerlink" title="2.2 作用："></a>2.2 作用：</h3><p>​        1.OS作为用户于计算机硬件系统之间的接口</p>
+<p>​        2.作为计算机资源的管理者</p>
+<p>​        3. 作为扩展机器实现了对计算机资源的抽象    </p>
+<h2 id="3-单批道处理系统"><a href="#3-单批道处理系统" class="headerlink" title="3. 单批道处理系统"></a>3. 单批道处理系统</h2><p>概念：系统对作业的处理都是成批进行的、且内存中始终只保持 一道作业，称为单道批处理系统（simple batch system）。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pssg5tfej30hx0acn0h.jpg" alt=""><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0psu5ylsqj30la0c8q54.jpg" alt=""></p>
+<h2 id="4-多批道处理系统"><a href="#4-多批道处理系统" class="headerlink" title="4. 多批道处理系统"></a>4. 多批道处理系统</h2><h3 id="4-1-基本概念"><a href="#4-1-基本概念" class="headerlink" title="4.1 基本概念"></a>4.1 基本概念</h3><p>多道：内存中同时存放几个作业； </p>
+<p>宏观上并行运行：都处于运行状态，但都未运行完；</p>
+<p>微观上串行运行：各作业交替使用CPU</p>
+<h3 id="4-2-特征"><a href="#4-2-特征" class="headerlink" title="4.2 特征"></a>4.2 特征</h3><p>多道性、无序性、调度性（作业调度、进程调度）</p>
+<h3 id="4-3-多道批处理系统的优缺点"><a href="#4-3-多道批处理系统的优缺点" class="headerlink" title="4.3 多道批处理系统的优缺点"></a>4.3 多道批处理系统的优缺点</h3><p>优点： 资源利用率高：CPU和内存利用率较高； 作业吞吐量大：单位时间内完成的工作总量大； </p>
+<p>缺点：  用户交互性差：整个作业完成后或中间出错时，才与用户交互，不利于调试和修改； </p>
+<p>​    作业平均周转时间长：短作业的周转时间显著增长</p>
+<h2 id="5-分时系统"><a href="#5-分时系统" class="headerlink" title="5. 分时系统"></a>5. 分时系统</h2><h3 id="5-1-概念："><a href="#5-1-概念：" class="headerlink" title="5.1 概念："></a>5.1 概念：</h3><p>指一台主机上连接了多个带有显示器和键盘 的终端，同时允许多个用户共享主机中的资源，各 个用户都可通过自己的终端以交互方式使用计算机。 </p>
+<h3 id="5-2-分时的目的："><a href="#5-2-分时的目的：" class="headerlink" title="5.2 分时的目的："></a>5.2 分时的目的：</h3><p>多个程序分时共享硬件和软件资源(即： 多任务)。多个用户分享使用同一台计算机(即：多用户) 。 </p>
+<h3 id="5-3-分时的定义："><a href="#5-3-分时的定义：" class="headerlink" title="5.3 分时的定义："></a>5.3 分时的定义：</h3><p>把计算机的系统资源（尤其是CPU时间） 进行时间上的分割，每个时间段称为一个时间片 （time slice），每个用户依次轮流使用时间片。</p>
+<h2 id="6-批处理系统和分时系统的区别"><a href="#6-批处理系统和分时系统的区别" class="headerlink" title="6. 批处理系统和分时系统的区别"></a>6. 批处理系统和分时系统的区别</h2><h3 id="6-1-批处理系统"><a href="#6-1-批处理系统" class="headerlink" title="6.1 批处理系统"></a>6.1 批处理系统</h3><p>从字面上理解，就是一批一批的处理任务的一种系统，严格的定义，就是指<strong>用户将一批作业提交给操作系统后就不再干预，由操作系统控制它们自动运行</strong>。这种采用批量处理作业技术的操作系统称为批处理操作系统。简单地理解就是我手中有一大堆作业（相当一个程序）要运行，我一个一个的放入内存中执行效率会很慢，因为我要人为的去装载程序（早期的机器会把程序写到磁带中，然后人为地放到专门处理程序的机器中），所以我一次性放一批的作业，让操作系统自己去运行它，而我不需要干涉，这样我就省了很多力气 ，如下图 </p>
+<p><img src="https://img-blog.csdn.net/20170329153105707?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzAxMzc2MTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<h3 id="6-2-分时系统"><a href="#6-2-分时系统" class="headerlink" title="6.2 分时系统"></a>6.2 分时系统</h3><p>分时操作系统：“分时”的含义是指多个用户使用同一台计算机，多个程序分时（分时间片）共享硬件和软件资源。分时操作系统是指在一台主机上连接多个带有显示器和键盘的终端，同时允许多个用户通过主机的终端，以交互方式使用计算机，共享主机中的资源。，<strong>分时操作系统将CPU的时间划分成若干个片段，称为时间片</strong>，操作系统以时间片为单位，轮流为每个终端用户服务 ，如下图 </p>
+<p><img src="https://img-blog.csdn.net/20170329152411531?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzAxMzc2MTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<h3 id="6-3-总结"><a href="#6-3-总结" class="headerlink" title="6.3 总结"></a>6.3 总结</h3><p>  从他们的定义我们大概可以总结出：<br>批处理系统没有人机交互，而分时系统允许多个用户同时使用<br>批处理系统中允许程序长时间地占用CPU，而分时系统不允许</p>
+<p>多道程序按不按时间片来分配时间 多道程序没有时间片的概念  </p>
+<h2 id="7-操作系统的基本特征"><a href="#7-操作系统的基本特征" class="headerlink" title="7. 操作系统的基本特征"></a>7. 操作系统的基本特征</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0ptfk7v13j30l20f7wj4.jpg" alt=""></p>
+<h2 id="8-操作系统的主要功能"><a href="#8-操作系统的主要功能" class="headerlink" title="8. 操作系统的主要功能"></a>8. 操作系统的主要功能</h2><h3 id="8-1-处理机管理"><a href="#8-1-处理机管理" class="headerlink" title="8.1 处理机管理"></a>8.1 处理机管理</h3><p>也可以理解为进程管理</p>
+<p>它又分为 【进程控制】【进程同步】 【进程通信】 【调度】</p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0ptomyfnqj30mm0vwtjm.jpg" alt=""></p>
+<h3 id="8-2-存储管理"><a href="#8-2-存储管理" class="headerlink" title="8.2 存储管理"></a>8.2 存储管理</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0ptpxeuk6j30m70eggpw.jpg" alt=""></p>
+<h3 id="8-3-设备管理"><a href="#8-3-设备管理" class="headerlink" title="8.3 设备管理"></a>8.3 设备管理</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0ptslx1sdj30na0esn25.jpg" alt=""></p>
+<h3 id="8-4-文件管理"><a href="#8-4-文件管理" class="headerlink" title="8.4 文件管理"></a>8.4 文件管理</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0ptty0c21j30mg0ap76f.jpg" alt=""></p>
+<h3 id="8-5-用户接口"><a href="#8-5-用户接口" class="headerlink" title="8.5 用户接口"></a>8.5 用户接口</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0ptzk5gwgj30kd0er0vh.jpg" alt=""></p>
 
     </article>
     <!-- license  -->
@@ -447,16 +456,16 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href="/[object Object]2019/01/13/绑定解绑事件兼容代码.html" title="绑定/解绑事件兼容代码">
-                    <div class="nextTitle">绑定/解绑事件兼容代码</div>
+                <a href="/[object Object]2019/03/06/02进程的描述与控制.html" title="02进程的描述与控制">
+                    <div class="nextTitle">02进程的描述与控制</div>
                 </a>
             
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/[object Object]2019/01/09/字符串小案例.html" title="字符串小练习">
-                    <div class="prevTitle">字符串小练习</div>
+                <a href="/[object Object]2019/01/21/a.html" title="">
+                    <div class="prevTitle">[Untitled Post]</div>
                 </a>
             
         </li>
@@ -577,7 +586,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#匿名函数与函数表达式"><span class="toc-number">1.</span> <span class="toc-text">匿名函数与函数表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数声明与函数表达式"><span class="toc-number">2.</span> <span class="toc-text">函数声明与函数表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#匿名函数自调用"><span class="toc-number">3.</span> <span class="toc-text">匿名函数自调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环添加事件时不宜使用匿名函数"><span class="toc-number">4.</span> <span class="toc-text">循环添加事件时不宜使用匿名函数</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一章"><span class="toc-number">1.</span> <span class="toc-text">第一章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-操作系统的定义："><span class="toc-number">1.1.</span> <span class="toc-text">1. 操作系统的定义：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-操作系统的目标-amp-作用"><span class="toc-number">1.2.</span> <span class="toc-text">2. 操作系统的目标&amp;作用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-目标："><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 目标：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-作用："><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 作用：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-单批道处理系统"><span class="toc-number">1.3.</span> <span class="toc-text">3. 单批道处理系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-多批道处理系统"><span class="toc-number">1.4.</span> <span class="toc-text">4. 多批道处理系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-基本概念"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1 基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-特征"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2 特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-多道批处理系统的优缺点"><span class="toc-number">1.4.3.</span> <span class="toc-text">4.3 多道批处理系统的优缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-分时系统"><span class="toc-number">1.5.</span> <span class="toc-text">5. 分时系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-概念："><span class="toc-number">1.5.1.</span> <span class="toc-text">5.1 概念：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-分时的目的："><span class="toc-number">1.5.2.</span> <span class="toc-text">5.2 分时的目的：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-分时的定义："><span class="toc-number">1.5.3.</span> <span class="toc-text">5.3 分时的定义：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-批处理系统和分时系统的区别"><span class="toc-number">1.6.</span> <span class="toc-text">6. 批处理系统和分时系统的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-批处理系统"><span class="toc-number">1.6.1.</span> <span class="toc-text">6.1 批处理系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-分时系统"><span class="toc-number">1.6.2.</span> <span class="toc-text">6.2 分时系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-总结"><span class="toc-number">1.6.3.</span> <span class="toc-text">6.3 总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-操作系统的基本特征"><span class="toc-number">1.7.</span> <span class="toc-text">7. 操作系统的基本特征</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-操作系统的主要功能"><span class="toc-number">1.8.</span> <span class="toc-text">8. 操作系统的主要功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-处理机管理"><span class="toc-number">1.8.1.</span> <span class="toc-text">8.1 处理机管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-存储管理"><span class="toc-number">1.8.2.</span> <span class="toc-text">8.2 存储管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-设备管理"><span class="toc-number">1.8.3.</span> <span class="toc-text">8.3 设备管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4-文件管理"><span class="toc-number">1.8.4.</span> <span class="toc-text">8.4 文件管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-5-用户接口"><span class="toc-number">1.8.5.</span> <span class="toc-text">8.5 用户接口</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

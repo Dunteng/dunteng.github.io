@@ -22,7 +22,7 @@
     <meta name="description" content="我的个人博客">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>浅谈js匿名函数 · Dunteng&#39;s Blog</title>
+    <title>处理机调度与死锁 · Dunteng&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -232,7 +232,7 @@
                 <a href="/">Dunteng&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">浅谈js匿名函数</a>
+                <a href="#" class="post-name">处理机调度与死锁</a>
             </div>
     </div>
     
@@ -256,13 +256,13 @@ height:50vh;
     <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/photo-1548580392-8d9c772d854e.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/photo-1549890762-0a3f8933bc76.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            浅谈js匿名函数
+            处理机调度与死锁
             <!-- 404 -->
             
         </h1>
@@ -281,18 +281,18 @@ height:50vh;
                 
                     <div class="post-intro-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="操作系统">操作系统</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">869</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">336</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/01/12</span>
+                    <span class="post-intro-time">2019/03/07</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -416,28 +416,58 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="匿名函数与函数表达式"><a href="#匿名函数与函数表达式" class="headerlink" title="匿名函数与函数表达式"></a>匿名函数与函数表达式</h2><p>​    与匿名函数相对的是命名函数——如果函数有名字就是命名函数，反之即为匿名函数。</p>
-<p>​    函数的一般定义方式为函数声明：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用方式为：函数名();</span></span><br></pre></td></tr></table></figure>
-<p>​    函数的另一种定义方式：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">&#125;;<span class="comment">//由于是赋值过程所以结尾必须加分号</span></span><br><span class="line"><span class="comment">//调用方式为：fn();</span></span><br><span class="line"><span class="comment">//把一个匿名函数赋给一个变量，即为函数表达式</span></span><br></pre></td></tr></table></figure>
-<h2 id="函数声明与函数表达式"><a href="#函数声明与函数表达式" class="headerlink" title="函数声明与函数表达式"></a>函数声明与函数表达式</h2><p>​    乍一看会觉得函数声明的方式来定义函数比较方便，但是函数声明和函数表达式是存在区别的。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">//函数声明</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"林深时见鹿"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    f1();<span class="comment">//输出“溪午不闻钟”而非“林深时见鹿”，因为f1被下面的函数声明覆盖了</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"溪午不闻钟"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    f1();<span class="comment">//输出“溪午不闻钟”</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//函数表达式</span></span><br><span class="line">    <span class="keyword">var</span> f2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"林深时见鹿"</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    f2();<span class="comment">//输出“林深时见鹿”</span></span><br><span class="line">    f2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"溪午不闻钟"</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    f2();<span class="comment">//输出“溪午不闻钟”</span></span><br><span class="line"><span class="comment">//函数表达式由于是变量赋值的形式，所以不存在函数覆盖的情况</span></span><br></pre></td></tr></table></figure>
-<h2 id="匿名函数自调用"><a href="#匿名函数自调用" class="headerlink" title="匿名函数自调用"></a>匿名函数自调用</h2><p>​    <strong>匿名函数自调用也叫做“立即执行函数”</strong>，在声明的同时立即直接执行，一次性。</p>
-<p>​    一般如以下两种形式：</p>
-<blockquote>
-<p>(function (){}());  W3C建议第一种</p>
-<p>(function (){})();</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//函数自调用</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"野竹分青霭"</span>);</span><br><span class="line">&#125;());</span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"飞泉挂碧峰"</span>)</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<p>立即执行函数，执行后即被释放。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子1</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">234</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a + b);</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line"><span class="comment">//例子2：带参数</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">a,b,c</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a+b+c*<span class="number">2</span>);</span><br><span class="line">&#125;(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//例子3：有返回值</span></span><br><span class="line"><span class="keyword">var</span> num = (<span class="function"><span class="keyword">function</span>(<span class="params">a,b,c,</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> d = a+b+c*<span class="number">2</span><span class="number">-2</span>;</span><br><span class="line">    <span class="keyword">return</span> d;</span><br><span class="line">&#125;(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>));</span><br></pre></td></tr></table></figure>
-<h2 id="循环添加事件时不宜使用匿名函数"><a href="#循环添加事件时不宜使用匿名函数" class="headerlink" title="循环添加事件时不宜使用匿名函数"></a>循环添加事件时不宜使用匿名函数</h2><p>在下面这个例子中要显示li的高亮，不推荐写这样的代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//为li添加鼠标进入事件</span><br><span class="line">   liObj.onmouseover = function()&#123;</span><br><span class="line">       this.style.backgroundColor = &quot;red&quot;;</span><br><span class="line">   &#125;;</span><br><span class="line">   //为li添加鼠标离开事件</span><br><span class="line">   liObj.onmouseout = function()&#123;</span><br><span class="line">       this.style.backgroundColor = &quot;&quot;;</span><br><span class="line">   &#125;;</span><br></pre></td></tr></table></figure>
-<p>这种匿名函数的写法不会错，但是每次循环都会产生一个匿名函数占用内存，这样子效率不高，浪费空间。</p>
-<p>所以我们推荐在循环添加事件的时候用命名函数：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">my$</span>(<span class="params">id</span>)</span>&#123;</span><br><span class="line">    	<span class="keyword">return</span> <span class="built_in">document</span>.getElementById(id);</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">  <span class="keyword">var</span> kungfu = [<span class="string">"降龙十八掌"</span>, <span class="string">"黯然销魂掌"</span>, <span class="string">"葵花宝典"</span>, <span class="string">"九阴真经"</span>, <span class="string">"吸星大法"</span>, <span class="string">"如来神掌"</span>, <span class="string">"化骨绵掌"</span>, <span class="string">"玉女心经"</span>, <span class="string">"极乐神功"</span>, <span class="string">"辟邪剑谱"</span>];</span><br><span class="line"></span><br><span class="line">  <span class="comment">//点击按钮动态的创建列表,把列表加到div中</span></span><br><span class="line">  my$(<span class="string">"btn"</span>).onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//创建ul,把ul立刻加入到父级元素div中</span></span><br><span class="line">    <span class="keyword">var</span> ulObj = <span class="built_in">document</span>.createElement(<span class="string">"ul"</span>);</span><br><span class="line">    my$(<span class="string">"dv"</span>).appendChild(ulObj);</span><br><span class="line">    <span class="comment">//动态的创建li,加到ul中</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; kungfu.length; i++) &#123;</span><br><span class="line">      <span class="keyword">var</span> liObj = <span class="built_in">document</span>.createElement(<span class="string">"li"</span>);</span><br><span class="line">      <span class="comment">//设置li中间的文字内容</span></span><br><span class="line">      liObj.innerHTML = kungfu[i];</span><br><span class="line">      ulObj.appendChild(liObj);</span><br><span class="line">      <span class="comment">//为li添加鼠标进入事件</span></span><br><span class="line">      liObj.onmouseover = mouseoverHandle;</span><br><span class="line">      <span class="comment">//为li添加鼠标离开事件</span></span><br><span class="line">      liObj.onmouseout = mouseoutHandle;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//此位置.按钮的点击事件的外面</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">mouseoverHandle</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.style.backgroundColor = <span class="string">"red"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">mouseoutHandle</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.style.backgroundColor = <span class="string">""</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//如果是循环的方式添加事件,推荐用命名函数</span></span><br><span class="line">  <span class="comment">//如果不是循环的方式添加事件,推荐使用匿名函数</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+        <h1 id="1-处理机调度"><a href="#1-处理机调度" class="headerlink" title="1. 处理机调度"></a>1. 处理机调度</h1><h2 id="1-1-概念"><a href="#1-1-概念" class="headerlink" title="1.1 概念"></a>1.1 概念</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qn1rcznjj30yg0iuwsp.jpg" alt=""></p>
+<h2 id="1-2-处理机调度的层级"><a href="#1-2-处理机调度的层级" class="headerlink" title="1.2 处理机调度的层级"></a>1.2 处理机调度的层级</h2><h4 id="高级调度（作业调度）"><a href="#高级调度（作业调度）" class="headerlink" title="高级调度（作业调度）"></a>高级调度（作业调度）</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qn7g121ij30w70ij4di.jpg" alt=""></p>
+<h4 id="中级调度（内存调度）"><a href="#中级调度（内存调度）" class="headerlink" title="中级调度（内存调度）"></a>中级调度（内存调度）</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qnc0pbvlj30wf0ibtoi.jpg" alt=""></p>
+<h4 id="低级调度（进程调度）"><a href="#低级调度（进程调度）" class="headerlink" title="低级调度（进程调度）"></a>低级调度（进程调度）</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qnf09rtjj30yz0j0wt7.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qnglyoguj30vh0eo466.jpg" alt=""></p>
+<h4 id="三者对比"><a href="#三者对比" class="headerlink" title="三者对比"></a>三者对比</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qnnrgywcj30tg0edwqg.jpg" alt=""></p>
+<h1 id="2-进程调度"><a href="#2-进程调度" class="headerlink" title="2. 进程调度"></a>2. 进程调度</h1><h2 id="2-1-进程调度的时机"><a href="#2-1-进程调度的时机" class="headerlink" title="2.1 进程调度的时机"></a>2.1 进程调度的时机</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qnwfh3koj311y0lbqnb.jpg" alt=""></p>
+<h2 id="2-2-进程调度的方式"><a href="#2-2-进程调度的方式" class="headerlink" title="2.2 进程调度的方式"></a>2.2 进程调度的方式</h2><p>抢占式与非抢占式</p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qnzipw35j30y60hwk4h.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qo2jvefuj30xs0g37fy.jpg" alt=""></p>
+<h1 id="3-调度算法的评价指标"><a href="#3-调度算法的评价指标" class="headerlink" title="3. 调度算法的评价指标"></a>3. 调度算法的评价指标</h1><h2 id="3-1-CPU利用率"><a href="#3-1-CPU利用率" class="headerlink" title="3.1 CPU利用率"></a>3.1 CPU利用率</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qo86gipvj311y0lbwzf.jpg" alt=""></p>
+<h2 id="3-2-系统吞吐量"><a href="#3-2-系统吞吐量" class="headerlink" title="3.2 系统吞吐量"></a>3.2 系统吞吐量</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qobu3h9gj30tr0etgql.jpg" alt=""></p>
+<h2 id="3-3-周转时间"><a href="#3-3-周转时间" class="headerlink" title="3.3 周转时间"></a>3.3 周转时间</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qog48uogj311y0lbqne.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qogvefzoj311y0lb4c8.jpg" alt=""></p>
+<h2 id="3-4-等待时间"><a href="#3-4-等待时间" class="headerlink" title="3.4 等待时间"></a>3.4 等待时间</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qoospfudj30x00in1dn.jpg" alt=""></p>
+<h2 id="3-5-响应时间"><a href="#3-5-响应时间" class="headerlink" title="3.5 响应时间"></a>3.5 响应时间</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qoq58r6dj30ye06omzt.jpg" alt=""></p>
+<h1 id="4-调度算法"><a href="#4-调度算法" class="headerlink" title="4.调度算法"></a>4.调度算法</h1><h2 id="即可用于作业调度又可用于进程调度的算法："><a href="#即可用于作业调度又可用于进程调度的算法：" class="headerlink" title="即可用于作业调度又可用于进程调度的算法："></a>即可用于作业调度又可用于进程调度的算法：</h2><h2 id="4-1-先来先服务算法（FCFS）"><a href="#4-1-先来先服务算法（FCFS）" class="headerlink" title="4.1  先来先服务算法（FCFS）"></a>4.1  先来先服务算法（FCFS）</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r2jsocr3j311y0lb4ho.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r2npdcghj311y0lbakv.jpg" alt=""></p>
+<h2 id="4-2-短作业优先（SJF）"><a href="#4-2-短作业优先（SJF）" class="headerlink" title="4.2  短作业优先（SJF）"></a>4.2  短作业优先（SJF）</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r2wgvr19j311y0lbww9.jpg" alt=""></p>
+<p>平均等待时间、平均周转时间最少</p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r322qnbxj311y0lbws8.jpg" alt=""></p>
+<h2 id="4-3-高响应比优先（HRRN）"><a href="#4-3-高响应比优先（HRRN）" class="headerlink" title="4.3  高响应比优先（HRRN）"></a>4.3  高响应比优先（HRRN）</h2><p> <img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r395uu82j311y0lbh2w.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r3adxwd6j311y0lb15a.jpg" alt=""></p>
+<h3 id="三者对比-1"><a href="#三者对比-1" class="headerlink" title="三者对比"></a>三者对比</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r3b74deoj311y0lbas1.jpg" alt=""></p>
+<h2 id="4-4-优先级调度算法"><a href="#4-4-优先级调度算法" class="headerlink" title="4.4 优先级调度算法"></a>4.4 优先级调度算法</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r3wndj9pj311y0lb16c.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r3zgw9pjj311y0lb7lr.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r413z5qnj311y0lb4jn.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r41o2tmlj311y0lbakk.jpg" alt=""></p>
+<h2 id="只用于进程调度的算法"><a href="#只用于进程调度的算法" class="headerlink" title="只用于进程调度的算法"></a>只用于进程调度的算法</h2><h2 id="4-5-轮转时间片算法"><a href="#4-5-轮转时间片算法" class="headerlink" title="4.5 轮转时间片算法"></a>4.5 轮转时间片算法</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r3rtvyg0j311y0lbqgr.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r3q2z967j311y0lbdz5.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r3swa9ptj311y0lbk3o.jpg" alt=""></p>
+<h2 id="4-6-多级反馈队列调度算法"><a href="#4-6-多级反馈队列调度算法" class="headerlink" title="4.6 多级反馈队列调度算法"></a>4.6 多级反馈队列调度算法</h2><p>过程见视频，较复杂，注意理解<img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r4b6mv8jj311y0lbdvw.jpg" alt=""></p>
+<h1 id="5-死锁"><a href="#5-死锁" class="headerlink" title="5. 死锁"></a>5. 死锁</h1><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>个进程互相等待对方手里的资源，这些资源都没有被释放，导致各进程都阻塞，无法向前推进的现象。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0saev0rp5j311y0lb7ud.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sai40aw1j30wv0d246u.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0saj2o2t7j311y0lb7jh.jpg" alt=""></p>
+<h3 id="死锁的处理"><a href="#死锁的处理" class="headerlink" title="死锁的处理"></a>死锁的处理</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sarh7ddvj30xj0gqqd8.jpg" alt=""></p>
+<h3 id="1-预防死锁"><a href="#1-预防死锁" class="headerlink" title="1. 预防死锁"></a>1. 预防死锁</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sawzwpzsj311y0lb14f.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sazjmbm5j311y0lbn8r.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sb2rxbw0j311y0lbdvr.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sb3dqekvj311y0lb4dn.jpg" alt=""></p>
+<h3 id="2-避免死锁"><a href="#2-避免死锁" class="headerlink" title="2.  避免死锁"></a>2.  避免死锁</h3><p><strong>安全状态：</strong></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sbft08umj31re0u07ah.jpg" alt=""></p>
+<h3 id="银行家算法"><a href="#银行家算法" class="headerlink" title="银行家算法"></a>银行家算法</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sbhm7ixbj311y0lb1e0.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sbky5t6yj30xr0acwk3.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sbzb5dwmj311y0lbdvt.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sbzvasmgj311y0lb49q.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sc188qr7j311y0lbk1r.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sc5w292uj311y0lbx3y.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sc8aran4j311y0lbk1y.jpg" alt=""></p>
+<h3 id="3-死锁的监测与解除"><a href="#3-死锁的监测与解除" class="headerlink" title="3. 死锁的监测与解除"></a>3. 死锁的监测与解除</h3><p>这部分重要，看视频：<a href="https://www.bilibili.com/video/av40376808?p=32" target="_blank" rel="noopener">https://www.bilibili.com/video/av40376808?p=32</a></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sckz7n0oj311y0lbtjq.jpg" alt=""></p>
 
     </article>
     <!-- license  -->
@@ -446,17 +476,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/[object Object]2019/01/13/绑定解绑事件兼容代码.html" title="绑定/解绑事件兼容代码">
-                    <div class="nextTitle">绑定/解绑事件兼容代码</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/[object Object]2019/01/09/字符串小案例.html" title="字符串小练习">
-                    <div class="prevTitle">字符串小练习</div>
+                <a href="/[object Object]2019/03/06/02进程的描述与控制.html" title="02进程的描述与控制">
+                    <div class="prevTitle">02进程的描述与控制</div>
                 </a>
             
         </li>
@@ -577,7 +602,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#匿名函数与函数表达式"><span class="toc-number">1.</span> <span class="toc-text">匿名函数与函数表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数声明与函数表达式"><span class="toc-number">2.</span> <span class="toc-text">函数声明与函数表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#匿名函数自调用"><span class="toc-number">3.</span> <span class="toc-text">匿名函数自调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环添加事件时不宜使用匿名函数"><span class="toc-number">4.</span> <span class="toc-text">循环添加事件时不宜使用匿名函数</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-处理机调度"><span class="toc-number">1.</span> <span class="toc-text">1. 处理机调度</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-概念"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-处理机调度的层级"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 处理机调度的层级</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#高级调度（作业调度）"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">高级调度（作业调度）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#中级调度（内存调度）"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">中级调度（内存调度）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#低级调度（进程调度）"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">低级调度（进程调度）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三者对比"><span class="toc-number">1.2.0.4.</span> <span class="toc-text">三者对比</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-进程调度"><span class="toc-number">2.</span> <span class="toc-text">2. 进程调度</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-进程调度的时机"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 进程调度的时机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-进程调度的方式"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 进程调度的方式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-调度算法的评价指标"><span class="toc-number">3.</span> <span class="toc-text">3. 调度算法的评价指标</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-CPU利用率"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 CPU利用率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-系统吞吐量"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 系统吞吐量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-周转时间"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 周转时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-等待时间"><span class="toc-number">3.4.</span> <span class="toc-text">3.4 等待时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-响应时间"><span class="toc-number">3.5.</span> <span class="toc-text">3.5 响应时间</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-调度算法"><span class="toc-number">4.</span> <span class="toc-text">4.调度算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#即可用于作业调度又可用于进程调度的算法："><span class="toc-number">4.1.</span> <span class="toc-text">即可用于作业调度又可用于进程调度的算法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-先来先服务算法（FCFS）"><span class="toc-number">4.2.</span> <span class="toc-text">4.1  先来先服务算法（FCFS）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-短作业优先（SJF）"><span class="toc-number">4.3.</span> <span class="toc-text">4.2  短作业优先（SJF）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-高响应比优先（HRRN）"><span class="toc-number">4.4.</span> <span class="toc-text">4.3  高响应比优先（HRRN）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#三者对比-1"><span class="toc-number">4.4.1.</span> <span class="toc-text">三者对比</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-优先级调度算法"><span class="toc-number">4.5.</span> <span class="toc-text">4.4 优先级调度算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#只用于进程调度的算法"><span class="toc-number">4.6.</span> <span class="toc-text">只用于进程调度的算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5-轮转时间片算法"><span class="toc-number">4.7.</span> <span class="toc-text">4.5 轮转时间片算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-6-多级反馈队列调度算法"><span class="toc-number">4.8.</span> <span class="toc-text">4.6 多级反馈队列调度算法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-死锁"><span class="toc-number">5.</span> <span class="toc-text">5. 死锁</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念"><span class="toc-number">5.0.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁的处理"><span class="toc-number">5.0.2.</span> <span class="toc-text">死锁的处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-预防死锁"><span class="toc-number">5.0.3.</span> <span class="toc-text">1. 预防死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-避免死锁"><span class="toc-number">5.0.4.</span> <span class="toc-text">2.  避免死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#银行家算法"><span class="toc-number">5.0.5.</span> <span class="toc-text">银行家算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-死锁的监测与解除"><span class="toc-number">5.0.6.</span> <span class="toc-text">3. 死锁的监测与解除</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

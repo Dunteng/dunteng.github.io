@@ -22,7 +22,7 @@
     <meta name="description" content="我的个人博客">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>浅谈js匿名函数 · Dunteng&#39;s Blog</title>
+    <title>Dunteng&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -218,23 +218,12 @@
 </head>
 
     
-        <body class="post-body">
-    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
-    
-    <div class="banner">
-            <div class="blog-title">
-                <a href="/">Dunteng&#39;s Blog.</a>
-            </div>
-            <div class="post-title">
-                <a href="#" class="post-name">浅谈js匿名函数</a>
-            </div>
-    </div>
     
     <a class="home-link" href="/">Dunteng's Blog.</a>
 </header>
@@ -246,74 +235,24 @@
 
 
 
-
-height:50vh;
 ">
     
     <!-- 主页  -->
-    
-    
-    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/photo-1548580392-8d9c772d854e.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
-            
-            浅谈js匿名函数
-            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
-            
-            <!-- 404 -->
-            
         </p>
         <!-- 文章页meta -->
-        
-            <div class="post-intros">
-                <!-- 文章页标签  -->
-                
-                    <div class="post-intro-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-</div>
-                
-                
-                    <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">869</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
-                    </div>
-                
-                <div class="post-intro-meta">
-                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/01/12</span>
-                    
-                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                        <span class="iconfont-archer">&#xe602;</span>
-                        <span id="busuanzi_value_page_pv"></span>
-                    </span>
-                    
-                    <span class="shareWrapper">
-                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
-                        <span class="shareText">Share</span>
-                        <ul class="shareList">
-                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
-                                <div class="share-qrcode"></div>
-                            </li>
-                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
-                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
-                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
-                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
         
     </div>
 </div>
@@ -414,67 +353,109 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main post-page">
-    <article class="article-entry">
-        <h2 id="匿名函数与函数表达式"><a href="#匿名函数与函数表达式" class="headerlink" title="匿名函数与函数表达式"></a>匿名函数与函数表达式</h2><p>​    与匿名函数相对的是命名函数——如果函数有名字就是命名函数，反之即为匿名函数。</p>
-<p>​    函数的一般定义方式为函数声明：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用方式为：函数名();</span></span><br></pre></td></tr></table></figure>
-<p>​    函数的另一种定义方式：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">&#125;;<span class="comment">//由于是赋值过程所以结尾必须加分号</span></span><br><span class="line"><span class="comment">//调用方式为：fn();</span></span><br><span class="line"><span class="comment">//把一个匿名函数赋给一个变量，即为函数表达式</span></span><br></pre></td></tr></table></figure>
-<h2 id="函数声明与函数表达式"><a href="#函数声明与函数表达式" class="headerlink" title="函数声明与函数表达式"></a>函数声明与函数表达式</h2><p>​    乍一看会觉得函数声明的方式来定义函数比较方便，但是函数声明和函数表达式是存在区别的。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">//函数声明</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"林深时见鹿"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    f1();<span class="comment">//输出“溪午不闻钟”而非“林深时见鹿”，因为f1被下面的函数声明覆盖了</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"溪午不闻钟"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    f1();<span class="comment">//输出“溪午不闻钟”</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//函数表达式</span></span><br><span class="line">    <span class="keyword">var</span> f2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"林深时见鹿"</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    f2();<span class="comment">//输出“林深时见鹿”</span></span><br><span class="line">    f2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"溪午不闻钟"</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    f2();<span class="comment">//输出“溪午不闻钟”</span></span><br><span class="line"><span class="comment">//函数表达式由于是变量赋值的形式，所以不存在函数覆盖的情况</span></span><br></pre></td></tr></table></figure>
-<h2 id="匿名函数自调用"><a href="#匿名函数自调用" class="headerlink" title="匿名函数自调用"></a>匿名函数自调用</h2><p>​    <strong>匿名函数自调用也叫做“立即执行函数”</strong>，在声明的同时立即直接执行，一次性。</p>
-<p>​    一般如以下两种形式：</p>
-<blockquote>
-<p>(function (){}());  W3C建议第一种</p>
-<p>(function (){})();</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//函数自调用</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"野竹分青霭"</span>);</span><br><span class="line">&#125;());</span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"飞泉挂碧峰"</span>)</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<p>立即执行函数，执行后即被释放。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子1</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">234</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a + b);</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line"><span class="comment">//例子2：带参数</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">a,b,c</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a+b+c*<span class="number">2</span>);</span><br><span class="line">&#125;(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//例子3：有返回值</span></span><br><span class="line"><span class="keyword">var</span> num = (<span class="function"><span class="keyword">function</span>(<span class="params">a,b,c,</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> d = a+b+c*<span class="number">2</span><span class="number">-2</span>;</span><br><span class="line">    <span class="keyword">return</span> d;</span><br><span class="line">&#125;(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>));</span><br></pre></td></tr></table></figure>
-<h2 id="循环添加事件时不宜使用匿名函数"><a href="#循环添加事件时不宜使用匿名函数" class="headerlink" title="循环添加事件时不宜使用匿名函数"></a>循环添加事件时不宜使用匿名函数</h2><p>在下面这个例子中要显示li的高亮，不推荐写这样的代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//为li添加鼠标进入事件</span><br><span class="line">   liObj.onmouseover = function()&#123;</span><br><span class="line">       this.style.backgroundColor = &quot;red&quot;;</span><br><span class="line">   &#125;;</span><br><span class="line">   //为li添加鼠标离开事件</span><br><span class="line">   liObj.onmouseout = function()&#123;</span><br><span class="line">       this.style.backgroundColor = &quot;&quot;;</span><br><span class="line">   &#125;;</span><br></pre></td></tr></table></figure>
-<p>这种匿名函数的写法不会错，但是每次循环都会产生一个匿名函数占用内存，这样子效率不高，浪费空间。</p>
-<p>所以我们推荐在循环添加事件的时候用命名函数：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">my$</span>(<span class="params">id</span>)</span>&#123;</span><br><span class="line">    	<span class="keyword">return</span> <span class="built_in">document</span>.getElementById(id);</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">  <span class="keyword">var</span> kungfu = [<span class="string">"降龙十八掌"</span>, <span class="string">"黯然销魂掌"</span>, <span class="string">"葵花宝典"</span>, <span class="string">"九阴真经"</span>, <span class="string">"吸星大法"</span>, <span class="string">"如来神掌"</span>, <span class="string">"化骨绵掌"</span>, <span class="string">"玉女心经"</span>, <span class="string">"极乐神功"</span>, <span class="string">"辟邪剑谱"</span>];</span><br><span class="line"></span><br><span class="line">  <span class="comment">//点击按钮动态的创建列表,把列表加到div中</span></span><br><span class="line">  my$(<span class="string">"btn"</span>).onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//创建ul,把ul立刻加入到父级元素div中</span></span><br><span class="line">    <span class="keyword">var</span> ulObj = <span class="built_in">document</span>.createElement(<span class="string">"ul"</span>);</span><br><span class="line">    my$(<span class="string">"dv"</span>).appendChild(ulObj);</span><br><span class="line">    <span class="comment">//动态的创建li,加到ul中</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; kungfu.length; i++) &#123;</span><br><span class="line">      <span class="keyword">var</span> liObj = <span class="built_in">document</span>.createElement(<span class="string">"li"</span>);</span><br><span class="line">      <span class="comment">//设置li中间的文字内容</span></span><br><span class="line">      liObj.innerHTML = kungfu[i];</span><br><span class="line">      ulObj.appendChild(liObj);</span><br><span class="line">      <span class="comment">//为li添加鼠标进入事件</span></span><br><span class="line">      liObj.onmouseover = mouseoverHandle;</span><br><span class="line">      <span class="comment">//为li添加鼠标离开事件</span></span><br><span class="line">      liObj.onmouseout = mouseoutHandle;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//此位置.按钮的点击事件的外面</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">mouseoverHandle</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.style.backgroundColor = <span class="string">"red"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">mouseoutHandle</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.style.backgroundColor = <span class="string">""</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//如果是循环的方式添加事件,推荐用命名函数</span></span><br><span class="line">  <span class="comment">//如果不是循环的方式添加事件,推荐使用匿名函数</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+            <main class="main index-page">
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/[object Object]2019/03/07/03处理机调度与死锁.html">
+            
+                <span>处理机调度与死锁</span>
+        </a>
+        <div class="abstract-content">
+            1. 处理机调度1.1 概念
+1.2 处理机调度的层级高级调度（作业调度）
+中级调度（内存调度）
+低级调度（进程调度）
 
+三者对比
+2. 进程调度2.1 进程调度的时机
+2.2 进程调度的方式抢...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/07</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="操作系统">操作系统</a>
+    
+</div>
+            
+        </div>
     </article>
-    <!-- license  -->
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/[object Object]2019/03/06/02进程的描述与控制.html">
+            
+                <span>02进程的描述与控制</span>
+        </a>
+        <div class="abstract-content">
+            第二章1. 前趋图和程序执行1.1 前趋图见课本p32、p33
+1.2 程序顺序执行程序执行有固定的时序，
+特征： 顺序性、可再现性、封闭性
+1.3 程序并发执行
+与顺序执行的特征相反： 间断性...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="操作系统">操作系统</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/[object Object]2019/03/05/01OS引言.html">
+            
+                <span>操作系统引言</span>
+        </a>
+        <div class="abstract-content">
+            第一章1. 操作系统的定义：​    操作系统是直接控制和管理计算机硬件、软件资源的最 基本的系统软件，用以方便用户充分、有效的利用这些资源 并增强整个计算机的处理能力
+2. 操作系统的目标&a...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/05</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="操作系统">操作系统</a>
+    
+</div>
+            
+        </div>
+    </article>
     
     <!-- paginator  -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-                <div class="nextSlogan">Next Post</div>
-                <a href="/[object Object]2019/01/13/绑定解绑事件兼容代码.html" title="绑定/解绑事件兼容代码">
-                    <div class="nextTitle">绑定/解绑事件兼容代码</div>
-                </a>
-            
-        </li>
-        <li class="previous">
-            
-                <div class="prevSlogan">Previous Post</div>
-                <a href="/[object Object]2019/01/09/字符串小案例.html" title="字符串小练习">
-                    <div class="prevTitle">字符串小练习</div>
-                </a>
-            
-        </li>
-    </ul>
-    <!-- 评论插件 -->
-    <!-- 来必力City版安装代码 -->
-
-<!-- City版安装代码已完成 -->
     
-    
-    <!-- partial('_partial/comment/changyan') -->
-    <!--PC版-->
-
-
-    
-    
-
-    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -561,24 +542,6 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
-    
-    <div class="toc-wrapper" style=
-    
-
-
-
-
-
-
-
-top:50vh;
-
-    >
-        <div class="toc-catalog">
-            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
-        </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#匿名函数与函数表达式"><span class="toc-number">1.</span> <span class="toc-text">匿名函数与函数表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数声明与函数表达式"><span class="toc-number">2.</span> <span class="toc-text">函数声明与函数表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#匿名函数自调用"><span class="toc-number">3.</span> <span class="toc-text">匿名函数自调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环添加事件时不宜使用匿名函数"><span class="toc-number">4.</span> <span class="toc-text">循环添加事件时不宜使用匿名函数</span></a></li></ol>
-    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1182,8 +1145,6 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
-    
-        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

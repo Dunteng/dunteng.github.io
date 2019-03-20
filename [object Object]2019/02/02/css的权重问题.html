@@ -22,7 +22,7 @@
     <meta name="description" content="我的个人博客">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Dunteng&#39;s Blog</title>
+    <title>css的权重问题 · Dunteng&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -218,12 +218,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Dunteng&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">css的权重问题</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">Dunteng's Blog.</a>
 </header>
@@ -235,24 +246,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(https://images.unsplash.com/photo-1551427669-d93d1e2f6829?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=500&fit=crop&ixid=eyJhcHBfaWQiOjF9)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            css的权重问题
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">857</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/02/02</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -353,308 +414,119 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/01/14/JS封装运动函数.html">
-            
-                <span>JS封装动画函数</span>
-        </a>
-        <div class="abstract-content">
-            本文介绍JavaScript实现动画效果的封装函数，将从匀速水平移动开始，在此基础上不断增加新功能，如二级标题所示。
-匀速水平移动动画这哥们可以用来写轮播图。
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="CSS优先级"><a href="#CSS优先级" class="headerlink" title="CSS优先级"></a>CSS优先级</h1><p>定义CSS样式时，经常出现两个或更多规则应用在同一元素上，这时就会出现优先级的问题。</p>
+<p>在考虑权重时，初学者还需要注意一些特殊的情况，具体如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">继承样式的权重为0。即在嵌套结构中，不管父元素样式的权重多大，被子元素继承时，他的权重都为0，也就是说子元素定义的样式会覆盖继承来的样式。</span><br><span class="line"></span><br><span class="line">行内样式优先。应用style属性的元素，其行内样式的权重非常高，可以理解为远大于100。总之，他拥有比上面提高的选择器都大的优先级。</span><br><span class="line"></span><br><span class="line">权重相同时，CSS遵循就近原则。也就是说靠近元素的样式具有最大的优先级，或者说排在最后的样式优先级最大。</span><br><span class="line"></span><br><span class="line">CSS定义了一个!important命令，该命令被赋予最大的优先级。也就是说不管权重如何以及样式位置的远近，!important都具有最大优先级。</span><br></pre></td></tr></table></figure>
+<h1 id="计算权重"><a href="#计算权重" class="headerlink" title="计算权重"></a>计算权重</h1><p>关于CSS权重，我们需要一套计算公式来去计算，这个就是 CSS Specificity，我们称为CSS 特性或称非凡性，它是一个衡量CSS值优先级的一个标准 具体规范入如下：</p>
+<p>specificity用一个四位的数 字串(CSS2是三位)来表示，更像四个级别，值从左到右，左面的最大，一级大于一级，数位之间没有进制，级别之间不可超越。 </p>
+<table>
+<thead>
+<tr>
+<th>继承或者* 的贡献值</th>
+<th>0,0,0,0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每个元素（标签）贡献值为</td>
+<td>0,0,0,1</td>
+</tr>
+<tr>
+<td>每个类，伪类贡献值为</td>
+<td>0,0,1,0</td>
+</tr>
+<tr>
+<td>每个ID贡献值为</td>
+<td>0,1,0,0</td>
+</tr>
+<tr>
+<td>每个行内样式贡献值</td>
+<td>1,0,0,0</td>
+</tr>
+<tr>
+<td>每个!important贡献值  重要的</td>
+<td>∞ 无穷大</td>
+</tr>
+</tbody>
+</table>
+<p>权重是可以叠加的</p>
+<p> 比如的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">div ul  li   ------&gt;      0,0,0,3</span><br><span class="line"></span><br><span class="line">.nav ul li   ------&gt;      0,0,1,2</span><br><span class="line"></span><br><span class="line">a:hover      -----—&gt;      0,0,1,1</span><br><span class="line"></span><br><span class="line">.nav a       ------&gt;      0,0,1,1   </span><br><span class="line"></span><br><span class="line">#nav p       -----&gt;       0,1,0,1</span><br></pre></td></tr></table></figure>
+<p>​   </p>
+<p>​      </p>
+<p> <img src="C:/Users/Administrator/Desktop/%E5%89%8D%E7%AB%AF/%E7%AC%94%E8%AE%B0/markdown%E7%AC%94%E8%AE%B0/02.css/media/w.jpg"> 注意： </p>
+<p>1.数位之间没有进制 比如说： 0,0,0,5 + 0,0,0,5 =0,0,0,10 而不是 0,0, 1, 0， 所以不会存在10个div能赶上一个类选择器的情况。</p>
+<ol>
+<li>继承的 权重是 0  </li>
+</ol>
+<p>总结优先级：</p>
+<ol>
+<li>使用了 !important声明的规则。</li>
+<li>内嵌在 HTML 元素的 style属性里面的声明。</li>
+<li>使用了 ID 选择器的规则。</li>
+<li>使用了类选择器、属性选择器、伪元素和伪类选择器的规则。</li>
+<li>使用了元素选择器的规则。</li>
+<li>只包含一个通用选择器的规则。</li>
+<li>同一类选择器则遵循就近原则。</li>
+</ol>
+<h1 id="小试牛刀"><a href="#小试牛刀" class="headerlink" title="小试牛刀"></a>小试牛刀</h1><p><img src="https://ws1.sinaimg.cn/large/006ttwEMgy1g19engqkklj30zk0iqtao.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/006ttwEMgy1g19eo6bptuj30pv0imabj.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/006ttwEMgy1g19eouc6loj30zk0iq75z.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/006ttwEMgy1g19epf43toj30t30i20ul.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/006ttwEMgy1g19epy7amkj30t10h0wfg.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/006ttwEMgy1g19eqn3wrzj30wm0ipwgo.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/006ttwEMgy1g19erfs9scj30rw0id75v.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/006ttwEMgy1g19ersuzobj30qc0fj3zo.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/006ttwEMgy1g19etc9v5pj30t20gmmyn.jpg" alt=""></p>
+<h1 id="important"><a href="#important" class="headerlink" title="!important"></a>!important</h1><p>来给一个属性提高权重。这个属性的权重就是无穷大。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type="text/css"&gt;</span><br><span class="line">		<span class="selector-tag">p</span>&#123;</span><br><span class="line">			<span class="attribute">color</span>:red <span class="meta">!important</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="selector-id">#para1</span>&#123;</span><br><span class="line">			<span class="attribute">color</span>:blue;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="selector-class">.spec</span>&#123;</span><br><span class="line">			<span class="attribute">color</span>:green;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>!important需要强调3点：</p>
+<p>1） !important提升的是一个属性，而不是一个选择器</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">	color:red !important;   → 只写了这一个!important，所以就字体颜色属性提升权重</span><br><span class="line">	<span class="selector-tag">font-size</span>: 100<span class="selector-tag">px</span> ;      → 这条属性没有写!<span class="selector-tag">important</span>，所以没有提升权重</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#para1</span>&#123;</span><br><span class="line">	<span class="attribute">color</span>:blue;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.spec</span>&#123;</span><br><span class="line">	<span class="attribute">color</span>:green;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2） !important无法提升继承的权重，该是0还是0</p>
+<p>3）!important不影响就近原则</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><img src="https://ws1.sinaimg.cn/large/006ttwEMgy1g19ez4pgnoj30k20bv3yr.jpg" alt=""></p>
+<p>还有!important这个挂逼注意一下。</p>
+<p>（完）</p>
 
-1234567891011121...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="小案例">小案例</a>
-    
-</div>
-            
-        </div>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/01/13/JS实现全选与全不选.html">
-            
-                <span>JS实现全选与全不选</span>
-        </a>
-        <div class="abstract-content">
-            
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="小案例">小案例</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/01/13/JS搜索框自动提示.html">
-            
-                <span>JS搜索框自动提示</span>
-        </a>
-        <div class="abstract-content">
-            
-效果展示：
-
-html部分：
-123456789101112131415161718192021222324252627282930313233343536  &lt;style&gt;   ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="小案例">小案例</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/01/13/自定义属性操作案例.html">
-            
-                <span>自定义属性操作案例</span>
-        </a>
-        <div class="abstract-content">
-            为了练习一下自定义属性操作，做了一个tab栏切换的demo
-自定义属性操作
-getAttribute() 获取标签行内属性
-setAttribute() 设置标签行内属性
-removeAttri...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="小案例">小案例</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/01/13/绑定解绑事件兼容代码.html">
-            
-                <span>绑定/解绑事件兼容代码</span>
-        </a>
-        <div class="abstract-content">
-            为元素绑定( 多个 )事件(DOM)除了用对象.onclick=fn这类的方式（这种方式无法绑定多个事件，如果写了多个事件则会发生覆盖），还有：  1 对象.addEventListener(“...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/01/12/浅谈js匿名函数.html">
-            
-                <span>浅谈js匿名函数</span>
-        </a>
-        <div class="abstract-content">
-            匿名函数与函数表达式​    与匿名函数相对的是命名函数——如果函数有名字就是命名函数，反之即为匿名函数。
-​    函数的一般定义方式为函数声明：
-1234function 函数名()&#12...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/01/09/字符串小案例.html">
-            
-                <span>字符串小练习</span>
-        </a>
-        <div class="abstract-content">
-            案例一：找到这个字符串中所有的 o 出现的位置“hello wod odd ott fbo nhyo”
-12345678var str = "hello wod odd ott fbo nhyo...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="小案例">小案例</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/01/07/JavaScript中的值传递和地址传递（引用传递）.html">
-            
-                <span>JavaScript中的值传递和地址传递（引用传递）</span>
-        </a>
-        <div class="abstract-content">
-            简单类型和复杂类型我们先来理清一下几种数据类型。原始的数据类型就有： number,string,boolean,undefined, null,object。进一步划分为值类型和引用类型。
-值...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/01/04/jiujiu.html">
-            
-                <span>JS实现九九乘法表</span>
-        </a>
-        <div class="abstract-content">
-            今天来水一篇。。。。
-用JavaScript实现九九乘法表，这是练习循环的经典题目。
-代码：
-123456789101112/*打印九九乘法表*/    var table = '';    v...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="小案例">小案例</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/[object Object]2019/02/25/导航细线边框的实现.html" title="导航细线边框的实现">
+                    <div class="nextTitle">导航细线边框的实现</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/[object Object]2019/01/14/JS封装运动函数.html" title="JS封装动画函数">
+                    <div class="prevTitle">JS封装动画函数</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -741,6 +613,24 @@ removeAttri...
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS优先级"><span class="toc-number">1.</span> <span class="toc-text">CSS优先级</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#计算权重"><span class="toc-number">2.</span> <span class="toc-text">计算权重</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#小试牛刀"><span class="toc-number">3.</span> <span class="toc-text">小试牛刀</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#important"><span class="toc-number">4.</span> <span class="toc-text">!important</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1340,6 +1230,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

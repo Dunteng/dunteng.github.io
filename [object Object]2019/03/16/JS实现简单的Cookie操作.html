@@ -22,7 +22,7 @@
     <meta name="description" content="我的个人博客">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>进程的描述与控制 · Dunteng&#39;s Blog</title>
+    <title>JS实现简单的Cookie操作 · Dunteng&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -232,7 +232,7 @@
                 <a href="/">Dunteng&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">进程的描述与控制</a>
+                <a href="#" class="post-name">JS实现简单的Cookie操作</a>
             </div>
     </div>
     
@@ -256,13 +256,13 @@ height:50vh;
     <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(https://ws1.sinaimg.cn/large/006ttwEMgy1g1cknzvsmpj318g0dw0ur.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(https://ws1.sinaimg.cn/large/006ttwEMly1g1iwwiteflj318g0dw47y.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            进程的描述与控制
+            JS实现简单的Cookie操作
             <!-- 404 -->
             
         </h1>
@@ -281,18 +281,18 @@ height:50vh;
                 
                     <div class="post-intro-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="操作系统">操作系统</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">375</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">351</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/03/06</span>
+                    <span class="post-intro-time">2019/03/16</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -416,72 +416,10 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><h2 id="1-前趋图和程序执行"><a href="#1-前趋图和程序执行" class="headerlink" title="1. 前趋图和程序执行"></a>1. 前趋图和程序执行</h2><h3 id="1-1-前趋图"><a href="#1-1-前趋图" class="headerlink" title="1.1 前趋图"></a>1.1 前趋图</h3><p>见课本p32、p33</p>
-<h3 id="1-2-程序顺序执行"><a href="#1-2-程序顺序执行" class="headerlink" title="1.2 程序顺序执行"></a>1.2 程序顺序执行</h3><p>程序执行有固定的时序，</p>
-<p><strong>特征：</strong> 顺序性、可再现性、封闭性</p>
-<h3 id="1-3-程序并发执行"><a href="#1-3-程序并发执行" class="headerlink" title="1.3 程序并发执行"></a>1.3 程序并发执行</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0publkgx4j30q40bewfa.jpg" alt="      "></p>
-<p>与顺序执行的特征相反： 间断性、不可再现性、非封闭性（由资源共享造成）</p>
-<p>结合pdf第9页左右例子理解</p>
-<h2 id="2-进程的描述"><a href="#2-进程的描述" class="headerlink" title="2. 进程的描述"></a>2. 进程的描述</h2><h3 id="2-1-进程的定义与特征"><a href="#2-1-进程的定义与特征" class="headerlink" title="2.1 进程的定义与特征"></a>2.1 进程的定义与特征</h3><h4 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h4><p>是程序的一次执行过程，是进程实体的运行过程，是系统进行资源分配和调度 的一个独立单位。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pw2y75xxj30ya0i6k3r.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pw75wembj30uv0ivtha.jpg" alt=""></p>
-<h4 id="特征："><a href="#特征：" class="headerlink" title="特征："></a>特征：</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pwls8evtj310d0kzk7h.jpg" alt=""></p>
-<h4 id="进程和程序的区别："><a href="#进程和程序的区别：" class="headerlink" title="进程和程序的区别："></a>进程和程序的区别：</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pumkycuaj30ov0d7acu.jpg" alt=""></p>
-<h3 id="2-2-进程的状态及转换"><a href="#2-2-进程的状态及转换" class="headerlink" title="2.2 进程的状态及转换"></a>2.2 进程的状态及转换</h3><h4 id="基本状态："><a href="#基本状态：" class="headerlink" title="基本状态："></a>基本状态：</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0puoshfafj30el0br3z2.jpg" alt=""></p>
-<h4 id="创建状态和终止状态"><a href="#创建状态和终止状态" class="headerlink" title="创建状态和终止状态"></a>创建状态和终止状态</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pwt7tdmbj30zj0k1ne6.jpg" alt=""></p>
-<h3 id="2-3-挂起操作与激活操作"><a href="#2-3-挂起操作与激活操作" class="headerlink" title="2.3 挂起操作与激活操作"></a>2.3 挂起操作与激活操作</h3><p>见书本p38\p39</p>
-<h3 id="2-4-进程控制块PCB"><a href="#2-4-进程控制块PCB" class="headerlink" title="2.4 进程控制块PCB"></a>2.4 进程控制块PCB</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pv2jjpexj30ow1nnqgj.jpg" alt=""></p>
-<h2 id="3-进程控制"><a href="#3-进程控制" class="headerlink" title="3. 进程控制"></a>3. 进程控制</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pwv8sr4dj30yn0jx11q.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0px2pngb0j311y0lbkaj.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0px6rffx3j311y0lc7iw.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pxc7k4t4j311y0lcgzx.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pxlzge2pj311y0lbtt8.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pxny9oswj311y0lbwsi.jpg" alt=""></p>
-<h2 id="4-进程同步"><a href="#4-进程同步" class="headerlink" title="4. 进程同步"></a>4. 进程同步</h2><h3 id="4-1-进程同步（进程的直接制约关系）"><a href="#4-1-进程同步（进程的直接制约关系）" class="headerlink" title="4.1 进程同步（进程的直接制约关系）"></a>4.1 进程同步（进程的直接制约关系）</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r4z2trshj311y0lban2.jpg" alt=""></p>
-<h3 id="4-2-进程互斥（进程的间接制约关系）"><a href="#4-2-进程互斥（进程的间接制约关系）" class="headerlink" title="4.2 进程互斥（进程的间接制约关系）"></a>4.2 进程互斥（进程的间接制约关系）</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r50gtecyj311y0lbk8u.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r5160ahej311y0lbdv0.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r52a2mpvj30sd0fstg7.jpg" alt=""></p>
-<h3 id="4-3-硬件同步机制（进程互斥的硬件方法）"><a href="#4-3-硬件同步机制（进程互斥的硬件方法）" class="headerlink" title="4.3 硬件同步机制（进程互斥的硬件方法）"></a>4.3 硬件同步机制（进程互斥的硬件方法）</h3><h4 id="关中断"><a href="#关中断" class="headerlink" title="关中断"></a>关中断</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0rvfs46pdj311y0lbqe2.jpg" alt=""></p>
-<h4 id="TestAndSet指令"><a href="#TestAndSet指令" class="headerlink" title="TestAndSet指令"></a>TestAndSet指令</h4><p>简称TS指令或TSL指令</p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0rvloygu5j311y0lbtox.jpg" alt=""></p>
-<h4 id="Swap指令"><a href="#Swap指令" class="headerlink" title="Swap指令"></a>Swap指令</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0rvnnbwdrj311y0lb17l.jpg" alt=""></p>
-<h3 id="4-4读者-写者问题"><a href="#4-4读者-写者问题" class="headerlink" title="4.4读者-写者问题"></a>4.4读者-写者问题</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r59jvg0nj311y0lbasa.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r5ih7bjqj311y0lb1fj.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r5t5rjxfj311y0lbqee.jpg" alt=""></p>
-<h3 id="4-5-哲学家进餐问题"><a href="#4-5-哲学家进餐问题" class="headerlink" title="4.5 哲学家进餐问题"></a>4.5 哲学家进餐问题</h3><p><a href="https://www.bilibili.com/video/av40376808?p=20" target="_blank" rel="noopener">https://www.bilibili.com/video/av40376808?p=20</a></p>
-<h3 id="4-6-信号量机制"><a href="#4-6-信号量机制" class="headerlink" title="4.6 信号量机制"></a>4.6 信号量机制</h3><h4 id="整形信号量"><a href="#整形信号量" class="headerlink" title="整形信号量"></a>整形信号量</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s7nzlu76j311y0lbwx0.jpg" alt=""></p>
-<h4 id="记录型信号量"><a href="#记录型信号量" class="headerlink" title="记录型信号量"></a>记录型信号量</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s89nuj9fj311y0la19h.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s7w0at66j311y0lbngk.jpg" alt=""></p>
-<h4 id="信号量机制实现进程互斥"><a href="#信号量机制实现进程互斥" class="headerlink" title="信号量机制实现进程互斥"></a>信号量机制实现进程互斥</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s81qzpn7j311y0lb7oj.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s84ho17hj311y0lbwtw.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s85q4vzbj311y0lbap7.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s86jdp0mj311y0lb4ge.jpg" alt=""></p>
-<h3 id="4-7-生产者消费者问题"><a href="#4-7-生产者消费者问题" class="headerlink" title="4.7 生产者消费者问题"></a>4.7 生产者消费者问题</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s8ykmm7nj30ud0jiaga.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s8slzfkxj311y0lbtzn.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s8twoliuj30xn0560xb.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s8uh02lkj311y0lbnlx.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s91zhzvsj311y0lbatk.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s94en3cfj311y0lbh2v.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s95ciaasj311y0lbwr3.jpg" alt=""></p>
-<h2 id="5-管程"><a href="#5-管程" class="headerlink" title="5. 管程"></a>5. 管程</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s8at0ft2j311y0lbqdo.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s8ccvbmuj30o70ffafx.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s8i3pf46j311y0lbneb.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s8jct50gj311y0lbncx.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s8jyzcsoj311y0lb4a3.jpg" alt=""></p>
-<h2 id="6-进程通信"><a href="#6-进程通信" class="headerlink" title="6. 进程通信"></a>6. 进程通信</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pxsey6f2j311y0lbk29.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pxvb7o6tj311y0lbdtv.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pxy26zsij311y0lbh03.jpg" alt=""></p>
-<h2 id="7-线程"><a href="#7-线程" class="headerlink" title="7. 线程"></a>7. 线程</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pydawsr8j311y0lbtro.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pyfqf1d0j30yy0jjqil.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pyitai0jj311y0lbwtz.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pyl12f9qj30re0ksajl.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pyq0moqsj311y0lbdpo.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pypjsb9kj311y0lb47v.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0ql8dox1bj30vi0jktjc.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qmlg8cbej30yb0k5aj0.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qmm2uwxrj30zo0k1qcp.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qmn9b6hbj30x40jm7d2.jpg" alt=""></p>
-<h2 id="8-进程、线程和作业的概念区分"><a href="#8-进程、线程和作业的概念区分" class="headerlink" title="8. 进程、线程和作业的概念区分"></a>8. 进程、线程和作业的概念区分</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qomkpz36j30oq0kygow.jpg" alt=""></p>
+        <p>Cookie是由服务器端生成，发送给User-Agent（一般是浏览器），（服务器告诉浏览器设置一下cookie），浏览器会将Cookie以key/value保存到某个目录下的文本文件内，下次请求同一网站时就发送该Cookie给服务器（前提是浏览器设置为启用cookie）。Cookie就是一个小型文件（浏览器对cookie的内存大小是有限制的——-用来记录一些信息）。</p>
+<p>Cookie实际上主要是web服务器开发人员设置的，前端开发人员较少使用cookie。但是我们得学会简单操作cookie （大概流程如下）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> manageCookie = &#123;</span><br><span class="line">	setCookie: <span class="function"><span class="keyword">function</span> (<span class="params">name, value, time</span>) </span>&#123; </span><br><span class="line">		<span class="built_in">document</span>.cookie = name+<span class="string">'='</span>+value+<span class="string">';max-age='</span>+time;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>;<span class="comment">//返回manageCookie用于实现链式函数调用</span></span><br><span class="line">	 &#125;,</span><br><span class="line">	 removeCookie: <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">		 <span class="keyword">return</span> <span class="keyword">this</span>.setCookie(name,<span class="string">''</span>,<span class="number">-1</span>) <span class="comment">//直接把max-age设置为负数使之过期，浏览器会自动删除过期cookie</span></span><br><span class="line">	 &#125;,</span><br><span class="line">	 getCookie: <span class="function"><span class="keyword">function</span>(<span class="params">name, callback</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> allCookieArr = <span class="built_in">document</span>.cookie.split(<span class="string">', '</span>);<span class="comment">//注意用逗号和一个空格来切分cookie值！</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt;allCookieArr.length; i++)&#123;</span><br><span class="line">			<span class="keyword">var</span> itemCookieArr = allCookieArr[i].split(<span class="string">'='</span>);</span><br><span class="line">			<span class="keyword">if</span>(itemCookieArr[<span class="number">0</span>]==name)&#123;</span><br><span class="line">				callback(itemCookieArr[<span class="number">1</span>]);</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">this</span>;<span class="comment">//同样也是返回manageCookie实现链式调用</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		callback(<span class="literal">undefined</span>);<span class="comment">//如果循环结束都没有找到name对应的值，则调用undefined</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>;<span class="comment">//返回manageCookie实现链式调用</span></span><br><span class="line">	 &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">manageCookie</span><br><span class="line">	.setCookie(<span class="string">'color'</span>, <span class="string">'red'</span>, <span class="number">10000</span>)</span><br><span class="line">	.setCookie(<span class="string">'dunteng'</span>, <span class="string">'great'</span>, <span class="string">'10000000'</span>)</span><br><span class="line">	.removeCookie(<span class="string">'color'</span>)</span><br><span class="line">	.getCookie(<span class="string">'dunteng'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(data)</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+<p><br><br>（完）<br><br></p>
 
     </article>
     <!-- license  -->
@@ -490,17 +428,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/[object Object]2019/03/07/03处理机调度与死锁.html" title="处理机调度与死锁">
-                    <div class="nextTitle">处理机调度与死锁</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/[object Object]2019/03/05/正则表达式验证密码的强度.html" title="正则表达式验证密码的强度">
-                    <div class="prevTitle">正则表达式验证密码的强度</div>
+                <a href="/[object Object]2019/03/14/封装jsonp代码.html" title="封装Jsonp代码">
+                    <div class="prevTitle">封装Jsonp代码</div>
                 </a>
             
         </li>
@@ -621,7 +554,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第二章"><span class="toc-number">1.</span> <span class="toc-text">第二章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-前趋图和程序执行"><span class="toc-number">1.1.</span> <span class="toc-text">1. 前趋图和程序执行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-前趋图"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1 前趋图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-程序顺序执行"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2 程序顺序执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-程序并发执行"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.3 程序并发执行</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-进程的描述"><span class="toc-number">1.2.</span> <span class="toc-text">2. 进程的描述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-进程的定义与特征"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 进程的定义与特征</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#定义："><span class="toc-number">1.2.1.1.</span> <span class="toc-text">定义：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#特征："><span class="toc-number">1.2.1.2.</span> <span class="toc-text">特征：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#进程和程序的区别："><span class="toc-number">1.2.1.3.</span> <span class="toc-text">进程和程序的区别：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-进程的状态及转换"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 进程的状态及转换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本状态："><span class="toc-number">1.2.2.1.</span> <span class="toc-text">基本状态：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建状态和终止状态"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">创建状态和终止状态</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-挂起操作与激活操作"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 挂起操作与激活操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-进程控制块PCB"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.4 进程控制块PCB</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-进程控制"><span class="toc-number">1.3.</span> <span class="toc-text">3. 进程控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-进程同步"><span class="toc-number">1.4.</span> <span class="toc-text">4. 进程同步</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-进程同步（进程的直接制约关系）"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1 进程同步（进程的直接制约关系）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-进程互斥（进程的间接制约关系）"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2 进程互斥（进程的间接制约关系）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-硬件同步机制（进程互斥的硬件方法）"><span class="toc-number">1.4.3.</span> <span class="toc-text">4.3 硬件同步机制（进程互斥的硬件方法）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#关中断"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">关中断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TestAndSet指令"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">TestAndSet指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Swap指令"><span class="toc-number">1.4.3.3.</span> <span class="toc-text">Swap指令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4读者-写者问题"><span class="toc-number">1.4.4.</span> <span class="toc-text">4.4读者-写者问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-哲学家进餐问题"><span class="toc-number">1.4.5.</span> <span class="toc-text">4.5 哲学家进餐问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6-信号量机制"><span class="toc-number">1.4.6.</span> <span class="toc-text">4.6 信号量机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#整形信号量"><span class="toc-number">1.4.6.1.</span> <span class="toc-text">整形信号量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#记录型信号量"><span class="toc-number">1.4.6.2.</span> <span class="toc-text">记录型信号量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#信号量机制实现进程互斥"><span class="toc-number">1.4.6.3.</span> <span class="toc-text">信号量机制实现进程互斥</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-7-生产者消费者问题"><span class="toc-number">1.4.7.</span> <span class="toc-text">4.7 生产者消费者问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-管程"><span class="toc-number">1.5.</span> <span class="toc-text">5. 管程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-进程通信"><span class="toc-number">1.6.</span> <span class="toc-text">6. 进程通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-线程"><span class="toc-number">1.7.</span> <span class="toc-text">7. 线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-进程、线程和作业的概念区分"><span class="toc-number">1.8.</span> <span class="toc-text">8. 进程、线程和作业的概念区分</span></a></li></ol></li></ol>
+        
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

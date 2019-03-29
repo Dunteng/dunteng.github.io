@@ -22,7 +22,7 @@
     <meta name="description" content="我的个人博客">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>字符串小练习 · Dunteng&#39;s Blog</title>
+    <title>Dunteng&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -218,23 +218,12 @@
 </head>
 
     
-        <body class="post-body">
-    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
-    
-    <div class="banner">
-            <div class="blog-title">
-                <a href="/">Dunteng&#39;s Blog.</a>
-            </div>
-            <div class="post-title">
-                <a href="#" class="post-name">字符串小练习</a>
-            </div>
-    </div>
     
     <a class="home-link" href="/">Dunteng's Blog.</a>
 </header>
@@ -246,78 +235,24 @@
 
 
 
-
-height:50vh;
 ">
     
     <!-- 主页  -->
-    
-    
-    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(https://ws1.sinaimg.cn/large/006ttwEMgy1g1ckze1lttj318g0dw418.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
-            
-            字符串小练习
-            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
-            
-            <!-- 404 -->
-            
         </p>
         <!-- 文章页meta -->
-        
-            <div class="post-intros">
-                <!-- 文章页标签  -->
-                
-                    <div class="post-intro-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="小案例">小案例</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="算法">算法</a>
-    
-</div>
-                
-                
-                    <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">522</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
-                    </div>
-                
-                <div class="post-intro-meta">
-                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/01/09</span>
-                    
-                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                        <span class="iconfont-archer">&#xe602;</span>
-                        <span id="busuanzi_value_page_pv"></span>
-                    </span>
-                    
-                    <span class="shareWrapper">
-                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
-                        <span class="shareText">Share</span>
-                        <ul class="shareList">
-                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
-                                <div class="share-qrcode"></div>
-                            </li>
-                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
-                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
-                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
-                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
         
     </div>
 </div>
@@ -418,55 +353,44 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main post-page">
-    <article class="article-entry">
-        <h2 id="案例一：找到这个字符串中所有的-o-出现的位置"><a href="#案例一：找到这个字符串中所有的-o-出现的位置" class="headerlink" title="案例一：找到这个字符串中所有的 o 出现的位置"></a>案例一：找到这个字符串中所有的 o 出现的位置</h2><p>“hello wod odd ott fbo nhyo”</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hello wod odd ott fbo nhyo"</span>;</span><br><span class="line"><span class="keyword">var</span> index = <span class="number">0</span>;</span><br><span class="line"><span class="comment">//var index = str.indexOf('o',index);</span></span><br><span class="line"><span class="comment">//index++;</span></span><br><span class="line"><span class="keyword">while</span>((index = str.indexOf(<span class="string">'o'</span>,index))!=<span class="number">-1</span>)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(index);</span><br><span class="line">    index++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="案例一升级版：找到这个字符串中所有的“你好啊”出现的位置"><a href="#案例一升级版：找到这个字符串中所有的“你好啊”出现的位置" class="headerlink" title="案例一升级版：找到这个字符串中所有的“你好啊”出现的位置"></a>案例一升级版：找到这个字符串中所有的“你好啊”出现的位置</h2><p>“李白你好啊你好啊杜甫说你好啊我也说你好啊”</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"李白你好啊你好啊杜甫说你好啊我也说你好啊"</span>;</span><br><span class="line"><span class="keyword">var</span> index = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> key = <span class="string">'你好啊'</span>;</span><br><span class="line"><span class="keyword">while</span>((index = str.indexOf(key,index))!=<span class="number">-1</span>)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(index);</span><br><span class="line">    index+=key.length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>所以案例一的代码可以进行一下优化，如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hello wod odd ott fbo nhyo"</span>;</span><br><span class="line"><span class="keyword">var</span> index = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> key = <span class="string">'o'</span>;</span><br><span class="line"><span class="keyword">while</span>((index = str.indexOf(key,index))!=<span class="number">-1</span>)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(index);</span><br><span class="line">    index+=key.length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="案例二：找到字符串中每个字符出现了多少次"><a href="#案例二：找到字符串中每个字符出现了多少次" class="headerlink" title="案例二：找到字符串中每个字符出现了多少次"></a>案例二：找到字符串中每个字符出现了多少次</h2><p>我写的臃肿版：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str3 = <span class="string">"whatOareYyouYnoYshaHleiHoHmyHgod"</span>;</span><br><span class="line"><span class="keyword">var</span> length = str3.length;</span><br><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; length; i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; arr.length; j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[j]==str3[i])&#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(j == arr.length)&#123;</span><br><span class="line">        arr[arr.length]=str3[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line"><span class="keyword">var</span> num = [];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">    num[i]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; length; j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(str3[j]==arr[i])&#123;</span><br><span class="line">            num[i]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'字符'</span>+arr[i]+<span class="string">'出现了'</span>+num[i]+<span class="string">'次'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>简洁版：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str3 = <span class="string">"whatOareYyouYnoYshaHleiHoHmyHgod"</span>;</span><br><span class="line">  <span class="comment">//第一步:把所有的字母全部变成小写</span></span><br><span class="line">  str3 = str3.toLocaleLowerCase();</span><br><span class="line">  <span class="comment">//第二步:创建一个空对象,目的:把字母作为键,次数作为值</span></span><br><span class="line">  <span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">  <span class="comment">//第三步,遍历字符串,获取每个字母</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; str3.length; i++) &#123;</span><br><span class="line">    <span class="comment">//判断obj这个对象中有没有这个字母(字母---键)</span></span><br><span class="line">    <span class="keyword">var</span> key = str3[i];<span class="comment">//每个字母</span></span><br><span class="line">    <span class="keyword">if</span> (obj[key]) &#123;<span class="comment">//判断obj中有没有这个键</span></span><br><span class="line">      <span class="comment">//对象中有这个字母了</span></span><br><span class="line">      obj[key]++;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">//对象中没有这个字母,那就把字母加到对象中,并且给这个字母一个出现的次数,默认1次</span></span><br><span class="line">      obj[key] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//遍历对象,显示每个字母的次数</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> obj)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(key+<span class="string">"这个字母出现了"</span>+obj[key]+<span class="string">"次"</span>);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
+            <main class="main index-page">
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/[object Object]2019/01/07/JavaScript中的值传递和地址传递（引用传递）.html">
+            
+                <span>JavaScript中的值传递和地址传递（引用传递）</span>
+        </a>
+        <div class="abstract-content">
+            简单类型和复杂类型我们先来理清一下几种数据类型。原始的数据类型就有： number,string,boolean,undefined, null,object。进一步划分为值类型和引用类型。
+值...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/07</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
+    
+</div>
+            
+        </div>
     </article>
-    <!-- license  -->
     
     <!-- paginator  -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-                <div class="nextSlogan">Next Post</div>
-                <a href="/[object Object]2019/01/12/浅谈js匿名函数.html" title="浅谈js匿名函数">
-                    <div class="nextTitle">浅谈js匿名函数</div>
-                </a>
-            
-        </li>
-        <li class="previous">
-            
-                <div class="prevSlogan">Previous Post</div>
-                <a href="/[object Object]2019/01/07/JavaScript中的值传递和地址传递（引用传递）.html" title="JavaScript中的值传递和地址传递（引用传递）">
-                    <div class="prevTitle">JavaScript中的值传递和地址传递（引用传递）</div>
-                </a>
-            
-        </li>
-    </ul>
-    <!-- 评论插件 -->
-    <!-- 来必力City版安装代码 -->
-
-<!-- City版安装代码已完成 -->
     
+    <nav class="page-nav">
+        <a class="extend prev" rel="prev" href="/archives/2019/page/2/">&#60; PREV</a><a class="page-number" href="/archives/2019/">1</a><a class="page-number" href="/archives/2019/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
     
-    <!-- partial('_partial/comment/changyan') -->
-    <!--PC版-->
-
-
-    
-    
-
-    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -553,24 +477,6 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
-    
-    <div class="toc-wrapper" style=
-    
-
-
-
-
-
-
-
-top:50vh;
-
-    >
-        <div class="toc-catalog">
-            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
-        </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#案例一：找到这个字符串中所有的-o-出现的位置"><span class="toc-number">1.</span> <span class="toc-text">案例一：找到这个字符串中所有的 o 出现的位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#案例一升级版：找到这个字符串中所有的“你好啊”出现的位置"><span class="toc-number">2.</span> <span class="toc-text">案例一升级版：找到这个字符串中所有的“你好啊”出现的位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#案例二：找到字符串中每个字符出现了多少次"><span class="toc-number">3.</span> <span class="toc-text">案例二：找到字符串中每个字符出现了多少次</span></a></li></ol>
-    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1288,8 +1194,6 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
-    
-        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

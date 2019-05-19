@@ -22,7 +22,7 @@
     <meta name="description" content="我的个人博客">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>JS搜索框自动提示 · Dunteng&#39;s Blog</title>
+    <title>啥是前端工程化、模块化、组件化？ · Dunteng&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -232,7 +232,7 @@
                 <a href="/">Dunteng&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">JS搜索框自动提示</a>
+                <a href="#" class="post-name">啥是前端工程化、模块化、组件化？</a>
             </div>
     </div>
     
@@ -256,13 +256,13 @@ height:50vh;
     <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(https://ws1.sinaimg.cn/large/006ttwEMgy1g1cks5j3foj318g0dw77u.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(https://raw.githubusercontent.com/Dunteng/images/master/images/photo-1555728333-998d1febe0b6.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            JS搜索框自动提示
+            啥是前端工程化、模块化、组件化？
             <!-- 404 -->
             
         </h1>
@@ -279,22 +279,14 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
-                    <div class="post-intro-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="小案例">小案例</a>
-    
-</div>
-                
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">524</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">193</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/01/13</span>
+                    <span class="post-intro-time">2019/05/10</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -418,14 +410,12 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p><br></p>
-<p>效果展示：</p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g08f80sqi4g30e80bq1kx.gif" alt=""></p>
-<p>html部分：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">  &lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">    <span class="selector-id">#box</span> &#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">450px</span>;</span><br><span class="line">      <span class="attribute">margin</span>: <span class="number">200px</span> auto;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-id">#txt</span> &#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">350px</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-id">#pop</span> &#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">350px</span>;</span><br><span class="line">      <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-id">#pop</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">      <span class="attribute">margin</span>: <span class="number">10px</span>;</span><br><span class="line">      <span class="attribute">padding</span>: <span class="number">0px</span>;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">      <span class="attribute">list-style-type</span>: none;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-id">#pop</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id="box"&gt;</span><br><span class="line">  &lt;input type="text" id="txt" value=""&gt;</span><br><span class="line">  &lt;input type="button" value="搜索" id="btn"&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<p><br>JavaScript：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">my$</span>(<span class="params">id</span>)</span>&#123; <span class="keyword">return</span> <span class="built_in">document</span>.getElementById(id);&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">setInnerText</span>(<span class="params">element, text</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> element.textContent == <span class="string">"undefined"</span>) &#123;</span><br><span class="line">        element.innerText = text;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        element.textContent = text;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> keyWords = [</span><br><span class="line">  <span class="string">"小林才是最纯洁的"</span>, </span><br><span class="line">  <span class="string">"小林才是最帅的"</span>, </span><br><span class="line">  <span class="string">"小明是最胖的"</span>, </span><br><span class="line">  <span class="string">"小明是最高的"</span>, </span><br><span class="line">  <span class="string">"三国是我最喜欢的"</span>, </span><br><span class="line">  <span class="string">"三星note7会爆炸"</span>,</span><br><span class="line">  <span class="string">"苹果好吃"</span>, </span><br><span class="line">  <span class="string">"苹果此次召回还是没有中国"</span>];</span><br><span class="line">  <span class="comment">//获取文本框注册键盘抬起事件</span></span><br><span class="line">  my$(<span class="string">"txt"</span>).onkeyup = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//每一次的键盘抬起都判断页面中有没有这个div</span></span><br><span class="line">    <span class="keyword">if</span>(my$(<span class="string">"dv"</span>))&#123;</span><br><span class="line">      <span class="comment">//删除一次</span></span><br><span class="line">      my$(<span class="string">"box"</span>).removeChild(my$(<span class="string">"dv"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//获取文本框输入的内容</span></span><br><span class="line">    <span class="keyword">var</span> text = <span class="keyword">this</span>.value;</span><br><span class="line">    <span class="comment">//临时数组--空数组-------&gt;存放对应上的数据</span></span><br><span class="line">    <span class="keyword">var</span> tempArr = [];</span><br><span class="line">    <span class="comment">//把文本框输入的内容和数组中的每个数据对比</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; keyWords.length; i++) &#123;</span><br><span class="line">      <span class="comment">//是否是最开始出现的</span></span><br><span class="line">      <span class="keyword">if</span> (keyWords[i].indexOf(text) == <span class="number">0</span>) &#123;</span><br><span class="line">        tempArr.push(keyWords[i]);<span class="comment">//追加</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果文本框是空的,临时数组是空的,不用创建div</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.value.length == <span class="number">0</span> || tempArr.length == <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="comment">//如果页面中有这个div,删除这个div</span></span><br><span class="line">      <span class="keyword">if</span> (my$(<span class="string">"dv"</span>)) &#123;</span><br><span class="line">        my$(<span class="string">"box"</span>).removeChild(my$(<span class="string">"dv"</span>));</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//创建div,把div加入id为box的div中</span></span><br><span class="line">    <span class="keyword">var</span> dvObj = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span><br><span class="line">    my$(<span class="string">"box"</span>).appendChild(dvObj);</span><br><span class="line">    dvObj.id = <span class="string">"dv"</span>;</span><br><span class="line">    dvObj.style.width = <span class="string">"350px"</span>;</span><br><span class="line">    <span class="comment">//dvObj.style.height="100px";//肯定是不需要的，由内容撑开</span></span><br><span class="line">    dvObj.style.border = <span class="string">"1px solid green"</span>;</span><br><span class="line">    <span class="comment">//循环遍历临时数组,创建对应的p标签</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; tempArr.length; i++) &#123;</span><br><span class="line">      <span class="comment">//创建p标签</span></span><br><span class="line">      <span class="keyword">var</span> pObj = <span class="built_in">document</span>.createElement(<span class="string">"p"</span>);</span><br><span class="line">      <span class="comment">//把p加到div中</span></span><br><span class="line">      dvObj.appendChild(pObj);</span><br><span class="line">      setInnerText(pObj, tempArr[i]);</span><br><span class="line">      pObj.style.margin = <span class="number">0</span>;</span><br><span class="line">      pObj.style.padding = <span class="number">0</span>;</span><br><span class="line">      pObj.style.cursor = <span class="string">"pointer"</span>;</span><br><span class="line">      pObj.style.marginTop = <span class="string">"5px"</span>;</span><br><span class="line">      pObj.style.marginLeft = <span class="string">"5px"</span>;</span><br><span class="line">      <span class="comment">//鼠标进入</span></span><br><span class="line">      pObj.onmouseover = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.style.backgroundColor = <span class="string">"yellow"</span>;</span><br><span class="line">      &#125;;</span><br><span class="line">      <span class="comment">//鼠标离开</span></span><br><span class="line">      pObj.onmouseout = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.style.backgroundColor = <span class="string">""</span>;</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<p><br><br><br></p>
+        <h3 id="工程化"><a href="#工程化" class="headerlink" title="工程化"></a>工程化</h3><p><strong>前端工程化</strong>是根据业务特点，将前端开发流程规范化，标准化，它包括了开发流程，技术选型，代码规范，构建发布等，用于提升前端工程师的<strong>开发效率和代码质量</strong>。前端工程化是一种思想，模块化和组件化可以看作是工程化的具体体现。</p>
+<h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><p>模块化最直观的一点就是<strong>封装模块，代码复用</strong>，比如封装轮播图的模块。</p>
+<h3 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h3><p>组件化可以看作是页面上 UI 的拆分，比如一个导航条、下拉列表、侧边栏等等，都可以看作是组件化。</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/images/1558253536.jpg" alt=""></p>
+<p>模块化和组件化都有一个特点：<strong>高内聚，低耦合</strong>    </p>
+<p>（完）</p>
 
     </article>
     <!-- license  -->
@@ -434,17 +424,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/[object Object]2019/01/13/自定义属性操作案例.html" title="自定义属性操作案例">
-                    <div class="nextTitle">自定义属性操作案例</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/[object Object]2019/01/13/绑定解绑事件兼容代码.html" title="绑定/解绑事件兼容代码">
-                    <div class="prevTitle">绑定/解绑事件兼容代码</div>
+                <a href="/[object Object]2019/04/03/ES6数据劫持.html" title="ES6数据劫持proxy&reflect">
+                    <div class="prevTitle">ES6数据劫持proxy&reflect</div>
                 </a>
             
         </li>
@@ -565,7 +550,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#工程化"><span class="toc-number">1.</span> <span class="toc-text">工程化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模块化"><span class="toc-number">2.</span> <span class="toc-text">模块化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组件化"><span class="toc-number">3.</span> <span class="toc-text">组件化</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

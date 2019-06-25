@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="O.G.園長">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="O.G.園長">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="我的个人博客">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Vue音乐播放器(二) · Dunteng&#39;s Blog</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
+    
+        <!-- algolia -->
+        <script>
+            
+            var hits = JSON.parse('{"per_page":10}')
+            var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
+
+            var algolia = {
+                applicationID: 'GX48388M0Z',
+                apiKey: '24910416df90ea04217402b818109cef',
+                indexName: 'index',
+                hits: hits,
+                labels: labels
+            }
+        </script>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Dunteng&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Vue音乐播放器(二)</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">Dunteng's Blog.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/background/photo-1544166829-49960080435f.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            Vue音乐播放器(二)
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">3.7k</span>阅读时长: <span class="post-count reading-time">16 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/06/05</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="推荐页面开发"><a href="#推荐页面开发" class="headerlink" title="推荐页面开发"></a>推荐页面开发</h1><h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p><a href="https://github.com/Dunteng/Vue-Music-WebApp/tree/v3/vue-music" target="_blank" rel="noopener">完成轮播图时</a></p>
+<p><a href="https://github.com/Dunteng/Vue-Music-WebApp/tree/v4/vue-music" target="_blank" rel="noopener">完成歌单列表时</a></p>
+<p><br><br></p>
+<h2 id="better-scroll插件"><a href="#better-scroll插件" class="headerlink" title="better-scroll插件"></a>better-scroll插件</h2><p><a href="https://github.com/ustbhuangyi/better-scroll/blob/master/README_zh-CN.md" target="_blank" rel="noopener">中文文档</a></p>
+<p><a href="https://ustbhuangyi.github.io/better-scroll/#/" target="_blank" rel="noopener">1.x Docs</a></p>
+<p><a href="https://better-scroll.github.io/docs/en-US/" target="_blank" rel="noopener">2.x Docs</a></p>
+<p>之后的轮播图组件和列表滚动组件都会用到这个插件。这个插件还挺牛逼的，9400+stars。</p>
+<p><br><br></p>
+<h2 id="QQ音乐的api"><a href="#QQ音乐的api" class="headerlink" title="QQ音乐的api"></a>QQ音乐的api</h2><ul>
+<li><p>jsonp用到的：</p>
+<p><a href="https://c.y.qq.com/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg" target="_blank" rel="noopener">https://c.y.qq.com/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg</a></p>
+</li>
+<li><p>axios/Ajax用到的：</p>
+<p>在webpack.dev.conf.js中配置，见下文</p>
+</li>
+</ul>
+<p><br><br></p>
+<h2 id="【重点难点一】recommend页面jsonp相关文件的编写"><a href="#【重点难点一】recommend页面jsonp相关文件的编写" class="headerlink" title="【重点难点一】recommend页面jsonp相关文件的编写"></a>【重点难点一】recommend页面jsonp相关文件的编写</h2><h3 id="src-common-js-jsonp-js-promise封装"><a href="#src-common-js-jsonp-js-promise封装" class="headerlink" title="src/common/js/jsonp.js  promise封装"></a>src/common/js/jsonp.js  promise封装</h3><p>本项目该部分使用jsonp技术获取数据，解决跨域问题。</p>
+<p>这里使用一个封装好的<a href="https://github.com/webmodules/jsonp" target="_blank" rel="noopener">jsonp插件</a>。这是它的API :</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuemusic/1560407149676.png" alt="1560407149676"></p>
+<p>利用这个插件里面提供的api进行<strong>Promise</strong>的改写—-&gt; jsonp.js的创建。</p>
+<p>先<code>npm i jsonp</code>进行jsonp插件的安装。</p>
+<p>之后会经常用到它，把他放在js文件夹下，然后编写src/common/js/jsonp.js:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> originJsonp <span class="keyword">from</span> <span class="string">'jsonp'</span></span><br><span class="line"><span class="comment">/* jsonp2这个函数的三个参数，url是一个干净的不带参数的url地址，data表示随同url传过去的参数，</span></span><br><span class="line"><span class="comment">  因为jsonp这个插件要求的url是不支持object类型的的data参数的，所以我们需要先将data里面的数据拼接到url上。</span></span><br><span class="line"><span class="comment">  第三个参数option对应jsonp插件api里的opts参数</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">jsonp2</span>(<span class="params">url, data, option</span>) </span>&#123;</span><br><span class="line">  url += (url.indexOf(<span class="string">'?'</span>) &lt; <span class="number">0</span> ? <span class="string">'?'</span> : <span class="string">'&amp;'</span>) + param(data)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    originJsonp(url, option, (err, data) =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (!err) &#123;</span><br><span class="line">        resolve(data)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        reject(err)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">param</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> url = <span class="string">''</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> data) &#123;</span><br><span class="line">    <span class="keyword">let</span> value = data[k] !== <span class="literal">undefined</span> ? data[k] : <span class="string">''</span></span><br><span class="line">    url += <span class="string">'&amp;'</span> + k + <span class="string">'='</span> + <span class="built_in">encodeURIComponent</span>(value)<span class="comment">/* encodeURIComponent(value)进行字符转义，如encodeURIComponent('百度')转为"%E7%99%BE%E5%BA%A6" */</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> url ? url.substring(<span class="number">1</span>) : <span class="string">''</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>我们把请求api数据相关的js放在<code>src/api</code>目录下</p>
+<p><br></p>
+<h3 id="src-api-config-js"><a href="#src-api-config-js" class="headerlink" title="src/api/config.js"></a>src/api/config.js</h3><p>这部分主要就是模拟qq音乐api的参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> commonParams = &#123;</span><br><span class="line">  g_tk: <span class="number">5381</span>,</span><br><span class="line">  inCharset: <span class="string">'utf-8'</span>,</span><br><span class="line">  outCharset: <span class="string">'utf-8'</span>,</span><br><span class="line">  notice: <span class="number">0</span>,</span><br><span class="line">  format: <span class="string">'jsonp'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> options = &#123;</span><br><span class="line">  param: <span class="string">'jsonpCallback'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> ERR_OK = <span class="number">0</span>  <span class="comment">/* 语义化一下 */</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="src-api-recommend-js"><a href="#src-api-recommend-js" class="headerlink" title="src/api/recommend.js:"></a>src/api/recommend.js:</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> jsonp <span class="keyword">from</span> <span class="string">'common/js/jsonp'</span></span><br><span class="line"><span class="keyword">import</span> &#123;commonParams, options&#125; <span class="keyword">from</span> <span class="string">'./config'</span></span><br><span class="line"><span class="comment">// import axios from 'axios'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getRecommend</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> url = <span class="string">'https://c.y.qq.com/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg'</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> data = <span class="built_in">Object</span>.assign(&#123;&#125;, commonParams, &#123;</span><br><span class="line">    platform: <span class="string">'h5'</span>,</span><br><span class="line">    uin: <span class="number">0</span>,</span><br><span class="line">    needNewCode: <span class="number">1</span></span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> jsonp(url, data, options)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="webpack-base-conf-js"><a href="#webpack-base-conf-js" class="headerlink" title="webpack.base.conf.js"></a>webpack.base.conf.js</h3><p>添加多两个别名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">alias: &#123;</span><br><span class="line">  &apos;@&apos;: resolve(&apos;src&apos;),</span><br><span class="line">  &apos;common&apos;: resolve(&apos;src/common&apos;),</span><br><span class="line">  &apos;components&apos;: resolve(&apos;src/components&apos;),</span><br><span class="line">  &apos;base&apos;: resolve(&apos;src/base&apos;),</span><br><span class="line">  &apos;api&apos;: resolve(&apos;src/api&apos;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="recommend-vue"><a href="#recommend-vue" class="headerlink" title="recommend.vue"></a>recommend.vue</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;recommend&quot; ref=&quot;recommend&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/ecmascript-6&quot;&gt;</span><br><span class="line">  import &#123;getRecommend&#125; from &apos;api/recommend&apos;</span><br><span class="line">  import &#123;ERR_OK&#125; from &apos;api/config&apos;</span><br><span class="line"></span><br><span class="line">  export default &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        recommends: [],</span><br><span class="line">        discList: []</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    created() &#123;</span><br><span class="line">      this._getRecommend()</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      _getRecommend() &#123;</span><br><span class="line">        getRecommend().then((res) =&gt; &#123;</span><br><span class="line">          if (res.code === ERR_OK) &#123;</span><br><span class="line">            this.recommends = res.data.slider</span><br><span class="line">            console.log(res);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped lang=&quot;stylus&quot; rel=&quot;stylesheet/stylus&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>看一下这时候有没有抓取到数据：</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuemusic/1560411184376.png" alt="1560411184376"></p>
+<p><br><br></p>
+<h2 id="轮播图组件"><a href="#轮播图组件" class="headerlink" title="轮播图组件"></a>轮播图组件</h2><h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><p>这里用到一个插件<a href="https://github.com/ustbhuangyi/better-scroll" target="_blank" rel="noopener">better-scroll</a></p>
+<p><a href="https://ustbhuangyi.github.io/better-scroll/doc/zh-hans/#better-scroll%20%E6%98%AF%E4%BB%80%E4%B9%88" target="_blank" rel="noopener">better-scroll文档</a></p>
+<p><br><br></p>
+<h3 id="插播一个小技巧：抽出一个“添加类名”组件dom-js"><a href="#插播一个小技巧：抽出一个“添加类名”组件dom-js" class="headerlink" title="插播一个小技巧：抽出一个“添加类名”组件dom.js"></a>插播一个小技巧：抽出一个“添加类名”组件dom.js</h3><p>在轮播图组件的编写过程中，编写 _setSliderWidth() 方法的代码中，要遍历某个节点的子节点，给它加上一个类名，这是一个常见的操作。比起直接在 _setSliderWidth() 里面实现，最好的方法是把该操作抽离成为一个js文件。</p>
+<p>于是新建了src/common/js/dom.js，在里面实现了添加类名的操作并暴露出去：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * dom操作相关的代码</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">hasClass</span>(<span class="params">el, className</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'(^|\\s)'</span> + className + <span class="string">'(\\s|$)'</span>)</span><br><span class="line">    <span class="keyword">return</span> reg.test(el.className)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">addClass</span>(<span class="params">el, className</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (hasClass(el, className)) &#123;</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> newClass = el.className.split(<span class="string">' '</span>)</span><br><span class="line">    newClass.push(className)</span><br><span class="line">    el.className = newClass.join(<span class="string">' '</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>而这个dom.js以后就专门来存放常见的dom操作。</p>
+<p><br><br></p>
+<h3 id="踩坑记录"><a href="#踩坑记录" class="headerlink" title="踩坑记录"></a>踩坑记录</h3><ol>
+<li><p>recommend.vue中引用slider组件，而slider.vue中的 <code>_setSliderWidth()</code>方法里面循环渲染dom节点。但是我一开始的recommend.vue的代码中没有实现判断是否成功获取到了数据并渲染了节点，因为获取的是真实数据存在异步过程，如果没有加上这句<code>v-if=&quot;recommends.length&quot;</code>的话，可能存在recommend.vue页面还没有成功获取数据渲染节点，而引用slider组件导致slider中 <code>_setSliderWidth()</code>方法里面循环渲染dom节点出错，最终导致页面报销的状况。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;recommend&quot; ref=&quot;recommend&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;recommend-content&quot;&gt;</span><br><span class="line">        &lt;div v-if=&quot;recommends.length&quot; class=&quot;slider-wrapper&quot;&gt;&lt;!-- 注意这里用了v-if来确保只有当成功获取到数据后才将slider组件添加上，从而保证slider中的循环渲染成功 --&gt;</span><br><span class="line">            &lt;slider&gt;</span><br><span class="line">                &lt;div v-for=&quot;item in recommends&quot; :key=&quot;item.id&quot;&gt;</span><br><span class="line">                    &lt;a :href=&quot;item.linkUrl&quot;&gt;</span><br><span class="line">                        &lt;img :src=&quot;item.picUrl&quot; alt=&quot;&quot;&gt;</span><br><span class="line">                    &lt;/a&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            &lt;/slider&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+</li>
+<li><p>better-scroll默认会复制轮播图的首尾两张图（这里说成“图”不太准确，姑且这么说），因此通过api获得的轮播图图片只有5张，但是在使用better-scroll的时候生成了7个节点。相应的在slider.vue的<code>_setSliderWidth</code>中要设置增加两张图的宽度：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">_setSliderWidth(isResize) &#123;</span><br><span class="line">  <span class="keyword">this</span>.children = <span class="keyword">this</span>.$refs.sliderGroup.children;</span><br><span class="line">   </span><br><span class="line">  <span class="keyword">let</span> width = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">let</span> sliderWidth = <span class="keyword">this</span>.$refs.slider.clientWidth;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.children.length; i++) &#123;</span><br><span class="line">    <span class="keyword">let</span> child = <span class="keyword">this</span>.children[i];</span><br><span class="line">    addClass(child, <span class="string">"slider-item"</span>);</span><br><span class="line">   </span><br><span class="line">    child.style.width = sliderWidth + <span class="string">"px"</span>;</span><br><span class="line">    width += sliderWidth;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.loop &amp;&amp; !isResize) &#123;</span><br><span class="line">    width += <span class="number">2</span> * sliderWidth; <span class="comment">/* 加多左右两个轮播图的宽度，为了实现无缝流畅滚动，不会噌的一下跳过去 */</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.$refs.sliderGroup.style.width = width + <span class="string">"px"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+</li>
+<li><p>有个<strong>bug</strong></p>
+<p>无法实现自动的无缝轮播，轮播到最后一张的时候就不动了，必须手动划一下才能无缝轮播。暂未解决，怀疑是better-scroll的问题。目前的妥协是最后一张直接跳转到第一张，就很难看。。。</p>
+<p><br></p>
+</li>
+<li><p>实现窗口改变的时候自适应</p>
+<p>在mounted钩子函数中监听一下窗口的改变事件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">/* 监听窗口改变事件 */</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'resize'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> (!<span class="keyword">this</span>.slider) &#123;<span class="comment">/* 如果slider还未初始化，直接退出 */</span></span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>._setSliderWidth()</span><br><span class="line">  <span class="keyword">this</span>.slider.refresh()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><br></p>
+</li>
+<li><p>优化：减少重复的数据请求</p>
+<p>打开项目的时候轮播图会发起数据请求，但是当从首页推荐页切换路由到其他页面，再从其他页面切换回轮播图所在的首页推荐页面时，它又重新刷新发起了数据请求，这是没必要的，而且降低了性能。</p>
+<p>可以使用<code>&lt;keepalive&gt;</code>标签将<code>&lt;router-view&gt;</code>包裹起来，将其dom缓存到内存中。这就避免了上述的情况。</p>
+<p><br></p>
+</li>
+<li><p>优化：beforeDestroy清除计时器释放内存</p>
+<p>路由切换的时候会触发vue的destroy，那么最好时把slider的计算器清除了以释放内存</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">beforeDestroy() &#123;</span><br><span class="line">  clearTimeout(this.timer)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><br><br></p>
+<h2 id="【重点难点二】axios与后端接口代理"><a href="#【重点难点二】axios与后端接口代理" class="headerlink" title="【重点难点二】axios与后端接口代理"></a>【重点难点二】axios与后端接口代理</h2><p>先安装axios依赖</p>
+<h3 id="修改代理"><a href="#修改代理" class="headerlink" title="修改代理"></a>修改代理</h3><p>在使用QQ音乐推荐页歌单列表的api时，发现无法通过ajax获取到。关键点是QQ音乐设置了请求头中的Host和Referer进行了限制：</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuemusic/1561392420142.png" alt="1561392420142"></p>
+<p>因此需要解决这个跨域的问题。方法是<strong>修改代理</strong>。</p>
+<p><br></p>
+<h3 id="修改webpack-dev-conf-js"><a href="#修改webpack-dev-conf-js" class="headerlink" title="修改webpack.dev.conf.js"></a>修改webpack.dev.conf.js</h3><p><a href="https://github.com/ustbhuangyi/vue-music/issues/82" target="_blank" rel="noopener">【相关参考】</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">  devServer: &#123;</span><br><span class="line">    before(app) &#123;</span><br><span class="line">      app.get(<span class="string">'/api/getDiscList'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> url = <span class="string">'https://c.y.qq.com/splcloud/fcgi-bin/fcg_get_diss_by_tag.fcg'</span></span><br><span class="line">        axios.get(url, &#123;</span><br><span class="line">          headers: &#123;</span><br><span class="line">            referer: <span class="string">'https://c.y.qq.com/'</span>,</span><br><span class="line">            host: <span class="string">'c.y.qq.com'</span></span><br><span class="line">          &#125;,</span><br><span class="line">          params: req.query</span><br><span class="line">        &#125;).then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">          res.json(response.data)</span><br><span class="line">        &#125;).catch(<span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(e)</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">      </span><br><span class="line">      ...</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="src-api-recommend-js-1"><a href="#src-api-recommend-js-1" class="headerlink" title="src/api/recommend.js"></a>src/api/recommend.js</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> jsonp <span class="keyword">from</span> <span class="string">'common/js/jsonp'</span></span><br><span class="line"><span class="keyword">import</span> &#123; commonParams, options &#125; <span class="keyword">from</span> <span class="string">'./config'</span></span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getRecommend</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> url = <span class="string">'https://c.y.qq.com/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg'</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> data = <span class="built_in">Object</span>.assign(&#123;&#125;, commonParams, &#123;</span><br><span class="line">        platform: <span class="string">'h5'</span>,</span><br><span class="line">        uin: <span class="number">0</span>,</span><br><span class="line">        needNewCode: <span class="number">1</span></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> jsonp(url, data, options)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getDiscList</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> url = <span class="string">'/api/getDiscList'</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> data = <span class="built_in">Object</span>.assign(&#123;&#125;, commonParams, &#123;</span><br><span class="line">        platform: <span class="string">'yqq'</span>,</span><br><span class="line">        hostUin: <span class="number">0</span>,</span><br><span class="line">        sin: <span class="number">0</span>,</span><br><span class="line">        ein: <span class="number">29</span>,</span><br><span class="line">        sortId: <span class="number">5</span>,</span><br><span class="line">        needNewCode: <span class="number">0</span>,</span><br><span class="line">        categoryId: <span class="number">10000000</span>,</span><br><span class="line">        rnd: <span class="built_in">Math</span>.random(),</span><br><span class="line">        format: <span class="string">'json'</span></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> axios.get(url, &#123;</span><br><span class="line">        params: data</span><br><span class="line">    &#125;).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(res.data)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后在recommend.vue中调用getDiscList()方法就能成功获取到数据了。</p>
+<p><br></p>
+<p>这时候启动项目，可以在chrome Network中看到发送了Ajax请求并成功获得了数据：</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuemusic/1560566255358.png" alt="1560566255358"></p>
+<p><br><br></p>
+<h2 id="歌单列表组件开发"><a href="#歌单列表组件开发" class="headerlink" title="歌单列表组件开发"></a>歌单列表组件开发</h2><p>通过上一步改变qq音乐api的接口代理，在recommend.vue调用getDiscList方法获取到数据，并渲染到页面上。</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuemusic/1560578229727.png" alt="1560578229727"></p>
+<p>但是到这一步为止，页面尚无法上下滑动。还是需要better-scroll组件来创建一个歌单列表滚动组件。</p>
+<p><br></p>
+<h3 id="src-base-scroll-scroll-vue"><a href="#src-base-scroll-scroll-vue" class="headerlink" title="src/base/scroll/scroll.vue"></a>src/base/scroll/scroll.vue</h3><p>创建/src/base/scroll/scroll.vue:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div ref=&quot;wrapper&quot;&gt;</span><br><span class="line">    &lt;slot&gt;&lt;/slot&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/ecmascript-6&quot;&gt;</span><br><span class="line">  import BScroll from &apos;better-scroll&apos;</span><br><span class="line"></span><br><span class="line">  export default &#123;</span><br><span class="line">    props: &#123;</span><br><span class="line">      probeType: &#123;</span><br><span class="line">        type: Number,</span><br><span class="line">        default: 1</span><br><span class="line">      &#125;,</span><br><span class="line">      click: &#123;</span><br><span class="line">        type: Boolean,</span><br><span class="line">        default: true</span><br><span class="line">      &#125;,</span><br><span class="line">      data: &#123;</span><br><span class="line">        type: Array,</span><br><span class="line">        default: null</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted() &#123;</span><br><span class="line">      setTimeout(() =&gt; &#123;</span><br><span class="line">        this._initScroll()</span><br><span class="line">      &#125;, 20)</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      _initScroll() &#123;</span><br><span class="line">        if (!this.$refs.wrapper) &#123;</span><br><span class="line">          return</span><br><span class="line">        &#125;</span><br><span class="line">        this.scroll = new BScroll(this.$refs.wrapper, &#123;</span><br><span class="line">          probeType: this.probeType,</span><br><span class="line">          click: this.click</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;,</span><br><span class="line">      enable() &#123;</span><br><span class="line">        this.scroll &amp;&amp; this.scroll.enable()/* better-scroll的api，启用 better-scroll, 默认 开启 */</span><br><span class="line">      &#125;,</span><br><span class="line">      disable() &#123;</span><br><span class="line">        this.scroll &amp;&amp; this.scroll.disable()/* better-scroll的api，禁用 better-scroll，DOM 事件（如 touchstart、touchmove、touchend）的回调函数不再响应。 */</span><br><span class="line">      &#125;,</span><br><span class="line">      refresh() &#123;</span><br><span class="line">        this.scroll &amp;&amp; this.scroll.refresh()/* 重新计算 better-scroll，当 DOM 结构发生变化的时候务必要调用确保滚动的效果正常。 */</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    watch: &#123;</span><br><span class="line">      data() &#123;  /* 监听数据改变立即刷新 */</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">          this.refresh()</span><br><span class="line">        &#125;, 20)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped lang=&quot;stylus&quot; rel=&quot;stylesheet/stylus&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="src-components-recommend-recommend-vue"><a href="#src-components-recommend-recommend-vue" class="headerlink" title="src/components/recommend/recommend.vue"></a>src/components/recommend/recommend.vue</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;recommend&quot; ref=&quot;recommend&quot;&gt;</span><br><span class="line">    &lt;scroll ref=&quot;scroll&quot; class=&quot;recommend-content&quot; :data=&apos;discList&apos;&gt;&lt;!-- 注意这里的:data如果没有加的话依旧是不能上下滑动的，因为scroll是在mounted时候初始化，由于数据获取存在异步性，可能mounted的时候尚未取到数据，整个列表dom的高度是没有被撑开的以至于better-scroll无法正确初始化。所以需要传入一个discList数据（discList有说明数据已经获取到了）触发scroll的watch里面的refresh --&gt;</span><br><span class="line">      &lt;div&gt; &lt;!-- 注意，better-scroll的scroll标签下只能是一个div包裹全部，如果这个div不把轮播图和列表都包裹起来的话，效果是只有歌单列表滚动，轮播图是固定的，那就糟了 --&gt;</span><br><span class="line">      &lt;div v-if=&quot;recommends.length&quot; class=&quot;slider-wrapper&quot;&gt;</span><br><span class="line">        &lt;!-- 注意这里用了v-if来确保只有当成功获取到数据后才将slider组件添加上，从而保证slider中的循环渲染成功 --&gt;</span><br><span class="line">        &lt;slider&gt;</span><br><span class="line">          &lt;div v-for=&quot;item in recommends&quot; :key=&quot;item.id&quot;&gt;</span><br><span class="line">            &lt;a :href=&quot;item.linkUrl&quot;&gt;</span><br><span class="line">              &lt;img  @load=&quot;loadImage&quot; :src=&quot;item.picUrl&quot;&gt;&lt;!-- 通过@load事件监听图片加载完成了没有，一旦获加载完就refresh scroll --&gt;</span><br><span class="line">            &lt;/a&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/slider&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &lt;div class=&quot;recommend-list&quot;&gt;</span><br><span class="line">        &lt;h1 class=&quot;list-title&quot;&gt;热门歌单推荐&lt;/h1&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">          &lt;li class=&quot;item&quot; v-for=&quot;item in discList&quot; :key=&quot;item.dissid&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;icon&quot;&gt;</span><br><span class="line">              &lt;img :src=&quot;item.imgurl&quot; width=&quot;60&quot; height=&quot;60&quot; alt&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;text&quot;&gt;</span><br><span class="line">                &lt;h2 class=&quot;name&quot; v-html=&quot;item.creator.name&quot;&gt;&lt;/h2&gt;</span><br><span class="line">                &lt;p class=&quot;desc&quot; v-html=&quot;item.dissname&quot;&gt;&lt;/p&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">          &lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/scroll&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="这里遇到的坑"><a href="#这里遇到的坑" class="headerlink" title="这里遇到的坑"></a>这里遇到的坑</h3><ol>
+<li><p>在上述recommend.vue中提到scroll标签中:data如果没有加的话依旧是不能上下滑动的，因为scroll是在mounted时候初始化，由于数据获取存在异步性，可能mounted的时候尚未取到数据，整个列表dom的高度是没有被撑开的。所以需要传入一个discList数据（discList有说明数据已经获取到了）触发scroll的refresh</p>
+</li>
+<li><p>那为什么传discList就行？传recommends行不行？答案是不行的。虽然他们都是异步获取数据，但是discList获取的速度比recommends的获取速度慢。如果传入的是recommends，虽然recommends已经获取到了，轮播图的高度也已经撑开了，但是下方的列表discList还没有完全获取到，所以scroll在初始化的时候页面的高度计算是有误的。</p>
+</li>
+<li><p>还有一个问题，拿到recommends就万事大吉了吗？不是。</p>
+<p>对于discList歌单列表，里面的列表项是给定宽高的，所以一拿到discList就能确定宽高撑开dom。但是recommend部分的轮播图图片是没有给定宽高的，是按照百分比来设置的宽高，所以即使获得了recommends的数据，但是由于图片是通过链接引入的，这又是一个异步的过程，所以不能保证拿到了recommends的数据就能立刻加载出图片撑起宽高，在此完成之前就初始化scroll还是会出问题的。所以，可以给img标签监听load事件，一旦load就refresh scroll。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">loadImage() &#123;</span><br><span class="line">  <span class="keyword">if</span> (!<span class="keyword">this</span>.checkloaded) &#123; <span class="comment">/* 无中生有搞个checkloaded变量来监测加载完成与否，一开始默认为undefined，只要有一张加载成功就改值为true，不用每张图都触发这个方法，加载得到一张图就可以确定宽高了 */</span></span><br><span class="line">    <span class="keyword">this</span>.checkloaded = <span class="literal">true</span> </span><br><span class="line">    <span class="keyword">this</span>.$refs.scroll.refresh()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>使用checkloaded也是<strong>常见的一种优化</strong>。</p>
+<p><br></p>
+<h3 id="这里总结一下better-scroll的渲染原理吧"><a href="#这里总结一下better-scroll的渲染原理吧" class="headerlink" title="这里总结一下better-scroll的渲染原理吧"></a>这里总结一下better-scroll的渲染原理吧</h3><p>它根据初始化的时机或者refresh的时机，那个时候scroll的父元素的高度和子元素的高度之差，算到scroll可以滚动的位置，所以我们去实例化或者refresh这个scroll的时候一定要保证dom是渲染完成的，才能正确计算他们的高度。一旦我们有数据变化引起dom变化或者其他dom结构变化，一定要重新refresh这个scroll。</p>
+<p><br><br></p>
+<h2 id="懒加载vue-lazyload"><a href="#懒加载vue-lazyload" class="headerlink" title="懒加载vue-lazyload"></a>懒加载vue-lazyload</h2><h3 id="vue-lazyload"><a href="#vue-lazyload" class="headerlink" title="vue-lazyload"></a><a href="https://github.com/hilongjw/vue-lazyload" target="_blank" rel="noopener">vue-lazyload</a></h3><p><br></p>
+<h3 id="代码编写"><a href="#代码编写" class="headerlink" title="代码编写"></a>代码编写</h3><ol>
+<li><p>main.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> VueLazyLoad <span class="keyword">from</span> <span class="string">'vue-lazyload'</span></span><br><span class="line"></span><br><span class="line">Vue.use(VueLazyLoad, &#123;</span><br><span class="line">    loading: <span class="built_in">require</span>(<span class="string">'./common/image/default-ldt.png'</span>)  <span class="comment">//loading时显示的图片</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将recommend.vue中<code>img</code>标签的<code>:src</code>属性替换成<code>v-lazy</code>计即可</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuemusic/1561427554510.png" alt="1561427554510"></p>
+</li>
+</ol>
+<p><br></p>
+<h2 id="loading组件"><a href="#loading组件" class="headerlink" title="loading组件"></a>loading组件</h2><p>效果：</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuemusic/1561428758666.png" alt="1561428758666"></p>
+<p><br></p>
+<p>要搞个这个东西，提升用户体验。</p>
+<h3 id="src-base-loading-vue"><a href="#src-base-loading-vue" class="headerlink" title="src/base/loading.vue"></a>src/base/loading.vue</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;loading&quot;&gt;</span><br><span class="line">    &lt;img width=&quot;24&quot; height=&quot;24&quot; src=&quot;./loading.gif&quot;&gt;</span><br><span class="line">    &lt;p class=&quot;desc&quot;&gt;&#123;&#123;title&#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script type=&quot;text/ecmascript-6&quot;&gt;</span><br><span class="line">  export default &#123;</span><br><span class="line">    props: &#123;</span><br><span class="line">      title: &#123;</span><br><span class="line">        type: String,</span><br><span class="line">        default: &apos;正在载入...&apos;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style scoped lang=&quot;stylus&quot; rel=&quot;stylesheet/stylus&quot;&gt;</span><br><span class="line">  @import &quot;~common/stylus/variable&quot;</span><br><span class="line"></span><br><span class="line">  .loading</span><br><span class="line">    width: 100%</span><br><span class="line">    text-align: center</span><br><span class="line">    .desc</span><br><span class="line">      line-height: 20px</span><br><span class="line">      font-size: $font-size-small</span><br><span class="line">      color: $color-text-l</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>然后在recommend.vue中引用并嵌入即可。</p>
+<p><br><br></p>
+
+    </article>
+    <!-- license  -->
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/[object Object]2019/06/01/01Vue音乐播放器.html" title="Vue音乐播放器（一）">
+                    <div class="prevTitle">Vue音乐播放器（一）</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:lindunteng@gmail.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/dunteng" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/WeChat.png">
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://www.zhihu.com/people/ten-20/activities" class="iconfont-archer zhihu" target="_blank" title="zhihu"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+    
+    <span id="busuanzi_container_site_uv"><h3 style="color:#f75357;">本站访问次数: <span id="busuanzi_value_site_uv"></span> </h3></span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#推荐页面开发"><span class="toc-number">1.</span> <span class="toc-text">推荐页面开发</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#源码"><span class="toc-number">1.1.</span> <span class="toc-text">源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#better-scroll插件"><span class="toc-number">1.2.</span> <span class="toc-text">better-scroll插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#QQ音乐的api"><span class="toc-number">1.3.</span> <span class="toc-text">QQ音乐的api</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#【重点难点一】recommend页面jsonp相关文件的编写"><span class="toc-number">1.4.</span> <span class="toc-text">【重点难点一】recommend页面jsonp相关文件的编写</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#src-common-js-jsonp-js-promise封装"><span class="toc-number">1.4.1.</span> <span class="toc-text">src/common/js/jsonp.js  promise封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#src-api-config-js"><span class="toc-number">1.4.2.</span> <span class="toc-text">src/api/config.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#src-api-recommend-js"><span class="toc-number">1.4.3.</span> <span class="toc-text">src/api/recommend.js:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack-base-conf-js"><span class="toc-number">1.4.4.</span> <span class="toc-text">webpack.base.conf.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#recommend-vue"><span class="toc-number">1.4.5.</span> <span class="toc-text">recommend.vue</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#轮播图组件"><span class="toc-number">1.5.</span> <span class="toc-text">轮播图组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装依赖"><span class="toc-number">1.5.1.</span> <span class="toc-text">安装依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插播一个小技巧：抽出一个“添加类名”组件dom-js"><span class="toc-number">1.5.2.</span> <span class="toc-text">插播一个小技巧：抽出一个“添加类名”组件dom.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#踩坑记录"><span class="toc-number">1.5.3.</span> <span class="toc-text">踩坑记录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#【重点难点二】axios与后端接口代理"><span class="toc-number">1.6.</span> <span class="toc-text">【重点难点二】axios与后端接口代理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#修改代理"><span class="toc-number">1.6.1.</span> <span class="toc-text">修改代理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改webpack-dev-conf-js"><span class="toc-number">1.6.2.</span> <span class="toc-text">修改webpack.dev.conf.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#src-api-recommend-js-1"><span class="toc-number">1.6.3.</span> <span class="toc-text">src/api/recommend.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#歌单列表组件开发"><span class="toc-number">1.7.</span> <span class="toc-text">歌单列表组件开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#src-base-scroll-scroll-vue"><span class="toc-number">1.7.1.</span> <span class="toc-text">src/base/scroll/scroll.vue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#src-components-recommend-recommend-vue"><span class="toc-number">1.7.2.</span> <span class="toc-text">src/components/recommend/recommend.vue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#这里遇到的坑"><span class="toc-number">1.7.3.</span> <span class="toc-text">这里遇到的坑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#这里总结一下better-scroll的渲染原理吧"><span class="toc-number">1.7.4.</span> <span class="toc-text">这里总结一下better-scroll的渲染原理吧</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#懒加载vue-lazyload"><span class="toc-number">1.8.</span> <span class="toc-text">懒加载vue-lazyload</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vue-lazyload"><span class="toc-number">1.8.1.</span> <span class="toc-text">vue-lazyload</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码编写"><span class="toc-number">1.8.2.</span> <span class="toc-text">代码编写</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#loading组件"><span class="toc-number">1.9.</span> <span class="toc-text">loading组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#src-base-loading-vue"><span class="toc-number">1.9.1.</span> <span class="toc-text">src/base/loading.vue</span></a></li></ol></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 39
+        </div>
+        <!-- search  -->
+        
+            <div class="site-search popup-trigger">
+                <span class="iconfont-archer search-icon">&#xe627;</span>
+            </div>
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/05</span><a class="archive-post-title" href="/[object Object]2019/06/05/02Vue音乐播放器.html">Vue音乐播放器(二)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/[object Object]2019/06/01/01Vue音乐播放器.html">Vue音乐播放器（一）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/[object Object]2019/05/11/vue写个日历组件.html">vue写个日历组件</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/[object Object]2019/05/10/啥是前端工程化模块化组件化.html">啥是前端工程化、模块化、组件化？</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/[object Object]2019/05/10/webpack笔记.html">webpack4复习笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/03</span><a class="archive-post-title" href="/[object Object]2019/04/03/ES6数据劫持.html">ES6数据劫持proxy&reflect</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/01</span><a class="archive-post-title" href="/[object Object]2019/04/01/箭头函数看这篇就够了.html">箭头函数看这篇就够了</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/29</span><a class="archive-post-title" href="/[object Object]2019/03/29/jsonp实现百度搜索框功能.html">jsonp实现百度搜索框功能</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/20</span><a class="archive-post-title" href="/[object Object]2019/03/20/jQ.Ajax实现瀑布流相册.html">jQ.Ajax实现瀑布流相册</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span><a class="archive-post-title" href="/[object Object]2019/03/16/JS实现简单的Cookie操作.html">拖拽方块记录Cookie</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span><a class="archive-post-title" href="/[object Object]2019/03/14/封装jsonp代码.html">封装Jsonp代码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span><a class="archive-post-title" href="/[object Object]2019/03/13/依此优化AJAX的封装代码.html">优化AJAX的JS封装代码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span><a class="archive-post-title" href="/[object Object]2019/03/07/03处理机调度与死锁.html">处理机调度与死锁</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/[object Object]2019/03/06/02进程的描述与控制.html">进程的描述与控制</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/05</span><a class="archive-post-title" href="/[object Object]2019/03/05/正则表达式验证密码的强度.html">正则表达式验证密码的强度</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/05</span><a class="archive-post-title" href="/[object Object]2019/03/05/01OS引言.html">操作系统引言</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/04</span><a class="archive-post-title" href="/[object Object]2019/03/04/继承.html">继承</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href="/[object Object]2019/02/25/导航细线边框的实现.html">导航细线边框的实现</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href="/[object Object]2019/02/20/常见浏览器内核.html">常见浏览器内核</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/16</span><a class="archive-post-title" href="/[object Object]2019/02/16/遍历DOM树.html">遍历DOM树</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/02</span><a class="archive-post-title" href="/[object Object]2019/02/02/css的权重问题.html">css的权重问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/14</span><a class="archive-post-title" href="/[object Object]2019/01/14/JS封装运动函数.html">JS封装动画函数</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/JS实现全选与全不选.html">JS实现全选与全不选</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/绑定解绑事件兼容代码.html">绑定/解绑事件兼容代码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/JS搜索框自动提示.html">JS搜索框自动提示</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/自定义属性操作案例.html">自定义属性操作案例</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/12</span><a class="archive-post-title" href="/[object Object]2019/01/12/浅谈js匿名函数.html">浅谈js匿名函数</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/09</span><a class="archive-post-title" href="/[object Object]2019/01/09/字符串小案例.html">字符串小练习</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/07</span><a class="archive-post-title" href="/[object Object]2019/01/07/JavaScript中的值传递和地址传递（引用传递）.html">JavaScript中的值传递和地址传递（引用传递）</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/15</span><a class="archive-post-title" href="/[object Object]2018/12/15/flex布局常用属性.html">flex伸缩弹性布局常用属性</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href="/[object Object]2018/12/10/浅谈BFC.html">浅谈BFC</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/08</span><a class="archive-post-title" href="/[object Object]2018/12/08/外边距塌陷问题.html">外边距塌陷问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/08</span><a class="archive-post-title" href="/[object Object]2018/12/08/字体图标的使用.html">字体图标的使用</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/07</span><a class="archive-post-title" href="/[object Object]2018/12/07/vertical-align.html">vertical-align</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/07</span><a class="archive-post-title" href="/[object Object]2018/12/07/实现微信滑动门.html">实现微信滑动门</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/[object Object]2018/12/06/绝对定位盒子水平居中.html">绝对定位的盒子水平/垂直居中</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/05</span><a class="archive-post-title" href="/[object Object]2018/12/05/前端开发仿站小工具.html">前端开发仿站小工具</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/05</span><a class="archive-post-title" href="/[object Object]2018/12/05/浅谈清除（闭合）浮动.html">浅谈清除（闭合）浮动</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/30</span><a class="archive-post-title" href="/[object Object]2018/11/30/ABOUT ME.html">你好哇~</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="操作系统"><span class="iconfont-archer">&#xe606;</span>操作系统</span>
+    
+        <span class="sidebar-tag-name" data-tags="JavaScript"><span class="iconfont-archer">&#xe606;</span>JavaScript</span>
+    
+        <span class="sidebar-tag-name" data-tags="小案例"><span class="iconfont-archer">&#xe606;</span>小案例</span>
+    
+        <span class="sidebar-tag-name" data-tags="html/css"><span class="iconfont-archer">&#xe606;</span>html/css</span>
+    
+        <span class="sidebar-tag-name" data-tags="Vue"><span class="iconfont-archer">&#xe606;</span>Vue</span>
+    
+        <span class="sidebar-tag-name" data-tags="工具"><span class="iconfont-archer">&#xe606;</span>工具</span>
+    
+        <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
+    
+        <span class="sidebar-tag-name" data-tags="webpack"><span class="iconfont-archer">&#xe606;</span>webpack</span>
+    
+        <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "O.G.園長"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+        <div class="site-search">
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="iconfont-archer">&#xe609;</i>
+    </span>
+  </div>
+</div>
+        <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.0/dist/instantsearch.min.js" defer></script>
+        <script src="/scripts/search.js" defer></script>
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+

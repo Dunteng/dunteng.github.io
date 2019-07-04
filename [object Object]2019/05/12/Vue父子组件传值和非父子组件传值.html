@@ -22,7 +22,7 @@
     <meta name="description" content="我的个人博客">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Dunteng&#39;s Blog</title>
+    <title>vue父子组件传值和非父子组件传值 · Dunteng&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -218,12 +218,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Dunteng&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">vue父子组件传值和非父子组件传值</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">Dunteng's Blog.</a>
 </header>
@@ -235,24 +246,68 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/background/photo-1544166829-49960080435f.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            vue父子组件传值和非父子组件传值
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">810</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/05/12</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -353,329 +408,67 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/03/16/JS实现简单的Cookie操作.html">
-            
-                <span>拖拽方块记录Cookie</span>
-        </a>
-        <div class="abstract-content">
-            Cookie是由服务器端生成，发送给User-Agent（一般是浏览器），（服务器告诉浏览器设置一下cookie），浏览器会将Cookie以key/value保存到某个目录下的文本文件内，下次请...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/16</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/03/14/封装jsonp代码.html">
-            
-                <span>封装Jsonp代码</span>
-        </a>
-        <div class="abstract-content">
-            jsonp的封装代码：
-1234567891011121314151617181920212223242526272829303132function jsonp (url, params, c...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/03/13/依此优化AJAX的封装代码.html">
-            
-                <span>优化AJAX的JS封装代码</span>
-        </a>
-        <div class="abstract-content">
-            为了一步步地理清封装步骤，我打算逐步封装ajax函数的功能，分成了以下6个版本：
-Version 1123456789101112131415    function ajax (method,...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/03/07/03处理机调度与死锁.html">
-            
-                <span>处理机调度与死锁</span>
-        </a>
-        <div class="abstract-content">
-            1. 处理机调度1.1 概念
-1.2 处理机调度的层级高级调度（作业调度）
-中级调度（内存调度）
-低级调度（进程调度）
+            <main class="main post-page">
+    <article class="article-entry">
+        <p><a href="https://github.com/Dunteng/demo/tree/master/Vue/%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC%E5%92%8C%E9%9D%9E%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC" target="_blank" rel="noopener">案例代码</a></p>
+<p>实现如下的一个案例：</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/demo/comp46546.GIF" alt=""></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>该页面是一个<strong>父组件Form.vue</strong>，添加学生的这个input框部分是一个<strong>子组件addStudent.vue</strong>，下面的 li 显示学生的这部分是另一个<strong>子组件StudentList.vue</strong>。我们需要把addStudent.vue的数据传给StudentList.vue，但是他们是<strong>非父子组件关系</strong>。</p>
+<p>因此需要先让 addStudent.vue 把数据传给它的父组件 Form.vue<strong>（子组件传值给父组件）</strong>，然后父组件 Form.vue 再将从子组件 addStudent.vue 获得的数据传给另一个子组件 StudentList.vue<strong>（父组件传值给子组件）</strong>。从而间接地实现<strong>非父子组件传值</strong>。</p>
+<p><br></p>
+<h3 id="子组件传值给父组件"><a href="#子组件传值给父组件" class="headerlink" title="子组件传值给父组件"></a>子组件传值给父组件</h3><p>通过子组件的一个事件触发一个方法，在 addStudent.vue 中是 addStu() 方法，<code>this.$emit(&quot;add&quot;, this.name);</code>  子组件向父组件派发一个方法，子组件将自身的数据作为参数向父组件传值，在另一头父组件 Form.vue 中引用的 add-student 标签里需要监听 “add” 事件，触发一个自身定义的方法 addFunc()，在这个方法内部实现获取数据并保存。</p>
+<p><br></p>
+<h3 id="父组件传值给子组件"><a href="#父组件传值给子组件" class="headerlink" title="父组件传值给子组件"></a>父组件传值给子组件</h3><p>父组件中引用的 student-list 标签绑定一个属性，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;student-list :student=&quot;studentList&quot;&gt;&lt;/student-list&gt;</span><br></pre></td></tr></table></figure>
+<p>其中的 studentList 就是这个父组件自身的数据。而另一方面，子组件 StudentList.vue 中，需要有 props属性来接受父组件传来的数据：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//   props: ["student"]  //简易写法</span></span><br><span class="line">props: &#123;</span><br><span class="line">  student: &#123;</span><br><span class="line">    type: <span class="built_in">Array</span>,</span><br><span class="line">    <span class="keyword">default</span>: <span class="string">""</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>之后就拿着 props 中的数据进行数据渲染即可。</p>
+<p><br></p>
+<h2 id="父组件Form-vue"><a href="#父组件Form-vue" class="headerlink" title="父组件Form.vue"></a>父组件Form.vue</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;form&quot;&gt;</span><br><span class="line">    &lt;h3&gt;我是addStudent组件和StudentList组件的父组件&lt;/h3&gt;</span><br><span class="line"></span><br><span class="line">    &lt;add-student @add=&quot;addFunc&quot;&gt;&lt;/add-student&gt;</span><br><span class="line">    &lt;hr /&gt;</span><br><span class="line">    &lt;student-list :student=&quot;studentList&quot;&gt;&lt;/student-list&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import StudentList from &quot;./StudentList&quot;;</span><br><span class="line">import addStudent from &quot;./addStudent&quot;;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      studentList: []</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    addFunc(param) &#123;</span><br><span class="line">      console.log(param);</span><br><span class="line">      this.studentList.push(param);</span><br><span class="line">      //   console.log(this.studentList);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    StudentList,</span><br><span class="line">    addStudent</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="子组件addStudent-vue"><a href="#子组件addStudent-vue" class="headerlink" title="子组件addStudent.vue"></a>子组件addStudent.vue</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;addStudent&quot;&gt;</span><br><span class="line">    添加学生：</span><br><span class="line">    &lt;input type=&quot;text&quot; v-model=&quot;name&quot; /&gt;</span><br><span class="line">    &lt;button @click=&quot;addStu&quot;&gt;添加&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      name: &quot;&quot;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    addStu() &#123;</span><br><span class="line">      this.$emit(&quot;add&quot;, this.name); //子组件向父组件派发一个方法，子组件向父组件传值</span><br><span class="line">      //注意这个this.$emit的this不能没写</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;   </span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="子组件StudentList-vue"><a href="#子组件StudentList-vue" class="headerlink" title="子组件StudentList.vue"></a>子组件StudentList.vue</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;StudentList&quot;&gt;</span><br><span class="line">    学生列表：</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &lt;li v-for=&quot;(item,index) in student&quot; :key=&quot;index+item&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;&#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  //   props: [&quot;student&quot;]  //简易写法</span><br><span class="line">  props: &#123;</span><br><span class="line">    student: &#123;</span><br><span class="line">      type: Array,</span><br><span class="line">      default: &quot;&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>这种子组件比较少的还好说，如果是很多个子组件公用一个公共数据，这样的非父子组件传值方式就比较麻烦。可以采用Vuex。</p>
+<p><br><br></p>
 
-三者对比
-2. 进程调度2.1 进程调度的时机
-2.2 进程调度的方式抢...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="操作系统">操作系统</a>
-    
-</div>
-            
-        </div>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/03/06/02进程的描述与控制.html">
-            
-                <span>进程的描述与控制</span>
-        </a>
-        <div class="abstract-content">
-            第二章1. 前趋图和程序执行1.1 前趋图见课本p32、p33
-1.2 程序顺序执行程序执行有固定的时序，
-特征： 顺序性、可再现性、封闭性
-1.3 程序并发执行
-与顺序执行的特征相反： 间断性...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="操作系统">操作系统</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/03/05/01OS引言.html">
-            
-                <span>操作系统引言</span>
-        </a>
-        <div class="abstract-content">
-            第一章1. 操作系统的定义：​    操作系统是直接控制和管理计算机硬件、软件资源的最 基本的系统软件，用以方便用户充分、有效的利用这些资源 并增强整个计算机的处理能力
-2. 操作系统的目标&a...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="操作系统">操作系统</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/03/05/正则表达式验证密码的强度.html">
-            
-                <span>正则表达式验证密码的强度</span>
-        </a>
-        <div class="abstract-content">
-            密码: 数字,字母,特殊符号
-密码: 只有数字- 或者是只有字母,或者是只有特殊符号—1级—弱
-两两组合: 数字和字母, 数字和特殊符号, 字母和特殊符号   —–2级—-中
-三者都有: 数字和...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="小案例">小案例</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/03/04/继承.html">
-            
-                <span>继承</span>
-        </a>
-        <div class="abstract-content">
-            继承: 首先继承是一种关系，类(class)与类之间的关系，JS中没有类，但是可以通过构造函数模拟类，然后通过原型来实现继承。继承也是为了数据共享，JS中的继承也是为了实现数据共享。下面介绍三种...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/02/25/导航细线边框的实现.html">
-            
-                <span>导航细线边框的实现</span>
-        </a>
-        <div class="abstract-content">
-            要实现如下边框：
-
-一般不要直接给每个盒子加border：1px solid #ccc，这样会使中间的边框线重合变成了2px的线，太粗，不好看。
-方法一：只给盒子的下边框和右边框加border,...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/02/20/常见浏览器内核.html">
-            
-                <span>常见浏览器内核</span>
-        </a>
-        <div class="abstract-content">
-            常见浏览器内核介绍浏览器是网页运行的平台，常用的浏览器有IE、火狐（Firefox）、谷歌（Chrome）、Safari和Opera等。我们平时称为五大浏览器。
-
-​             
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/[object Object]2019/06/01/01Vue音乐播放器.html" title="Vue音乐播放器（一）">
+                    <div class="nextTitle">Vue音乐播放器（一）</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/[object Object]2019/05/11/vue写个日历组件.html" title="vue写个日历组件">
+                    <div class="prevTitle">vue写个日历组件</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/2019/">&#60; PREV</a><a class="page-number" href="/archives/2019/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2019/page/3/">3</a><a class="extend next" rel="next" href="/archives/2019/page/3/">NEXT &#62;</a>
-    </nav>
     
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -762,6 +555,24 @@ Version 1123456789101112131415    function ajax (method,...
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#子组件传值给父组件"><span class="toc-number">1.1.</span> <span class="toc-text">子组件传值给父组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#父组件传值给子组件"><span class="toc-number">1.2.</span> <span class="toc-text">父组件传值给子组件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#父组件Form-vue"><span class="toc-number">2.</span> <span class="toc-text">父组件Form.vue</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#子组件addStudent-vue"><span class="toc-number">3.</span> <span class="toc-text">子组件addStudent.vue</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#子组件StudentList-vue"><span class="toc-number">4.</span> <span class="toc-text">子组件StudentList.vue</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1697,6 +1508,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

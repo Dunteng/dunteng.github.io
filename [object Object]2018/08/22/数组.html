@@ -22,7 +22,7 @@
     <meta name="description" content="我的个人博客">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>你好哇~ · Dunteng&#39;s Blog</title>
+    <title>数组常用方法 · Dunteng&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -232,7 +232,7 @@
                 <a href="/">Dunteng&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">你好哇~</a>
+                <a href="#" class="post-name">数组常用方法</a>
             </div>
     </div>
     
@@ -256,13 +256,13 @@ height:50vh;
     <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(https://ws1.sinaimg.cn/large/006ttwEMgy1g1ckm5xo2jj318g0dw0xn.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568807933666&di=edcc04916cd5671af1c4c3e5d49c55e8&imgtype=0&src=http%3A%2F%2Fi1.hdslb.com%2Fbfs%2Farchive%2F9b2d4753667e5b32443227c6d79b7e3800da7a90.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            你好哇~
+            数组常用方法
             <!-- 404 -->
             
         </h1>
@@ -279,14 +279,20 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
+    
+</div>
+                
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">34</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.5k</span>阅读时长: <span class="post-count reading-time">6 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/11/30</span>
+                    <span class="post-intro-time">2018/08/22</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -408,13 +414,144 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <!-- 不可以删除，否则会调用post的layout  -->
-<main class="main about-page">
+            <main class="main post-page">
     <article class="article-entry">
-        <h2 id="关于Dunteng’s-Blog"><a href="#关于Dunteng’s-Blog" class="headerlink" title="关于Dunteng’s Blog"></a>关于Dunteng’s Blog</h2><p>我叫Dunteng ！</p>
-<p>我將在這里分享我的IT技術筆記和其他生活隨筆，let’s record and share together ！</p>
+        <h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h4 id="数组的常用方法（ES3）"><a href="#数组的常用方法（ES3）" class="headerlink" title="数组的常用方法（ES3）"></a>数组的常用方法（ES3）</h4><ul>
+<li><p>改变原数组的</p>
+<ul>
+<li><p>push()`        在原数组最后位添加</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line">    arr.push(<span class="number">10</span>);   <span class="comment">//[10]</span></span><br><span class="line">    arr.push(<span class="number">11</span>);   <span class="comment">//[10,11]</span></span><br><span class="line">    arr.push(<span class="number">9</span>);    <span class="comment">//[10,11,9]</span></span><br><span class="line">    arr.push(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>)     <span class="comment">//[10,11,9,1,2,3,4,5,6,7]</span></span><br></pre></td></tr></table></figure>
+<p><em>手动实现一下push方法</em></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.myPush = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="built_in">arguments</span>.length; i++)&#123;</span><br><span class="line">            <span class="keyword">this</span>[<span class="keyword">this</span>.length] = <span class="built_in">arguments</span>[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.length;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+</li>
+<li><p>pop()            把原数组的最后一位剪切出来，pop方法无视传参</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">    arr.pop();      <span class="comment">//[1,2]</span></span><br><span class="line">    arr.pop();      <span class="comment">//[1]</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+</li>
+<li><p>shift()           把原数组的第一位删除</p>
+</li>
+<li><p>unshift()       在原数组的第一位添加，都是添加，只是和push的方向不同。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">    arr.unshift(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(arr);  <span class="comment">//[0,1,2,3]</span></span><br><span class="line">    arr.unshift(<span class="number">-3</span>,<span class="number">-2</span>,<span class="number">-1</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(arr);  <span class="comment">//[-3,-2,-1,0,1,2,3,]</span></span><br><span class="line">    arr.shift();</span><br><span class="line">    <span class="built_in">console</span>.log(arr);  <span class="comment">//[-2,-1,0,1,2,3,]</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+</li>
+<li><p>sort()             升序数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">4</span>,<span class="number">3</span>,<span class="number">9</span>,<span class="number">1</span>,<span class="number">2</span>];   <span class="comment">//无序的数组</span></span><br><span class="line">arr.sort();</span><br><span class="line"><span class="built_in">console</span>.log(arr);   <span class="comment">//得：[1,2,3,4,9]</span></span><br></pre></td></tr></table></figure>
+<p>那么 <code>var arr = [4,3,9,1,2];</code>   的话就是   <code>[1,2,3,4,9,10]</code>咯？</p>
+<p>很遗憾，不是，结果是   <code>[1, 10, 2, 3, 4, 9]</code></p>
+<p>为什么呢？因为sort方法提供的升序排序是按照ascii码值继续排序，那么可以用sort（）方法来达到我们想要得到的结果吗？可以，因为sort还提供了一个编程接口，允许我们在sort方法中传入一个参数，这个参数要是一个方法，在方法里面让我们自己来编写排序规则。</p>
+<p>但是这个方法有两个一定要的约定：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">4</span>,<span class="number">3</span>,<span class="number">9</span>,<span class="number">1</span>,<span class="number">2</span>];</span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line"><span class="comment">//这是我们自己的升序规则</span></span><br><span class="line">    <span class="keyword">if</span>(x&gt;y)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>​    * <strong>1.必须写两个参数</strong></p>
+<p>​    <strong>*2.看返回值</strong></p>
+<p>​        <strong>*当返回值是负数时，x依然在前，y在后</strong></p>
+<p>​        <strong>*当返回值是正数时，y在前，x在后</strong></p>
+<p>​        <strong>*当返回值是0时，不动</strong></p>
+<p>那么sort括号里的函数是什么时候，怎么执行，执行多少次？</p>
+<p>首先，第一次调用匿名函数传入的x，y分别是arr数组中的第一位和第二位，也就是拿4跟3比</p>
+<p>4&gt;3吗？是，返回1，返回值正数，所以换一下位置，3在前4在后，</p>
+<p><code>匿名函数执行第一次后arr数组： [3,4,9,1,2]</code></p>
+<p>第二次执行，第一位变成3了，拿第一位和第三位比，3&gt;9吗？不大，返回-1，返回值负数，x，也就是3依然在前，y（9）在后。</p>
+<p>第三次执行，x是3，y是1，结果arr数组： [1,3,4,9,2]</p>
+<p>第四次，x是1，y是2，结果arr数组： [1,3,4,9,2]</p>
+<p>第五次了，第一位已经和其他位全部比完，x从第二位拿，x是3，y是4</p>
+<p>如此循环下去。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">4</span>,<span class="number">3</span>,<span class="number">9</span>,<span class="number">1</span>,<span class="number">2</span>];</span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line"><span class="comment">//这是我们自己的升序规则</span></span><br><span class="line">    <span class="keyword">if</span>(x&gt;y)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>上面代码中如果判断条件是x&lt;y就是降序功能，数值大的在前小的在后。</p>
+<p>优化代码：</p>
+<p>依然是升序，既然我们需要 一个返回结果，x和y作比较，x大于y返回结果要是一个正数，那么直接</p>
+<p><code>return   x - y</code>  就满足了上述要求。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">4</span>,<span class="number">3</span>,<span class="number">9</span>,<span class="number">1</span>,<span class="number">2</span>];</span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line"><span class="comment">//这是我们自己的升序规则</span></span><br><span class="line">	<span class="keyword">return</span> x-y;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>x大于y那么相减肯定是正数，反之是负数。</p>
+<p>如果是要降序，则判断条件改为<code>y-x</code>。</p>
+<p><br></p>
+</li>
+<li><p>reverse         颠倒原数组元素</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr.reverse());    <span class="comment">//['c','b','a']</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+</li>
+<li><p>splice（参数1，参数2，参数3）           </p>
+<p>参数1：从下标是几开始切？</p>
+<p>参数2：切多少？</p>
+<p>参数3：在切口处添加新数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">    <span class="comment">//两个参数的</span></span><br><span class="line">    arr.splice(<span class="number">1</span>,<span class="number">1</span>);      <span class="comment">//从下标是1的地方开始切，切一个长度的数据</span></span><br><span class="line">    <span class="built_in">console</span>.log(arr);     <span class="comment">//['a','c']</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>];</span><br><span class="line">    <span class="comment">//三个参数的，假如要实现将数组arr添加一位数据变成[1,2,3,4,5]?</span></span><br><span class="line">    arr.splice(<span class="number">3</span>,<span class="number">0</span>,<span class="number">4</span>);  </span><br><span class="line">	<span class="comment">//在下标是3的地方，切除0个(也就是没有切，所以光标也就是切口，在数字5的前面)，添加一个数据4</span></span><br><span class="line">    <span class="built_in">console</span>.log(arr); <span class="comment">//[1,2,3,4,5]</span></span><br></pre></td></tr></table></figure>
+<p><strong>注意：参数1可以为负数</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">arr.splice(<span class="number">-1</span>,<span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr);   <span class="comment">//[1,2]</span></span><br></pre></td></tr></table></figure>
+<p><strong>-1 代表倒数第几位</strong></p>
+<p><br></p>
+<p><br></p>
+</li>
+</ul>
+</li>
+<li><p>不改变原数组的，返回一个新数组出来。</p>
+<ul>
+<li><p>concat()      连接两个数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">    <span class="keyword">const</span> arr2 = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>];</span><br><span class="line">    <span class="built_in">console</span>.log(arr1.concat(arr2));</span><br></pre></td></tr></table></figure>
+<p>拼接完之后控制台打印的结果是 [1,2,3,4,5,6,7] ， arr1和arr2都没有改变。</p>
+<p><br></p>
+</li>
+<li><p>join()       数组转换为字符串</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> str = arr.join(<span class="string">'-'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(str) +<span class="string">' : '</span> + str);  </span><br><span class="line"><span class="comment">//控制台</span></span><br><span class="line"><span class="comment">//string : 1-2-3</span></span><br></pre></td></tr></table></figure>
+<p>join函数不传参数默认用逗号<code>,</code>连接。</p>
+<p>数组转换为字符串是用join，与之对应的，字符串转换数组是split( )</p>
+<p><strong>字符串的split( )函数</strong></p>
+<p>split（  按照字符串中的什么拆分为数组 ）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'a-b-c-d-e-f-g'</span>;</span><br><span class="line"><span class="keyword">var</span> arr = str.split(<span class="string">'-'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr);   <span class="comment">//(7) ["a", "b", "c", "d", "e", "f", "g"]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>slice()      截取</p>
+<p>slice（）</p>
+<p>无参数，截取整个数组。</p>
+<p>slice（<code>从下标多少开始截取到最后</code>）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> newArr = arr.slice(<span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newArr);  <span class="comment">//[3,4,5]</span></span><br></pre></td></tr></table></figure>
+<p>参数如果是负数则表示从倒数第几位开始截取。</p>
+<p>slice( <code>从下标多少开始截取</code>，<code>截取到第几下标</code> )</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> newArr = arr.slice(<span class="number">0</span>,<span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newArr);  <span class="comment">//[1,2]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<h3 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h3><p>1、给一个有序的数组，如何操作才可以让这个有序的数组乱序？</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//有序的数组使之乱序</span></span><br><span class="line">    <span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line">    <span class="built_in">console</span>.log( arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> <span class="built_in">Math</span>.random() - <span class="number">0.5</span>; &#125;) );</span><br></pre></td></tr></table></figure>
+<p>2、颠倒字符串 str=’abcde’ 为  ‘edcba’</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'abcde'</span>;</span><br><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"><span class="comment">//字符串转换为数组</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;str.length;i++)&#123;</span><br><span class="line">    arr.push(str.charAt(i));</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//颠倒数组</span></span><br><span class="line">arr.reverse();</span><br><span class="line"><span class="comment">//数组转换字符串，正则表达式去掉逗号</span></span><br><span class="line">str = arr.join().replace(<span class="regexp">/,/g</span>, <span class="string">""</span>);</span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br></pre></td></tr></table></figure>
 
     </article>
+    <!-- license  -->
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/[object Object]2018/11/30/ABOUT ME.html" title="你好哇~">
+                    <div class="nextTitle">你好哇~</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -517,7 +654,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于Dunteng’s-Blog"><span class="toc-number">1.</span> <span class="toc-text">关于Dunteng’s Blog</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#数组"><span class="toc-number">1.</span> <span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数组的常用方法（ES3）"><span class="toc-number">1.1.</span> <span class="toc-text">数组的常用方法（ES3）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面试题"><span class="toc-number">2.</span> <span class="toc-text">面试题</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

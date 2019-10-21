@@ -22,7 +22,7 @@
     <meta name="description" content="我的个人博客">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>箭头函数看这篇就够了 · Dunteng&#39;s Blog</title>
+    <title>虚拟机安装centos7和node · Dunteng&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -232,7 +232,7 @@
                 <a href="/">Dunteng&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">箭头函数看这篇就够了</a>
+                <a href="#" class="post-name">虚拟机安装centos7和node</a>
             </div>
     </div>
     
@@ -256,13 +256,13 @@ height:50vh;
     <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/background/photo-1557115831-0512155dbbe7.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/background/photo-1544166829-49960080435f.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            箭头函数看这篇就够了
+            虚拟机安装centos7和node
             <!-- 404 -->
             
         </h1>
@@ -281,18 +281,20 @@ height:50vh;
                 
                     <div class="post-intro-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="Linux">Linux</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="node.js">node.js</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1.1k</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.2k</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/04/01</span>
+                    <span class="post-intro-time">2019/09/25</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -416,41 +418,92 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="初试箭头函数"><a href="#初试箭头函数" class="headerlink" title="初试箭头函数"></a>初试箭头函数</h1><p><strong>作用：</strong>函数目的指向性更强，可读性更好，简化代码，提高开发效率</p>
-<p><strong>特点：</strong></p>
-<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/006ttwEMly1g26yir0e5ij30ey09775m.jpg" alt=""></p>
-<p><strong>代码1：</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> add = <span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//也可以这样写，省略return更加简洁</span></span><br><span class="line"><span class="keyword">let</span> add = <span class="function">(<span class="params">a,b</span>)=&gt;</span>(a+b);</span><br></pre></td></tr></table></figure>
-<p><strong>代码2：</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对象的应用</span></span><br><span class="line"><span class="keyword">let</span> func1 = <span class="function">(<span class="params">a,b,c</span>)=&gt;</span>(&#123;a,b,c&#125;);</span><br><span class="line"><span class="keyword">let</span> func2 = <span class="function">(<span class="params">a,b,c</span>)=&gt;</span>(&#123;<span class="attr">aa</span>:a,<span class="attr">bb</span>:b,<span class="attr">cc</span>:c&#125;);</span><br><span class="line"><span class="comment">// let func3 = (a,b,c)=&gt;&#123;aa:a,bb:b,cc:c&#125;;//如果不加圆括号是会报错的</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(func1(<span class="number">12</span>,<span class="number">35</span>,<span class="number">5</span>));</span><br><span class="line"><span class="built_in">console</span>.log(func2(<span class="number">12</span>,<span class="number">35</span>,<span class="number">5</span>));</span><br><span class="line"><span class="comment">// console.log(func3(12,35,5));</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/006ttwEMly1g26yyfgxeij307705nwec.jpg" alt=""></p>
-<p><strong>代码3：</strong></p>
-<p><strong>箭头函数必须用一个东西来存，可以使变量、属性或者使数组</strong>，想比于ES5中函数可以用function funC(a,b){}格式声明，箭头函数是不允许的。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用变量存</span></span><br><span class="line"><span class="keyword">let</span> sum = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line">sum();<span class="comment">//这样调用</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//用对象属性存</span></span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    fn: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.fn();<span class="comment">//这样调用</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//用数组存</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;];</span><br><span class="line">arr[<span class="number">0</span>]();<span class="comment">//这样调用</span></span><br></pre></td></tr></table></figure>
-<h1 id="高阶函数应用"><a href="#高阶函数应用" class="headerlink" title="高阶函数应用"></a>高阶函数应用</h1><p>数学和计算机科学中，高阶<strong>函数</strong>是至少满足下列一个条件的<strong>函数</strong>： 接受一个或多个<strong>函数</strong>作为输入参数，返回输出一个<strong>函数</strong></p>
-<p>箭头函数在高阶函数的应用中可以使代码更加简便，下面来看一下对比：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//高阶函数之ES5的传统方法</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">y</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">z</span>) </span>&#123; </span><br><span class="line">            <span class="keyword">return</span> x+y+z;</span><br><span class="line">         &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sum1 = sum(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">var</span> sum2 = sum1(<span class="number">2</span>);</span><br><span class="line"><span class="keyword">var</span> sum3 = sum2(<span class="number">3</span>);</span><br><span class="line"><span class="built_in">console</span>.log(sum3);<span class="comment">//成功输出6</span></span><br><span class="line"><span class="comment">/*************把上面的函数改成箭头函数语法**********************/</span></span><br><span class="line"><span class="keyword">let</span> sum = <span class="function">(<span class="params">x</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function">(<span class="params">y</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function">(<span class="params">z</span>)=&gt;</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> x+y+z;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*************进一步省略return**********************/</span></span><br><span class="line"><span class="keyword">let</span> sum = <span class="function">(<span class="params">x</span>)=&gt;</span><span class="function">(<span class="params">y</span>)=&gt;</span><span class="function">(<span class="params">z</span>)=&gt;</span>(x+y+z);</span><br><span class="line"><span class="built_in">console</span>.log(sum(<span class="number">1</span>)(<span class="number">2</span>)(<span class="number">3</span>));<span class="comment">//输出6</span></span><br></pre></td></tr></table></figure>
-<h1 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h1><p><strong>内部arguments和this都是由定义时外围最接近一层的非箭头函数的arguments和this决定其值的</strong> </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 举个例子</span></span><br><span class="line"><span class="keyword">var</span>  myfun1 = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>,a,b);</span><br><span class="line">&#125;</span><br><span class="line">myfun1(<span class="number">12</span>,<span class="number">5</span>);<span class="comment">//可以正常输出arguments和12和5</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> myfun2 = <span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>, a, b)</span><br><span class="line">&#125;</span><br><span class="line">myfun2(<span class="number">12</span>, <span class="number">5</span>);<span class="comment">//报错，arguments未定义,myfun2函数外围没有非箭头函数</span></span><br></pre></td></tr></table></figure>
-<p>再举个带外围非箭头函数的例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> myfun2 = <span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">arguments</span>, a, b)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我是箭头函数的外围非箭头函数test'</span>);</span><br><span class="line">    myfun2(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test(<span class="number">12</span>,<span class="number">5</span>,<span class="number">6</span>);</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/006ttwEMly1g27050audjj30e505n3yg.jpg" alt=""></p>
-<p>再说另一个应用场景：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES5中获取外围最近函数的arguments的做法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Curry</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> arg = <span class="built_in">arguments</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(arg, <span class="built_in">arguments</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Curry(<span class="string">'a'</span>, <span class="string">'b'</span>)(<span class="number">11</span>, <span class="number">22</span>);</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES5中获取外围最近函数的arguments的做法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Curry</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">()</span>=&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Curry(<span class="string">'a'</span>, <span class="string">'b'</span>)(<span class="number">1</span>,<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
-<h1 id="this"><a href="#this" class="headerlink" title="this"></a>this</h1><p><strong>内部arguments和this都是由定义时外围最接近一层的非箭头函数的arguments和this决定其值的</strong></p>
-<p>不过有一点不同，对于arguments如果外围没有非箭头函数，使用时是报错，提示arguments未定义；</p>
-<p>而this如果外围没有非箭头函数，使用时不会报错，规定其值为<strong>window</strong>。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sum = <span class="function"><span class="params">()</span> =&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line">sum();<span class="comment">//打印结果为window对象</span></span><br></pre></td></tr></table></figure>
-<p>例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//之所以用var定义a是为了把a挂载到window上</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="string">'outer'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    a: <span class="string">'inner'</span>,</span><br><span class="line">    fn: <span class="function"><span class="params">()</span> =&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.a); <span class="comment">// 该箭头函数没有外围非箭头函数，this指向window</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj.fn();<span class="comment">//如果安装ES5的写法结果时inner，但是结果是outer</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//之所以用var定义a是为了把a挂载到window上</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="string">'outer'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    a: <span class="string">'inner'</span>,</span><br><span class="line">    fn()&#123;</span><br><span class="line">        test=<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.a); <span class="comment">//此时this指向了fn的this也就是obj对象</span></span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">return</span> test;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj.fn()();<span class="comment">//结果为inner</span></span><br></pre></td></tr></table></figure>
-<p><strong>比较实际的一个应用setTimeout：</strong></p>
-<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/006ttwEMly1g2715siovcj307h01o3ya.jpg" alt=""></p>
-<p>setTimeout是window对象里的一个方法，其this是指向window的</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myObj = &#123;</span><br><span class="line">    ms: <span class="string">'hhhhh'</span>,</span><br><span class="line">    fn()&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.ms)</span><br><span class="line">        &#125;, <span class="number">500</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">myObj.fn();<span class="comment">//输出结果为undefined而非我们想要的hhhhh，因为setTimeout指向的this是window</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//针对上述情况的解决方法</span></span><br><span class="line"><span class="keyword">let</span> myObj = &#123;</span><br><span class="line">    ms: <span class="string">'hhhhh'</span>,</span><br><span class="line">    fn()&#123;</span><br><span class="line">        <span class="keyword">let</span> that = <span class="keyword">this</span>;<span class="comment">//把fn的this赋给that,that此时指向fn的对象myObj</span></span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(that.ms)</span><br><span class="line">        &#125;, <span class="number">500</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">myObj.fn();<span class="comment">//成功输出hhhhh，但是这样太麻烦了，事实上这样的写法就是ES6代码babel后的ES5写法</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用箭头函数直接搞定</span></span><br><span class="line"><span class="keyword">let</span> myObj = &#123;</span><br><span class="line">    ms: <span class="string">'hhhhh'</span>,</span><br><span class="line">    fn()&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.a)</span><br><span class="line">        &#125;, <span class="number">500</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">myObj.fn();<span class="comment">//成功输出hhhhh,利用了箭头函数this为外围非箭头函数fn的this</span></span><br></pre></td></tr></table></figure>
+        <p>【外部文章】：</p>
+<ul>
+<li>我的Linux基础整理网站👉<a href="https://rockdunteng.github.io/LinuxStudy/index.html" target="_blank" rel="noopener">rockdunteng</a></li>
+</ul>
+<h2 id="虚拟机安装centos7"><a href="#虚拟机安装centos7" class="headerlink" title="虚拟机安装centos7"></a>虚拟机安装centos7</h2><ul>
+<li><p><a href="https://www.cnblogs.com/lynn-li/p/6077944.html" target="_blank" rel="noopener">参考文章</a></p>
+</li>
+<li><p>我安装的是迷你版，没有桌面系统，纯命令模式。</p>
+</li>
+<li><p>之后我们会搭建小型的集群</p>
+<p><img src="https://raw.githubusercontent.com/rockdunteng/imageBed/master/note/blog/1560265774418.png" alt="1560265774418"></p>
+<p><br>现实项目中的全栈过程👇</p>
+<p><img src="https://raw.githubusercontent.com/rockdunteng/imageBed/master/note/blog/1571589448636.png" alt="1571589448636"></p>
+<p><br>推荐的虚拟机内存配置：</p>
+<ul>
+<li>最好就是16G内存，随便配；但是老子是8G，往下看</li>
+<li>proxy代理服务器：512</li>
+<li>Service服务器： 1024</li>
+<li>Cache缓存服务器： 1024</li>
+<li>Database服务器： 1024</li>
+<li>Release服务器： 1024/512</li>
+</ul>
+</li>
+</ul>
+<p><br><br></p>
+<h2 id="桥接网络设置"><a href="#桥接网络设置" class="headerlink" title="桥接网络设置"></a>桥接网络设置</h2><ul>
+<li><p>设置的是桥接网络，为了是不与宿主机共享同一网络。这时是无法上网的，需要进行下面的配置：</p>
+<ul>
+<li><p>进入路径<code>/etc/sysconfig/network-scripts</code>，修改<code>ifcfg-ens33</code>文件，将末行的<code>ONBOOT=no</code>改为<code>yes</code>。</p>
+<p><img src="https://raw.githubusercontent.com/rockdunteng/imageBed/master/note/blog/1571577252621.png" alt="1571577252621"></p>
+</li>
+<li><p>重启系统<code>reboot</code>。然后尝试<code>ping</code>功能，发现可以<code>ping</code>通即可。</p>
+</li>
+<li><p>如果还是ping不通，见这两篇文章👉   <a href="https://blog.csdn.net/bob_666/article/details/81412242" target="_blank" rel="noopener">一</a>   <a href="https://jingyan.baidu.com/article/f7ff0bfc7859502e26bb1328.html" target="_blank" rel="noopener">二</a></p>
+</li>
+<li><p>这里我平时用的是校园网，是无法桥接成功的。所以我改用手机热点wifi，并把网卡换成相应的无线网卡。</p>
+</li>
+<li><p>注意，我用热点的时候网速很慢，当要下载东西的时候最好切换回nat模式连接网络。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><br><br></p>
+<h2 id="安装wget和node"><a href="#安装wget和node" class="headerlink" title="安装wget和node"></a>安装wget和node</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">yum install wget		//用于网络请求</span><br><span class="line"></span><br><span class="line">wget https://nodejs.org/dist/v10.16.0/node-v10.16.0-linux-x64.tar.xz    //安装node压缩包</span><br><span class="line"></span><br><span class="line">xz -d node-v10.16.0-linux-x64.tar.xz      //解压成node-v10.16.0-linux-x64.tar</span><br><span class="line"></span><br><span class="line">tar -xf node-v10.16.0-linux-x64.tar      //解压成node-v10.16.0-linux-x64文件夹</span><br></pre></td></tr></table></figure>
+<p><br>安装成功之后在本路径下查看：</p>
+<p><img src="https://raw.githubusercontent.com/rockdunteng/imageBed/master/note/blog/1560361705831.png" alt="1560361705831"></p>
+<p><br>通过<code>ll</code>指令可以看到多了node的安装包，之后通过<code>xz -d</code>指令解压得到.tar<br>的压缩包，再通过<code>tar -xf</code>指令解压得到node-v10.16.0-linux-x64的文件夹。</p>
+<p><br><br></p>
+<h2 id="创建node软连接（快捷方式）"><a href="#创建node软连接（快捷方式）" class="headerlink" title="创建node软连接（快捷方式）"></a>创建node软连接（快捷方式）</h2><p>目前node安装在了root的用户目录下，没有放在<code>/usr/bin</code>下，所以需要创建一个软连接到<code>/usr/bin</code>下。</p>
+<p><img src="https://raw.githubusercontent.com/rockdunteng/imageBed/master/note/blog/1560527054649.png" alt="1560527054649"></p>
+<p><br>定位到/usr/bin路径下，这个文件夹下有很多可执行的程序。上面绿色的就是代表可执行程序，浅蓝色的是链接，连接到指定的程序，有点类似win下的快捷方式。</p>
+<p>我们进入node/bin文件夹里面，可以看到有<code>node</code>，<code>npm</code>，<code>npx</code>等可执行程序，这就是我们之前常用到的node命令。</p>
+<p><img src="https://raw.githubusercontent.com/rockdunteng/imageBed/master/note/blog/1560527879178.png" alt="1560527879178"></p>
+<p>为了使得node指令在全局范围下都可以使用，我们需要把上述的node可执行程序放到/usr/bin/文件夹中。怎么实现呢？我们做个<strong>软连接</strong>而不是真的把文件放到那里面去。</p>
+<p><br></p>
+<ul>
+<li><p>node</p>
+<p>使用指令<code>ln -s ~/node-v10.16.0-linux-x64/bin/node /usr/bin/node</code>将原本node-xxx/bin/文件夹中的node可执行程序软连接到了/usr/bin/node文件夹中，可以看到在用户根目录路径下就可以使用node指令了</p>
+<p> <img src="https://raw.githubusercontent.com/rockdunteng/imageBed/master/note/blog/1560528488411.png" alt="1560528488411"><br></p>
+</li>
+<li><p>npm和npx</p>
+<p>同样地搞一下npm和npx</p>
+<p>通过检查版本可以看到，这时已经可以在全局下使用node、npm、npx了：</p>
+<p><img src="https://raw.githubusercontent.com/rockdunteng/imageBed/master/note/blog/1571587193826.png" alt="1571587193826"></p>
+</li>
+</ul>
+<p>  <br>这时再到/usr/bin/路径下输入<code>ls</code>指令就能看到我们链接的三个程序，使用<code>shift+PgUp</code> 向前翻看,一般翻13页左右。<code>shift+PgDown</code>向后翻看,一般翻13页左右。</p>
+<p>  <img src="https://raw.githubusercontent.com/rockdunteng/imageBed/master/note/blog/1560529922036.png" alt="1560529922036"></p>
+<p>  <br></p>
+<p><br></p>
+<h2 id="FHS-文件系统层次化标准"><a href="#FHS-文件系统层次化标准" class="headerlink" title="FHS(文件系统层次化标准)"></a>FHS(文件系统层次化标准)</h2><p><img src="https://oscimg.oschina.net/oscnet/719336e7cbb111e832a03c95075d32701fa.jpg" alt=""></p>
+<p><br></p>
+<p>/home和/root的区别：实际上，linux与windows的分区都有主分区，扩展分区，逻辑分区，只是他们的目录结构不一样，windows为森林型目录结构，他可以有很多的跟，如C，D，E，F都是他的根目录，而linux中是一个树形机构，他只有一个根目录那就是 / ,然后在他下面有子目录/root  /home  /etc /bin 等，你可以将各个子目录单独挂载到一个分区，而其中的/root 相当于是linux超级权限用户root的家目录，而/home/XXX(用户名)这是普通用户的家目录，当新建一个普通用户时候，那么在/home 目录下就有一个对应的/home/XX 路径，用来存放用户的主目录</p>
+<p><br><br></p>
+<h2 id="使用xshell"><a href="#使用xshell" class="headerlink" title="使用xshell"></a>使用xshell</h2><p>虚拟机的终端不支持复制粘贴，不太方便，所以可以使用xshell远程连接上虚拟机，通过xshell来执行操作。</p>
+<p><br><br></p>
+<h2 id="node服务器初试"><a href="#node服务器初试" class="headerlink" title="node服务器初试"></a>node服务器初试</h2><p>找个目录，我随便在<code>/home/test</code>下新建了一个<code>test.js</code>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">	res.writeHead(<span class="number">200</span>,&#123;<span class="string">"Content-Type"</span>:<span class="string">"text/plain"</span>&#125;);</span><br><span class="line">	res.end(<span class="string">"hello world"</span>);</span><br><span class="line">&#125;</span><br><span class="line">http.createServer(hello).listen(<span class="number">12306</span>,<span class="string">"192.168.171.134"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello world"</span>);</span><br></pre></td></tr></table></figure>
+<p>【注意】：</p>
+<ul>
+<li>通过<code>ip addr</code>查看IP地址，然后用xshell远程连接之。</li>
+<li>代码中的IP地址即为centos的IP地址，开启端口为12306</li>
+<li>在<code>/home/test</code>下执行<code>node test.js</code>指令就开启了node服务器。</li>
+<li>然后要<strong>关闭centos的防火墙</strong>。<code>systemctl disable firewalld</code>，然后<code>reboot</code>重启之。</li>
+<li>这下子就可以在浏览器中访问到<code>http://192.168.171.134:12306/</code>了，页面显示<code>res.end</code>中的内容。</li>
+</ul>
 
     </article>
     <!-- license  -->
@@ -460,16 +513,16 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href="/[object Object]2019/04/03/ES6数据劫持.html" title="ES6数据劫持proxy&reflect">
-                    <div class="nextTitle">ES6数据劫持proxy&reflect</div>
+                <a href="/[object Object]2019/09/30/写一个微型node服务器.html" title="写一个微型node服务器">
+                    <div class="nextTitle">写一个微型node服务器</div>
                 </a>
             
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/[object Object]2019/03/29/jsonp实现百度搜索框功能.html" title="jsonp实现百度搜索框功能">
-                    <div class="prevTitle">jsonp实现百度搜索框功能</div>
+                <a href="/[object Object]2019/09/01/Linux基础入门.html" title="Linux基础入门">
+                    <div class="prevTitle">Linux基础入门</div>
                 </a>
             
         </li>
@@ -590,7 +643,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#初试箭头函数"><span class="toc-number">1.</span> <span class="toc-text">初试箭头函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#高阶函数应用"><span class="toc-number">2.</span> <span class="toc-text">高阶函数应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#arguments"><span class="toc-number">3.</span> <span class="toc-text">arguments</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#this"><span class="toc-number">4.</span> <span class="toc-text">this</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#虚拟机安装centos7"><span class="toc-number">1.</span> <span class="toc-text">虚拟机安装centos7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#桥接网络设置"><span class="toc-number">2.</span> <span class="toc-text">桥接网络设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装wget和node"><span class="toc-number">3.</span> <span class="toc-text">安装wget和node</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建node软连接（快捷方式）"><span class="toc-number">4.</span> <span class="toc-text">创建node软连接（快捷方式）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FHS-文件系统层次化标准"><span class="toc-number">5.</span> <span class="toc-text">FHS(文件系统层次化标准)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用xshell"><span class="toc-number">6.</span> <span class="toc-text">使用xshell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#node服务器初试"><span class="toc-number">7.</span> <span class="toc-text">node服务器初试</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

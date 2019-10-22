@@ -287,7 +287,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">54</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">337</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -416,8 +416,8 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//增</span></span><br><span class="line">insert into student(name, age, stu_num, <span class="class"><span class="keyword">class</span>)</span></span><br><span class="line"><span class="class"><span class="title">value</span> ('卡卡西',28,6600,1)</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//改</span></span><br><span class="line">update student set name=<span class="string">'鸣人'</span> where id = <span class="number">1</span>;</span><br><span class="line">update student set name = <span class="string">'佐助'</span>, age=<span class="number">18</span>, stu_num=<span class="number">6631</span>, <span class="class"><span class="keyword">class</span></span>=<span class="number">1</span> where id = <span class="number">2</span>;</span><br><span class="line">update student</span><br><span class="line">set  id = <span class="number">3</span>, age=<span class="number">18</span>, stu_num=<span class="number">6632</span>, <span class="class"><span class="keyword">class</span></span>=<span class="number">1</span></span><br><span class="line">where name=<span class="string">'小樱'</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="https://pic1.zhimg.com/v2-8dc902e921dfc2f2d189f2940dbbc3a7_1200x500.jpg" alt=""></p>
+        <p><img src="https://pic1.zhimg.com/v2-8dc902e921dfc2f2d189f2940dbbc3a7_1200x500.jpg" alt=""></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//增</span></span><br><span class="line">insert into student(name, age, stu_num, <span class="class"><span class="keyword">class</span>)</span></span><br><span class="line"><span class="class"><span class="title">value</span> ('卡卡西',28,6600,1)</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//改</span></span><br><span class="line">update student set name=<span class="string">'鸣人'</span> where id = <span class="number">1</span>;</span><br><span class="line">update student set name = <span class="string">'佐助'</span>, age=<span class="number">18</span>, stu_num=<span class="number">6631</span>, <span class="class"><span class="keyword">class</span></span>=<span class="number">1</span> where id = <span class="number">2</span>;</span><br><span class="line">update student</span><br><span class="line">set  id = <span class="number">3</span>, age=<span class="number">18</span>, stu_num=<span class="number">6632</span>, <span class="class"><span class="keyword">class</span></span>=<span class="number">1</span></span><br><span class="line">where name=<span class="string">'小樱'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//查</span></span><br><span class="line">select * <span class="keyword">from</span> student;  <span class="comment">/*查询表中所有人*/</span></span><br><span class="line"></span><br><span class="line">select  name,age <span class="keyword">from</span> student;  <span class="comment">/*查询表中所有人的名字和年龄*/</span></span><br><span class="line"></span><br><span class="line">select * <span class="keyword">from</span> student where age = <span class="number">18</span>; <span class="comment">/*查询年龄为18的所有人*/</span></span><br><span class="line"></span><br><span class="line">select count(<span class="number">1</span>) <span class="keyword">from</span> student; <span class="comment">/*查询表中所有记录条数（在这里就是表中所有人总数）*/</span></span><br><span class="line"></span><br><span class="line">select count(<span class="number">1</span>) <span class="keyword">from</span> student where age=<span class="number">18</span>; <span class="comment">/*查询表中年龄为18的人数*/</span></span><br><span class="line"></span><br><span class="line">select sum(age) <span class="keyword">from</span> student; <span class="comment">/* 所有人的年龄加起来的总数*/</span></span><br><span class="line"></span><br><span class="line">select avg(age) <span class="keyword">from</span> student;<span class="comment">/*求所有人的平均年龄*/</span></span><br><span class="line"></span><br><span class="line">select  avg(age) <span class="keyword">as</span> avg_age <span class="keyword">from</span> student; <span class="comment">/*给平均数设置别名*/</span></span><br><span class="line"></span><br><span class="line">select <span class="class"><span class="keyword">class</span>, <span class="title">count</span>(1) <span class="title">from</span> <span class="title">student</span> <span class="title">group</span> <span class="title">by</span> <span class="title">class</span></span>; <span class="comment">/*查询每班各有多少人，使用了group by进行分组*/</span></span><br><span class="line"></span><br><span class="line">select name, <span class="class"><span class="keyword">class</span> <span class="title">from</span> <span class="title">student</span> <span class="title">where</span> <span class="title">age</span>!</span>=<span class="number">18</span> and <span class="class"><span class="keyword">class</span></span>=<span class="number">3</span>; <span class="comment">/* 多个条件使用and */</span></span><br><span class="line">select name, <span class="class"><span class="keyword">class</span> <span class="title">from</span> <span class="title">student</span> <span class="title">where</span> <span class="title">age</span></span>=<span class="number">18</span> or stu_num&gt;<span class="number">6640</span>; <span class="comment">/* 或操作使用or */</span></span><br><span class="line"></span><br><span class="line">select * <span class="keyword">from</span> student limit <span class="number">2</span>; <span class="comment">/* 只取前两条记录*/</span></span><br><span class="line"></span><br><span class="line">select * <span class="keyword">from</span> student limit <span class="number">5</span>,<span class="number">3</span>; <span class="comment">/* 前5条记录不看，从第6条记录看起，取出3条记录*/</span></span><br><span class="line"></span><br><span class="line">select * <span class="keyword">from</span> student order by id; <span class="comment">/* 以id进行正序排列 */</span></span><br><span class="line">select * <span class="keyword">from</span> student order by id desc ; <span class="comment">/* 倒序排列 */</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//删</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> student;  <span class="comment">/*删除整个表。危险！！！*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> student where name=<span class="string">'卡卡西'</span>;</span><br></pre></td></tr></table></figure>
 
     </article>
     <!-- license  -->
@@ -1287,48 +1287,6 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 51
@@ -1416,12 +1374,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/[object Object]2019/05/10/啥是前端工程化模块化组件化.html">啥是前端工程化、模块化、组件化？</a>
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/[object Object]2019/05/10/webpack笔记.html">webpack4复习笔记</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/[object Object]2019/05/10/webpack笔记.html">webpack4复习笔记</a>
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/[object Object]2019/05/10/啥是前端工程化模块化组件化.html">啥是前端工程化、模块化、组件化？</a>
         </li>
     
     
@@ -1516,12 +1474,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/绑定解绑事件兼容代码.html">绑定/解绑事件兼容代码</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/JS搜索框自动提示.html">JS搜索框自动提示</a>
+            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/自定义属性操作案例.html">自定义属性操作案例</a>
         </li>
     
     
@@ -1531,7 +1484,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/自定义属性操作案例.html">自定义属性操作案例</a>
+            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/绑定解绑事件兼容代码.html">绑定/解绑事件兼容代码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/JS搜索框自动提示.html">JS搜索框自动提示</a>
         </li>
     
     
@@ -1624,19 +1582,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="小案例"><span class="iconfont-archer">&#xe606;</span>小案例</span>
     
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
+    
         <span class="sidebar-tag-name" data-tags="数据库"><span class="iconfont-archer">&#xe606;</span>数据库</span>
     
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
+        <span class="sidebar-tag-name" data-tags="Vue"><span class="iconfont-archer">&#xe606;</span>Vue</span>
     
         <span class="sidebar-tag-name" data-tags="html/css"><span class="iconfont-archer">&#xe606;</span>html/css</span>
     
-        <span class="sidebar-tag-name" data-tags="Vue"><span class="iconfont-archer">&#xe606;</span>Vue</span>
+        <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
     
         <span class="sidebar-tag-name" data-tags="node.js"><span class="iconfont-archer">&#xe606;</span>node.js</span>
     
         <span class="sidebar-tag-name" data-tags="工具"><span class="iconfont-archer">&#xe606;</span>工具</span>
-    
-        <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
     
         <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
     

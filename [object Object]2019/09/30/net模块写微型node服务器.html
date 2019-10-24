@@ -22,7 +22,7 @@
     <meta name="description" content="我的个人博客">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Dunteng&#39;s Blog</title>
+    <title>写一个微型node服务器 · Dunteng&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,6 +77,8 @@
 
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -216,14 +218,23 @@
 </head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Dunteng&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">写一个微型node服务器</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">Dunteng's Blog.</a>
 </header>
@@ -242,7 +253,7 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-img" style="background-image: url(https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/background/photo-1544166829-49960080435f.jpg)"></div>
@@ -251,8 +262,8 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Dunteng's Blog.
-            <!-- 文章页  -->
+            写一个微型node服务器
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -260,12 +271,49 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                Go big or go home！
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="node.js">node.js</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">716</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/09/30</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -366,450 +414,75 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/02/20/常见浏览器内核.html">
-            
-                <span>常见浏览器内核</span>
-        </a>
-        <div class="abstract-content">
-            常见浏览器内核介绍浏览器是网页运行的平台，常用的浏览器有IE、火狐（Firefox）、谷歌（Chrome）、Safari和Opera等。我们平时称为五大浏览器。
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/Dunteng/node.js/tree/master/net%E5%BE%AE%E5%9E%8B%E6%9C%8D%E5%8A%A1%E5%99%A8" target="_blank" rel="noopener">https://github.com/Dunteng/node.js/tree/master/net%E5%BE%AE%E5%9E%8B%E6%9C%8D%E5%8A%A1%E5%99%A8</a></p>
+<p><br><br></p>
+<h2 id="基础demo"><a href="#基础demo" class="headerlink" title="基础demo"></a>基础demo</h2><p>我们可以使用浏览器来对Server建立连接并发送请求。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//server.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> net = <span class="built_in">require</span>(<span class="string">"net"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> server = net.createServer();</span><br><span class="line">server.listen(<span class="number">12306</span>, <span class="string">"127.0.0.1"</span>);</span><br><span class="line"></span><br><span class="line">server.on(<span class="string">"listening"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"服务已启动"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.on(<span class="string">"connection"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">socket</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"有新的连接"</span>);</span><br><span class="line">    socket.on(<span class="string">"data"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(data.toString());</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><br>开启server服务，然后在浏览器访问<code>127.0.0.0:12306</code>，可以看到打印出了data，而这个data就是请求头👇</p>
+<p><img src="https://raw.githubusercontent.com/rockdunteng/imageBed/master/note/blog/1571650335272.png" alt="1571650335272"></p>
+<p><br></p>
+<p>模拟获取请求头数据和设置响应头👇</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> net = <span class="built_in">require</span>(<span class="string">"net"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> server = net.createServer();</span><br><span class="line">server.listen(<span class="number">12306</span>, <span class="string">"127.0.0.1"</span>);</span><br><span class="line"></span><br><span class="line">server.on(<span class="string">"listening"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"服务已启动"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.on(<span class="string">"connection"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">socket</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"有新的连接"</span>);</span><br><span class="line">    socket.on(<span class="string">"data"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(data.toString());</span><br><span class="line">        <span class="keyword">var</span> request = data.toString().split(<span class="string">"\r\n"</span>);</span><br><span class="line">        <span class="keyword">var</span> url = request[<span class="number">0</span>].split(<span class="string">" "</span>)[<span class="number">1</span>];</span><br><span class="line">        <span class="built_in">console</span>.log(url);</span><br><span class="line">        socket.write(<span class="string">"HTTP 200OK\r\nContent-type:text/html\r\nServer:DWS/1.1\r\n\r\n&lt;html&gt;&lt;body&gt;hello browser&lt;/body&gt;&lt;/html&gt;"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p><img src="https://raw.githubusercontent.com/rockdunteng/imageBed/master/note/blog/1571651223434.png" alt="1571651223434"></p>
+<p><br></p>
+<p><img src="https://raw.githubusercontent.com/rockdunteng/imageBed/master/note/blog/1571651233360.png" alt="1571651233360"></p>
+<p><br></p>
+<p>💡到了这一步，我们可以进一步实现平时看到的网站响应的效果：</p>
+<p>​    新建一个<code>index.html</code>文件，我们通过浏览器访问<a href="http://127.0.0.1:12306/index" target="_blank" rel="noopener">http://127.0.0.1:12306/index</a>，然后服务端解析请求头截取到<code>index</code>字段，通过这个字段知道服务端要响应出<code>index.html</code>的数据。怎么获取到目标文件的内容，这就涉及到了读写文件的操作了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> net = <span class="built_in">require</span>(<span class="string">"net"</span>);</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> server = net.createServer();</span><br><span class="line">server.listen(<span class="number">12306</span>, <span class="string">"127.0.0.1"</span>);</span><br><span class="line"></span><br><span class="line">server.on(<span class="string">'listening'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'服务启动了'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">server.on(<span class="string">'connection'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">socket</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'有新的连接建立了'</span>);</span><br><span class="line"></span><br><span class="line">    socket.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(data.toString());</span><br><span class="line">        <span class="keyword">var</span> request = data.toString().split(<span class="string">'\r\n'</span>);</span><br><span class="line">        <span class="keyword">var</span> url = request[<span class="number">0</span>].split(<span class="string">" "</span>)[<span class="number">1</span>];</span><br><span class="line">        <span class="built_in">console</span>.log(url);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">var</span> dataFile = fs.readFileSync(__dirname + url);</span><br><span class="line">            <span class="comment">// console.log(dataFile.toString());</span></span><br><span class="line">            socket.write(<span class="string">"HTTP 200OK\r\nContent-type:text/html\r\nServer:DWS/1.1\r\n\r\n"</span>);</span><br><span class="line">            socket.write(dataFile)  <span class="comment">//socket分成两部写，避免dataFile被字符串化</span></span><br><span class="line">        &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">            socket.write(<span class="string">"HTTP 404NotFound\r\nContent-type:text/html\r\nServer:DWS/1.1\r\n\r\n&lt;html&gt;&lt;body&gt;&lt;h1&gt;&lt;/h1&gt;404 Not Found&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        socket.end();</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><br>运行<code>node server.js</code>，在浏览器访问<a href="http://127.0.0.1:12306/index.html就可以显示出`index.html`中的页面，如果访问的页面不存在会显示404页面。" target="_blank" rel="noopener">http://127.0.0.1:12306/index.html就可以显示出`index.html`中的页面，如果访问的页面不存在会显示404页面。</a></p>
+<p><br><br></p>
+<h2 id="微型服务器的编写"><a href="#微型服务器的编写" class="headerlink" title="微型服务器的编写"></a>微型服务器的编写</h2><p>在此基础上进行配置文件的编写，从而构建一个node.js微型服务器👇</p>
+<ul>
+<li>server.conf   配置文件，在里面写入要打开的文件的路径，相对路径和绝对路径都可。</li>
+<li>conf.js   处理配置信息，暴露出一个全局的配置</li>
+<li>newserver.js  服务端代码</li>
+</ul>
+<p>运行<code>node newserver.js</code>服务器，在浏览器打开<a href="http://127.0.0.1:12306/index.html" target="_blank" rel="noopener">http://127.0.0.1:12306/index.html</a>即可成功访问。</p>
+<p>代码实现见文首GitHub链接。</p>
+<p><br><br></p>
 
-​             
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
-    
-</div>
-            
-        </div>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/02/16/遍历DOM树.html">
-            
-                <span>遍历DOM树</span>
-        </a>
-        <div class="abstract-content">
-            代码：
-123456789101112131415161718192021222324252627282930313233343536373839404142//  第一个函数:给我根节点,我会...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/16</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/02/02/css的权重问题.html">
-            
-                <span>css的权重问题</span>
-        </a>
-        <div class="abstract-content">
-            CSS优先级定义CSS样式时，经常出现两个或更多规则应用在同一元素上，这时就会出现优先级的问题。
-在考虑权重时，初学者还需要注意一些特殊的情况，具体如下：
-继承样式的权重为0。即在嵌套结构中，不...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/01/14/JS封装运动函数.html">
-            
-                <span>JS封装动画函数</span>
-        </a>
-        <div class="abstract-content">
-            本文介绍JavaScript实现动画效果的封装函数，将从匀速水平移动开始，在此基础上不断增加新功能，如二级标题所示。
-匀速水平移动动画这哥们可以用来写轮播图。
-
-1234567891011121...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="小案例">小案例</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/01/13/自定义属性操作案例.html">
-            
-                <span>自定义属性操作案例</span>
-        </a>
-        <div class="abstract-content">
-            为了练习一下自定义属性操作，做了一个tab栏切换的demo
-自定义属性操作
-getAttribute() 获取标签行内属性
-setAttribute() 设置标签行内属性
-removeAttri...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="小案例">小案例</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/01/13/JS搜索框自动提示.html">
-            
-                <span>JS搜索框自动提示</span>
-        </a>
-        <div class="abstract-content">
-            
-效果展示：
-
-html部分：
-123456789101112131415161718192021222324252627282930313233343536  &lt;style&gt;   ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="小案例">小案例</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/01/13/绑定解绑事件兼容代码.html">
-            
-                <span>绑定/解绑事件兼容代码</span>
-        </a>
-        <div class="abstract-content">
-            为元素绑定( 多个 )事件(DOM)除了用对象.onclick=fn这类的方式（这种方式无法绑定多个事件，如果写了多个事件则会发生覆盖），还有：  1 对象.addEventListener(“...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/01/13/JS实现全选与全不选.html">
-            
-                <span>JS实现全选与全不选</span>
-        </a>
-        <div class="abstract-content">
-            
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="小案例">小案例</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/01/12/浅谈js匿名函数.html">
-            
-                <span>浅谈js匿名函数</span>
-        </a>
-        <div class="abstract-content">
-            匿名函数与函数表达式​    与匿名函数相对的是命名函数——如果函数有名字就是命名函数，反之即为匿名函数。
-​    函数的一般定义方式为函数声明：
-1234function 函数名()&#12...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/01/09/字符串小案例.html">
-            
-                <span>字符串小练习</span>
-        </a>
-        <div class="abstract-content">
-            案例一：找到这个字符串中所有的 o 出现的位置“hello wod odd ott fbo nhyo”
-12345678var str = "hello wod odd ott fbo nhyo...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="小案例">小案例</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/3/">&#60; PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">NEXT &#62;</a>
-    </nav>
-    
-</main>
-            <!-- profile -->
+    <ul class="post-paginator">
+        <li class="next">
             
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src="/avatar/heykong.png">
-    <div class="profile-name">Dunteng</div>
-    
-    <div class="profile-signature">
-        晚来天欲雪，能饮一杯无？
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
+                <div class="nextSlogan">Next Post</div>
+                <a href="/[object Object]2019/10/01/MySQL基本的增删改查操作.html" title="MySQL基本的增删改查操作">
+                    <div class="nextTitle">MySQL基本的增删改查操作</div>
+                </a>
             
-                <a href="mailto:lindunteng@gmail.com" class="iconfont-archer email" title="email"></a>
+        </li>
+        <li class="previous">
             
-        
-    
-        
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/[object Object]2019/09/25/新linux学习.html" title="虚拟机安装centos7和node">
+                    <div class="prevTitle">虚拟机安装centos7和node</div>
+                </a>
             
-                <a href="//github.com/dunteng" class="iconfont-archer github" target="_blank" title="github"></a>
-            
-        
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-        
-            
-                <span class="iconfont-archer wechat" title="wechat">
-                  
-                  <img class="profile-qr" src="/assets/WeChat.png">
-                </span>
-            
-        
     
-        
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
     
-        
-    
-        
-            
-                <a href="https://www.zhihu.com/people/ten-20/activities" class="iconfont-archer zhihu" target="_blank" title="zhihu"></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href="https://lindunwei.github.io/" target="_black">lindunwei</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href="https://lai.yuweining.cn/" target="_black">不死鸟</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href="http://zhangwei2222.github.io/" target="_black">zhangwei2222<br></a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href="http://chenweilin.xin" target="_black">cwl-blog</a>
-                    </span>
-                
-            
-        </div>
-    
-    
-        <div class="about-me">
-            <a href="/about">ABOUT ME</a>
-        </div>
-    
-</div>
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
             
         </div>
         <footer class="footer footer-unloaded">
@@ -894,6 +567,24 @@ html部分：
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">1.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基础demo"><span class="toc-number">2.</span> <span class="toc-text">基础demo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#微型服务器的编写"><span class="toc-number">3.</span> <span class="toc-text">微型服务器的编写</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -2099,6 +1790,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

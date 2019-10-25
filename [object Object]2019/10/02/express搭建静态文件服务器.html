@@ -22,7 +22,7 @@
     <meta name="description" content="我的个人博客">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Dunteng&#39;s Blog</title>
+    <title>使用express搭建静态文件服务器 · Dunteng&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,6 +77,8 @@
 
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -216,14 +218,23 @@
 </head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Dunteng&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">使用express搭建静态文件服务器</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">Dunteng's Blog.</a>
 </header>
@@ -242,7 +253,7 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-img" style="background-image: url(https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/background/photo-1544166829-49960080435f.jpg)"></div>
@@ -251,8 +262,8 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Dunteng's Blog.
-            <!-- 文章页  -->
+            使用express搭建静态文件服务器
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -260,12 +271,43 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                Go big or go home！
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">223</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/10/02</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -366,446 +408,61 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/08/08/vi—终端中的编辑器.html">
-            
-                <span>vi编辑器教程</span>
-        </a>
-        <div class="abstract-content">
-            vi —— 终端中的编辑器目标
-vi 简介
-打开和新建文件
-三种工作模式
-常用命令
-分屏命令
-常用命令速查图
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="搭建静态文件服务器"><a href="#搭建静态文件服务器" class="headerlink" title="搭建静态文件服务器"></a>搭建静态文件服务器</h2><p>之前用过原生的node.js来写服务器👉（<a href="https://dunteng.github.io/[object%20Object]2019/09/30/net%E6%A8%A1%E5%9D%97%E5%86%99%E5%BE%AE%E5%9E%8Bnode%E6%9C%8D%E5%8A%A1%E5%99%A8.html">net服务器</a>，<a href="https://dunteng.github.io/[object%20Object]2019/10/01/%E4%BD%BF%E7%94%A8http%E6%A8%A1%E5%9D%97%E9%87%8D%E6%9E%84%E5%BE%AE%E5%9E%8B%E6%9C%8D%E5%8A%A1%E5%99%A8.html">http服务器</a>）</p>
+<p>今天用express，比起<strong>原生node.js</strong>来太简单了！</p>
+<p>先<code>npm init</code>初始化项目文件夹，运行<code>npm install express --save</code>安装express.</p>
+<p>index.js服务器启动文件👇</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> express();<span class="comment">//创建express实例</span></span><br><span class="line"></span><br><span class="line">app.use(express.static(<span class="string">"page"</span>));</span><br><span class="line">app.listen(<span class="number">12306</span>);</span><br></pre></td></tr></table></figure>
+<p>项目架构如下👇</p>
+<p><img src="https://pic2.zhimg.com/v2-30bad54d291afaa93d00b03e257fb535_r.jpg" alt=""></p>
+<p>运行<code>node index.js</code>，然后在浏览器中访问<a href="http://127.0.0.1:12306/index.html" target="_blank" rel="noopener">http://127.0.0.1:12306/index.html</a>和<a href="http://127.0.0.1:12306/test.html" target="_blank" rel="noopener">http://127.0.0.1:12306/test.html</a>就直接显示出相应的页面了。<strong>太他妈方便了！</strong></p>
+<p><br></p>
+<p>写一下配置文件和对应的处理文件稍微规范化一点👇</p>
+<p><img src="https://pic3.zhimg.com/v2-6380ca214c7bf0c61be476f8cc1fbf0a_r.jpg" alt=""></p>
+<p>📌<strong>config.js</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> globalConfig = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> conf = fs.readFileSync(<span class="string">'./server.conf'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> configArr = conf.toString().split(<span class="string">"\r\n"</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; configArr.length; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> itemArr = configArr[i].replace(<span class="regexp">/\s+/g</span>, <span class="string">""</span>).split(<span class="string">'='</span>);</span><br><span class="line">    globalConfig[itemArr[<span class="number">0</span>]] = itemArr[<span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(globalConfig);</span><br><span class="line"><span class="built_in">module</span>.exports = globalConfig;</span><br></pre></td></tr></table></figure>
+<p><br><br></p>
 
-01. vi 简介1.1 学习 vi 的目的
-在工作中，要对 服务器 上的文件进行...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Linux">Linux</a>
-    
-</div>
-            
-        </div>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/06/05/02Vue音乐播放器.html">
-            
-                <span>Vue音乐播放器(二)</span>
-        </a>
-        <div class="abstract-content">
-            推荐页面开发源码完成轮播图时
-完成歌单列表时
-
-better-scroll插件中文文档
-1.x Docs
-2.x Docs
-之后的轮播图组件和列表滚动组件都会用到这个插件。这个插件还挺牛逼的，9...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/06/03/Vuex笔记.html">
-            
-                <span>Vuex笔记</span>
-        </a>
-        <div class="abstract-content">
-            我这篇文章也放在我的GitHub上，里面还有相应的代码。建议移步GitHub阅读本文章。
-本文代码
-前导~state部分的全部代码： 点击
-应用（一）代码： 点击
-getters 应用（二）代码...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Vue">Vue</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/06/01/01Vue音乐播放器.html">
-            
-                <span>Vue音乐播放器（一）</span>
-        </a>
-        <div class="abstract-content">
-            项目简介
-
-vue cli脚手架搭建vue init webpack vue-music 方式我之前安装的是vue cli3的版本，事实上cli3也能使用2.x模板：需要安装init模块
-12n...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/01</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Vue">Vue</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="项目">项目</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/05/12/Vue父子组件传值和非父子组件传值.html">
-            
-                <span>vue父子组件传值和非父子组件传值</span>
-        </a>
-        <div class="abstract-content">
-            案例代码
-实现如下的一个案例：
-
-简介该页面是一个父组件Form.vue，添加学生的这个input框部分是一个子组件addStudent.vue，下面的 li 显示学生的这部分是另一个子组件St...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Vue">Vue</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/05/11/vue写个日历组件.html">
-            
-                <span>vue写个日历组件</span>
-        </a>
-        <div class="abstract-content">
-            
-
-样式：
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="小案例">小案例</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Vue">Vue</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/05/10/啥是前端工程化模块化组件化.html">
-            
-                <span>啥是前端工程化、模块化、组件化？</span>
-        </a>
-        <div class="abstract-content">
-            工程化前端工程化是根据业务特点，将前端开发流程规范化，标准化，它包括了开发流程，技术选型，代码规范，构建发布等，用于提升前端工程师的开发效率和代码质量。前端工程化是一种思想，模块化和组件化可以看...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/10</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/05/10/webpack笔记.html">
-            
-                <span>webpack4复习笔记</span>
-        </a>
-        <div class="abstract-content">
-            
-webpack的卸载webpack4.x开始官方文档是说要单独安装webpack-cli所以如果是用4.+就需要卸载cli
-12345678//删除全局webpack-cli  卸载unins...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="webpack">webpack</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/04/03/ES6数据劫持.html">
-            
-                <span>ES6数据劫持proxy&amp;reflect</span>
-        </a>
-        <div class="abstract-content">
-            ES5数据劫持VUE的双向数据绑定的基础知识。
-
-对对象的监测
-12345678910111213141516171819202122232425262728293031323334353637...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/04/01/箭头函数看这篇就够了.html">
-            
-                <span>箭头函数看这篇就够了</span>
-        </a>
-        <div class="abstract-content">
-            初试箭头函数作用：函数目的指向性更强，可读性更好，简化代码，提高开发效率
-特点：
-
-代码1：
-123456let add = (a, b) =&gt; &#123;    return a + ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/01</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/">&#60; PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">NEXT &#62;</a>
-    </nav>
-    
-</main>
-            <!-- profile -->
+    <ul class="post-paginator">
+        <li class="next">
             
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src="/avatar/heykong.png">
-    <div class="profile-name">Dunteng</div>
-    
-    <div class="profile-signature">
-        晚来天欲雪，能饮一杯无？
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
+                <div class="nextSlogan">Next Post</div>
+                <a href="/[object Object]2019/10/05/聊天机器人.html" title="聊天机器人">
+                    <div class="nextTitle">聊天机器人</div>
+                </a>
             
-                <a href="mailto:lindunteng@gmail.com" class="iconfont-archer email" title="email"></a>
+        </li>
+        <li class="previous">
             
-        
-    
-        
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/[object Object]2019/10/01/MySQL基本的增删改查操作.html" title="MySQL基本的增删改查操作">
+                    <div class="prevTitle">MySQL基本的增删改查操作</div>
+                </a>
             
-                <a href="//github.com/dunteng" class="iconfont-archer github" target="_blank" title="github"></a>
-            
-        
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-        
-            
-                <span class="iconfont-archer wechat" title="wechat">
-                  
-                  <img class="profile-qr" src="/assets/WeChat.png">
-                </span>
-            
-        
     
-        
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
     
-        
-    
-        
-            
-                <a href="https://www.zhihu.com/people/ten-20/activities" class="iconfont-archer zhihu" target="_blank" title="zhihu"></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href="https://lindunwei.github.io/" target="_black">lindunwei</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href="https://lai.yuweining.cn/" target="_black">不死鸟</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href="http://zhangwei2222.github.io/" target="_black">zhangwei2222<br></a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href="http://chenweilin.xin" target="_black">cwl-blog</a>
-                    </span>
-                
-            
-        </div>
-    
-    
-        <div class="about-me">
-            <a href="/about">ABOUT ME</a>
-        </div>
-    
-</div>
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
             
         </div>
         <footer class="footer footer-unloaded">
@@ -890,6 +547,24 @@ webpack的卸载webpack4.x开始官方文档是说要单独安装webpack-cli所�
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建静态文件服务器"><span class="toc-number">1.</span> <span class="toc-text">搭建静态文件服务器</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -2121,6 +1796,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

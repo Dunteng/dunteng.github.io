@@ -22,7 +22,7 @@
     <meta name="description" content="我的个人博客">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Dunteng&#39;s Blog</title>
+    <title>Redis · Dunteng&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -218,12 +218,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Dunteng&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Redis</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">Dunteng's Blog.</a>
 </header>
@@ -235,24 +246,76 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/background/photo-1544166829-49960080435f.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            Redis
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="后端">后端</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="redis">redis</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.2k</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/10/08</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -353,45 +416,95 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2018/12/05/浅谈清除（闭合）浮动.html">
-            
-                <span>浅谈清除（闭合）浮动</span>
-        </a>
-        <div class="abstract-content">
-            为什么要清除浮动由于浮动元素不再占用原文档流的位置，所以它会对后面的元素排版产生影响，为了解决这些问题，此时就需要在该元素中清除浮动。
-准确地说，并不是清除浮动，而是清除浮动后造成的影响
-如果浮...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="缓存背景"><a href="#缓存背景" class="headerlink" title="缓存背景"></a>缓存背景</h2><p>由于数据库是建立在硬盘上的，当有大量数据读写数据库时，而硬盘的读写速度慢，导致数据库性能有瓶颈，数据吞吐不够。</p>
+<p>因此在客户端和数据库之前间，加一个<strong>缓存</strong>，而这个缓存是用内存做的，<strong>内存的读写速度非常快</strong>。 当要对数据库进行读写时，先访问中间层的缓存，读数据时先看缓存中有无想要的数据，若有直接从缓存拿，若无则再去访问数据库；写数据时，先写进缓存，之后缓存再慢慢同步到数据库。这样就帮数据库有效地拦截了一些频繁的读写操作。</p>
+<p><img src="https://pic4.zhimg.com/v2-ae215207d175303dd4e37b37b61a7d33_r.jpg" alt=""></p>
+<p>【什么样的数据存入缓存】缓存中存的应是读写数据库非常频繁的数据。</p>
+<p>【防止缓存穿透】缓存穿透是指查询一个一定不存在的数据，由于缓存是不命中时被动写的，并且出于容错考虑，如果从存储层查不到数据则不写入缓存，这将导致这个不存在的数据每次请求都要到存储层去查询，失去了缓存的意义。在流量大时，可能DB就挂掉了，要是有人利用不存在的key频繁攻击我们的应用，这就是漏洞。这需要一些算法去识别，比如布隆算法。参考文章👉<a href="https://blog.csdn.net/zeb_perfect/article/details/54135506" target="_blank" rel="noopener">点击</a></p>
+<p><br></p>
+<p>缓存这一层就用<strong>Redis</strong>来做。Redis既使用内存，也使用硬盘。作为读写操作的时候是用内存的，但是内存存数据是暂时的，机器一关内存里的东西就没了，所以需要用到硬盘来做缓存备份。内存与硬盘之间是同步数据和恢复数据的关系。</p>
+<p>Redis是用C语言写的，Redis支持多种数据结构，key-value、key-map、key-set、key-list等等。比较常用的就是key-value，key一般是字符串，value可以是数字也可以是字符串。但是C语言中是没有字符串的。而Redis中的字符串长度是可变的，是用了SDS结构（Simple Dynamic String）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>当字符串变长时，先看sds结构内free还有没有足够的空间，没有的话就要重新创建一个更大的字节数组用以存储变长后的字符串。</p>
+<p>关于更多Redis源码的知识这里就不说了，因为我只懂一点皮毛。</p>
+<p><br></p>
+<h2 id="Windows使用Redis"><a href="#Windows使用Redis" class="headerlink" title="Windows使用Redis"></a>Windows使用Redis</h2><p>Redis是微软开源的一个存储数据库。可以在GitHub上下载👉<a href="https://github.com/microsoftarchive/redis/releases" target="_blank" rel="noopener">https://github.com/microsoftarchive/redis/releases</a></p>
+<p>注意window系统中只有64位的系统才能使用Redis。</p>
+<p><img src="https://pic2.zhimg.com/v2-754e178d110a14222ca88e9d52ee724d_r.jpg" alt=""></p>
+<p>下载后点击，不需要配置什么，按提示安装就行了。安装后要配置一些配置文件。</p>
+<p><br></p>
+<p><strong>设置链接密码，修改redis.windows-service.conf</strong></p>
+<p>​    <img src="https://pic4.zhimg.com/v2-3d74b5d6edf13cb03fca1b642b1abc6b_r.jpg" alt=""></p>
+<p><br></p>
+<p><strong>查看是否允许本地访问</strong>，有的版本是允许的，如下所示</p>
+<p><img src="https://pic3.zhimg.com/v2-f62414b17a45477d65578f64858c555e_r.jpg" alt=""></p>
+<p><br></p>
+<p>配置修改后需要重启Redis，打开系统的”服务“，找到Redis重启即可。</p>
+<p><br></p>
+<p>双击redis-cli.exe启动。</p>
+<p>输入<code>auth 123456</code>连接Redis。通过<code>set</code>键值对来写入数据，通过<code>get</code>键来获取数据。</p>
+<p><img src="https://pic4.zhimg.com/80/v2-c2683c7ddec97d9396f726cfbe89c9bb_hd.jpg" alt=""></p>
+<h2 id="CentOS使用Redis"><a href="#CentOS使用Redis" class="headerlink" title="CentOS使用Redis"></a>CentOS使用Redis</h2><p>使用安装包下载👇</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-4.0.2.tar.gz</span><br></pre></td></tr></table></figure>
+<p>解压</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xzf redis-4.0.2.tar.gz</span><br></pre></td></tr></table></figure>
+<p>下载gcc依赖环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install gcc</span><br></pre></td></tr></table></figure>
+<p>执行下面的命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">make MOLLOC=libc</span><br><span class="line"></span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<p>之后再<code>/usr/local/bin</code>目录下就多了Redis的可执行文件</p>
+<p><img src="https://pic3.zhimg.com/v2-8dda927023de977c96fdf8b25f4b581e_r.jpg" alt=""></p>
+<p>执行命令👇</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-sever &amp;</span><br></pre></td></tr></table></figure>
+<p>这样它就可以在后台运行了。</p>
+<p>执行<code>ps aux grep|&quot;redis&quot;</code>查看到redis的进程正在执行。</p>
+<p>如果要关闭Redis，就杀了它的进程。</p>
+<p><img src="https://pic1.zhimg.com/v2-dff48949afd760407a8abce57ff851ec_r.jpg" alt=""></p>
+<p><br></p>
+<h2 id="node操作Redis"><a href="#node操作Redis" class="headerlink" title="node操作Redis"></a>node操作Redis</h2><p>需要<code>npm install redis --save</code>安装redis模块。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> redis = <span class="built_in">require</span>(<span class="string">'redis'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> port = <span class="number">6379</span>;</span><br><span class="line"><span class="keyword">var</span> host = <span class="string">"127.0.0.1"</span>;</span><br><span class="line"><span class="keyword">var</span> password = <span class="string">"123456"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> client = redis.createClient(port, host);</span><br><span class="line">client.auth(password, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"OK，redis连接成功"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getKey</span>(<span class="params">key, callback</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    client.on(<span class="string">"connect"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        client.get(key, callback);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setKey</span>(<span class="params">key, value, callback</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    client.on(<span class="string">'connect'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        client.set(key, value, callback);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">callback</span>(<span class="params">error, reply</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (error == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(reply);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">setKey(<span class="string">'iii'</span>, <span class="string">'III'</span>, callback);</span><br><span class="line">getKey(<span class="string">'iii'</span>, callback);</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>之前说过redis除了key-value的数据结构，还可以存哈希结构的数据。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sethash</span>(<span class="params">hash, key, value, callback</span>) </span>&#123;</span><br><span class="line">    client.on(<span class="string">'connect'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        client.hset(hash, key, value, callback)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">gethash</span>(<span class="params">hash, key, callback</span>) </span>&#123;</span><br><span class="line">    client.on(<span class="string">'connect'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        client.hget(hash, key, callback)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getallhash</span>(<span class="params">hash, callback</span>) </span>&#123;</span><br><span class="line">    client.on(<span class="string">'connect'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        client.hgetall(hash, callback)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hmset</span>(<span class="params">hash, params, callback</span>) </span>&#123;</span><br><span class="line">    client.on(<span class="string">'connect'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        client.hmset(hash, ...params, callback)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">callback</span>(<span class="params">error, reply</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (error == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(reply);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sethash(<span class="string">'map1'</span>, <span class="string">'key1'</span>, <span class="string">'value1'</span>, callback)</span><br><span class="line">sethash(<span class="string">'map1'</span>, <span class="string">'key2'</span>, <span class="string">'value2'</span>, callback)</span><br><span class="line">hmset(<span class="string">'set1'</span>, [<span class="number">0</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">12</span>], callback)</span><br><span class="line">gethash(<span class="string">'map1'</span>, <span class="string">'key1'</span>, callback)</span><br><span class="line">getallhash(<span class="string">'map1'</span>, callback)</span><br><span class="line">getallhash(<span class="string">'set1'</span>, callback)</span><br></pre></td></tr></table></figure>
+
     </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/[object Object]2019/10/15/防抖节流.html" title="防抖节流">
+                    <div class="nextTitle">防抖节流</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/[object Object]2019/10/05/聊天机器人.html" title="聊天机器人">
+                    <div class="prevTitle">聊天机器人</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/tags/html-css/">&#60; PREV</a><a class="page-number" href="/tags/html-css/">1</a><span class="page-number current">2</span>
-    </nav>
     
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -478,6 +591,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#缓存背景"><span class="toc-number">1.</span> <span class="toc-text">缓存背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Windows使用Redis"><span class="toc-number">2.</span> <span class="toc-text">Windows使用Redis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CentOS使用Redis"><span class="toc-number">3.</span> <span class="toc-text">CentOS使用Redis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#node操作Redis"><span class="toc-number">4.</span> <span class="toc-text">node操作Redis</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1759,6 +1890,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

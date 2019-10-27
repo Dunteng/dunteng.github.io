@@ -22,7 +22,7 @@
     <meta name="description" content="我的个人博客">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>JS电商上线项目 · Dunteng&#39;s Blog</title>
+    <title>mongoDB · Dunteng&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -232,7 +232,7 @@
                 <a href="/">Dunteng&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">JS电商上线项目</a>
+                <a href="#" class="post-name">mongoDB</a>
             </div>
     </div>
     
@@ -262,7 +262,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            JS电商上线项目
+            mongoDB
             <!-- 404 -->
             
         </h1>
@@ -281,20 +281,20 @@ height:50vh;
                 
                     <div class="post-intro-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="后端">后端</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="项目">项目</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="mongoDB">mongoDB</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">964</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">625</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/02/28</span>
+                    <span class="post-intro-time">2019/10/05</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -418,191 +418,35 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="架构设计"><a href="#架构设计" class="headerlink" title="架构设计"></a>架构设计</h1><ul>
-<li><p>前后端完全分离</p>
-</li>
-<li><p>分层架构</p>
-<p>逻辑层–数据层–工具层</p>
-<p>通过层级的划分来进行系统的解耦，提高系统可扩展性和可维护性</p>
-</li>
-<li><p>模块化</p>
-<p>达到进一步解耦的效果，让系统通过组件的拼装来完成业务的实现。</p>
-<p>模块化的另一个好处：支持团队的并行开发，提高整个团队的效率</p>
-</li>
-</ul>
+        <h2 id="Windows安装"><a href="#Windows安装" class="headerlink" title="Windows安装"></a>Windows安装</h2><p>下载地址：<a href="https://www.mongodb.com/download-center/community" target="_blank" rel="noopener">https://www.mongodb.com/download-center/community</a></p>
+<p>运行mongo.exe</p>
+<p>输入<code>show dbs</code>显示数据库。</p>
+<p><img src="https://pic2.zhimg.com/80/v2-f16be839b9b3f541f4de299d92ae0b75_hd.jpg" alt=""></p>
 <p><br></p>
-<h2 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h2><p>HTML+CSS+JavaScript+jQuery（Ajax和DOM操作）</p>
+<h2 id="CentOS安装"><a href="#CentOS安装" class="headerlink" title="CentOS安装"></a>CentOS安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://fastdl.mongodb.org/linux/mongodb-linux-x86_64-2.4.9.tgz</span><br></pre></td></tr></table></figure>
+<p>执行该命令下载安装报包。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf mongodb-linux-x86_64-2.4.9.tgz</span><br></pre></td></tr></table></figure>
+<p>解压之后移动到/usr/local中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv ./mongodb-linux-x86_64-2.4.9.tgz /usr/local/mongodb</span><br></pre></td></tr></table></figure>
+<p>数据库存放到/home目录下，在/home目录下新建两个文件夹并创建mongodb.log</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir mongodb  /home/mongodb 即为数据库路径</span><br><span class="line">mkdir mongodblog  /home/mongodblog  日志路径</span><br><span class="line">cd /home/mongodblog</span><br><span class="line">touch mongodb.log</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/mongodb/bin</span><br><span class="line">ll</span><br><span class="line">可以看到有一个可执行文件mongod</span><br></pre></td></tr></table></figure>
+<p>回到mongodb的根路径下执行👇</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/mongod --dbpath /home/mongodb/ --logpath /home/mongolog/mongodb.log --fork --port 27017</span><br></pre></td></tr></table></figure>
+<p><code>--fork</code>使得mongodb在后台执行。</p>
+<p>查看是否成功启动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps aux |grep &quot;mongo&quot;</span><br></pre></td></tr></table></figure>
 <p><br></p>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><ul>
-<li><p>webpack</p>
-<p>对代码进行基于CommonJs的模块化打包集成</p>
-</li>
-<li><p>node.js</p>
-</li>
-<li><p>npm</p>
-</li>
-<li><p>shell脚本</p>
-<p>用于制作自动化脚本发布工具</p>
-</li>
-<li><p>Charles</p>
-<p>用于请求劫持</p>
-</li>
-<li><p>Git</p>
+<h2 id="mongodb基本指令"><a href="#mongodb基本指令" class="headerlink" title="mongodb基本指令"></a>mongodb基本指令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">查看数据库：</span><br><span class="line">show dbs</span><br><span class="line"></span><br><span class="line">使用数据库, （use 数据库名）如果这给数据库不存在，则创建之：</span><br><span class="line">use &lt;database&gt;</span><br><span class="line"></span><br><span class="line">查看当前数据库名：</span><br><span class="line">db.getName()</span><br><span class="line"></span><br><span class="line">mongodb没有mysql表的概念，但是有集合collection</span><br><span class="line">查看collection：</span><br><span class="line">show collections</span><br><span class="line"></span><br><span class="line">创建collection：</span><br><span class="line">db.createCollection(&apos;集合名称&apos;)</span><br><span class="line"></span><br><span class="line">集合中增加数据：</span><br><span class="line">db.collection1.save(&#123;name:&apos;tony&apos;,age:18&#125;);</span><br><span class="line"></span><br><span class="line">查询集合中所有数据：</span><br><span class="line">db.collection1.find()</span><br><span class="line"></span><br><span class="line">查询集合中有几条数据：</span><br><span class="line">db.collection1.find().count()</span><br><span class="line"></span><br><span class="line">条件查询:</span><br><span class="line">db.collection1.find(&#123;age:18&#125;)//age为18的数据</span><br><span class="line">db.collection1.find(&#123;age:&#123;$gt:18&#125;&#125;)//age大于18</span><br><span class="line">db.collection1.find(&#123;age:&#123;$lt:18&#125;&#125;)//age小于18</span><br><span class="line">db.collection1.find(&#123;age:&#123;$gte:18&#125;&#125;)//age大于等于18</span><br><span class="line">db.collection1.find(&#123;age:&#123;$lte:18&#125;&#125;)//age小于等于18</span><br><span class="line"></span><br><span class="line">名字去重</span><br><span class="line">db.collection1.distinct(&quot;name&quot;)</span><br><span class="line"> </span><br><span class="line">多重条件查询</span><br><span class="line">and：</span><br><span class="line">db.collection1.find(&#123;$and:[&#123;age:18&#125;,&#123;name:&apos;tony&apos;&#125;]&#125;)  //要特别注意这种写法</span><br><span class="line">or:   </span><br><span class="line">db.collection1.find(&#123;$or:[&#123;age:18&#125;,&#123;name:&apos;tony&apos;&#125;]&#125;)</span><br><span class="line"></span><br><span class="line">查询age大于12小于19：</span><br><span class="line">db.collection1.find(&#123;age:&#123;$gt:12, $lt:19&#125;&#125;)</span><br><span class="line"></span><br><span class="line">查询前两条数据：</span><br><span class="line">db.collection1.find().limit(2)</span><br><span class="line"></span><br><span class="line">跳过前两条然后只查看两条：</span><br><span class="line">db.collection1.find().skip(2).limit(2)</span><br><span class="line"></span><br><span class="line">删除age为12的数据：</span><br><span class="line">db.collection1.remove(&#123;age:12&#125;)</span><br><span class="line"></span><br><span class="line">修改：</span><br><span class="line">db.collection1.update(&#123;name:&apos;tony&apos;&#125;,&#123;$set:&#123;age:80&#125;&#125;, false ,true)</span><br></pre></td></tr></table></figure>
+<p>更多操作Google一下。</p>
 <p><br></p>
-</li>
-</ul>
-<h1 id="开发安排"><a href="#开发安排" class="headerlink" title="开发安排"></a>开发安排</h1><h2 id="准备部分"><a href="#准备部分" class="headerlink" title="准备部分"></a>准备部分</h2><ul>
-<li>基础框架的搭建<ul>
-<li>双平台的开发环境安装</li>
-<li>git仓库的规范化用法</li>
-<li>webpack脚手架搭建实战</li>
-</ul>
-</li>
-<li><p>通用模块</p>
-<ul>
-<li><p>可高复用工具类设计与封装</p>
-</li>
-<li><p>通用模块设计与独立打包方法</p>
-</li>
-<li><p>高逼格UI开发经验与技巧</p>
+<h2 id="node操作mongodb"><a href="#node操作mongodb" class="headerlink" title="node操作mongodb"></a>node操作mongodb</h2><p>先安装mongodb依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install mongodb --save</span><br></pre></td></tr></table></figure>
+<p>先保证开启了mongodb，最基本的连接👇</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mongo = <span class="built_in">require</span>(<span class="string">'mongodb'</span>).MongoClient;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> url = <span class="string">"mongodb://127.0.0.1:27017/test"</span>;  <span class="comment">//本地ip地址、端口号和数据库名称</span></span><br><span class="line"></span><br><span class="line">mongo.connect(url, <span class="function"><span class="keyword">function</span> (<span class="params">error, db</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (error == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(db);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(error);</span><br><span class="line">    &#125;</span><br><span class="line">    db.close();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p><br></p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="业务部分"><a href="#业务部分" class="headerlink" title="业务部分"></a>业务部分</h2><ul>
-<li>用户模块<ul>
-<li>数据安全性处理方案</li>
-<li>表单同步/异步验证</li>
-<li>基于JavaScript的小型SPA开发</li>
-</ul>
-</li>
-<li>商品模块<ul>
-<li>jQuery插件模块化改造</li>
-<li>独立组建抽离技巧</li>
-<li>多功能列表开发</li>
-</ul>
-</li>
-<li>购物车模块<ul>
-<li>商品状态随时验证方法</li>
-<li>模块内部方法调用方式</li>
-<li>非form提交时的数据验证</li>
-</ul>
-</li>
-<li>订单模块<ul>
-<li>modal式组件封装思想</li>
-<li>城市级联操作</li>
-<li>复杂表单回填</li>
-</ul>
-</li>
-<li>支付模块<ul>
-<li>支付宝支付功能对接</li>
-<li>支付状态动态监测</li>
-<li>支付成功回执处理</li>
-</ul>
-</li>
-<li>管理后台<ul>
-<li>管理后天实现思路</li>
-<li>React框架及其组件化</li>
-<li>React-Router的使用</li>
-</ul>
-</li>
-<li>访问数据分析<ul>
-<li>PV / UV</li>
-<li>流量来源监控</li>
-<li>用户特征分析</li>
-</ul>
-</li>
-<li>SEO优化<ul>
-<li>SEO原理</li>
-<li>关键词的设计</li>
-<li>SEO监控</li>
-</ul>
-</li>
-<li>线上部署<ul>
-<li>线上服务器环境搭建</li>
-<li>自动化发布脚本编写</li>
-<li>域名规划与nginx配置</li>
-</ul>
-</li>
-<li>可用性监控<ul>
-<li>外部监控原理</li>
-<li>第三方监控的设置</li>
-<li>更高级的监控方式</li>
-</ul>
-</li>
-</ul>
-<p><br></p>
-<h1 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h1><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0mjkhkl8tj30q90dcdol.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0mjnb9yh9j30ob09un0z.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0mjorrwkij30o40bm780.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0mjpfza5ij30j30a2mzz.jpg" alt=""></p>
-<p><br><br></p>
-<h1 id="架构设计与技术选型"><a href="#架构设计与技术选型" class="headerlink" title="架构设计与技术选型"></a>架构设计与技术选型</h1><h2 id="架构设计-1"><a href="#架构设计-1" class="headerlink" title="架构设计"></a>架构设计</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0mjtko8v5j30kn08s0uy.jpg" alt=""><br></p>
-<h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0mjvdkhrzj30k20a80v1.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0mjyk0guij30lh0a8aev.jpg" alt=""></p>
-<p>（了解一下这几种模块化方案，本项目采用common JS）</p>
-<p><br><br></p>
-<p>一个web应用的入口式网页页面，而每一个页面都有一个主模块，用来组织各个子模块的逻辑关系，从而形成一个功能完整的页面，我们可以把主模块和各个子模块放在同一层，称之为<strong>逻辑层</strong>，而逻辑层需要和<strong>后端服务</strong>进行数据交互。我们把这些数据交互的方法都划分到一个个的service模块里，我们把这些service模块又划分为一个层，称之为<strong>数据层</strong>，所有的数据交换都要由数据层来和服务器进行，不允许业务模块和服务器直接进行跨层的对接。最后我们需要划分一个最底层的层级，用来提供支持整个系统的通用工具，称之为<strong>工具层</strong>。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0mk3e6bomj30n60de7a2.jpg" alt=""></p>
-<p><br></p>
-<h2 id="技术选型-1"><a href="#技术选型-1" class="headerlink" title="技术选型"></a>技术选型</h2><h3 id="需要考虑的东西"><a href="#需要考虑的东西" class="headerlink" title="需要考虑的东西"></a>需要考虑的东西</h3><ul>
-<li><p>软件过程模型</p>
-<ul>
-<li>瀑布模型</li>
-<li>螺旋模型</li>
-<li>敏捷开发</li>
-</ul>
-<p>软件过程的不同所带来的开发过程也不同</p>
-</li>
-<li><p>前后端分离</p>
-<p>分离方式的不同会影响到开发效率</p>
-</li>
-<li><p>构建工具</p>
-</li>
-<li><p>框架</p>
-</li>
-<li><p>代码版本控制软件</p>
-</li>
-<li><p>发布上线的方案</p>
-</li>
-</ul>
-<p><br></p>
-<h3 id="本项目的选择"><a href="#本项目的选择" class="headerlink" title="本项目的选择"></a>本项目的选择</h3><ul>
-<li><p>软件过程：敏捷开发</p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0mkp9cropj30li0aywi2.jpg" alt=""></p>
-</li>
-<li><p>前后端采用完全分离的方式</p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0ml71m3xtj30ik0ajmze.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0ml5apemcj30if0a0ad2.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0ml7o2i58j30jr09amzx.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0ml87sncyj30iu0ayn07.jpg" alt=""></p>
-</li>
-<li><p>框架选型</p>
-<p>使用 jQuery 来进行 Ajax 操作和 DOM 操作</p>
-</li>
-<li><p>构建工具</p>
-<p>webpack</p>
-</li>
-<li><p>版本控制</p>
-<p>Git</p>
-</li>
-<li><p>发布上线</p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0mlejuhmtj30dl0bzdin.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0mlfpuajvj30dk0c6tbk.jpg" alt=""></p>
-</li>
-</ul>
-<p><br><br></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
-<li>使用敏捷开发思想</li>
-<li>前后端完全分离</li>
-<li>commonJs + webpack 实现模块化</li>
-<li>框架使用 jQuery</li>
-<li>版本控制 git</li>
-</ul>
-<p><br><br></p>
-<h1 id="前后端配合方式和数据接口定义"><a href="#前后端配合方式和数据接口定义" class="headerlink" title="前后端配合方式和数据接口定义"></a>前后端配合方式和数据接口定义</h1><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0n3843zlvj30ld0d4jss.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0n39a2hx3j30l90d60un.jpg" alt=""></p>
+<p>进行【增删改查】代码操作👇</p>
+<p>未完待续。。。。</p>
 
     </article>
     <!-- license  -->
@@ -612,16 +456,16 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href="/[object Object]2019/03/04/继承.html" title="继承">
-                    <div class="nextTitle">继承</div>
+                <a href="/[object Object]2019/10/08/Redis.html" title="Redis">
+                    <div class="nextTitle">Redis</div>
                 </a>
             
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/[object Object]2019/02/25/导航细线边框的实现.html" title="导航细线边框的实现">
-                    <div class="prevTitle">导航细线边框的实现</div>
+                <a href="/[object Object]2019/10/05/聊天机器人.html" title="聊天机器人">
+                    <div class="prevTitle">聊天机器人</div>
                 </a>
             
         </li>
@@ -742,7 +586,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#架构设计"><span class="toc-number">1.</span> <span class="toc-text">架构设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#技术选型"><span class="toc-number">1.1.</span> <span class="toc-text">技术选型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工具"><span class="toc-number">1.2.</span> <span class="toc-text">工具</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#开发安排"><span class="toc-number">2.</span> <span class="toc-text">开发安排</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备部分"><span class="toc-number">2.1.</span> <span class="toc-text">准备部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#业务部分"><span class="toc-number">2.2.</span> <span class="toc-text">业务部分</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#需求分析"><span class="toc-number">3.</span> <span class="toc-text">需求分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#架构设计与技术选型"><span class="toc-number">4.</span> <span class="toc-text">架构设计与技术选型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#架构设计-1"><span class="toc-number">4.1.</span> <span class="toc-text">架构设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模块化"><span class="toc-number">4.2.</span> <span class="toc-text">模块化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#技术选型-1"><span class="toc-number">4.3.</span> <span class="toc-text">技术选型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#需要考虑的东西"><span class="toc-number">4.3.1.</span> <span class="toc-text">需要考虑的东西</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本项目的选择"><span class="toc-number">4.3.2.</span> <span class="toc-text">本项目的选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">4.3.3.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前后端配合方式和数据接口定义"><span class="toc-number">5.</span> <span class="toc-text">前后端配合方式和数据接口定义</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Windows安装"><span class="toc-number">1.</span> <span class="toc-text">Windows安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CentOS安装"><span class="toc-number">2.</span> <span class="toc-text">CentOS安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mongodb基本指令"><span class="toc-number">3.</span> <span class="toc-text">mongodb基本指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#node操作mongodb"><span class="toc-number">4.</span> <span class="toc-text">node操作mongodb</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

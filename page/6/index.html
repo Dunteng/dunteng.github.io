@@ -1,2273 +1,2150 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-    <!-- title -->
 
 
 
-
-<!-- keywords -->
-
+  
 
 
-
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="author" content="燎原火">
-    <meta name="renderer" content="webkit">
-    <meta name="copyright" content="燎原火">
-    
-    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
-    
-    <meta name="description" content="我的个人博客">
-    <meta http-equiv="Cache-control" content="no-cache">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Dunteng&#39;s Blog</title>
-    <style type="text/css">
-    @font-face {
-        font-family: 'Oswald-Regular';
-        src: url("/font/Oswald-Regular.ttf");
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="都会好的  总会有的">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dunteng&#39;s Blog">
+<meta property="og:url" content="https://dunteng.github.io/page/6/index.html">
+<meta property="og:site_name" content="Dunteng&#39;s Blog">
+<meta property="og:description" content="都会好的  总会有的">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dunteng&#39;s Blog">
+<meta name="twitter:description" content="都会好的  总会有的">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'GX48388M0Z',
+      apiKey: '24910416df90ea04217402b818109cef',
+      indexName: 'index',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
-
-    body {
-        margin: 0;
-    }
-
-    header,
-    footer,
-    .back-top,
-    .sidebar,
-    .container,
-    .site-intro-meta,
-    .toc-wrapper {
-        display: none;
-    }
-
-    .site-intro {
-        position: relative;
-        z-index: 3;
-        width: 100%;
-        /* height: 50vh; */
-        overflow: hidden;
-    }
-
-    .site-intro-placeholder {
-        position: absolute;
-        z-index: -2;
-        top: 0;
-        left: 0;
-        width: calc(100% + 300px);
-        height: 100%;
-        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
-        background-position: center center;
-        transform: translate3d(-226px, 0, 0);
-        animation: gradient-move 2.5s ease-out 0s infinite;
-    }
-
-    @keyframes gradient-move {
-        0% {
-            transform: translate3d(-226px, 0, 0);
-        }
-        100% {
-            transform: translate3d(0, 0, 0);
-        }
-    }
-
-</style>
-
-    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
-    
-    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
-/* This file is meant as a standalone workflow for
-- testing support for link[rel=preload]
-- enabling async CSS loading in browsers that do not support rel=preload
-- applying rel preload css once loaded, whether supported or not.
-*/ -->
-<script>
-(function( w ){
-	"use strict";
-	// rel=preload support test
-	if( !w.loadCSS ){
-		w.loadCSS = function(){};
-	}
-	// define on the loadCSS obj
-	var rp = loadCSS.relpreload = {};
-	// rel=preload feature support test
-	// runs once and returns a function for compat purposes
-	rp.support = (function(){
-		var ret;
-		try {
-			ret = w.document.createElement( "link" ).relList.supports( "preload" );
-		} catch (e) {
-			ret = false;
-		}
-		return function(){
-			return ret;
-		};
-	})();
-
-	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
-	// then change that media back to its intended value on load
-	rp.bindMediaToggle = function( link ){
-		// remember existing media attr for ultimate state, or default to 'all'
-		var finalMedia = link.media || "all";
-
-		function enableStylesheet(){
-			link.media = finalMedia;
-		}
-
-		// bind load handlers to enable media
-		if( link.addEventListener ){
-			link.addEventListener( "load", enableStylesheet );
-		} else if( link.attachEvent ){
-			link.attachEvent( "onload", enableStylesheet );
-		}
-
-		// Set rel and non-applicable media type to start an async request
-		// note: timeout allows this to happen async to let rendering continue in IE
-		setTimeout(function(){
-			link.rel = "stylesheet";
-			link.media = "only x";
-		});
-		// also enable media after 3 seconds,
-		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
-		setTimeout( enableStylesheet, 3000 );
-	};
-
-	// loop through link elements in DOM
-	rp.poly = function(){
-		// double check this to prevent external calls from running
-		if( rp.support() ){
-			return;
-		}
-		var links = w.document.getElementsByTagName( "link" );
-		for( var i = 0; i < links.length; i++ ){
-			var link = links[ i ];
-			// qualify links to those with rel=preload and as=style attrs
-			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
-				// prevent rerunning on link
-				link.setAttribute( "data-loadcss", true );
-				// bind listeners to toggle media back
-				rp.bindMediaToggle( link );
-			}
-		}
-	};
-
-	// if unsupported, run the polyfill
-	if( !rp.support() ){
-		// run once at least
-		rp.poly();
-
-		// rerun poly on an interval until onload
-		var run = w.setInterval( rp.poly, 500 );
-		if( w.addEventListener ){
-			w.addEventListener( "load", function(){
-				rp.poly();
-				w.clearInterval( run );
-			} );
-		} else if( w.attachEvent ){
-			w.attachEvent( "onload", function(){
-				rp.poly();
-				w.clearInterval( run );
-			} );
-		}
-	}
-
-
-	// commonjs
-	if( typeof exports !== "undefined" ){
-		exports.loadCSS = loadCSS;
-	}
-	else {
-		w.loadCSS = loadCSS;
-	}
-}( typeof global !== "undefined" ? global : this ) );
+  };
 </script>
 
-    <link rel="icon" href="/assets/favicon.ico">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
-    <link rel="preload" href="/scripts/main.js" as="script">
-    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
-    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
-    
-        <!-- algolia -->
-        <script>
-            
-            var hits = JSON.parse('{"per_page":10}')
-            var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
 
-            var algolia = {
-                applicationID: 'GX48388M0Z',
-                apiKey: '24910416df90ea04217402b818109cef',
-                indexName: 'index',
-                hits: hits,
-                labels: labels
-            }
-        </script>
-    
-    <!-- fancybox -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
-    <!-- 百度统计  -->
-    
-    <!-- 谷歌统计  -->
-    
+
+  <link rel="canonical" href="https://dunteng.github.io/page/6/">
+
+
+
+
+
+  <title>Dunteng's Blog</title>
+  
+
+
+
+
+
+
+
+
 </head>
 
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
     
-        <body class="home-body">
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
     
-    
-<header class="header index-header">
 
-    <div class="read-progress"></div>
-    <div class="header-sidebar-menu">&#xe775;</div>
-    <!-- post页的toggle banner  -->
-    
-    <a class="home-link" href="/">Dunteng's Blog.</a>
-</header>
-    <div class="wrapper">
-        <div class="site-intro" style="
-
-
-
-
-
-
-
-height:50vh;
-">
-    
-    <!-- 主页  -->
-    
-    
-    <!-- 文章页  -->
-            
-    <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/background/photo-1544166829-49960080435f.jpg)"></div>
-    <div class="site-intro-meta">
-        <!-- 标题  -->
-        <h1 class="intro-title">
-            <!-- 主页  -->
-            
-            Dunteng's Blog.
-            <!-- 文章页  -->
-            
-        </h1>
-        <!-- 副标题 -->
-        <p class="intro-subtitle">
-            <!-- 主页副标题  -->
-            
-            
-                Go big or go home！
-            
-            <!-- 文章页  -->
-            
-        </p>
-        <!-- 文章页meta -->
-        
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Dunteng's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
-        <script>
- 
-  // get user agent
-  var browser = {
-    versions: function () {
-      var u = window.navigator.userAgent;
-      return {
-        userAgent: u,
-        trident: u.indexOf('Trident') > -1, //IE内核
-        presto: u.indexOf('Presto') > -1, //opera内核
-        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
-        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
-        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
-        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
-        iPad: u.indexOf('iPad') > -1, //是否为iPad
-        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
-        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
-        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
-      };
-    }()
-  }
-  console.log("userAgent:" + browser.versions.userAgent);
 
-  // callback
-  function fontLoaded() {
-    console.log('font loaded');
-    if (document.getElementsByClassName('site-intro-meta')) {
-      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
-      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
-      var postIntros = document.getElementsByClassName('post-intros')[0]
-      if (postIntros) {
-        postIntros.classList.add('post-fade-in');
-      }
-    }
-  }
+<nav class="site-nav">
+  
 
-  // UC不支持跨域，所以直接显示
-  function asyncCb(){
-    if (browser.versions.uc) {
-      console.log("UCBrowser");
-      fontLoaded();
-    } else {
-      WebFont.load({
-        custom: {
-          families: ['Oswald-Regular']
-        },
-        loading: function () {  //所有字体开始加载
-          // console.log('loading');
-        },
-        active: function () {  //所有字体已渲染
-          fontLoaded();
-        },
-        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
-          console.log('inactive: timeout');
-          fontLoaded();
-        },
-        timeout: 5000 // Set the timeout to two seconds
-      });
-    }
-  }
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
 
-  function asyncErr(){
-    console.warn('script load from CDN failed, will load local script')
-  }
+      
+    </ul>
+  
 
-  // load webfont-loader async, and add callback function
-  function async(u, cb, err) {
-    var d = document, t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
-    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
-    s.parentNode.insertBefore(o, s);
-  }
+  
+</nav>
 
-  var asyncLoadWithFallBack = function(arr, success, reject) {
-      var currReject = function(){
-        reject()
-        arr.shift()
-        if(arr.length)
-          async(arr[0], success, currReject)
-        }
 
-      async(arr[0], success, currReject)
-  }
 
-  asyncLoadWithFallBack([
-    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
-    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
-    "/lib/webfontloader.min.js"
-  ], asyncCb, asyncErr)
-</script>        
-        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
-        <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2018/12/15/flex布局常用属性.html">
-            
-                <span>flex伸缩弹性布局常用属性</span>
-        </a>
-        <div class="abstract-content">
-            伸缩布局(CSS3)CSS3在布局方面做了非常大的改进，使得我们对块级元素的布局排列变得十分灵活，适应性非常强，其强大的伸缩性，在响应式开中可以发挥极大的作用。
+ </div>
+    </header>
 
-主轴：Flex容器的主轴主要用...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/15</span>
-            </div>
-            <!-- tags  -->
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
             
-            <div class="abstract-tags">
+  <section id="posts" class="posts-expand">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2018/12/10/浅谈BFC.html">
-            
-                <span>浅谈BFC</span>
-        </a>
-        <div class="abstract-content">
-            BFC(Block formatting context)
-直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level B...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2018/12/08/外边距塌陷问题.html">
-            
-                <span>外边距塌陷问题</span>
-        </a>
-        <div class="abstract-content">
-            外边距合并使用margin定义块元素的垂直外边距时，可能会出现外边距的合并。
-相邻块元素垂直外边距的合并当上下相邻的两个块元素相遇时，如果上面的元素有下外边距margin-bottom，下面的元...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2018/12/08/字体图标的使用.html">
-            
-                <span>字体图标的使用</span>
-        </a>
-        <div class="abstract-content">
-            字体格式不同浏览器所支持的字体格式是不一样的，我们有必要了解一下有关字体格式的知识。
-1、TureType(.ttf)格式
-.ttf字体是Windows和Mac的最常见的字体，是一种RAW格式，...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="工具">工具</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2018/12/07/vertical-align.html">
-            
-                <span>vertical-align</span>
-        </a>
-        <div class="abstract-content">
-            让带有宽度的块级元素居中对齐，是margin: 0 auto;
-让文字居中对齐，是 text-align: center;
-本文讲一下垂直居中的属性.
+      
 
-图片、表单和文字对齐vertical-a...
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2018/12/15/flex布局常用属性.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]2018/12/15/flex布局常用属性.html" itemprop="url">flex伸缩弹性布局常用属性</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-15T00:00:00+08:00">
+                2018-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
+      </header>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
+
     
-</div>
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="伸缩布局-CSS3"><a href="#伸缩布局-CSS3" class="headerlink" title="伸缩布局(CSS3)"></a>伸缩布局(CSS3)</h2><p>CSS3在布局方面做了非常大的改进，使得我们对块级元素的布局排列变得十分灵活，适应性非常强，其强大的伸缩性，在响应式开中可以发挥极大的作用。</p>
+<p><br></p>
+<p>主轴：Flex容器的主轴主要用来配置Flex项目，默认是水平方向</p>
+<p>侧轴：与主轴垂直的轴称作侧轴，默认是垂直方向的</p>
+<p>方向：默认主轴从左向右，侧轴默认从上到下</p>
+<p>主轴和侧轴并不是固定不变的，通过flex-direction可以互换。</p>
+<p><img src="http://wx3.sinaimg.cn/large/006ttwEMgy1fy6udwb0ndj30ju08r0u6.jpg" alt=""></p>
+<p>Flex布局的语法规范经过几年发生了很大的变化，也给Flexbox的使用带来一定的局限性，因为语法规范版本众多，浏览器支持不一致，致使Flexbox布局使用不多<br></p>
+<h2 id="各属性详解"><a href="#各属性详解" class="headerlink" title="各属性详解"></a>各属性详解</h2><p><br>1.flex子项目在主轴的缩放比例，不指定flex属性，则不参与伸缩分配</p>
+<p>min-width  最小值      min-width: 280px  最小宽度  不能小于 280</p>
+<p>max-width: 1280px  最大宽度  不能大于 1280</p>
+<p><br></p>
+<p>2.flex-direction调整主轴方向（默认为水平方向）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-direction：row</span><br></pre></td></tr></table></figure>
+<p>flex容器的主轴被定义为与文本方向相同。 主轴起点和主轴终点与内容方向相同。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-direction：row-reverse</span><br></pre></td></tr></table></figure>
+<p>表现和row相同，但是置换了主轴起点和主轴终点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-direction：column</span><br></pre></td></tr></table></figure>
+<p>flex容器的主轴和块轴相同。主轴起点与主轴终点和书写模式的前后点相同</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-direction：column-reverse</span><br></pre></td></tr></table></figure>
+<p>表现和<code>column</code>相同，但是置换了主轴起点和主轴终点</p>
+<p>  可以仿写<a href="http://m.ctrip.com/html5/" target="_blank" rel="noopener">携程网手机端</a>页面练习flex布局</p>
+<p><br></p>
+<p>3、justify-content调整主轴对齐（水平对齐）</p>
+<p>子盒子如何在父盒子里面水平对齐</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+<th>白话文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flex-start</td>
+<td>默认值。项目位于容器的开头。</td>
+<td>让子元素从父容器的开头开始排序但是盒子顺序不变</td>
+</tr>
+<tr>
+<td>flex-end</td>
+<td>项目位于容器的结尾。</td>
+<td>让子元素从父容器的后面开始排序但是盒子顺序不变</td>
+</tr>
+<tr>
+<td>center</td>
+<td>项目位于容器的中心。</td>
+<td>让子元素在父容器中间显示</td>
+</tr>
+<tr>
+<td>space-between</td>
+<td>项目位于各行之间留有空白的容器内。</td>
+<td>左右的盒子贴近父盒子，中间的平均分布空白间距</td>
+</tr>
+<tr>
+<td>space-around</td>
+<td>项目位于各行之前、之间、之后都留有空白的容器内。</td>
+<td>相当于给每个盒子添加了左右margin外边距</td>
+</tr>
+</tbody>
+</table>
+<p><br>4、align-items调整侧轴对齐（垂直对齐）</p>
+<p>子盒子如何在父盒子里面垂直对齐（单行）</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+<th>白话文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stretch</td>
+<td>默认值。项目被拉伸以适应容器。</td>
+<td>让子元素的高度拉伸适用父容器（子元素不给高度的前提下)</td>
+</tr>
+<tr>
+<td>center</td>
+<td>项目位于容器的中心。</td>
+<td>垂直居中</td>
+</tr>
+<tr>
+<td>flex-start</td>
+<td>项目位于容器的开头。</td>
+<td>垂直对齐开始位置 上对齐</td>
+</tr>
+<tr>
+<td>flex-end</td>
+<td>项目位于容器的结尾。</td>
+<td>垂直对齐结束位置 底对齐</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><br>5、flex-wrap控制是否换行</p>
+<p>当我们子盒子内容宽度多于父盒子的时候如何处理</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nowrap</td>
+<td>默认值。规定灵活的项目不拆行或不拆列。  不换行，则 收缩（压缩） 显示  强制一行内显示</td>
+</tr>
+<tr>
+<td>wrap</td>
+<td>规定灵活的项目在必要的时候拆行或拆列。</td>
+</tr>
+<tr>
+<td>wrap-reverse</td>
+<td>规定灵活的项目在必要的时候拆行或拆列，但是以相反的顺序。</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><br>6、flex-flow是flex-direction、flex-wrap的简写形式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">flex-flow</span>: <span class="selector-tag">flex-direction</span>  <span class="selector-tag">flex-wrap</span>;</span><br></pre></td></tr></table></figure>
+<p>白话记：    flex-flow: 排列方向   换不换行; </p>
+<p>两个中间用空格</p>
+<p>例如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">flex</span>;</span><br><span class="line"><span class="comment">/* flex-direction: row;</span></span><br><span class="line"><span class="comment">flex-wrap: wrap;   这两句话等价于下面的这句话*/</span></span><br><span class="line"><span class="selector-tag">flex-flow</span>: <span class="selector-tag">column</span> <span class="selector-tag">wrap</span>;  <span class="comment">/* 两者的综合 */</span></span><br></pre></td></tr></table></figure>
+<p><br>7、align-content堆栈（由flex-wrap产生的独立行）多行垂直对齐方式齐</p>
+<p>align-content是针对flex容器里面多轴(多行)的情况,align-items是针对一行的情况进行排列。</p>
+<p>必须对父元素设置自由盒属性display:flex;，并且设置排列方式为横向排列flex-direction:row;并且设置换行，flex-wrap:wrap;这样这个属性的设置才会起作用。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+<th>测试</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stretch</td>
+<td>默认值。项目被拉伸以适应容器。</td>
+<td></td>
+</tr>
+<tr>
+<td>center</td>
+<td>项目位于容器的中心。</td>
+<td></td>
+</tr>
+<tr>
+<td>flex-start</td>
+<td>项目位于容器的开头。</td>
+<td></td>
+</tr>
+<tr>
+<td>flex-end</td>
+<td>项目位于容器的结尾。</td>
+<td></td>
+</tr>
+<tr>
+<td>space-between</td>
+<td>项目位于各行之间留有空白的容器内。</td>
+<td></td>
+</tr>
+<tr>
+<td>space-around</td>
+<td>项目位于各行之前、之间、之后都留有空白的容器内。</td>
+</tr>
+</tbody>
+</table>
+<p><br>8、order控制子项目的排列顺序，正序方式排序，从小到大</p>
+<p>用css 来控制盒子的前后顺序。  用order 就可以</p>
+<p>用整数值来定义排列顺序，数值小的排在前面。可以为负值。 默认值是 0</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">order</span>: 1;</span><br></pre></td></tr></table></figure>
+<p><br><br><br></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2018/12/10/浅谈BFC.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]2018/12/10/浅谈BFC.html" itemprop="url">浅谈BFC</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-10T00:00:00+08:00">
+                2018-12-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-    </article>
+      </header>
+    
+
     
     
     
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>BFC(Block formatting context)</strong></p>
+<p>直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。</p>
+<p>白话文： 孩子在家里愿意怎么折腾都行，但是出了家门口，你就的乖乖的，不能影响外面的任何人。</p>
+<p><br></p>
+<h3 id="元素的显示模式"><a href="#元素的显示模式" class="headerlink" title="元素的显示模式"></a>元素的显示模式</h3><p>我们前面讲过 元素的显示模式 display。 </p>
+<p>分为 块级元素   行内元素  行内块元素 ，其实，它还有很多其他显示模式。</p>
+<p><img src="http://wx3.sinaimg.cn/large/006ttwEMgy1fy5juu4ov4j30a20dkjrx.jpg" alt=""><br></p>
+<h3 id="哪些元素会具有BFC的条件"><a href="#哪些元素会具有BFC的条件" class="headerlink" title="哪些元素会具有BFC的条件"></a>哪些元素会具有BFC的条件</h3><p>不是所有的元素模式都能产生BFC，w3c 规范： </p>
+<p>display 属性为 block, list-item, table 的元素，会产生BFC.</p>
+<p>这个三个都是用来布局最为合理的元素，因为他们就是用来可视化布局。</p>
+<p>注意其他的，display属性，比如 line 等等，他们创建的是 IFC ，我们暂且不研究。</p>
+<p>这个BFC 有着具体的布局特性： </p>
+<p><img src="http://wx1.sinaimg.cn/large/006ttwEMgy1fy5juujfrkg30dw0dwt8n.gif" alt=""></p>
+<p>有宽度和高度 ， 有 外边距margin  有内边距padding 有边框 border。<br></p>
+<h3 id="什么情况下可以让元素产生BFC"><a href="#什么情况下可以让元素产生BFC" class="headerlink" title="什么情况下可以让元素产生BFC"></a>什么情况下可以让元素产生BFC</h3><p>以上盒子具有BFC条件了，就是说有资质了，但是怎样触发才会产生BFC，从而创造这个封闭的环境呢？<br>同样，要给这些元素添加如下属性就可以触发BFC。</p>
+<blockquote>
+<p>-float属性不为none</p>
+<p>-position为absolute或fixed</p>
+<p>-display为inline-block, table-cell, table-caption, flex, inline-flex</p>
+<p>-overflow不为visible。</p>
+</blockquote>
+<p><br></p>
+<h3 id="BFC元素所具有的特性"><a href="#BFC元素所具有的特性" class="headerlink" title="BFC元素所具有的特性"></a>BFC元素所具有的特性</h3><p>BFC布局规则特性：</p>
+<p>1.在BFC中，盒子从顶端开始垂直地一个接一个地排列.</p>
+<p>2.盒子垂直方向的距离由margin决定。属于同一个BFC的两个相邻盒子的margin会发生重叠，不属于同一个BFC的两个相邻盒子的margin不会发生重叠。（一般非BFC区域内的两个相邻盒子的margin也是会发生重叠）</p>
+<p>3.在BFC中，每一个盒子的左外边缘（margin-left）会触碰到容器的左边缘(border-left)内侧，只是接触不会压住border（对于从右到左的格式来说，则触碰到右边缘）。</p>
+<p>4.BFC的区域不会与浮动盒子产生交集，而是紧贴浮动边缘。</p>
+<p>5.计算BFC的高度时，自然也会检测浮动或者定位的盒子高度。</p>
+<p><br></p>
+<h3 id="BFC的主要用途"><a href="#BFC的主要用途" class="headerlink" title="BFC的主要用途"></a>BFC的主要用途</h3><p>BFC能用来做什么？</p>
+<p>(1) 清除元素内部浮动</p>
+<p>只要把父元素设为BFC就可以清理子元素的浮动了，最常见的用法就是在父元素上设置overflow: hidden样式，对于IE6加上zoom:1就可以了。</p>
+<p>主要用到 <strong>计算BFC的高度时，自然也会检测浮动或者定位的盒子高度</strong>这一特性</p>
+<p>清除浮动前：<img src="http://wx2.sinaimg.cn/large/006ttwEMgy1fy5jwcv0kuj30ah090q2p.jpg" alt=""></p>
+<p>清除浮动后：<img src="http://wx1.sinaimg.cn/large/006ttwEMgy1fy5jwdc1bkj309p08cmwx.jpg" alt=""></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">    &lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">        <span class="selector-class">.father</span> &#123;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">            <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">            <span class="comment">/* float: left;   给father 创建了BFC*/</span></span><br><span class="line">            <span class="comment">/*position: absolute; 给father 创建了BFC*/</span></span><br><span class="line">            <span class="comment">/*display: inline-block; 给father 创建了BFC*/</span></span><br><span class="line">            <span class="attribute">overflow</span>: hidden;   <span class="comment">/*给father创建了BFC*/</span></span><br><span class="line">            <span class="attribute">zoom</span>: <span class="number">1</span>; <span class="comment">/*兼容ie6 */</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.son1</span>, <span class="selector-class">.son2</span> &#123;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">            <span class="attribute">background-color</span>: pink;</span><br><span class="line">            <span class="attribute">float</span>: left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.son2</span> &#123;</span><br><span class="line">            <span class="attribute">background-color</span>: purple;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">&lt;div class="father"&gt;</span><br><span class="line">    &lt;div class="son1"&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class="son2"&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>(2) 解决外边距合并问题</p>
+<p>外边距合并的问题。</p>
+<p>主要用到 <strong>盒子垂直方向的距离由margin决定，属于同一个BFC的两个相邻盒子的margin会发生重叠，不属于统一BFC的相邻盒子不会margin重叠</strong>这一特性</p>
+<p>属于同一个BFC的两个相邻盒子的margin会发生重叠，那么我们创建不属于同一个BFC，就不会发生margin重叠了。<img src="http://wx3.sinaimg.cn/large/006ttwEMgy1fy5jwchk3tj30fk0caq2w.jpg" alt=""></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">    &lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">        <span class="selector-class">.father</span> &#123;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">500px</span>;</span><br><span class="line">            <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.son1</span>, <span class="selector-class">.son2</span> &#123;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">            <span class="attribute">background-color</span>: pink;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.son1</span> &#123;</span><br><span class="line">            <span class="attribute">margin-bottom</span>: <span class="number">50px</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.over</span> &#123;</span><br><span class="line">            <span class="attribute">overflow</span>: hidden;<span class="comment">/*形成BFC区域*/</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.son2</span> &#123;</span><br><span class="line">            <span class="attribute">background-color</span>: purple;</span><br><span class="line">            <span class="attribute">margin-top</span>: <span class="number">100px</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">&lt;div class="father"&gt;</span><br><span class="line">    &lt;div class="over"&gt; &lt;!--over隔开，那么 son1 就和son1 不是同一BFC--&gt;</span><br><span class="line">        &lt;div class="son1"&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class="son2"&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>(3) 制作右侧自适应的盒子问题</p>
+<p>主要用到<strong>普通流体元素BFC后，为了和浮动元素不产生任何交集，顺着浮动边缘形成自己的封闭上下文</strong></p>
+<p><img src="http://wx4.sinaimg.cn/large/006ttwEMgy1fy5jwdxel9j30d20f4t8z.jpg" alt=""></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">    &lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">        <span class="selector-class">.father</span> &#123;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">500px</span>;</span><br><span class="line">            <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</span><br><span class="line">            <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.box</span> &#123;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">            <span class="attribute">background-color</span>: pink;</span><br><span class="line">            <span class="attribute">float</span>: left;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="selector-class">.txt</span> &#123;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">            <span class="attribute">background-color</span>: purple;</span><br><span class="line">            <span class="attribute">overflow</span>: hidden;  <span class="comment">/*给txt 创建BFC 区域 在不和浮动产生交集 紧贴制浮动的边缘 */</span></span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">&lt;div class="father"&gt;</span><br><span class="line">    &lt;div class="box"&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class="txt"&gt;我可以制作右侧自适应的盒子我可以制作右侧自适应的盒子我可以制作右侧自适应的盒子</span><br><span class="line">        我可以制作右侧自适应的盒子我可以制作右侧自适应的盒子我可以制作右侧自适应的盒子我可以制作右侧自适应的盒子</span><br><span class="line">        我可以制作右侧自适应的盒子我可以制作右侧自适应的盒子我可以制作右侧自适应的盒子</span><br><span class="line">        我可以制作右侧自适应的盒子我可以制作右侧自适应的盒子我可以制作右侧自适应的盒子&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="BFC-总结"><a href="#BFC-总结" class="headerlink" title="BFC 总结"></a>BFC 总结</h3><p>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。包括浮动，和外边距合并等等，因此，有了这个特性，我们布局的时候就不会出现意外情况了。</p>
+
+          
+        
+      
+    </div>
     
     
     
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2018/12/07/实现微信滑动门.html">
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2018/12/08/外边距塌陷问题.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]2018/12/08/外边距塌陷问题.html" itemprop="url">外边距塌陷问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
-                <span>实现微信滑动门</span>
-        </a>
-        <div class="abstract-content">
-            滑动门出现的背景制作网页时，为了美观，常常需要为网页元素设置特殊形状的背景，比如微信导航栏，有凸起和凹下去的感觉，最大的问题是里面的字数不一样多，按照传统思维，这就意味着要多张长度不同的背景图片...
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-08T16:18:38+08:00">
+                2018-12-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/07</span>
-            </div>
-            <!-- tags  -->
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="外边距合并"><a href="#外边距合并" class="headerlink" title="外边距合并"></a>外边距合并</h2><p>使用margin定义块元素的垂直外边距时，可能会出现外边距的合并。</p>
+<h3 id="相邻块元素垂直外边距的合并"><a href="#相邻块元素垂直外边距的合并" class="headerlink" title="相邻块元素垂直外边距的合并"></a>相邻块元素垂直外边距的合并</h3><p>当上下相邻的两个块元素相遇时，如果上面的元素有下外边距margin-bottom，下面的元素有上外边距margin-top，则他们之间的垂直间距不是margin-bottom与margin-top之和，而是两者中的较大者。这种现象被称为相邻块元素垂直外边距的合并（也称外边距塌陷）。</p>
+<p><img src="http://wx1.sinaimg.cn/mw690/006ttwEMgy1fy0xzlda0nj30e008lq2t.jpg" alt=""></p>
+<p>解决方案一： 避免这样写就好了。。。。</p>
+<p>解决方案二：详见我的另一篇博文<a href="https://dunteng.github.io/[object%20Object]2018/12/10/%E6%B5%85%E8%B0%88BFC.html#BFC%E7%9A%84%E4%B8%BB%E8%A6%81%E7%94%A8%E9%80%94">利用BFC机制解决外边距合并问题</a></p>
+<h3 id="嵌套块元素垂直外边距的合并"><a href="#嵌套块元素垂直外边距的合并" class="headerlink" title="嵌套块元素垂直外边距的合并"></a>嵌套块元素垂直外边距的合并</h3><p>对于两个嵌套关系的块元素，如果父元素没有上内边距及边框，则父元素的上外边距会与子元素的上外边距发生合并，合并后的外边距为两者中的较大者，即使父元素的上外边距为0，也会发生合并。</p>
+<p><img src="http://wx2.sinaimg.cn/mw690/006ttwEMgy1fy0xzb8o6vj30e005fwec.jpg" alt=""></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">      <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">	* &#123;</span></span><br><span class="line"><span class="undefined">		margin: 0;</span></span><br><span class="line"><span class="undefined">		padding: 0;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined">	</span></span><br><span class="line"><span class="css">	<span class="selector-class">.baba</span> &#123;</span></span><br><span class="line"><span class="css">		<span class="comment">/* border-top: 1px solid black; */</span></span></span><br><span class="line"><span class="undefined">		height: 100px;</span></span><br><span class="line"><span class="undefined">		width: 100px;</span></span><br><span class="line"><span class="undefined">		background-color: red;</span></span><br><span class="line"><span class="undefined">		margin-top: 30px;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-class">.erzi</span> &#123;</span></span><br><span class="line"><span class="undefined">		height: 50px;</span></span><br><span class="line"><span class="undefined">		width: 50px;</span></span><br><span class="line"><span class="undefined">		background-color: pink;</span></span><br><span class="line"><span class="undefined">		margin-top: 10px;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined">      </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"baba"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"erzi"</span>&gt;</span>123<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><br>观察下图erzi块的效果，erzi与baba之间没有margin撑开，不是我们想要的效果<img src="http://wx1.sinaimg.cn/large/006ttwEMgy1fy0zwmwqw8j311y0heq3o.jpg" alt=""></p>
+<p><br>父元素的上外边距会与子元素的上外边距发生合并，合并后的外边距为两者中的较大者<img src="http://wx4.sinaimg.cn/large/006ttwEMgy1fy0zwnceysj311y0heaau.jpg" alt=""></p>
+<p>解决方案：</p>
+<ol>
+<li>可以为父元素定义1像素的上边框或上内边距。</li>
+<li>可以为父元素添加overflow:hidden。</li>
+</ol>
+<p><br>解决该问题后，erzi块与baba块有了我们想要的margin<img src="http://wx1.sinaimg.cn/large/006ttwEMgy1fy0zwnq65qj311y0hemxw.jpg" alt=""></p>
+<p><img src="http://wx3.sinaimg.cn/large/006ttwEMgy1fy0zwo350qj311y0hedgm.jpg" alt=""></p>
+<p><br><br>待续。。。。</p>
+<p><br><br></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2018/12/08/字体图标的使用.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]2018/12/08/字体图标的使用.html" itemprop="url">字体图标的使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="小案例">小案例</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
-    
-</div>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-08T00:00:00+08:00">
+                2018-12-08
+              </time>
             
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-    </article>
+      </header>
+    
+
     
     
     
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="字体格式"><a href="#字体格式" class="headerlink" title="字体格式"></a>字体格式</h1><p>不同浏览器所支持的字体格式是不一样的，我们有必要了解一下有关字体格式的知识。</p>
+<p>1、TureType(.ttf)格式</p>
+<p>.ttf字体是Windows和Mac的最常见的字体，是一种RAW格式，支持这种字体的浏览器有IE9+、Firefox3.5+、Chrome4+、Safari3+、Opera10+、iOS Mobile、Safari4.2+；</p>
+<p>2、OpenType(.otf)格式</p>
+<p>.otf字体被认为是一种原始的字体格式，其内置在TureType的基础上，支持这种字体的浏览器有Firefox3.5+、Chrome4.0+、Safari3.1+、Opera10.0+、iOS Mobile、Safari4.2+；</p>
+<p>3、Web Open Font Format(.woff)格式</p>
+<p>woff字体是Web字体中最佳格式，他是一个开放的TrueType/OpenType的压缩版本，同时也支持元数据包的分离，支持这种字体的浏览器有IE9+、Firefox3.5+、Chrome6+、Safari3.6+、Opera11.1+；</p>
+<p>4、Embedded Open Type(.eot)格式</p>
+<p>.eot字体是IE专用字体，可以从TrueType创建此格式字体，支持这种字体的浏览器有IE4+；</p>
+<p>5、SVG(.svg)格式</p>
+<p>.svg字体是基于SVG字体渲染的一种格式，支持这种字体的浏览器有Chrome4+、Safari3.1+、Opera10.0+、iOS Mobile Safari3.2+；</p>
+<p>了解了上面的知识后，我们就需要为不同的浏览器准备不同格式的字体，通常我们会通过字体生成工具帮我们生成各种格式的字体，因此无需过于在意字体格式间的区别差异。</p>
+<h1 id="字体图标"><a href="#字体图标" class="headerlink" title="字体图标"></a>字体图标</h1><p>图片是有诸多优点的，但是缺点很明显，比如图片不但增加了总文件的大小，还增加了很多额外的”http请求”，这都会大大降低网页的性能的。更重要的是图片不能很好的进行“缩放”，因为图片放大和缩小会失真。 我们学习移动端响应式，很多情况下希望我们的图标是可以缩放的。此时，一个非常重要的技术出现了，就是字体图标（iconfont).</p>
+<h2 id="字体图标优点"><a href="#字体图标优点" class="headerlink" title="字体图标优点"></a>字体图标优点</h2><p>可以做出跟图片一样可以做的事情，改变透明度、旋转度，等等..<br>但是本质其实是文字，可以很随意的改变颜色、产生阴影、透明效果等等…<br>本身体积更小，但携带的信息并没有削减。<br>几乎支持所有的浏览器<br>移动端设备必备良药…</p>
+<h2 id="字体图标使用流程"><a href="#字体图标使用流程" class="headerlink" title="字体图标使用流程"></a>字体图标使用流程</h2><p>总体来说，字体图标按照如下流程：</p>
+<p><img src="http://wx2.sinaimg.cn/large/006ttwEMgy1fy4ayku0rmj30xt0a8mxz.jpg" alt=""></p>
+<h3 id="设计字体图标"><a href="#设计字体图标" class="headerlink" title="设计字体图标"></a>设计字体图标</h3><p>假如图标是我们公司单独设计，那就需要第一步了，这个属于UI设计人员的工作， 他们在 illustrator 或 Sketch 这类矢量图形软件里创建 icon图标， 比如下图：</p>
+<p><img src="http://wx3.sinaimg.cn/large/006ttwEMgy1fy4ayliklzj30dc05wwf5.jpg" alt=""></p>
+<p>  之后保存为svg格式，然后给我们前端人员就好了。 </p>
+<p>  其实第一步，我们不需要关心，只需要给我们这些图标就可以了，如果图标是大众的，网上本来就有的，可以直接跳过第一步，进入第三步。</p>
+<h3 id="上传生成字体包"><a href="#上传生成字体包" class="headerlink" title="上传生成字体包"></a>上传生成字体包</h3><p>   当UI设计人员给我们svg文件的时候，我们需要转换成我们页面能使用的字体文件， 而且需要生成的是兼容性的适合各个浏览器的。</p>
+<p>​    推荐网站： <a href="http://icomoon.io" target="_blank" rel="noopener">http://icomoon.io</a></p>
+<p><strong>icomoon字库</strong></p>
+<p>IcoMoon成立于2011年，推出的第一个自定义图标字体生成器，它允许用户选择他们所需要的图标，使它们成一字型。 内容种类繁多，非常全面。</p>
+<p>   推荐网站： <a href="http://www.iconfont.cn/" target="_blank" rel="noopener">http://www.iconfont.cn/</a></p>
+<p><strong>阿里icon font字库</strong></p>
+<p><a href="http://www.iconfont.cn/" target="_blank" rel="noopener">http://www.iconfont.cn/</a></p>
+<p>这个是阿里妈妈M2UX的一个icon font字体图标字库，包含了淘宝图标库和阿里妈妈图标库。可以使用AI制作图标上传生成。 一个字，免费，免费！！</p>
+<p><strong>fontello</strong></p>
+<p><a href="http://fontello.com/" target="_blank" rel="noopener">http://fontello.com/</a></p>
+<p>在线定制你自己的icon font字体图标字库，也可以直接从GitHub下载整个图标集，该项目也是开源的。</p>
+<p><strong>Font-Awesome</strong></p>
+<p><a href="http://fortawesome.github.io/Font-Awesome/" target="_blank" rel="noopener">http://fortawesome.github.io/Font-Awesome/</a></p>
+<p>这是我最喜欢的字库之一了，更新比较快。目前已经有369个图标了。</p>
+<p><strong>Glyphicon Halflings</strong></p>
+<p><a href="http://glyphicons.com/" target="_blank" rel="noopener">http://glyphicons.com/</a></p>
+<p>这个字体图标可以在Bootstrap下免费使用。自带了200多个图标。</p>
+<p><strong>Icons8</strong></p>
+<p><a href="https://icons8.com/" target="_blank" rel="noopener">https://icons8.com/</a></p>
+<p>提供PNG免费下载，像素大能到500PX</p>
+<p><img src="http://wx4.sinaimg.cn/large/006ttwEMgy1fy4aym7ehpj30gm08vq38.jpg" alt="1513132290173"></p>
+<h3 id="下载兼容字体包"><a href="#下载兼容字体包" class="headerlink" title="下载兼容字体包"></a>下载兼容字体包</h3><p>刚才上传完毕， 网站会给我们把UI做的svg图片转换为我们的字体格式， 然后下载下来就好了</p>
+<p>当然，我们不需要自己专门的图标，是想网上找几个图标使用，以上2步可以直接省略了， 直接到刚才的网站上找喜欢的下载使用吧。</p>
+<p><img src="http://wx4.sinaimg.cn/large/006ttwEMgy1fy4ayjisn4j30k70db750.jpg" alt=""></p>
+<p><img src="http://wx4.sinaimg.cn/large/006ttwEMgy1fy4ayk46x9j30lx0g53z3.jpg" alt=""></p>
+<h3 id="字体引入到HTML"><a href="#字体引入到HTML" class="headerlink" title="字体引入到HTML"></a>字体引入到HTML</h3><p>得到压缩包之后，最后一步，是最重要的一步了， 就是字体文件已经有了，我们需要引入到我们页面中。</p>
+<ol>
+<li><p>首先把 以下4个文件放入到 fonts文件夹里面。 通俗的做法</p>
+<p><img src="http://wx4.sinaimg.cn/large/006ttwEMgy1fy4aymmz4oj30bo06wweh.jpg" alt=""></p>
+<h5 id="第一步：在样式里面声明字体：-告诉别人我们自己定义的字体"><a href="#第一步：在样式里面声明字体：-告诉别人我们自己定义的字体" class="headerlink" title="第一步：在样式里面声明字体： 告诉别人我们自己定义的字体"></a>第一步：在样式里面声明字体： 告诉别人我们自己定义的字体</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">'icomoon'</span>;</span><br><span class="line">  <span class="attribute">src</span>:  <span class="built_in">url</span>(<span class="string">'fonts/icomoon.eot?7kkyc2'</span>);<span class="comment">/*注意路径不要照搬，看实际位置*/</span></span><br><span class="line">  <span class="attribute">src</span>:  <span class="built_in">url</span>(<span class="string">'fonts/icomoon.eot?7kkyc2#iefix'</span>) <span class="built_in">format</span>(<span class="string">'embedded-opentype'</span>),</span><br><span class="line">    <span class="built_in">url</span>(<span class="string">'fonts/icomoon.ttf?7kkyc2'</span>) <span class="built_in">format</span>(<span class="string">'truetype'</span>),</span><br><span class="line">    <span class="built_in">url</span>(<span class="string">'fonts/icomoon.woff?7kkyc2'</span>) <span class="built_in">format</span>(<span class="string">'woff'</span>),</span><br><span class="line">    <span class="built_in">url</span>(<span class="string">'fonts/icomoon.svg?7kkyc2#icomoon'</span>) <span class="built_in">format</span>(<span class="string">'svg'</span>);</span><br><span class="line">  <span class="attribute">font-weight</span>: normal;</span><br><span class="line">  <span class="attribute">font-style</span>: normal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="第二步：给盒子使用字体"><a href="#第二步：给盒子使用字体" class="headerlink" title="第二步：给盒子使用字体"></a>第二步：给盒子使用字体</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">span</span> &#123;</span><br><span class="line">		<span class="attribute">font-family</span>: <span class="string">"icomoon"</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="第三步：盒子里面添加结构"><a href="#第三步：盒子里面添加结构" class="headerlink" title="第三步：盒子里面添加结构"></a>第三步：盒子里面添加结构</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">span</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">		 <span class="attribute">content</span>: <span class="string">"\e900"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">或者  </span><br><span class="line">&lt;span&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="追加新图标到原来库里面"><a href="#追加新图标到原来库里面" class="headerlink" title="追加新图标到原来库里面"></a>追加新图标到原来库里面</h3><p>如果工作中，原来的字体图标不够用了，我们需要添加新的字体图标，但是原来的不能删除，继续使用，此时我们需要这样做</p>
+<p>把压缩包里面的selection.json 从新上传，然后，选中自己想要新的图标，从新下载压缩包，替换原来文件即可。</p>
+<p><img src="http://wx1.sinaimg.cn/large/006ttwEMgy1fy4ayilxtvj30dx0cc0ti.jpg" alt=""></p>
+</li>
+</ol>
+<p><br><br><br><br></p>
+
+          
+        
+      
+    </div>
     
     
     
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2018/12/06/绝对定位盒子水平居中.html">
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2018/12/07/实现微信滑动门.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]2018/12/07/实现微信滑动门.html" itemprop="url">实现微信滑动门</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
-                <span>绝对定位的盒子水平/垂直居中</span>
-        </a>
-        <div class="abstract-content">
-            <p>普通的盒子是左右margin 改为 auto就可， 但是对于绝对定位就无效了</p>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-07T00:00:00+08:00">
+                2018-12-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="滑动门出现的背景"><a href="#滑动门出现的背景" class="headerlink" title="滑动门出现的背景"></a>滑动门出现的背景</h2><p>制作网页时，为了美观，常常需要为网页元素设置特殊形状的背景，比如微信导航栏，有凸起和凹下去的感觉，最大的问题是里面的字数不一样多，按照传统思维，这就意味着要多张长度不同的背景图片，不过有更好的解决方法。</p>
+<p><img src="http://wx4.sinaimg.cn/large/006ttwEMgy1fy49ltwng4j30xq0dcdi1.jpg" alt=""></p>
+<p>为了使各种特殊形状的背景能够自适应元素中文本内容的多少，出现了CSS滑动门技术。它从新的角度构建页面，使各种特殊形状的背景能够自由拉伸滑动，以适应元素内部的文本内容，可用性更强。 最常见于各种导航栏的滑动门。</p>
+<h2 id="核心技术"><a href="#核心技术" class="headerlink" title="核心技术"></a>核心技术</h2><p>核心技术就是利用CSS精灵（主要是背景位置）和盒子padding撑开宽度, 以便能适应不同字数的导航栏。</p>
+<p>一般的经典布局都是这样的：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>导航栏内容<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>两张背景图：</p>
+<p>一张是凸起的：</p>
+<p><img src="http://wx3.sinaimg.cn/large/006ttwEMgy1fy49gsni0vj30ao00x0bn.jpg" alt=""></p>
+<p>另一张是凹陷的：</p>
+<p><img src="http://wx4.sinaimg.cn/large/006ttwEMgy1fy49gs3rmtj30ao00x0az.jpg" alt=""></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">		<span class="attribute">background</span>: <span class="built_in">url</span>(images/wx.jpg)  repeat-x; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">		<span class="attribute">float</span>: left;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">		<span class="comment">/*1. a 左边放 左圆角   但是文字需要往右走 15px*/</span></span><br><span class="line">		<span class="attribute">height</span>: <span class="number">33px</span>;</span><br><span class="line">		<span class="attribute">line-height</span>: <span class="number">33px</span>;</span><br><span class="line">		<span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">		<span class="attribute">text-decoration</span>: none;</span><br><span class="line">		<span class="attribute">background</span>: <span class="built_in">url</span>(images/to.png) no-repeat;</span><br><span class="line">		<span class="attribute">display</span>: inline-block;</span><br><span class="line">		<span class="attribute">padding-left</span>: <span class="number">15px</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.nav</span>  <span class="selector-tag">span</span> &#123;</span><br><span class="line">		<span class="comment">/*2. span 右边放右圆角   但是文字需要往左走 15px*/</span></span><br><span class="line">		<span class="attribute">background</span>: <span class="built_in">url</span>(images/to.png) no-repeat right;</span><br><span class="line">		<span class="attribute">display</span>: inline-block;</span><br><span class="line">		<span class="attribute">height</span>: <span class="number">33px</span>;</span><br><span class="line">		<span class="attribute">padding-right</span>: <span class="number">15px</span>;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.nav</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>, <span class="selector-class">.nav</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">span</span> &#123;</span><br><span class="line">		<span class="attribute">background-image</span>: <span class="built_in">url</span>(images/ao.png);</span><br><span class="line">	&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">	&lt;ul class="nav"&gt;</span><br><span class="line">		&lt;<span class="selector-tag">li</span>&gt;</span><br><span class="line">		      &lt;a href="#"&gt;</span><br><span class="line">		      		&lt;span&gt;首页&lt;/span&gt;</span><br><span class="line">		      &lt;/a&gt;</span><br><span class="line">		&lt;/li&gt;</span><br><span class="line">		&lt;<span class="selector-tag">li</span>&gt;</span><br><span class="line">		      &lt;a href="#"&gt;</span><br><span class="line">		      		&lt;span&gt;三个字&lt;/span&gt;</span><br><span class="line">		      &lt;/a&gt;</span><br><span class="line">		&lt;/li&gt;</span><br><span class="line">		&lt;<span class="selector-tag">li</span>&gt;</span><br><span class="line">		      &lt;a href="#"&gt;</span><br><span class="line">		      		&lt;span&gt;新闻客户端&lt;/span&gt;</span><br><span class="line">		      &lt;/a&gt;</span><br><span class="line">		&lt;/li&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;/ul&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>实现效果：</strong></p>
+<p><img src="http://wx2.sinaimg.cn/large/006ttwEMgy1fy49v5c8vuj30a7069wen.jpg" alt=""></p>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><ol>
+<li>a 设置 背景左侧，padding撑开合适宽度。    </li>
+<li>span 设置背景右侧， padding撑开合适宽度 剩下由文字继续撑开宽度。</li>
+<li>之所以a包含span就是因为 整个导航都是可以点击的。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2018/12/07/vertical-align.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]2018/12/07/vertical-align.html" itemprop="url">vertical-align</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-07T00:00:00+08:00">
+                2018-12-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>让带有宽度的块级元素居中对齐，是margin: 0 auto;</p>
+<p>让文字居中对齐，是 text-align: center;</p>
+<p>本文讲一下垂直居中的属性.</p>
+<p><br></p>
+<h3 id="图片、表单和文字对齐"><a href="#图片、表单和文字对齐" class="headerlink" title="图片、表单和文字对齐"></a>图片、表单和文字对齐</h3><p>vertical-align 垂直对齐， 这个看上去很美好的一个属性， 实际有着不可捉摸的脾气。<br></p>
+<p><img src="http://wx2.sinaimg.cn/large/006ttwEMgy1fy4740ts24j30ku0410th.jpg" alt=""><br><br></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vertical-align : baseline |top |middle |bottom</span><br></pre></td></tr></table></figure>
+<p><strong>vertical-align 不影响块级元素中的内容对齐，它只针对于 行内元素或者行内块元素，特别是行内块元素， 通常用来控制图片/表单与文字的对齐</strong>。</p>
+<p>默认的图片会和文字基线对齐，我们可以通过vertical-align 控制图片和文字的垂直关系了。 </p>
+<p><br></p>
+<h3 id="去除图片底侧空白缝隙"><a href="#去除图片底侧空白缝隙" class="headerlink" title="去除图片底侧空白缝隙"></a>去除图片底侧空白缝隙</h3><p>有个很重要特性你要记住： 图片或者表单等行内块元素，他的底线会和父级盒子的基线对齐。这样会造成一个问题，就是图片底侧会有一个空白缝隙。</p>
+<p>解决的方法就是：  </p>
+<p>1.给img vertical-align:middle | top等等。  让图片不要和基线对齐。</p>
+<p><img src="http://wx2.sinaimg.cn/large/006ttwEMgy1fy47418d8ej30he08cab3.jpg" alt=""></p>
+<p>2.给img 添加 display：block; 转换为块级元素就不会存在问题了。</p>
+<p><img src="http://wx4.sinaimg.cn/large/006ttwEMgy1fy4741w8mnj30kp0a0404.jpg" alt=""></p>
+<p><br><br><br><br></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2018/12/06/绝对定位盒子水平居中.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]2018/12/06/绝对定位盒子水平居中.html" itemprop="url">绝对定位的盒子水平/垂直居中</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-06T13:27:31+08:00">
+                2018-12-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>普通的盒子是左右margin 改为 auto就可， 但是对于绝对定位就无效了</p>
 <p>定位的盒子也可以水平或者垂直居中，有一个算法。</p>
 <ol>
 <li><p>首先left 50%   父盒子的一半大小</p>
 </li>
 <li><p>然后margin-left的值设为负数的自己盒子宽度的一半值就可以了</p>
 <p>另外可以使用CSS3的translate来做更方便，避免了人工计算
-        </p></li></ol></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2018/12/05/前端开发仿站小工具.html">
-            
-                <span>前端开发仿站小工具</span>
-        </a>
-        <div class="abstract-content">
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>仿站小工具是通过网址下载静态网页的工具。从输入的网址下载html代码，提取出JS、Css、Image、Picture、Flash等静态文件网址，再从下载完好的Css代码中提取出Image静态文件网址，通过网址下载静态文件，根据软件设置好的保存规则，自动修正html和css代码链接路径，最终这些静态文件被按分类保存到电脑文件夹。
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="工具">工具</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2018/12/05/浅谈清除（闭合）浮动.html">
-            
-                <span>浅谈清除（闭合）浮动</span>
-        </a>
-        <div class="abstract-content">
-            为什么要清除浮动由于浮动元素不再占用原文档流的位置，所以它会对后面的元素排版产生影响，为了解决这些问题，此时就需要在该元素中清除浮动。
-准确地说，并不是清除浮动，而是清除浮动后造成的影响
-如果浮...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2018/11/30/ABOUT ME.html">
-            
-                <span>你好哇~</span>
-        </a>
-        <div class="abstract-content">
-            关于Dunteng’s Blog我叫Dunteng ！
-我將在這里分享我的IT技術筆記和其他生活隨筆，let’s record and share together ！
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/30</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/5/">&#60; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/">NEXT &#62;</a>
-    </nav>
-    
-</main>
-            <!-- profile -->
-            
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src="/avatar/heykong.png">
-    <div class="profile-name">Dunteng</div>
-    
-    <div class="profile-signature">
-        晚来天欲雪，能饮一杯无？
-    </div>
-    
-    
-    <div class="profile-social">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/[object Object]2018/12/06/绝对定位盒子水平居中.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
+      
+    </p></li></ol></div>
     
-        
-            
-                <a href="mailto:lindunteng@gmail.com" class="iconfont-archer email" title="email"></a>
-            
-        
     
-        
-            
-                <a href="//github.com/dunteng" class="iconfont-archer github" target="_blank" title="github"></a>
-            
-        
-    
-        
-            
-                <span class="iconfont-archer wechat" title="wechat">
-                  
-                  <img class="profile-qr" src="/assets/WeChat.png">
-                </span>
-            
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="https://www.zhihu.com/people/ten-20/activities" class="iconfont-archer zhihu" target="_blank" title="zhihu"></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href="https://lindunwei.github.io/" target="_black">lindunwei</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href="https://lai.yuweining.cn/" target="_black">不死鸟</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href="http://zhangwei2222.github.io/" target="_black">zhangwei2222<br></a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href="http://chenweilin.xin" target="_black">cwl-blog</a>
-                    </span>
-                
-            
-        </div>
-    
-    
-        <div class="about-me">
-            <a href="/about">ABOUT ME</a>
-        </div>
-    
-</div>
-            
-        </div>
-        <footer class="footer footer-unloaded">
-    <!-- social  -->
-    
-    <div class="social">
-        
-    
-        
-            
-                <a href="mailto:lindunteng@gmail.com" class="iconfont-archer email" title="email"></a>
-            
-        
-    
-        
-            
-                <a href="//github.com/dunteng" class="iconfont-archer github" target="_blank" title="github"></a>
-            
-        
-    
-        
-            
-                <span class="iconfont-archer wechat" title="wechat">
-                  
-                  <img class="profile-qr" src="/assets/WeChat.png">
-                </span>
-            
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="https://www.zhihu.com/people/ten-20/activities" class="iconfont-archer zhihu" target="_blank" title="zhihu"></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
     
-    <!-- powered by Hexo  -->
-    <div class="copyright">
-        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
-    </div>
-    <!-- 不蒜子  -->
-    
-    <div class="busuanzi-container">
-    
-    
-    <span id="busuanzi_container_site_uv"><h3 style="color:#f75357;">本站访问次数: <span id="busuanzi_value_site_uv"></span> </h3></span>
-    
-    </div>
-    
-</footer>
-    </div>
-    <!-- toc -->
-    
-    <div class="back-top iconfont-archer">&#xe639;</div>
-    <div class="sidebar sidebar-hide">
-    <ul class="sidebar-tabs sidebar-tabs-active-0">
-        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
-        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
-        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
-    </ul>
-    <div class="sidebar-content sidebar-content-show-archive">
-          <div class="sidebar-panel-archives">
-    <!-- 在ejs中将archive按照时间排序 -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="total-and-search">
-        <div class="total-archive">
-        Total : 61
-        </div>
-        <!-- search  -->
-        
-            <div class="site-search popup-trigger">
-                <span class="iconfont-archer search-icon">&#xe627;</span>
-            </div>
-        
-    </div>
-    
-    <div class="post-archive">
-    
-    
-    
-    
-    <div class="archive-year"> 2019 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/23</span><a class="archive-post-title" href="/[object Object]2019/11/23/小程序云函数路由优化之tcb-router.html">小程序云函数路由优化之tcb-router</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/[object Object]2019/10/28/对象.html">复习对象</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/[object Object]2019/10/28/复习数组.html">复习数组</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/[object Object]2019/10/28/预编译-作用域-闭包-立即执行函数.html">复习预编译-作用域-闭包-立即执行函数</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/17</span><a class="archive-post-title" href="/[object Object]2019/10/17/Vue页面间通信传值的方法.html">Vue页面间通信传值的方法</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/15</span><a class="archive-post-title" href="/[object Object]2019/10/15/防抖节流.html">防抖节流</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href="/[object Object]2019/10/08/Redis.html">Redis</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/05</span><a class="archive-post-title" href="/[object Object]2019/10/05/mongoDB.html">mongoDB</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/05</span><a class="archive-post-title" href="/[object Object]2019/10/05/聊天机器人.html">聊天机器人</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/02</span><a class="archive-post-title" href="/[object Object]2019/10/02/express搭建静态文件服务器.html">使用express搭建静态文件服务器</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/01</span><a class="archive-post-title" href="/[object Object]2019/10/01/MySQL基本的增删改查操作.html">MySQL基本的增删改查操作</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/01</span><a class="archive-post-title" href="/[object Object]2019/10/01/使用http模块重构微型服务器.html">使用http模块重构微型服务器</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/30</span><a class="archive-post-title" href="/[object Object]2019/09/30/net模块写微型node服务器.html">写一个微型node服务器</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/25</span><a class="archive-post-title" href="/[object Object]2019/09/25/新linux学习.html">虚拟机安装centos7和node</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href="/[object Object]2019/09/01/Linux基础入门.html">Linux基础入门</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/09</span><a class="archive-post-title" href="/[object Object]2019/08/09/vue知识点.html">Vue基础笔记</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/09</span><a class="archive-post-title" href="/[object Object]2019/08/09/博客项目01.html">一、博客项目大作战之数据库建表</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/08</span><a class="archive-post-title" href="/[object Object]2019/08/08/vi—终端中的编辑器.html">vi编辑器教程</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/05</span><a class="archive-post-title" href="/[object Object]2019/06/05/02Vue音乐播放器.html">Vue音乐播放器(二)</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/03</span><a class="archive-post-title" href="/[object Object]2019/06/03/Vuex笔记.html">Vuex笔记</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/[object Object]2019/06/01/01Vue音乐播放器.html">Vue音乐播放器（一）</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/12</span><a class="archive-post-title" href="/[object Object]2019/05/12/Vue父子组件传值和非父子组件传值.html">vue父子组件传值和非父子组件传值</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/[object Object]2019/05/11/vue写个日历组件.html">vue写个日历组件</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/[object Object]2019/05/10/啥是前端工程化模块化组件化.html">啥是前端工程化、模块化、组件化？</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/[object Object]2019/05/10/webpack笔记.html">webpack4复习笔记</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/03</span><a class="archive-post-title" href="/[object Object]2019/04/03/ES6数据劫持.html">ES6数据劫持proxy&reflect</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/01</span><a class="archive-post-title" href="/[object Object]2019/04/01/箭头函数看这篇就够了.html">箭头函数看这篇就够了</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/29</span><a class="archive-post-title" href="/[object Object]2019/03/29/jsonp实现百度搜索框功能.html">jsonp实现百度搜索框功能</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/20</span><a class="archive-post-title" href="/[object Object]2019/03/20/jQ.Ajax实现瀑布流相册.html">jQ.Ajax实现瀑布流相册</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/16</span><a class="archive-post-title" href="/[object Object]2019/03/16/JS实现简单的Cookie操作.html">拖拽方块记录Cookie</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/14</span><a class="archive-post-title" href="/[object Object]2019/03/14/封装jsonp代码.html">封装Jsonp代码</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/13</span><a class="archive-post-title" href="/[object Object]2019/03/13/依此优化AJAX的封装代码.html">优化AJAX的JS封装代码</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/07</span><a class="archive-post-title" href="/[object Object]2019/03/07/03处理机调度与死锁.html">处理机调度与死锁</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/[object Object]2019/03/06/02进程的描述与控制.html">进程的描述与控制</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/05</span><a class="archive-post-title" href="/[object Object]2019/03/05/01OS引言.html">操作系统引言</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/05</span><a class="archive-post-title" href="/[object Object]2019/03/05/正则表达式验证密码的强度.html">正则表达式验证密码的强度</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/04</span><a class="archive-post-title" href="/[object Object]2019/03/04/继承.html">继承</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/28</span><a class="archive-post-title" href="/[object Object]2019/02/28/dianshang01.html">JS电商上线项目</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/25</span><a class="archive-post-title" href="/[object Object]2019/02/25/导航细线边框的实现.html">导航细线边框的实现</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/20</span><a class="archive-post-title" href="/[object Object]2019/02/20/常见浏览器内核.html">常见浏览器内核</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/16</span><a class="archive-post-title" href="/[object Object]2019/02/16/遍历DOM树.html">遍历DOM树</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/02</span><a class="archive-post-title" href="/[object Object]2019/02/02/css的权重问题.html">css的权重问题</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/14</span><a class="archive-post-title" href="/[object Object]2019/01/14/JS封装运动函数.html">JS封装动画函数</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/自定义属性操作案例.html">自定义属性操作案例</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/JS搜索框自动提示.html">JS搜索框自动提示</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/JS实现全选与全不选.html">JS实现全选与全不选</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/绑定解绑事件兼容代码.html">绑定/解绑事件兼容代码</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/12</span><a class="archive-post-title" href="/[object Object]2019/01/12/浅谈js匿名函数.html">浅谈js匿名函数</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/09</span><a class="archive-post-title" href="/[object Object]2019/01/09/字符串小案例.html">字符串小练习</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/07</span><a class="archive-post-title" href="/[object Object]2019/01/07/JavaScript中的值传递和地址传递（引用传递）.html">JavaScript中的值传递和地址传递（引用传递）</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2018 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/15</span><a class="archive-post-title" href="/[object Object]2018/12/15/flex布局常用属性.html">flex伸缩弹性布局常用属性</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/10</span><a class="archive-post-title" href="/[object Object]2018/12/10/浅谈BFC.html">浅谈BFC</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/08</span><a class="archive-post-title" href="/[object Object]2018/12/08/外边距塌陷问题.html">外边距塌陷问题</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/08</span><a class="archive-post-title" href="/[object Object]2018/12/08/字体图标的使用.html">字体图标的使用</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/07</span><a class="archive-post-title" href="/[object Object]2018/12/07/vertical-align.html">vertical-align</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/07</span><a class="archive-post-title" href="/[object Object]2018/12/07/实现微信滑动门.html">实现微信滑动门</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/[object Object]2018/12/06/绝对定位盒子水平居中.html">绝对定位的盒子水平/垂直居中</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/05</span><a class="archive-post-title" href="/[object Object]2018/12/05/浅谈清除（闭合）浮动.html">浅谈清除（闭合）浮动</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/05</span><a class="archive-post-title" href="/[object Object]2018/12/05/前端开发仿站小工具.html">前端开发仿站小工具</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/30</span><a class="archive-post-title" href="/[object Object]2018/11/30/ABOUT ME.html">你好哇~</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/22</span><a class="archive-post-title" href="/[object Object]2018/08/22/数组.html">数组常用方法</a>
-        </li>
-    
-    </ul></div>
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
-        <div class="sidebar-panel-tags">
-    <div class="sidebar-tags-name">
-    
-        <span class="sidebar-tag-name" data-tags="操作系统"><span class="iconfont-archer">&#xe606;</span>操作系统</span>
-    
-        <span class="sidebar-tag-name" data-tags="JavaScript"><span class="iconfont-archer">&#xe606;</span>JavaScript</span>
-    
-        <span class="sidebar-tag-name" data-tags="小案例"><span class="iconfont-archer">&#xe606;</span>小案例</span>
-    
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
-    
-        <span class="sidebar-tag-name" data-tags="Vue"><span class="iconfont-archer">&#xe606;</span>Vue</span>
-    
-        <span class="sidebar-tag-name" data-tags="html/css"><span class="iconfont-archer">&#xe606;</span>html/css</span>
-    
-        <span class="sidebar-tag-name" data-tags="数据库"><span class="iconfont-archer">&#xe606;</span>数据库</span>
-    
-        <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
-    
-        <span class="sidebar-tag-name" data-tags="后端"><span class="iconfont-archer">&#xe606;</span>后端</span>
-    
-        <span class="sidebar-tag-name" data-tags="redis"><span class="iconfont-archer">&#xe606;</span>redis</span>
-    
-        <span class="sidebar-tag-name" data-tags="mongoDB"><span class="iconfont-archer">&#xe606;</span>mongoDB</span>
-    
-        <span class="sidebar-tag-name" data-tags="node.js"><span class="iconfont-archer">&#xe606;</span>node.js</span>
-    
-        <span class="sidebar-tag-name" data-tags="工具"><span class="iconfont-archer">&#xe606;</span>工具</span>
-    
-        <span class="sidebar-tag-name" data-tags="小程序"><span class="iconfont-archer">&#xe606;</span>小程序</span>
-    
-        <span class="sidebar-tag-name" data-tags="前端优化"><span class="iconfont-archer">&#xe606;</span>前端优化</span>
-    
-        <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
-    
-        <span class="sidebar-tag-name" data-tags="webpack"><span class="iconfont-archer">&#xe606;</span>webpack</span>
-    
-    </div>
-    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
-    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
-    缺失模块。<br>
-    1、请确保node版本大于6.2<br>
-    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
-    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
-    3、在根目录_config.yml里添加配置：
-    <pre style="color: #787878; font-size: 0.6rem;">
-jsonContent:
-  meta: false
-  pages: false
-  posts:
-    title: true
-    date: true
-    path: true
-    text: false
-    raw: false
-    content: false
-    slug: false
-    updated: false
-    comments: false
-    link: false
-    permalink: false
-    excerpt: false
-    categories: true
-    tags: true</pre>
-    </div> 
-    <div class="sidebar-tags-list"></div>
-</div>
-        <div class="sidebar-panel-categories">
-    <div class="sidebar-categories-name">
-    
-    </div>
-    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
-    <div class="sidebar-categories-list"></div>
-</div>
-    </div>
-</div> 
-    <script>
-    var siteMeta = {
-        root: "/",
-        author: "燎原火"
-    }
-</script>
-    <!-- CDN failover -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <script type="text/javascript">
-        if (typeof window.$ === 'undefined')
-        {
-            console.warn('jquery load from jsdelivr failed, will load local script')
-            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
-        }
-    </script>
-    <script src="/scripts/main.js"></script>
-    <!-- algolia -->
-    
-        <div class="site-search">
-  <div class="algolia-popup popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
+  
+  
+  
+  </article>
 
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
 
-    <span class="popup-btn-close">
-      <i class="iconfont-archer">&#xe609;</i>
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2018/12/05/浅谈清除（闭合）浮动.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
     </span>
-  </div>
-</div>
-        <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.0/dist/instantsearch.min.js" defer></script>
-        <script src="/scripts/search.js" defer></script>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
     
-    <!-- busuanzi  -->
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]2018/12/05/浅谈清除（闭合）浮动.html" itemprop="url">浅谈清除（闭合）浮动</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-05T13:27:31+08:00">
+                2018-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
     
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
     
-    <!-- CNZZ  -->
     
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="为什么要清除浮动"><a href="#为什么要清除浮动" class="headerlink" title="为什么要清除浮动"></a>为什么要清除浮动</h2><p>由于浮动元素不再占用原文档流的位置，所以它会对后面的元素排版产生影响，为了解决这些问题，此时就需要在该元素中清除浮动。</p>
+<p>准确地说，并不是清除浮动，而是<strong>清除浮动后造成的影响</strong></p>
+<p>如果浮动一开始就是一个美丽的错误，那么请用正确的方法挽救它。</p>
+<h2 id="清除浮动本质"><a href="#清除浮动本质" class="headerlink" title="清除浮动本质"></a>清除浮动本质</h2><p>我们一般不直接给定父级元素的高度，更希望子元素可以撑起父级元素。</p>
+<p>清除浮动主要为了解决父级元素高度为0，因为子级浮动引起无法撑起父级元素的问题。</p>
+<p><img src="http://wx3.sinaimg.cn/large/006ttwEMgy1fy35tsuml3j30gp09hdh5.jpg" alt=""></p>
+<p><img src="http://wx1.sinaimg.cn/large/006ttwEMgy1fy35ts9v92j30gq05iwfn.jpg" alt=""><br></p>
+<h2 id="清除浮动的方法"><a href="#清除浮动的方法" class="headerlink" title="清除浮动的方法"></a>清除浮动的方法</h2><p>其实本质叫做闭合浮动更好一些, 记住，清除浮动就是把浮动的盒子圈到里面，让父盒子闭合出口和入口不让他们出来影响其他元素。最最暴力的方法是给父级元素加上高度，但是这显然不是一个好方法。</p>
+<p>在CSS中，clear属性用于清除浮动，其基本语法格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器&#123;clear:属性值;&#125;   clear 清除</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>left</td>
+<td>不允许左侧有浮动元素（清除左侧浮动的影响）</td>
+</tr>
+<tr>
+<td>right</td>
+<td>不允许右侧有浮动元素（清除右侧浮动的影响）</td>
+</tr>
+<tr>
+<td>both</td>
+<td>同时清除左右两侧浮动的影响</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h3 id="1-额外标签法"><a href="#1-额外标签法" class="headerlink" title="1. 额外标签法"></a>1. 额外标签法</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">是W3C推荐的做法是通过在浮动元素末尾添加一个空的标签例如 <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">”clear:both”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>，或则其他标签br等亦可。</span><br></pre></td></tr></table></figure>
+<p>优点： 通俗易懂，书写方便</p>
+<p>缺点： 添加许多无意义的标签，结构化较差。<br></p>
+<h3 id="2-父级添加overflow属性方法"><a href="#2-父级添加overflow属性方法" class="headerlink" title="2. 父级添加overflow属性方法"></a>2. 父级添加overflow属性方法</h3><p>可以通过触发BFC的方式，可以实现清除浮动效果。（BFC后面讲解）</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">可以给父级添加： overflow为 hidden|auto|scroll  都可以实现。</span><br></pre></td></tr></table></figure>
+<p>优点：  代码简洁</p>
+<p>缺点：  内容增多时候容易造成不会自动换行导致内容被隐藏掉，无法显示需要溢出的元素。<br></p>
+<h3 id="3-父级标签使用after伪元素清除浮动"><a href="#3-父级标签使用after伪元素清除浮动" class="headerlink" title="3. 父级标签使用after伪元素清除浮动"></a>3. 父级标签使用after伪元素清除浮动</h3><p><strong>:after 方式为空元素的升级版，好处是不用单独加标签了</strong> </p>
+<p>使用方法：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">     <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">     <span class="attribute">display</span>: block;</span><br><span class="line">     <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">     <span class="attribute">clear</span>: both;</span><br><span class="line">     <span class="attribute">visibility</span>: hidden;</span><br><span class="line">&#125;   </span><br><span class="line"></span><br><span class="line"> .clearfix &#123;*zoom: 1;&#125;   /* IE6、7 专有 */</span><br></pre></td></tr></table></figure>
+<p>优点： 符合闭合浮动思想  结构语义化正确</p>
+<p>缺点： 由于IE6-7不支持:after，使用 zoom:1触发 hasLayout。</p>
+<p>代表网站： 百度、淘宝网、网易等</p>
+<p><img src="http://wx2.sinaimg.cn/large/006ttwEMgy1fy35tt9hxkj30u80ho41p.jpg" alt=""></p>
+<p>注意： content:””   尽量不带点</p>
+<p><br></p>
+<h3 id="4-父级标签使用before和after双伪元素清除浮动"><a href="#4-父级标签使用before和after双伪元素清除浮动" class="headerlink" title="4. 父级标签使用before和after双伪元素清除浮动"></a>4. 父级标签使用before和after双伪元素清除浮动</h3><p>使用方法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:before</span>,<span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123; </span><br><span class="line">  <span class="attribute">content</span>:<span class="string">""</span>;</span><br><span class="line">  <span class="attribute">display</span>:table;  <span class="comment">/* 这句话可以出发BFC BFC可以清除浮动,BFC我们后面讲 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line"> <span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">  *zoom:1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>优点：  代码更简洁</p>
+<p>缺点：  由于IE6-7不支持:after，使用 zoom:1触发 hasLayout。</p>
+<p>代表网站： 小米、腾讯等<br><br><br><br></p>
+
+          
+        
+      
     </div>
-    <!-- async load share.js -->
-     
-    </body>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2018/12/05/前端开发仿站小工具.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]2018/12/05/前端开发仿站小工具.html" itemprop="url">前端开发仿站小工具</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-05T13:27:31+08:00">
+                2018-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>仿站小工具是通过网址下载静态网页的工具。从输入的网址下载html代码，提取出JS、Css、Image、Picture、Flash等静态文件网址，再从下载完好的Css代码中提取出Image静态文件网址，通过网址下载静态文件，根据软件设置好的保存规则，自动修正html和css代码链接路径，最终这些静态文件被按分类保存到电脑文件夹。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/[object Object]2018/12/05/前端开发仿站小工具.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2018/11/30/ABOUT ME.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]2018/11/30/ABOUT ME.html" itemprop="url">你好哇~</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-30T01:46:50+08:00">
+                2018-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="关于Dunteng’s-Blog"><a href="#关于Dunteng’s-Blog" class="headerlink" title="关于Dunteng’s Blog"></a>关于Dunteng’s Blog</h2><p>我叫Dunteng ！</p>
+<p>我將在這里分享我的IT技術筆記和其他生活隨筆，let’s record and share together ！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Dunteng Lin">
+            
+              <p class="site-author-name" itemprop="name">Dunteng Lin</p>
+              <p class="site-description motion-element" itemprop="description">都会好的  总会有的</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dunteng Lin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
 </html>
-
-

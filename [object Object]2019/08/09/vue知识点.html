@@ -1,421 +1,406 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-    <!-- title -->
 
 
 
-
-<!-- keywords -->
-
+  
 
 
-
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="author" content="燎原火">
-    <meta name="renderer" content="webkit">
-    <meta name="copyright" content="燎原火">
-    
-    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
-    
-    <meta name="description" content="我的个人博客">
-    <meta http-equiv="Cache-control" content="no-cache">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Vue基础笔记 · Dunteng&#39;s Blog</title>
-    <style type="text/css">
-    @font-face {
-        font-family: 'Oswald-Regular';
-        src: url("/font/Oswald-Regular.ttf");
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Vue,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="源码【复习本篇笔记时一边看源码】  https://github.com/rockdunteng/rockdunteng.github.io/tree/master/note/vue/%E6%B8%A1%E4%B8%80%E6%96%B0Vue%E6%BA%90%E7%A0%81 一、Vue前导Vue的优点：  减少dom操作，性能更好 视图、数据分离 维护成本低  点击该pdf查看详情  二、数">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue基础笔记">
+<meta property="og:url" content="https://dunteng.github.io/[object Object]2019/08/09/vue知识点.html">
+<meta property="og:site_name" content="Dunteng&#39;s Blog">
+<meta property="og:description" content="源码【复习本篇笔记时一边看源码】  https://github.com/rockdunteng/rockdunteng.github.io/tree/master/note/vue/%E6%B8%A1%E4%B8%80%E6%96%B0Vue%E6%BA%90%E7%A0%81 一、Vue前导Vue的优点：  减少dom操作，性能更好 视图、数据分离 维护成本低  点击该pdf查看详情  二、数">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1564215958637.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1564212932741.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1564213382860.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1564214165792.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1564216195094.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1564217181273.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1564217272687.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1564217455589.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1564217936576.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1564218209720.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567579888756.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567580190773.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567580308732.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1564384342505.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1564385335421.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1564386032576.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1564386210997.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1564386818920.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1564387087174.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1564387434614.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/挂载流程.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006ttwEMly1g2hbe8i32jj31xe25qtku.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006ttwEMgy1g2czp6tk1ej303o02dmwx.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/006ttwEMgy1g2d14c4gstj308c076jrd.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567510618984.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567511594805.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567668494678.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567668892295.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567669076852.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567512737130.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567513134224.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567514346664.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567519232543.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567573718978.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567574861249.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567574935531.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567575042562.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567575099573.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567576385970.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567576901607.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567579334058.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567581936328.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567585452418.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567585482438.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567585581527.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567588110311.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567834770585.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567834990024.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567836335642.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567836265612.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567836714591.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567836792711.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567837033399.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1568037236fa.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/20180315110305411.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567838042925.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567850470296.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567850528088.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567851075014.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567851012789.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567845124241.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567845232834.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567850373975.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567926980649.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567928081876.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567958712382.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1567958795682.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/rockdunteng/imageBed/master/note/vue/1568962541144.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/rockdunteng/imageBed/master/note/vue/1568962967595.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/rockdunteng/imageBed/master/note/vue/1568963218053.png">
+<meta property="og:updated_time" content="2019-09-20T17:07:33.442Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue基础笔记">
+<meta name="twitter:description" content="源码【复习本篇笔记时一边看源码】  https://github.com/rockdunteng/rockdunteng.github.io/tree/master/note/vue/%E6%B8%A1%E4%B8%80%E6%96%B0Vue%E6%BA%90%E7%A0%81 一、Vue前导Vue的优点：  减少dom操作，性能更好 视图、数据分离 维护成本低  点击该pdf查看详情  二、数">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vue/1564215958637.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'GX48388M0Z',
+      apiKey: '24910416df90ea04217402b818109cef',
+      indexName: 'index',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
-
-    body {
-        margin: 0;
-    }
-
-    header,
-    footer,
-    .back-top,
-    .sidebar,
-    .container,
-    .site-intro-meta,
-    .toc-wrapper {
-        display: none;
-    }
-
-    .site-intro {
-        position: relative;
-        z-index: 3;
-        width: 100%;
-        /* height: 50vh; */
-        overflow: hidden;
-    }
-
-    .site-intro-placeholder {
-        position: absolute;
-        z-index: -2;
-        top: 0;
-        left: 0;
-        width: calc(100% + 300px);
-        height: 100%;
-        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
-        background-position: center center;
-        transform: translate3d(-226px, 0, 0);
-        animation: gradient-move 2.5s ease-out 0s infinite;
-    }
-
-    @keyframes gradient-move {
-        0% {
-            transform: translate3d(-226px, 0, 0);
-        }
-        100% {
-            transform: translate3d(0, 0, 0);
-        }
-    }
-
-</style>
-
-    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
-    
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    
-    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
-/* This file is meant as a standalone workflow for
-- testing support for link[rel=preload]
-- enabling async CSS loading in browsers that do not support rel=preload
-- applying rel preload css once loaded, whether supported or not.
-*/ -->
-<script>
-(function( w ){
-	"use strict";
-	// rel=preload support test
-	if( !w.loadCSS ){
-		w.loadCSS = function(){};
-	}
-	// define on the loadCSS obj
-	var rp = loadCSS.relpreload = {};
-	// rel=preload feature support test
-	// runs once and returns a function for compat purposes
-	rp.support = (function(){
-		var ret;
-		try {
-			ret = w.document.createElement( "link" ).relList.supports( "preload" );
-		} catch (e) {
-			ret = false;
-		}
-		return function(){
-			return ret;
-		};
-	})();
-
-	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
-	// then change that media back to its intended value on load
-	rp.bindMediaToggle = function( link ){
-		// remember existing media attr for ultimate state, or default to 'all'
-		var finalMedia = link.media || "all";
-
-		function enableStylesheet(){
-			link.media = finalMedia;
-		}
-
-		// bind load handlers to enable media
-		if( link.addEventListener ){
-			link.addEventListener( "load", enableStylesheet );
-		} else if( link.attachEvent ){
-			link.attachEvent( "onload", enableStylesheet );
-		}
-
-		// Set rel and non-applicable media type to start an async request
-		// note: timeout allows this to happen async to let rendering continue in IE
-		setTimeout(function(){
-			link.rel = "stylesheet";
-			link.media = "only x";
-		});
-		// also enable media after 3 seconds,
-		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
-		setTimeout( enableStylesheet, 3000 );
-	};
-
-	// loop through link elements in DOM
-	rp.poly = function(){
-		// double check this to prevent external calls from running
-		if( rp.support() ){
-			return;
-		}
-		var links = w.document.getElementsByTagName( "link" );
-		for( var i = 0; i < links.length; i++ ){
-			var link = links[ i ];
-			// qualify links to those with rel=preload and as=style attrs
-			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
-				// prevent rerunning on link
-				link.setAttribute( "data-loadcss", true );
-				// bind listeners to toggle media back
-				rp.bindMediaToggle( link );
-			}
-		}
-	};
-
-	// if unsupported, run the polyfill
-	if( !rp.support() ){
-		// run once at least
-		rp.poly();
-
-		// rerun poly on an interval until onload
-		var run = w.setInterval( rp.poly, 500 );
-		if( w.addEventListener ){
-			w.addEventListener( "load", function(){
-				rp.poly();
-				w.clearInterval( run );
-			} );
-		} else if( w.attachEvent ){
-			w.attachEvent( "onload", function(){
-				rp.poly();
-				w.clearInterval( run );
-			} );
-		}
-	}
-
-
-	// commonjs
-	if( typeof exports !== "undefined" ){
-		exports.loadCSS = loadCSS;
-	}
-	else {
-		w.loadCSS = loadCSS;
-	}
-}( typeof global !== "undefined" ? global : this ) );
+  };
 </script>
 
-    <link rel="icon" href="/assets/favicon.ico">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
-    <link rel="preload" href="/scripts/main.js" as="script">
-    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
-    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
-    
-        <!-- algolia -->
-        <script>
-            
-            var hits = JSON.parse('{"per_page":10}')
-            var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
 
-            var algolia = {
-                applicationID: 'GX48388M0Z',
-                apiKey: '24910416df90ea04217402b818109cef',
-                indexName: 'index',
-                hits: hits,
-                labels: labels
-            }
-        </script>
-    
-    <!-- fancybox -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
-    <!-- 百度统计  -->
-    
-    <!-- 谷歌统计  -->
-    
+
+  <link rel="canonical" href="https://dunteng.github.io/[object Object]2019/08/09/vue知识点.html">
+
+
+
+
+
+  <title>Vue基础笔记 | Dunteng's Blog</title>
+  
+
+
+
+
+
+
+
+
 </head>
 
-    
-        <body class="post-body">
-    
-    
-<header class="header">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-    <div class="read-progress"></div>
-    <div class="header-sidebar-menu">&#xe775;</div>
-    <!-- post页的toggle banner  -->
+  
+  
     
-    <div class="banner">
-            <div class="blog-title">
-                <a href="/">Dunteng&#39;s Blog.</a>
-            </div>
-            <div class="post-title">
-                <a href="#" class="post-name">Vue基础笔记</a>
-            </div>
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Dunteng's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-    
-    <a class="home-link" href="/">Dunteng's Blog.</a>
-</header>
-    <div class="wrapper">
-        <div class="site-intro" style="
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
 
-
-
-
-
-
-
-height:50vh;
-">
-    
-    <!-- 主页  -->
-    
-    
-    <!-- 404页  -->
-            
-    <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(https://images.unsplash.com/photo-1566154247258-466b02048738?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixlib=rb-1.2.1&q=80&w=1600)"></div>
-    <div class="site-intro-meta">
-        <!-- 标题  -->
-        <h1 class="intro-title">
-            <!-- 主页  -->
-            
-            Vue基础笔记
-            <!-- 404 -->
-            
-        </h1>
-        <!-- 副标题 -->
-        <p class="intro-subtitle">
-            <!-- 主页副标题  -->
-            
-            
-            <!-- 404 -->
-            
-        </p>
-        <!-- 文章页meta -->
-        
-            <div class="post-intros">
-                <!-- 文章页标签  -->
-                
-                    <div class="post-intro-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Vue">Vue</a>
-    
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
-                
-                
-                    <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">10.1k</span>阅读时长: <span class="post-count reading-time">41 min</span></span>
-                    </div>
-                
-                <div class="post-intro-meta">
-                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/08/09</span>
-                    
-                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                        <span class="iconfont-archer">&#xe602;</span>
-                        <span id="busuanzi_value_page_pv"></span>
-                    </span>
-                    
-                    <span class="shareWrapper">
-                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
-                        <span class="shareText">Share</span>
-                        <ul class="shareList">
-                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
-                                <div class="share-qrcode"></div>
-                            </li>
-                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
-                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
-                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
-                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
         
-    </div>
-</div>
-        <script>
- 
-  // get user agent
-  var browser = {
-    versions: function () {
-      var u = window.navigator.userAgent;
-      return {
-        userAgent: u,
-        trident: u.indexOf('Trident') > -1, //IE内核
-        presto: u.indexOf('Presto') > -1, //opera内核
-        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
-        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
-        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
-        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
-        iPad: u.indexOf('iPad') > -1, //是否为iPad
-        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
-        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
-        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
-      };
-    }()
-  }
-  console.log("userAgent:" + browser.versions.userAgent);
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
 
-  // callback
-  function fontLoaded() {
-    console.log('font loaded');
-    if (document.getElementsByClassName('site-intro-meta')) {
-      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
-      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
-      var postIntros = document.getElementsByClassName('post-intros')[0]
-      if (postIntros) {
-        postIntros.classList.add('post-fade-in');
-      }
-    }
-  }
+      
+    </ul>
+  
 
-  // UC不支持跨域，所以直接显示
-  function asyncCb(){
-    if (browser.versions.uc) {
-      console.log("UCBrowser");
-      fontLoaded();
-    } else {
-      WebFont.load({
-        custom: {
-          families: ['Oswald-Regular']
-        },
-        loading: function () {  //所有字体开始加载
-          // console.log('loading');
-        },
-        active: function () {  //所有字体已渲染
-          fontLoaded();
-        },
-        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
-          console.log('inactive: timeout');
-          fontLoaded();
-        },
-        timeout: 5000 // Set the timeout to two seconds
-      });
-    }
-  }
+  
+</nav>
 
-  function asyncErr(){
-    console.warn('script load from CDN failed, will load local script')
-  }
 
-  // load webfont-loader async, and add callback function
-  function async(u, cb, err) {
-    var d = document, t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
-    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
-    s.parentNode.insertBefore(o, s);
-  }
 
-  var asyncLoadWithFallBack = function(arr, success, reject) {
-      var currReject = function(){
-        reject()
-        arr.shift()
-        if(arr.length)
-          async(arr[0], success, currReject)
-        }
+ </div>
+    </header>
 
-      async(arr[0], success, currReject)
-  }
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
-  asyncLoadWithFallBack([
-    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
-    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
-    "/lib/webfontloader.min.js"
-  ], asyncCb, asyncErr)
-</script>        
-        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
-        <div class="container container-unloaded">
-            <main class="main post-page">
-    <article class="article-entry">
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2019/08/09/vue知识点.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Vue基础笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-09T13:27:31+08:00">
+                2019-08-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         <h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p style="color:red">【复习本篇笔记时一边看源码】</p>
 
 <p><a href="https://github.com/rockdunteng/rockdunteng.github.io/tree/master/note/vue/%E6%B8%A1%E4%B8%80%E6%96%B0Vue%E6%BA%90%E7%A0%81" target="_blank" rel="noopener">https://github.com/rockdunteng/rockdunteng.github.io/tree/master/note/vue/%E6%B8%A1%E4%B8%80%E6%96%B0Vue%E6%BA%90%E7%A0%81</a><br><br><br></p>
@@ -1013,1541 +998,383 @@ height:50vh;
 <hr>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">request</span>(<span class="params">config</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 返回一个Promise</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> instance = axios.create(&#123;</span><br><span class="line">        baseURL: <span class="string">' http://www.liulongbin.top:3005'</span>,</span><br><span class="line">        timeout: <span class="number">5000</span></span><br><span class="line">    &#125;)</span><br><span class="line">    instance.interceptors.request.use(<span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(config);<span class="comment">//拦截config进行处理，这里将其打印出来，这里的config实际上就是上面的config</span></span><br><span class="line">        <span class="keyword">return</span> config  <span class="comment">//这里必须return config以取消拦截，否则之后无法响应成功</span></span><br><span class="line">    &#125;, err =&gt; &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    instance.interceptors.response.use(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(res);<span class="comment">//拦截res进行处理，这里将其打印出来</span></span><br><span class="line">        <span class="keyword">return</span> res.data<span class="comment">//这里必须return res.data以取消拦截，否则之后无法响应成功</span></span><br><span class="line">    &#125;, err =&gt; &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> instance(config)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    </article>
-    <!-- license  -->
+      
+    </div>
     
-    <!-- paginator  -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-                <div class="nextSlogan">Next Post</div>
-                <a href="/[object Object]2019/09/01/Linux基础入门.html" title="Linux基础入门">
-                    <div class="nextTitle">Linux基础入门</div>
-                </a>
-            
-        </li>
-        <li class="previous">
-            
-                <div class="prevSlogan">Previous Post</div>
-                <a href="/[object Object]2019/08/09/博客项目01.html" title="一、博客项目大作战之数据库建表">
-                    <div class="prevTitle">一、博客项目大作战之数据库建表</div>
-                </a>
-            
-        </li>
-    </ul>
-    <!-- 评论插件 -->
-    <!-- 来必力City版安装代码 -->
-
-<!-- City版安装代码已完成 -->
-    
-    
-    <!-- partial('_partial/comment/changyan') -->
-    <!--PC版-->
-
-
     
     
 
-    <!-- 评论 -->
-</main>
-            <!-- profile -->
-            
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vue/" rel="tag"># Vue</a>
+          
         </div>
-        <footer class="footer footer-unloaded">
-    <!-- social  -->
-    
-    <div class="social">
-        
-    
-        
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-                <a href="mailto:lindunteng@gmail.com" class="iconfont-archer email" title="email"></a>
+              <a href="/[object Object]2019/08/09/博客项目01.html" rel="next" title="一、博客项目大作战之数据库建表">
+                <i class="fa fa-chevron-left"></i> 一、博客项目大作战之数据库建表
+              </a>
             
-        
-    
-        
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-                <a href="//github.com/dunteng" class="iconfont-archer github" target="_blank" title="github"></a>
+              <a href="/[object Object]2019/09/01/Linux基础入门.html" rel="prev" title="Linux基础入门">
+                Linux基础入门 <i class="fa fa-chevron-right"></i>
+              </a>
             
-        
-    
-        
-            
-                <span class="iconfont-archer wechat" title="wechat">
-                  
-                  <img class="profile-qr" src="/assets/WeChat.png">
-                </span>
-            
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="https://www.zhihu.com/people/ten-20/activities" class="iconfont-archer zhihu" target="_blank" title="zhihu"></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-    </div>
-    
-    <!-- powered by Hexo  -->
-    <div class="copyright">
-        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
-    </div>
-    <!-- 不蒜子  -->
-    
-    <div class="busuanzi-container">
-    
-    
-    <span id="busuanzi_container_site_uv"><h3 style="color:#f75357;">本站访问次数: <span id="busuanzi_value_site_uv"></span> </h3></span>
-    
-    </div>
-    
-</footer>
-    </div>
-    <!-- toc -->
-    
-    <div class="toc-wrapper" style=
-    
-
-
-
-
-
-
-
-top:50vh;
-
-    >
-        <div class="toc-catalog">
-            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+          </div>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#源码"><span class="toc-number">1.</span> <span class="toc-text">源码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一、Vue前导"><span class="toc-number">2.</span> <span class="toc-text">一、Vue前导</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、数据绑定与视图渲染"><span class="toc-number">3.</span> <span class="toc-text">二、数据绑定与视图渲染</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据要先存在，才能实现数据绑定"><span class="toc-number">3.1.</span> <span class="toc-text">数据要先存在，才能实现数据绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过索引的方式修改数组，或通过修改数组长度的方式修改数组，都无法重新渲染视图"><span class="toc-number">3.2.</span> <span class="toc-text">通过索引的方式修改数组，或通过修改数组长度的方式修改数组，都无法重新渲染视图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组变异方法"><span class="toc-number">3.3.</span> <span class="toc-text">数组变异方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#set方法"><span class="toc-number">3.4.</span> <span class="toc-text">$set方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#el"><span class="toc-number">3.5.</span> <span class="toc-text">$el</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nextTick"><span class="toc-number">3.6.</span> <span class="toc-text">$nextTick</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mount"><span class="toc-number">3.7.</span> <span class="toc-text">$mount</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#refs"><span class="toc-number">3.8.</span> <span class="toc-text">$refs</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、Vue-指令"><span class="toc-number">4.</span> <span class="toc-text">三、Vue 指令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#v-pre、v-cloak和v-once指令"><span class="toc-number">4.1.</span> <span class="toc-text">v-pre、v-cloak和v-once指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#v-pre指令"><span class="toc-number">4.1.1.</span> <span class="toc-text">v-pre指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-cloak指令"><span class="toc-number">4.1.2.</span> <span class="toc-text">v-cloak指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-once指令"><span class="toc-number">4.1.3.</span> <span class="toc-text">v-once指令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他常用指令"><span class="toc-number">4.2.</span> <span class="toc-text">其他常用指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xss攻击"><span class="toc-number">4.3.</span> <span class="toc-text">xss攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#v-bind和v-on"><span class="toc-number">4.4.</span> <span class="toc-text">v-bind和v-on</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#绑定class"><span class="toc-number">4.4.1.</span> <span class="toc-text">绑定class</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绑定style"><span class="toc-number">4.4.2.</span> <span class="toc-text">绑定style</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#v-for"><span class="toc-number">4.5.</span> <span class="toc-text">v-for</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#v-model"><span class="toc-number">4.6.</span> <span class="toc-text">v-model</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、自定义键盘修饰符"><span class="toc-number">5.</span> <span class="toc-text">四、自定义键盘修饰符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-x中自定义键盘修饰符"><span class="toc-number">5.0.1.</span> <span class="toc-text">2.x中自定义键盘修饰符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、directive自定义指令"><span class="toc-number">6.</span> <span class="toc-text">五、directive自定义指令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、filter过滤器"><span class="toc-number">7.</span> <span class="toc-text">六、filter过滤器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#私有过滤器"><span class="toc-number">7.0.1.</span> <span class="toc-text">私有过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全局过滤器"><span class="toc-number">7.0.2.</span> <span class="toc-text">全局过滤器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、el、-template、render"><span class="toc-number">8.</span> <span class="toc-text">七、el、 template、render</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、vue实例的生命周期"><span class="toc-number">9.</span> <span class="toc-text">八、vue实例的生命周期</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九、计算属性computed和监听器watch"><span class="toc-number">10.</span> <span class="toc-text">九、计算属性computed和监听器watch</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十、组件"><span class="toc-number">11.</span> <span class="toc-text">十、组件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#全局组件"><span class="toc-number">11.1.</span> <span class="toc-text">全局组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#局部组件"><span class="toc-number">11.2.</span> <span class="toc-text">局部组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态组件和插槽-v-slot"><span class="toc-number">11.3.</span> <span class="toc-text">动态组件和插槽 v-slot</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#动态组件"><span class="toc-number">11.3.1.</span> <span class="toc-text">动态组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插槽"><span class="toc-number">11.3.2.</span> <span class="toc-text">插槽</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组件传值"><span class="toc-number">11.4.</span> <span class="toc-text">组件传值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#组件传递普通的值"><span class="toc-number">11.4.1.</span> <span class="toc-text">组件传递普通的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组件传递data中的值，父组件传值给子组件"><span class="toc-number">11.4.2.</span> <span class="toc-text">组件传递data中的值，父组件传值给子组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多层父传子通信"><span class="toc-number">11.4.3.</span> <span class="toc-text">多层父传子通信</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#【方案二】利用-attrs-来传值"><span class="toc-number">11.4.3.1.</span> <span class="toc-text">【方案二】利用 $attrs 来传值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【方案三】利用-parent"><span class="toc-number">11.4.3.2.</span> <span class="toc-text">【方案三】利用 $parent</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【方案四】利用provide和inject"><span class="toc-number">11.4.3.3.</span> <span class="toc-text">【方案四】利用provide和inject</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子组件向父组件传值"><span class="toc-number">11.4.4.</span> <span class="toc-text">子组件向父组件传值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#【方案一】利用-children"><span class="toc-number">11.4.4.1.</span> <span class="toc-text">【方案一】利用 $children</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【方案二】-利用-refs"><span class="toc-number">11.4.4.2.</span> <span class="toc-text">【方案二】 利用 $refs</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#兄弟组件之间的传值"><span class="toc-number">11.4.5.</span> <span class="toc-text">兄弟组件之间的传值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#利用事件总线EventBus"><span class="toc-number">11.4.5.1.</span> <span class="toc-text">利用事件总线EventBus</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组件双向数据通信"><span class="toc-number">11.4.6.</span> <span class="toc-text">组件双向数据通信</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十一、Vue-cli-脚手架"><span class="toc-number">12.</span> <span class="toc-text">十一、Vue-cli 脚手架</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装初试"><span class="toc-number">12.1.</span> <span class="toc-text">安装初试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#router的push、replace和go"><span class="toc-number">12.2.</span> <span class="toc-text">$router的push、replace和go</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#导航守卫和动态路由"><span class="toc-number">12.3.</span> <span class="toc-text">导航守卫和动态路由</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#动态路由"><span class="toc-number">12.3.1.</span> <span class="toc-text">动态路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组件内的守卫"><span class="toc-number">12.3.2.</span> <span class="toc-text">组件内的守卫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由独享守卫"><span class="toc-number">12.3.3.</span> <span class="toc-text">路由独享守卫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全局前置守卫"><span class="toc-number">12.3.4.</span> <span class="toc-text">全局前置守卫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全局解析守卫"><span class="toc-number">12.3.5.</span> <span class="toc-text">全局解析守卫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全局后置钩子"><span class="toc-number">12.3.6.</span> <span class="toc-text">全局后置钩子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导航守卫小汇总"><span class="toc-number">12.3.7.</span> <span class="toc-text">导航守卫小汇总</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#完整的导航解析流程"><span class="toc-number">12.3.8.</span> <span class="toc-text">完整的导航解析流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#路由元信息"><span class="toc-number">12.4.</span> <span class="toc-text">路由元信息</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十三、Vuex"><span class="toc-number">13.</span> <span class="toc-text">十三、Vuex</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#state、getters、mutations、actions"><span class="toc-number">13.1.</span> <span class="toc-text">state、getters、mutations、actions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vuex-module"><span class="toc-number">13.2.</span> <span class="toc-text">vuex module</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">13.2.1.</span> <span class="toc-text">★★★★★ 看代码【F:\渡一前端课\新录制的vue课程资料\34. vuex module\src】</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十四、跨域"><span class="toc-number">14.</span> <span class="toc-text">十四、跨域</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十五、网络请求axios"><span class="toc-number">15.</span> <span class="toc-text">十五、网络请求axios</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Example"><span class="toc-number">15.1.</span> <span class="toc-text">Example</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#全局配置"><span class="toc-number">15.2.</span> <span class="toc-text">全局配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#axios-的实例使用"><span class="toc-number">15.3.</span> <span class="toc-text">axios 的实例使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#axios-封装代码"><span class="toc-number">15.4.</span> <span class="toc-text">axios 封装代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#level-1"><span class="toc-number">15.4.1.</span> <span class="toc-text">level 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level-2"><span class="toc-number">15.4.2.</span> <span class="toc-text">level 2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level-3"><span class="toc-number">15.4.3.</span> <span class="toc-text">level 3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level-4"><span class="toc-number">15.4.4.</span> <span class="toc-text">level 4</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拦截器"><span class="toc-number">15.5.</span> <span class="toc-text">拦截器</span></a></li></ol></li></ol>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
     </div>
-    
-    <div class="back-top iconfont-archer">&#xe639;</div>
-    <div class="sidebar sidebar-hide">
-    <ul class="sidebar-tabs sidebar-tabs-active-0">
-        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
-        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
-        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
-    </ul>
-    <div class="sidebar-content sidebar-content-show-archive">
-          <div class="sidebar-panel-archives">
-    <!-- 在ejs中将archive按照时间排序 -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="total-and-search">
-        <div class="total-archive">
-        Total : 61
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
         </div>
-        <!-- search  -->
         
-            <div class="site-search popup-trigger">
-                <span class="iconfont-archer search-icon">&#xe627;</span>
-            </div>
-        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
-    
-    <div class="post-archive">
-    
-    
-    
-    
-    <div class="archive-year"> 2019 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/23</span><a class="archive-post-title" href="/[object Object]2019/11/23/小程序云函数路由优化之tcb-router.html">小程序云函数路由优化之tcb-router</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/[object Object]2019/10/28/对象.html">复习对象</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/[object Object]2019/10/28/复习数组.html">复习数组</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/[object Object]2019/10/28/预编译-作用域-闭包-立即执行函数.html">复习预编译-作用域-闭包-立即执行函数</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/17</span><a class="archive-post-title" href="/[object Object]2019/10/17/Vue页面间通信传值的方法.html">Vue页面间通信传值的方法</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/15</span><a class="archive-post-title" href="/[object Object]2019/10/15/防抖节流.html">防抖节流</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href="/[object Object]2019/10/08/Redis.html">Redis</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/05</span><a class="archive-post-title" href="/[object Object]2019/10/05/mongoDB.html">mongoDB</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/05</span><a class="archive-post-title" href="/[object Object]2019/10/05/聊天机器人.html">聊天机器人</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/02</span><a class="archive-post-title" href="/[object Object]2019/10/02/express搭建静态文件服务器.html">使用express搭建静态文件服务器</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/01</span><a class="archive-post-title" href="/[object Object]2019/10/01/MySQL基本的增删改查操作.html">MySQL基本的增删改查操作</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/01</span><a class="archive-post-title" href="/[object Object]2019/10/01/使用http模块重构微型服务器.html">使用http模块重构微型服务器</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/30</span><a class="archive-post-title" href="/[object Object]2019/09/30/net模块写微型node服务器.html">写一个微型node服务器</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/25</span><a class="archive-post-title" href="/[object Object]2019/09/25/新linux学习.html">虚拟机安装centos7和node</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href="/[object Object]2019/09/01/Linux基础入门.html">Linux基础入门</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/09</span><a class="archive-post-title" href="/[object Object]2019/08/09/vue知识点.html">Vue基础笔记</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/09</span><a class="archive-post-title" href="/[object Object]2019/08/09/博客项目01.html">一、博客项目大作战之数据库建表</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/08</span><a class="archive-post-title" href="/[object Object]2019/08/08/vi—终端中的编辑器.html">vi编辑器教程</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/05</span><a class="archive-post-title" href="/[object Object]2019/06/05/02Vue音乐播放器.html">Vue音乐播放器(二)</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/03</span><a class="archive-post-title" href="/[object Object]2019/06/03/Vuex笔记.html">Vuex笔记</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/[object Object]2019/06/01/01Vue音乐播放器.html">Vue音乐播放器（一）</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/12</span><a class="archive-post-title" href="/[object Object]2019/05/12/Vue父子组件传值和非父子组件传值.html">vue父子组件传值和非父子组件传值</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/[object Object]2019/05/11/vue写个日历组件.html">vue写个日历组件</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/[object Object]2019/05/10/啥是前端工程化模块化组件化.html">啥是前端工程化、模块化、组件化？</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/[object Object]2019/05/10/webpack笔记.html">webpack4复习笔记</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/03</span><a class="archive-post-title" href="/[object Object]2019/04/03/ES6数据劫持.html">ES6数据劫持proxy&reflect</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/01</span><a class="archive-post-title" href="/[object Object]2019/04/01/箭头函数看这篇就够了.html">箭头函数看这篇就够了</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/29</span><a class="archive-post-title" href="/[object Object]2019/03/29/jsonp实现百度搜索框功能.html">jsonp实现百度搜索框功能</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/20</span><a class="archive-post-title" href="/[object Object]2019/03/20/jQ.Ajax实现瀑布流相册.html">jQ.Ajax实现瀑布流相册</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/16</span><a class="archive-post-title" href="/[object Object]2019/03/16/JS实现简单的Cookie操作.html">拖拽方块记录Cookie</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/14</span><a class="archive-post-title" href="/[object Object]2019/03/14/封装jsonp代码.html">封装Jsonp代码</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/13</span><a class="archive-post-title" href="/[object Object]2019/03/13/依此优化AJAX的封装代码.html">优化AJAX的JS封装代码</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/07</span><a class="archive-post-title" href="/[object Object]2019/03/07/03处理机调度与死锁.html">处理机调度与死锁</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/[object Object]2019/03/06/02进程的描述与控制.html">进程的描述与控制</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/05</span><a class="archive-post-title" href="/[object Object]2019/03/05/01OS引言.html">操作系统引言</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/05</span><a class="archive-post-title" href="/[object Object]2019/03/05/正则表达式验证密码的强度.html">正则表达式验证密码的强度</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/04</span><a class="archive-post-title" href="/[object Object]2019/03/04/继承.html">继承</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/28</span><a class="archive-post-title" href="/[object Object]2019/02/28/dianshang01.html">JS电商上线项目</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/25</span><a class="archive-post-title" href="/[object Object]2019/02/25/导航细线边框的实现.html">导航细线边框的实现</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/20</span><a class="archive-post-title" href="/[object Object]2019/02/20/常见浏览器内核.html">常见浏览器内核</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/16</span><a class="archive-post-title" href="/[object Object]2019/02/16/遍历DOM树.html">遍历DOM树</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/02</span><a class="archive-post-title" href="/[object Object]2019/02/02/css的权重问题.html">css的权重问题</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/14</span><a class="archive-post-title" href="/[object Object]2019/01/14/JS封装运动函数.html">JS封装动画函数</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/自定义属性操作案例.html">自定义属性操作案例</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/JS搜索框自动提示.html">JS搜索框自动提示</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/JS实现全选与全不选.html">JS实现全选与全不选</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/绑定解绑事件兼容代码.html">绑定/解绑事件兼容代码</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/12</span><a class="archive-post-title" href="/[object Object]2019/01/12/浅谈js匿名函数.html">浅谈js匿名函数</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/09</span><a class="archive-post-title" href="/[object Object]2019/01/09/字符串小案例.html">字符串小练习</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/07</span><a class="archive-post-title" href="/[object Object]2019/01/07/JavaScript中的值传递和地址传递（引用传递）.html">JavaScript中的值传递和地址传递（引用传递）</a>
-        </li>
-    
-    
-    
-    
-    
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
         </ul>
-    
-    <div class="archive-year"> 2018 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/15</span><a class="archive-post-title" href="/[object Object]2018/12/15/flex布局常用属性.html">flex伸缩弹性布局常用属性</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/10</span><a class="archive-post-title" href="/[object Object]2018/12/10/浅谈BFC.html">浅谈BFC</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/08</span><a class="archive-post-title" href="/[object Object]2018/12/08/外边距塌陷问题.html">外边距塌陷问题</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/08</span><a class="archive-post-title" href="/[object Object]2018/12/08/字体图标的使用.html">字体图标的使用</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/07</span><a class="archive-post-title" href="/[object Object]2018/12/07/vertical-align.html">vertical-align</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/07</span><a class="archive-post-title" href="/[object Object]2018/12/07/实现微信滑动门.html">实现微信滑动门</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/[object Object]2018/12/06/绝对定位盒子水平居中.html">绝对定位的盒子水平/垂直居中</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/05</span><a class="archive-post-title" href="/[object Object]2018/12/05/浅谈清除（闭合）浮动.html">浅谈清除（闭合）浮动</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/05</span><a class="archive-post-title" href="/[object Object]2018/12/05/前端开发仿站小工具.html">前端开发仿站小工具</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/30</span><a class="archive-post-title" href="/[object Object]2018/11/30/ABOUT ME.html">你好哇~</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/22</span><a class="archive-post-title" href="/[object Object]2018/08/22/数组.html">数组常用方法</a>
-        </li>
-    
-    </ul></div>
-  </div>
-        <div class="sidebar-panel-tags">
-    <div class="sidebar-tags-name">
-    
-        <span class="sidebar-tag-name" data-tags="操作系统"><span class="iconfont-archer">&#xe606;</span>操作系统</span>
-    
-        <span class="sidebar-tag-name" data-tags="JavaScript"><span class="iconfont-archer">&#xe606;</span>JavaScript</span>
-    
-        <span class="sidebar-tag-name" data-tags="小案例"><span class="iconfont-archer">&#xe606;</span>小案例</span>
-    
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
-    
-        <span class="sidebar-tag-name" data-tags="Vue"><span class="iconfont-archer">&#xe606;</span>Vue</span>
-    
-        <span class="sidebar-tag-name" data-tags="html/css"><span class="iconfont-archer">&#xe606;</span>html/css</span>
-    
-        <span class="sidebar-tag-name" data-tags="数据库"><span class="iconfont-archer">&#xe606;</span>数据库</span>
-    
-        <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
-    
-        <span class="sidebar-tag-name" data-tags="后端"><span class="iconfont-archer">&#xe606;</span>后端</span>
-    
-        <span class="sidebar-tag-name" data-tags="redis"><span class="iconfont-archer">&#xe606;</span>redis</span>
-    
-        <span class="sidebar-tag-name" data-tags="mongoDB"><span class="iconfont-archer">&#xe606;</span>mongoDB</span>
-    
-        <span class="sidebar-tag-name" data-tags="node.js"><span class="iconfont-archer">&#xe606;</span>node.js</span>
-    
-        <span class="sidebar-tag-name" data-tags="工具"><span class="iconfont-archer">&#xe606;</span>工具</span>
-    
-        <span class="sidebar-tag-name" data-tags="小程序"><span class="iconfont-archer">&#xe606;</span>小程序</span>
-    
-        <span class="sidebar-tag-name" data-tags="前端优化"><span class="iconfont-archer">&#xe606;</span>前端优化</span>
-    
-        <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
-    
-        <span class="sidebar-tag-name" data-tags="webpack"><span class="iconfont-archer">&#xe606;</span>webpack</span>
-    
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Dunteng Lin">
+            
+              <p class="site-author-name" itemprop="name">Dunteng Lin</p>
+              <p class="site-description motion-element" itemprop="description">都会好的  总会有的</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#源码"><span class="nav-number">1.</span> <span class="nav-text">源码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一、Vue前导"><span class="nav-number">2.</span> <span class="nav-text">一、Vue前导</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、数据绑定与视图渲染"><span class="nav-number">3.</span> <span class="nav-text">二、数据绑定与视图渲染</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据要先存在，才能实现数据绑定"><span class="nav-number">3.1.</span> <span class="nav-text">数据要先存在，才能实现数据绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过索引的方式修改数组，或通过修改数组长度的方式修改数组，都无法重新渲染视图"><span class="nav-number">3.2.</span> <span class="nav-text">通过索引的方式修改数组，或通过修改数组长度的方式修改数组，都无法重新渲染视图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组变异方法"><span class="nav-number">3.3.</span> <span class="nav-text">数组变异方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set方法"><span class="nav-number">3.4.</span> <span class="nav-text">$set方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#el"><span class="nav-number">3.5.</span> <span class="nav-text">$el</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nextTick"><span class="nav-number">3.6.</span> <span class="nav-text">$nextTick</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mount"><span class="nav-number">3.7.</span> <span class="nav-text">$mount</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#refs"><span class="nav-number">3.8.</span> <span class="nav-text">$refs</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、Vue-指令"><span class="nav-number">4.</span> <span class="nav-text">三、Vue 指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#v-pre、v-cloak和v-once指令"><span class="nav-number">4.1.</span> <span class="nav-text">v-pre、v-cloak和v-once指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#v-pre指令"><span class="nav-number">4.1.1.</span> <span class="nav-text">v-pre指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-cloak指令"><span class="nav-number">4.1.2.</span> <span class="nav-text">v-cloak指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-once指令"><span class="nav-number">4.1.3.</span> <span class="nav-text">v-once指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他常用指令"><span class="nav-number">4.2.</span> <span class="nav-text">其他常用指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xss攻击"><span class="nav-number">4.3.</span> <span class="nav-text">xss攻击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-bind和v-on"><span class="nav-number">4.4.</span> <span class="nav-text">v-bind和v-on</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定class"><span class="nav-number">4.4.1.</span> <span class="nav-text">绑定class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定style"><span class="nav-number">4.4.2.</span> <span class="nav-text">绑定style</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-for"><span class="nav-number">4.5.</span> <span class="nav-text">v-for</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-model"><span class="nav-number">4.6.</span> <span class="nav-text">v-model</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、自定义键盘修饰符"><span class="nav-number">5.</span> <span class="nav-text">四、自定义键盘修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-x中自定义键盘修饰符"><span class="nav-number">5.0.1.</span> <span class="nav-text">2.x中自定义键盘修饰符</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#五、directive自定义指令"><span class="nav-number">6.</span> <span class="nav-text">五、directive自定义指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、filter过滤器"><span class="nav-number">7.</span> <span class="nav-text">六、filter过滤器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#私有过滤器"><span class="nav-number">7.0.1.</span> <span class="nav-text">私有过滤器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局过滤器"><span class="nav-number">7.0.2.</span> <span class="nav-text">全局过滤器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、el、-template、render"><span class="nav-number">8.</span> <span class="nav-text">七、el、 template、render</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八、vue实例的生命周期"><span class="nav-number">9.</span> <span class="nav-text">八、vue实例的生命周期</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#九、计算属性computed和监听器watch"><span class="nav-number">10.</span> <span class="nav-text">九、计算属性computed和监听器watch</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十、组件"><span class="nav-number">11.</span> <span class="nav-text">十、组件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局组件"><span class="nav-number">11.1.</span> <span class="nav-text">全局组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#局部组件"><span class="nav-number">11.2.</span> <span class="nav-text">局部组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态组件和插槽-v-slot"><span class="nav-number">11.3.</span> <span class="nav-text">动态组件和插槽 v-slot</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#动态组件"><span class="nav-number">11.3.1.</span> <span class="nav-text">动态组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插槽"><span class="nav-number">11.3.2.</span> <span class="nav-text">插槽</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件传值"><span class="nav-number">11.4.</span> <span class="nav-text">组件传值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#组件传递普通的值"><span class="nav-number">11.4.1.</span> <span class="nav-text">组件传递普通的值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件传递data中的值，父组件传值给子组件"><span class="nav-number">11.4.2.</span> <span class="nav-text">组件传递data中的值，父组件传值给子组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多层父传子通信"><span class="nav-number">11.4.3.</span> <span class="nav-text">多层父传子通信</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#【方案二】利用-attrs-来传值"><span class="nav-number">11.4.3.1.</span> <span class="nav-text">【方案二】利用 $attrs 来传值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#【方案三】利用-parent"><span class="nav-number">11.4.3.2.</span> <span class="nav-text">【方案三】利用 $parent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#【方案四】利用provide和inject"><span class="nav-number">11.4.3.3.</span> <span class="nav-text">【方案四】利用provide和inject</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子组件向父组件传值"><span class="nav-number">11.4.4.</span> <span class="nav-text">子组件向父组件传值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#【方案一】利用-children"><span class="nav-number">11.4.4.1.</span> <span class="nav-text">【方案一】利用 $children</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#【方案二】-利用-refs"><span class="nav-number">11.4.4.2.</span> <span class="nav-text">【方案二】 利用 $refs</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#兄弟组件之间的传值"><span class="nav-number">11.4.5.</span> <span class="nav-text">兄弟组件之间的传值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#利用事件总线EventBus"><span class="nav-number">11.4.5.1.</span> <span class="nav-text">利用事件总线EventBus</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件双向数据通信"><span class="nav-number">11.4.6.</span> <span class="nav-text">组件双向数据通信</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十一、Vue-cli-脚手架"><span class="nav-number">12.</span> <span class="nav-text">十一、Vue-cli 脚手架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装初试"><span class="nav-number">12.1.</span> <span class="nav-text">安装初试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#router的push、replace和go"><span class="nav-number">12.2.</span> <span class="nav-text">$router的push、replace和go</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导航守卫和动态路由"><span class="nav-number">12.3.</span> <span class="nav-text">导航守卫和动态路由</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#动态路由"><span class="nav-number">12.3.1.</span> <span class="nav-text">动态路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件内的守卫"><span class="nav-number">12.3.2.</span> <span class="nav-text">组件内的守卫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由独享守卫"><span class="nav-number">12.3.3.</span> <span class="nav-text">路由独享守卫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局前置守卫"><span class="nav-number">12.3.4.</span> <span class="nav-text">全局前置守卫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局解析守卫"><span class="nav-number">12.3.5.</span> <span class="nav-text">全局解析守卫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局后置钩子"><span class="nav-number">12.3.6.</span> <span class="nav-text">全局后置钩子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导航守卫小汇总"><span class="nav-number">12.3.7.</span> <span class="nav-text">导航守卫小汇总</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完整的导航解析流程"><span class="nav-number">12.3.8.</span> <span class="nav-text">完整的导航解析流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由元信息"><span class="nav-number">12.4.</span> <span class="nav-text">路由元信息</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十三、Vuex"><span class="nav-number">13.</span> <span class="nav-text">十三、Vuex</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#state、getters、mutations、actions"><span class="nav-number">13.1.</span> <span class="nav-text">state、getters、mutations、actions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vuex-module"><span class="nav-number">13.2.</span> <span class="nav-text">vuex module</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">13.2.1.</span> <span class="nav-text">★★★★★ 看代码【F:\渡一前端课\新录制的vue课程资料\34. vuex module\src】</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十四、跨域"><span class="nav-number">14.</span> <span class="nav-text">十四、跨域</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十五、网络请求axios"><span class="nav-number">15.</span> <span class="nav-text">十五、网络请求axios</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Example"><span class="nav-number">15.1.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局配置"><span class="nav-number">15.2.</span> <span class="nav-text">全局配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#axios-的实例使用"><span class="nav-number">15.3.</span> <span class="nav-text">axios 的实例使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#axios-封装代码"><span class="nav-number">15.4.</span> <span class="nav-text">axios 封装代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#level-1"><span class="nav-number">15.4.1.</span> <span class="nav-text">level 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#level-2"><span class="nav-number">15.4.2.</span> <span class="nav-text">level 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#level-3"><span class="nav-number">15.4.3.</span> <span class="nav-text">level 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#level-4"><span class="nav-number">15.4.4.</span> <span class="nav-text">level 4</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拦截器"><span class="nav-number">15.5.</span> <span class="nav-text">拦截器</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
     </div>
-    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
-    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
-    缺失模块。<br>
-    1、请确保node版本大于6.2<br>
-    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
-    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
-    3、在根目录_config.yml里添加配置：
-    <pre style="color: #787878; font-size: 0.6rem;">
-jsonContent:
-  meta: false
-  pages: false
-  posts:
-    title: true
-    date: true
-    path: true
-    text: false
-    raw: false
-    content: false
-    slug: false
-    updated: false
-    comments: false
-    link: false
-    permalink: false
-    excerpt: false
-    categories: true
-    tags: true</pre>
-    </div> 
-    <div class="sidebar-tags-list"></div>
-</div>
-        <div class="sidebar-panel-categories">
-    <div class="sidebar-categories-name">
-    
-    </div>
-    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
-    <div class="sidebar-categories-list"></div>
-</div>
-    </div>
-</div> 
-    <script>
-    var siteMeta = {
-        root: "/",
-        author: "燎原火"
-    }
-</script>
-    <!-- CDN failover -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <script type="text/javascript">
-        if (typeof window.$ === 'undefined')
-        {
-            console.warn('jquery load from jsdelivr failed, will load local script')
-            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
-        }
-    </script>
-    <script src="/scripts/main.js"></script>
-    <!-- algolia -->
-    
-        <div class="site-search">
-  <div class="algolia-popup popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
+  </aside>
+
+
+        
       </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
+    </main>
 
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dunteng Lin</span>
 
-    <span class="popup-btn-close">
-      <i class="iconfont-archer">&#xe609;</i>
-    </span>
-  </div>
+  
 </div>
-        <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.0/dist/instantsearch.min.js" defer></script>
-        <script src="/scripts/search.js" defer></script>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
     
-    <!-- busuanzi  -->
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
     
-    <!-- CNZZ  -->
-    
-    </div>
-    <!-- async load share.js -->
-    
-        <script src="/scripts/share.js" async></script>    
-     
-    </body>
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
 </html>
-
-

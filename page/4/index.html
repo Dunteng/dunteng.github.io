@@ -1,2293 +1,2177 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-    <!-- title -->
 
 
 
-
-<!-- keywords -->
-
+  
 
 
-
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="author" content="燎原火">
-    <meta name="renderer" content="webkit">
-    <meta name="copyright" content="燎原火">
-    
-    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
-    
-    <meta name="description" content="我的个人博客">
-    <meta http-equiv="Cache-control" content="no-cache">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Dunteng&#39;s Blog</title>
-    <style type="text/css">
-    @font-face {
-        font-family: 'Oswald-Regular';
-        src: url("/font/Oswald-Regular.ttf");
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="都会好的  总会有的">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dunteng&#39;s Blog">
+<meta property="og:url" content="https://dunteng.github.io/page/4/index.html">
+<meta property="og:site_name" content="Dunteng&#39;s Blog">
+<meta property="og:description" content="都会好的  总会有的">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dunteng&#39;s Blog">
+<meta name="twitter:description" content="都会好的  总会有的">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'GX48388M0Z',
+      apiKey: '24910416df90ea04217402b818109cef',
+      indexName: 'index',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
-
-    body {
-        margin: 0;
-    }
-
-    header,
-    footer,
-    .back-top,
-    .sidebar,
-    .container,
-    .site-intro-meta,
-    .toc-wrapper {
-        display: none;
-    }
-
-    .site-intro {
-        position: relative;
-        z-index: 3;
-        width: 100%;
-        /* height: 50vh; */
-        overflow: hidden;
-    }
-
-    .site-intro-placeholder {
-        position: absolute;
-        z-index: -2;
-        top: 0;
-        left: 0;
-        width: calc(100% + 300px);
-        height: 100%;
-        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
-        background-position: center center;
-        transform: translate3d(-226px, 0, 0);
-        animation: gradient-move 2.5s ease-out 0s infinite;
-    }
-
-    @keyframes gradient-move {
-        0% {
-            transform: translate3d(-226px, 0, 0);
-        }
-        100% {
-            transform: translate3d(0, 0, 0);
-        }
-    }
-
-</style>
-
-    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
-    
-    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
-/* This file is meant as a standalone workflow for
-- testing support for link[rel=preload]
-- enabling async CSS loading in browsers that do not support rel=preload
-- applying rel preload css once loaded, whether supported or not.
-*/ -->
-<script>
-(function( w ){
-	"use strict";
-	// rel=preload support test
-	if( !w.loadCSS ){
-		w.loadCSS = function(){};
-	}
-	// define on the loadCSS obj
-	var rp = loadCSS.relpreload = {};
-	// rel=preload feature support test
-	// runs once and returns a function for compat purposes
-	rp.support = (function(){
-		var ret;
-		try {
-			ret = w.document.createElement( "link" ).relList.supports( "preload" );
-		} catch (e) {
-			ret = false;
-		}
-		return function(){
-			return ret;
-		};
-	})();
-
-	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
-	// then change that media back to its intended value on load
-	rp.bindMediaToggle = function( link ){
-		// remember existing media attr for ultimate state, or default to 'all'
-		var finalMedia = link.media || "all";
-
-		function enableStylesheet(){
-			link.media = finalMedia;
-		}
-
-		// bind load handlers to enable media
-		if( link.addEventListener ){
-			link.addEventListener( "load", enableStylesheet );
-		} else if( link.attachEvent ){
-			link.attachEvent( "onload", enableStylesheet );
-		}
-
-		// Set rel and non-applicable media type to start an async request
-		// note: timeout allows this to happen async to let rendering continue in IE
-		setTimeout(function(){
-			link.rel = "stylesheet";
-			link.media = "only x";
-		});
-		// also enable media after 3 seconds,
-		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
-		setTimeout( enableStylesheet, 3000 );
-	};
-
-	// loop through link elements in DOM
-	rp.poly = function(){
-		// double check this to prevent external calls from running
-		if( rp.support() ){
-			return;
-		}
-		var links = w.document.getElementsByTagName( "link" );
-		for( var i = 0; i < links.length; i++ ){
-			var link = links[ i ];
-			// qualify links to those with rel=preload and as=style attrs
-			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
-				// prevent rerunning on link
-				link.setAttribute( "data-loadcss", true );
-				// bind listeners to toggle media back
-				rp.bindMediaToggle( link );
-			}
-		}
-	};
-
-	// if unsupported, run the polyfill
-	if( !rp.support() ){
-		// run once at least
-		rp.poly();
-
-		// rerun poly on an interval until onload
-		var run = w.setInterval( rp.poly, 500 );
-		if( w.addEventListener ){
-			w.addEventListener( "load", function(){
-				rp.poly();
-				w.clearInterval( run );
-			} );
-		} else if( w.attachEvent ){
-			w.attachEvent( "onload", function(){
-				rp.poly();
-				w.clearInterval( run );
-			} );
-		}
-	}
-
-
-	// commonjs
-	if( typeof exports !== "undefined" ){
-		exports.loadCSS = loadCSS;
-	}
-	else {
-		w.loadCSS = loadCSS;
-	}
-}( typeof global !== "undefined" ? global : this ) );
+  };
 </script>
 
-    <link rel="icon" href="/assets/favicon.ico">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
-    <link rel="preload" href="/scripts/main.js" as="script">
-    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
-    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
-    
-        <!-- algolia -->
-        <script>
-            
-            var hits = JSON.parse('{"per_page":10}')
-            var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
 
-            var algolia = {
-                applicationID: 'GX48388M0Z',
-                apiKey: '24910416df90ea04217402b818109cef',
-                indexName: 'index',
-                hits: hits,
-                labels: labels
-            }
-        </script>
-    
-    <!-- fancybox -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
-    <!-- 百度统计  -->
-    
-    <!-- 谷歌统计  -->
-    
+
+  <link rel="canonical" href="https://dunteng.github.io/page/4/">
+
+
+
+
+
+  <title>Dunteng's Blog</title>
+  
+
+
+
+
+
+
+
+
 </head>
 
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
     
-        <body class="home-body">
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
     
-    
-<header class="header index-header">
 
-    <div class="read-progress"></div>
-    <div class="header-sidebar-menu">&#xe775;</div>
-    <!-- post页的toggle banner  -->
-    
-    <a class="home-link" href="/">Dunteng's Blog.</a>
-</header>
-    <div class="wrapper">
-        <div class="site-intro" style="
-
-
-
-
-
-
-
-height:50vh;
-">
-    
-    <!-- 主页  -->
-    
-    
-    <!-- 文章页  -->
-            
-    <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/background/photo-1544166829-49960080435f.jpg)"></div>
-    <div class="site-intro-meta">
-        <!-- 标题  -->
-        <h1 class="intro-title">
-            <!-- 主页  -->
-            
-            Dunteng's Blog.
-            <!-- 文章页  -->
-            
-        </h1>
-        <!-- 副标题 -->
-        <p class="intro-subtitle">
-            <!-- 主页副标题  -->
-            
-            
-                Go big or go home！
-            
-            <!-- 文章页  -->
-            
-        </p>
-        <!-- 文章页meta -->
-        
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Dunteng's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
-        <script>
- 
-  // get user agent
-  var browser = {
-    versions: function () {
-      var u = window.navigator.userAgent;
-      return {
-        userAgent: u,
-        trident: u.indexOf('Trident') > -1, //IE内核
-        presto: u.indexOf('Presto') > -1, //opera内核
-        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
-        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
-        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
-        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
-        iPad: u.indexOf('iPad') > -1, //是否为iPad
-        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
-        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
-        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
-      };
-    }()
-  }
-  console.log("userAgent:" + browser.versions.userAgent);
 
-  // callback
-  function fontLoaded() {
-    console.log('font loaded');
-    if (document.getElementsByClassName('site-intro-meta')) {
-      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
-      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
-      var postIntros = document.getElementsByClassName('post-intros')[0]
-      if (postIntros) {
-        postIntros.classList.add('post-fade-in');
-      }
-    }
-  }
+<nav class="site-nav">
+  
 
-  // UC不支持跨域，所以直接显示
-  function asyncCb(){
-    if (browser.versions.uc) {
-      console.log("UCBrowser");
-      fontLoaded();
-    } else {
-      WebFont.load({
-        custom: {
-          families: ['Oswald-Regular']
-        },
-        loading: function () {  //所有字体开始加载
-          // console.log('loading');
-        },
-        active: function () {  //所有字体已渲染
-          fontLoaded();
-        },
-        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
-          console.log('inactive: timeout');
-          fontLoaded();
-        },
-        timeout: 5000 // Set the timeout to two seconds
-      });
-    }
-  }
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
 
-  function asyncErr(){
-    console.warn('script load from CDN failed, will load local script')
-  }
-
-  // load webfont-loader async, and add callback function
-  function async(u, cb, err) {
-    var d = document, t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
-    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
-    s.parentNode.insertBefore(o, s);
-  }
-
-  var asyncLoadWithFallBack = function(arr, success, reject) {
-      var currReject = function(){
-        reject()
-        arr.shift()
-        if(arr.length)
-          async(arr[0], success, currReject)
-        }
-
-      async(arr[0], success, currReject)
-  }
-
-  asyncLoadWithFallBack([
-    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
-    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
-    "/lib/webfontloader.min.js"
-  ], asyncCb, asyncErr)
-</script>        
-        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
-        <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/03/14/封装jsonp代码.html">
-            
-                <span>封装Jsonp代码</span>
-        </a>
-        <div class="abstract-content">
-            jsonp的封装代码：
-1234567891011121314151617181920212223242526272829303132function jsonp (url, params, c...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/03/13/依此优化AJAX的封装代码.html">
-            
-                <span>优化AJAX的JS封装代码</span>
-        </a>
-        <div class="abstract-content">
-            为了一步步地理清封装步骤，我打算逐步封装ajax函数的功能，分成了以下6个版本：
-Version 1123456789101112131415    function ajax (method,...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/03/07/03处理机调度与死锁.html">
-            
-                <span>处理机调度与死锁</span>
-        </a>
-        <div class="abstract-content">
-            1. 处理机调度1.1 概念
-1.2 处理机调度的层级高级调度（作业调度）
-中级调度（内存调度）
-低级调度（进程调度）
-
-三者对比
-2. 进程调度2.1 进程调度的时机
-2.2 进程调度的方式抢...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="操作系统">操作系统</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/03/06/02进程的描述与控制.html">
-            
-                <span>进程的描述与控制</span>
-        </a>
-        <div class="abstract-content">
-            第二章1. 前趋图和程序执行1.1 前趋图见课本p32、p33
-1.2 程序顺序执行程序执行有固定的时序，
-特征： 顺序性、可再现性、封闭性
-1.3 程序并发执行
-与顺序执行的特征相反： 间断性...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="操作系统">操作系统</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/03/05/01OS引言.html">
-            
-                <span>操作系统引言</span>
-        </a>
-        <div class="abstract-content">
-            第一章1. 操作系统的定义：​    操作系统是直接控制和管理计算机硬件、软件资源的最 基本的系统软件，用以方便用户充分、有效的利用这些资源 并增强整个计算机的处理能力
-2. 操作系统的目标&a...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="操作系统">操作系统</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/03/05/正则表达式验证密码的强度.html">
-            
-                <span>正则表达式验证密码的强度</span>
-        </a>
-        <div class="abstract-content">
-            密码: 数字,字母,特殊符号
-密码: 只有数字- 或者是只有字母,或者是只有特殊符号—1级—弱
-两两组合: 数字和字母, 数字和特殊符号, 字母和特殊符号   —–2级—-中
-三者都有: 数字和...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="小案例">小案例</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/03/04/继承.html">
-            
-                <span>继承</span>
-        </a>
-        <div class="abstract-content">
-            继承: 首先继承是一种关系，类(class)与类之间的关系，JS中没有类，但是可以通过构造函数模拟类，然后通过原型来实现继承。继承也是为了数据共享，JS中的继承也是为了实现数据共享。下面介绍三种...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/02/28/dianshang01.html">
-            
-                <span>JS电商上线项目</span>
-        </a>
-        <div class="abstract-content">
-            架构设计
-前后端完全分离
-
-分层架构
-逻辑层–数据层–工具层
-通过层级的划分来进行系统的解耦，提高系统可扩展性和可维护性
-
-模块化
-达到进一步解耦的效果，让系统通过组件的拼装来完成业务的实现。
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="项目">项目</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/02/25/导航细线边框的实现.html">
-            
-                <span>导航细线边框的实现</span>
-        </a>
-        <div class="abstract-content">
-            要实现如下边框：
-
-一般不要直接给每个盒子加border：1px solid #ccc，这样会使中间的边框线重合变成了2px的线，太粗，不好看。
-方法一：只给盒子的下边框和右边框加border,...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/[object Object]2019/02/20/常见浏览器内核.html">
-            
-                <span>常见浏览器内核</span>
-        </a>
-        <div class="abstract-content">
-            常见浏览器内核介绍浏览器是网页运行的平台，常用的浏览器有IE、火狐（Firefox）、谷歌（Chrome）、Safari和Opera等。我们平时称为五大浏览器。
-
-​             
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="html/css">html/css</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/3/">&#60; PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">NEXT &#62;</a>
-    </nav>
-    
-</main>
-            <!-- profile -->
-            
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src="/avatar/heykong.png">
-    <div class="profile-name">Dunteng</div>
-    
-    <div class="profile-signature">
-        晚来天欲雪，能饮一杯无？
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
-            
-                <a href="mailto:lindunteng@gmail.com" class="iconfont-archer email" title="email"></a>
-            
-        
-    
-        
-            
-                <a href="//github.com/dunteng" class="iconfont-archer github" target="_blank" title="github"></a>
-            
-        
-    
-        
-            
-                <span class="iconfont-archer wechat" title="wechat">
-                  
-                  <img class="profile-qr" src="/assets/WeChat.png">
-                </span>
-            
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="https://www.zhihu.com/people/ten-20/activities" class="iconfont-archer zhihu" target="_blank" title="zhihu"></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href="https://lindunwei.github.io/" target="_black">lindunwei</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href="https://lai.yuweining.cn/" target="_black">不死鸟</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href="http://zhangwei2222.github.io/" target="_black">zhangwei2222<br></a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href="http://chenweilin.xin" target="_black">cwl-blog</a>
-                    </span>
-                
-            
-        </div>
-    
-    
-        <div class="about-me">
-            <a href="/about">ABOUT ME</a>
-        </div>
-    
-</div>
-            
-        </div>
-        <footer class="footer footer-unloaded">
-    <!-- social  -->
-    
-    <div class="social">
-        
-    
-        
-            
-                <a href="mailto:lindunteng@gmail.com" class="iconfont-archer email" title="email"></a>
-            
-        
-    
-        
-            
-                <a href="//github.com/dunteng" class="iconfont-archer github" target="_blank" title="github"></a>
-            
-        
-    
-        
-            
-                <span class="iconfont-archer wechat" title="wechat">
-                  
-                  <img class="profile-qr" src="/assets/WeChat.png">
-                </span>
-            
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="https://www.zhihu.com/people/ten-20/activities" class="iconfont-archer zhihu" target="_blank" title="zhihu"></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-    </div>
-    
-    <!-- powered by Hexo  -->
-    <div class="copyright">
-        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
-    </div>
-    <!-- 不蒜子  -->
-    
-    <div class="busuanzi-container">
-    
-    
-    <span id="busuanzi_container_site_uv"><h3 style="color:#f75357;">本站访问次数: <span id="busuanzi_value_site_uv"></span> </h3></span>
-    
-    </div>
-    
-</footer>
-    </div>
-    <!-- toc -->
-    
-    <div class="back-top iconfont-archer">&#xe639;</div>
-    <div class="sidebar sidebar-hide">
-    <ul class="sidebar-tabs sidebar-tabs-active-0">
-        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
-        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
-        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+      
     </ul>
-    <div class="sidebar-content sidebar-content-show-archive">
-          <div class="sidebar-panel-archives">
-    <!-- 在ejs中将archive按照时间排序 -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="total-and-search">
-        <div class="total-archive">
-        Total : 61
-        </div>
-        <!-- search  -->
-        
-            <div class="site-search popup-trigger">
-                <span class="iconfont-archer search-icon">&#xe627;</span>
-            </div>
-        
-    </div>
-    
-    <div class="post-archive">
-    
-    
-    
-    
-    <div class="archive-year"> 2019 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/23</span><a class="archive-post-title" href="/[object Object]2019/11/23/小程序云函数路由优化之tcb-router.html">小程序云函数路由优化之tcb-router</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/[object Object]2019/10/28/对象.html">复习对象</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/[object Object]2019/10/28/复习数组.html">复习数组</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/[object Object]2019/10/28/预编译-作用域-闭包-立即执行函数.html">复习预编译-作用域-闭包-立即执行函数</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/17</span><a class="archive-post-title" href="/[object Object]2019/10/17/Vue页面间通信传值的方法.html">Vue页面间通信传值的方法</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/15</span><a class="archive-post-title" href="/[object Object]2019/10/15/防抖节流.html">防抖节流</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href="/[object Object]2019/10/08/Redis.html">Redis</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/05</span><a class="archive-post-title" href="/[object Object]2019/10/05/mongoDB.html">mongoDB</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/05</span><a class="archive-post-title" href="/[object Object]2019/10/05/聊天机器人.html">聊天机器人</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/02</span><a class="archive-post-title" href="/[object Object]2019/10/02/express搭建静态文件服务器.html">使用express搭建静态文件服务器</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/01</span><a class="archive-post-title" href="/[object Object]2019/10/01/MySQL基本的增删改查操作.html">MySQL基本的增删改查操作</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/01</span><a class="archive-post-title" href="/[object Object]2019/10/01/使用http模块重构微型服务器.html">使用http模块重构微型服务器</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/30</span><a class="archive-post-title" href="/[object Object]2019/09/30/net模块写微型node服务器.html">写一个微型node服务器</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/25</span><a class="archive-post-title" href="/[object Object]2019/09/25/新linux学习.html">虚拟机安装centos7和node</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href="/[object Object]2019/09/01/Linux基础入门.html">Linux基础入门</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/09</span><a class="archive-post-title" href="/[object Object]2019/08/09/vue知识点.html">Vue基础笔记</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/09</span><a class="archive-post-title" href="/[object Object]2019/08/09/博客项目01.html">一、博客项目大作战之数据库建表</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/08</span><a class="archive-post-title" href="/[object Object]2019/08/08/vi—终端中的编辑器.html">vi编辑器教程</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/05</span><a class="archive-post-title" href="/[object Object]2019/06/05/02Vue音乐播放器.html">Vue音乐播放器(二)</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/03</span><a class="archive-post-title" href="/[object Object]2019/06/03/Vuex笔记.html">Vuex笔记</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/[object Object]2019/06/01/01Vue音乐播放器.html">Vue音乐播放器（一）</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/12</span><a class="archive-post-title" href="/[object Object]2019/05/12/Vue父子组件传值和非父子组件传值.html">vue父子组件传值和非父子组件传值</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/11</span><a class="archive-post-title" href="/[object Object]2019/05/11/vue写个日历组件.html">vue写个日历组件</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/[object Object]2019/05/10/啥是前端工程化模块化组件化.html">啥是前端工程化、模块化、组件化？</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/[object Object]2019/05/10/webpack笔记.html">webpack4复习笔记</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/03</span><a class="archive-post-title" href="/[object Object]2019/04/03/ES6数据劫持.html">ES6数据劫持proxy&reflect</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/01</span><a class="archive-post-title" href="/[object Object]2019/04/01/箭头函数看这篇就够了.html">箭头函数看这篇就够了</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/29</span><a class="archive-post-title" href="/[object Object]2019/03/29/jsonp实现百度搜索框功能.html">jsonp实现百度搜索框功能</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/20</span><a class="archive-post-title" href="/[object Object]2019/03/20/jQ.Ajax实现瀑布流相册.html">jQ.Ajax实现瀑布流相册</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/16</span><a class="archive-post-title" href="/[object Object]2019/03/16/JS实现简单的Cookie操作.html">拖拽方块记录Cookie</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/14</span><a class="archive-post-title" href="/[object Object]2019/03/14/封装jsonp代码.html">封装Jsonp代码</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/13</span><a class="archive-post-title" href="/[object Object]2019/03/13/依此优化AJAX的封装代码.html">优化AJAX的JS封装代码</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/07</span><a class="archive-post-title" href="/[object Object]2019/03/07/03处理机调度与死锁.html">处理机调度与死锁</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/[object Object]2019/03/06/02进程的描述与控制.html">进程的描述与控制</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/05</span><a class="archive-post-title" href="/[object Object]2019/03/05/01OS引言.html">操作系统引言</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/05</span><a class="archive-post-title" href="/[object Object]2019/03/05/正则表达式验证密码的强度.html">正则表达式验证密码的强度</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/04</span><a class="archive-post-title" href="/[object Object]2019/03/04/继承.html">继承</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/28</span><a class="archive-post-title" href="/[object Object]2019/02/28/dianshang01.html">JS电商上线项目</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/25</span><a class="archive-post-title" href="/[object Object]2019/02/25/导航细线边框的实现.html">导航细线边框的实现</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/20</span><a class="archive-post-title" href="/[object Object]2019/02/20/常见浏览器内核.html">常见浏览器内核</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/16</span><a class="archive-post-title" href="/[object Object]2019/02/16/遍历DOM树.html">遍历DOM树</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/02</span><a class="archive-post-title" href="/[object Object]2019/02/02/css的权重问题.html">css的权重问题</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/14</span><a class="archive-post-title" href="/[object Object]2019/01/14/JS封装运动函数.html">JS封装动画函数</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/自定义属性操作案例.html">自定义属性操作案例</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/JS搜索框自动提示.html">JS搜索框自动提示</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/JS实现全选与全不选.html">JS实现全选与全不选</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href="/[object Object]2019/01/13/绑定解绑事件兼容代码.html">绑定/解绑事件兼容代码</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/12</span><a class="archive-post-title" href="/[object Object]2019/01/12/浅谈js匿名函数.html">浅谈js匿名函数</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/09</span><a class="archive-post-title" href="/[object Object]2019/01/09/字符串小案例.html">字符串小练习</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/07</span><a class="archive-post-title" href="/[object Object]2019/01/07/JavaScript中的值传递和地址传递（引用传递）.html">JavaScript中的值传递和地址传递（引用传递）</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2018 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/15</span><a class="archive-post-title" href="/[object Object]2018/12/15/flex布局常用属性.html">flex伸缩弹性布局常用属性</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/10</span><a class="archive-post-title" href="/[object Object]2018/12/10/浅谈BFC.html">浅谈BFC</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/08</span><a class="archive-post-title" href="/[object Object]2018/12/08/外边距塌陷问题.html">外边距塌陷问题</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/08</span><a class="archive-post-title" href="/[object Object]2018/12/08/字体图标的使用.html">字体图标的使用</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/07</span><a class="archive-post-title" href="/[object Object]2018/12/07/vertical-align.html">vertical-align</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/07</span><a class="archive-post-title" href="/[object Object]2018/12/07/实现微信滑动门.html">实现微信滑动门</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/[object Object]2018/12/06/绝对定位盒子水平居中.html">绝对定位的盒子水平/垂直居中</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/05</span><a class="archive-post-title" href="/[object Object]2018/12/05/浅谈清除（闭合）浮动.html">浅谈清除（闭合）浮动</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/05</span><a class="archive-post-title" href="/[object Object]2018/12/05/前端开发仿站小工具.html">前端开发仿站小工具</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/30</span><a class="archive-post-title" href="/[object Object]2018/11/30/ABOUT ME.html">你好哇~</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/22</span><a class="archive-post-title" href="/[object Object]2018/08/22/数组.html">数组常用方法</a>
-        </li>
-    
-    </ul></div>
-  </div>
-        <div class="sidebar-panel-tags">
-    <div class="sidebar-tags-name">
-    
-        <span class="sidebar-tag-name" data-tags="操作系统"><span class="iconfont-archer">&#xe606;</span>操作系统</span>
-    
-        <span class="sidebar-tag-name" data-tags="JavaScript"><span class="iconfont-archer">&#xe606;</span>JavaScript</span>
-    
-        <span class="sidebar-tag-name" data-tags="小案例"><span class="iconfont-archer">&#xe606;</span>小案例</span>
-    
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
-    
-        <span class="sidebar-tag-name" data-tags="Vue"><span class="iconfont-archer">&#xe606;</span>Vue</span>
-    
-        <span class="sidebar-tag-name" data-tags="html/css"><span class="iconfont-archer">&#xe606;</span>html/css</span>
-    
-        <span class="sidebar-tag-name" data-tags="数据库"><span class="iconfont-archer">&#xe606;</span>数据库</span>
-    
-        <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
-    
-        <span class="sidebar-tag-name" data-tags="后端"><span class="iconfont-archer">&#xe606;</span>后端</span>
-    
-        <span class="sidebar-tag-name" data-tags="redis"><span class="iconfont-archer">&#xe606;</span>redis</span>
-    
-        <span class="sidebar-tag-name" data-tags="mongoDB"><span class="iconfont-archer">&#xe606;</span>mongoDB</span>
-    
-        <span class="sidebar-tag-name" data-tags="node.js"><span class="iconfont-archer">&#xe606;</span>node.js</span>
-    
-        <span class="sidebar-tag-name" data-tags="工具"><span class="iconfont-archer">&#xe606;</span>工具</span>
-    
-        <span class="sidebar-tag-name" data-tags="小程序"><span class="iconfont-archer">&#xe606;</span>小程序</span>
-    
-        <span class="sidebar-tag-name" data-tags="前端优化"><span class="iconfont-archer">&#xe606;</span>前端优化</span>
-    
-        <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
-    
-        <span class="sidebar-tag-name" data-tags="webpack"><span class="iconfont-archer">&#xe606;</span>webpack</span>
-    
-    </div>
-    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
-    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
-    缺失模块。<br>
-    1、请确保node版本大于6.2<br>
-    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
-    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
-    3、在根目录_config.yml里添加配置：
-    <pre style="color: #787878; font-size: 0.6rem;">
-jsonContent:
-  meta: false
-  pages: false
-  posts:
-    title: true
-    date: true
-    path: true
-    text: false
-    raw: false
-    content: false
-    slug: false
-    updated: false
-    comments: false
-    link: false
-    permalink: false
-    excerpt: false
-    categories: true
-    tags: true</pre>
-    </div> 
-    <div class="sidebar-tags-list"></div>
-</div>
-        <div class="sidebar-panel-categories">
-    <div class="sidebar-categories-name">
-    
-    </div>
-    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
-    <div class="sidebar-categories-list"></div>
-</div>
-    </div>
-</div> 
-    <script>
-    var siteMeta = {
-        root: "/",
-        author: "燎原火"
-    }
-</script>
-    <!-- CDN failover -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <script type="text/javascript">
-        if (typeof window.$ === 'undefined')
-        {
-            console.warn('jquery load from jsdelivr failed, will load local script')
-            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
-        }
-    </script>
-    <script src="/scripts/main.js"></script>
-    <!-- algolia -->
-    
-        <div class="site-search">
-  <div class="algolia-popup popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
+  
 
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
+  
+</nav>
 
-    <span class="popup-btn-close">
-      <i class="iconfont-archer">&#xe609;</i>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2019/03/14/封装jsonp代码.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
     </span>
-  </div>
-</div>
-        <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.0/dist/instantsearch.min.js" defer></script>
-        <script src="/scripts/search.js" defer></script>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
     
-    <!-- busuanzi  -->
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]2019/03/14/封装jsonp代码.html" itemprop="url">封装Jsonp代码</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-14T00:00:00+08:00">
+                2019-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
     
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
     
-    <!-- CNZZ  -->
     
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>jsonp的封装代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsonp</span> (<span class="params">url, params, callback</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> funcName = <span class="string">'jsonp_'</span> + <span class="built_in">Date</span>.now() + <span class="built_in">Math</span>.random().toString().substr(<span class="number">2</span>, <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> params === <span class="string">'object'</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> tempArr = []</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> params) &#123;</span><br><span class="line">      <span class="keyword">var</span> value = params[key]</span><br><span class="line">      tempArr.push(key + <span class="string">'='</span> + value)</span><br><span class="line">    &#125;</span><br><span class="line">    params = tempArr.join(<span class="string">'&amp;'</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>)</span><br><span class="line">  script.src = url + <span class="string">'?'</span> + params + <span class="string">'&amp;callback='</span> + funcName</span><br><span class="line">  <span class="built_in">document</span>.body.appendChild(script)</span><br><span class="line"></span><br><span class="line">  <span class="built_in">window</span>[funcName] = <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    callback(data)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span> <span class="built_in">window</span>[funcName]</span><br><span class="line">    <span class="built_in">document</span>.body.removeChild(script)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">jsonp(<span class="string">'http://localhost/jsonp/server.php'</span>, &#123; <span class="attr">id</span>: <span class="number">123</span> &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(res)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">jsonp(<span class="string">'http://localhost/jsonp/server.php'</span>, &#123; <span class="attr">id</span>: <span class="number">123</span> &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(res)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>例子中的server.php代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">$conn = mysqli_connect(&apos;localhost&apos;, &apos;root&apos;, &apos;123456&apos;, &apos;demo&apos;);</span><br><span class="line"></span><br><span class="line">$query = mysqli_query($conn, &apos;select * from users&apos;);</span><br><span class="line"></span><br><span class="line">while ($row = mysqli_fetch_assoc($query)) &#123;</span><br><span class="line">  $data[] = $row;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (empty($_GET[&apos;callback&apos;])) &#123;</span><br><span class="line">  header(&apos;Content-Type: application/json&apos;);</span><br><span class="line">  echo json_encode($data);</span><br><span class="line">  exit();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 如果客户端采用的是 script 标记对我发送的请求</span><br><span class="line">// 一定要返回一段 JavaScript</span><br><span class="line">header(&apos;Content-Type: application/javascript&apos;);</span><br><span class="line">$result = json_encode($data);</span><br><span class="line"></span><br><span class="line">$callback_name = $_GET[&apos;callback&apos;];</span><br><span class="line"></span><br><span class="line">echo &quot;typeof &#123;$callback_name&#125; === &apos;function&apos; &amp;&amp; &#123;$callback_name&#125;(&#123;$result&#125;)&quot;;</span><br></pre></td></tr></table></figure>
+<p><br><br></p>
+<p>（完）</p>
+<p><br><br></p>
+
+          
+        
+      
     </div>
-    <!-- async load share.js -->
-     
-    </body>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2019/03/13/依此优化AJAX的封装代码.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]2019/03/13/依此优化AJAX的封装代码.html" itemprop="url">优化AJAX的JS封装代码</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-13T00:00:00+08:00">
+                2019-03-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>为了一步步地理清封装步骤，我打算逐步封装ajax函数的功能，分成了以下6个版本：</p>
+<h2 id="Version-1"><a href="#Version-1" class="headerlink" title="Version 1"></a>Version 1</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">ajax</span> (<span class="params">method, url, params</span>) </span>&#123;</span><br><span class="line">      xhr.open(method, url)</span><br><span class="line">      xhr.setRequestHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/x-www-form-urlencoded'</span>) <span class="comment">//针对post的设置请求头</span></span><br><span class="line"></span><br><span class="line">      params = params || <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">      xhr.send(params)</span><br><span class="line">      xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.readyState !== <span class="number">4</span>) <span class="keyword">return</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.responseText)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">ajax(<span class="string">'GET'</span>,<span class="string">'xxx.php'</span>,<span class="string">'id=1'</span>);</span><br><span class="line">ajax(<span class="string">'POST'</span>,<span class="string">'xxx.php'</span>,<span class="string">'key1=value1&amp;key2=value2'</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>说明：</strong> </p>
+<ul>
+<li>未兼容低版本 IE</li>
+<li>这种方法在传参数的时候只能上例所示的格式，无法用json格式；</li>
+<li>当method为get的时候，参数没正确地加在url后面无法起到作用；</li>
+<li>method为get时也是设置了(‘Content-Type’, ‘application/x-www-form-urlencoded’)的请求头，但是这是不必要的。</li>
+<li>把函数的结果写死了，总是console.log(this.responseText)</li>
+</ul>
+<p><br><br></p>
+<h2 id="Version-2"><a href="#Version-2" class="headerlink" title="Version 2"></a>Version 2</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">ajax</span> (<span class="params">method, url, params</span>) </span>&#123;</span><br><span class="line">      method = method.toUpperCase() <span class="comment">//统一为大写，避免实参为小写的情况造成下面匹配时出错</span></span><br><span class="line">      </span><br><span class="line">      <span class="comment">//解决XMLHttpRequest在ie6不兼容的问题</span></span><br><span class="line">      <span class="keyword">var</span> xhr = <span class="literal">null</span>;</span><br><span class="line">      <span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest)&#123;</span><br><span class="line">		xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">	  &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">		xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">'Microsoft.XMLHttp'</span>);</span><br><span class="line">	  &#125;</span><br><span class="line">        </span><br><span class="line">      <span class="keyword">if</span> (method === <span class="string">'GET'</span>) &#123;</span><br><span class="line">        url += <span class="string">'?'</span> + params</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      xhr.open(method, url)</span><br><span class="line"></span><br><span class="line">      <span class="keyword">var</span> data = <span class="literal">null</span></span><br><span class="line">      <span class="keyword">if</span> (method === <span class="string">'POST'</span>) &#123;</span><br><span class="line">        xhr.setRequestHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/x-www-form-urlencoded'</span>)</span><br><span class="line">        data = params</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      xhr.send(data)</span><br><span class="line">      xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.readyState !== <span class="number">4</span>) <span class="keyword">return</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.responseText)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">ajax(<span class="string">'GET'</span>,<span class="string">'xxx.php'</span>,<span class="string">'id=1'</span>);</span><br><span class="line">ajax(<span class="string">'POST'</span>,<span class="string">'xxx.php'</span>,<span class="string">'key1=value1&amp;key2=value2'</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>说明：</strong></p>
+<ul>
+<li>实现了IE低版本的兼容并实现了method各自对应的传参方式</li>
+<li>这种方法在传参数的时候只能上例所示的格式，无法用json格式；</li>
+<li>把函数的结果写死了，总是console.log(this.responseText)</li>
+</ul>
+<p><br><br></p>
+<h2 id="Version-3"><a href="#Version-3" class="headerlink" title="Version 3"></a>Version 3</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">ajax</span> (<span class="params">method, url, params</span>) </span>&#123;</span><br><span class="line">      method = method.toUpperCase()</span><br><span class="line">      <span class="keyword">var</span> xhr = <span class="literal">null</span>;</span><br><span class="line">      <span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest)&#123;</span><br><span class="line">		xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">	  &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">		xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">'Microsoft.XMLHttp'</span>);</span><br><span class="line">	  &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 将 object 类型的参数转换为 key=value&amp;key=value</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> params === <span class="string">'object'</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> tempArr = []</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> params) &#123;</span><br><span class="line">          <span class="keyword">var</span> value = params[key]</span><br><span class="line">          tempArr.push(key + <span class="string">'='</span> + value)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// tempArr =&gt; [ 'key1=value1', 'key2=value2' ]</span></span><br><span class="line">        params = tempArr.join(<span class="string">'&amp;'</span>)</span><br><span class="line">        <span class="comment">// params =&gt; 'key1=value1&amp;key2=value2'</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (method === <span class="string">'GET'</span>) &#123;</span><br><span class="line">        url += <span class="string">'?'</span> + params</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      xhr.open(method, url)</span><br><span class="line"></span><br><span class="line">      <span class="keyword">var</span> data = <span class="literal">null</span></span><br><span class="line">      <span class="keyword">if</span> (method === <span class="string">'POST'</span>) &#123;</span><br><span class="line">        xhr.setRequestHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/x-www-form-urlencoded'</span>)</span><br><span class="line">        data = params</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      xhr.send(data)</span><br><span class="line">      xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.readyState !== <span class="number">4</span>) <span class="keyword">return</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.responseText)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">ajax(<span class="string">'GET'</span>,<span class="string">'xxx.php'</span>,<span class="string">'id=1'</span>);</span><br><span class="line">ajax(<span class="string">'POST'</span>,<span class="string">'xxx.php'</span>,<span class="string">'key1=value1&amp;key2=value2'</span>);</span><br><span class="line">ajax(<span class="string">'GET'</span>, <span class="string">'time.php'</span>, &#123; <span class="attr">id</span>: <span class="number">1</span> &#125;)</span><br><span class="line">ajax(<span class="string">'POST'</span>, <span class="string">'add.php'</span>, &#123; <span class="attr">key1</span>: <span class="string">'value1'</span>, <span class="attr">key2</span>: <span class="string">'value2'</span> &#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>说明：</strong></p>
+<ul>
+<li>弥补了无法使用json传参的缺陷，既能用字符串形式传参也能用json</li>
+<li>仍然把函数结果写死了</li>
+</ul>
+<p><br><br></p>
+<h2 id="尝试在Ajax中return出数据"><a href="#尝试在Ajax中return出数据" class="headerlink" title="尝试在Ajax中return出数据"></a>尝试在Ajax中return出数据</h2><p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/ajaxreturn1.jpg" alt=""></p>
+<p><br><br></p>
+<h2 id="Version-4"><a href="#Version-4" class="headerlink" title="Version 4"></a><del>Version 4</del></h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">ajax</span> (<span class="params">method, url, params</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> res = <span class="literal">null</span>  <span class="comment">//用于返回值</span></span><br><span class="line"></span><br><span class="line">      method = method.toUpperCase()</span><br><span class="line">      <span class="keyword">var</span> xhr = <span class="literal">null</span>;</span><br><span class="line">      <span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest)&#123;</span><br><span class="line">		xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">	  &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">		xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">'Microsoft.XMLHttp'</span>);</span><br><span class="line">	  &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 将 object 类型的参数转换为 key=value&amp;key=value</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> params === <span class="string">'object'</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> tempArr = []</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> params) &#123;</span><br><span class="line">          <span class="keyword">var</span> value = params[key]</span><br><span class="line">          tempArr.push(key + <span class="string">'='</span> + value)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// tempArr =&gt; [ 'key1=value1', 'key2=value2' ]</span></span><br><span class="line">        params = tempArr.join(<span class="string">'&amp;'</span>)</span><br><span class="line">        <span class="comment">// params =&gt; 'key1=value1&amp;key2=value2'</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (method === <span class="string">'GET'</span>) &#123;</span><br><span class="line">        url += <span class="string">'?'</span> + params</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      xhr.open(method, url, <span class="literal">false</span>) <span class="comment">//async参数为false，使用同步而非异步</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">var</span> data = <span class="literal">null</span></span><br><span class="line">      <span class="keyword">if</span> (method === <span class="string">'POST'</span>) &#123;</span><br><span class="line">        xhr.setRequestHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/x-www-form-urlencoded'</span>)</span><br><span class="line">        data = params</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.readyState !== <span class="number">4</span>) <span class="keyword">return</span></span><br><span class="line">        <span class="comment">// 不应该在封装的函数中主观的处理响应结果</span></span><br><span class="line">        <span class="comment">// console.log(this.responseText)</span></span><br><span class="line">        <span class="comment">// 无法在内部包含的函数中通过 return 给外部函数的调用返回结果</span></span><br><span class="line">        <span class="comment">// return this.responseText</span></span><br><span class="line">        <span class="comment">// 由于异步模式下 这里的代码最后执行 所以不可能在外部通过返回值的方式返回数据</span></span><br><span class="line">        res = <span class="keyword">this</span>.responseText</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      xhr.send(data) <span class="comment">//使用了同步的策略，只能把send（）置于最后</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> res</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = ajax(<span class="string">"GET"</span>,<span class="string">"xxx.php"</span>,&#123;<span class="attr">id</span>: <span class="number">1</span>&#125;);</span><br><span class="line"><span class="keyword">var</span> result2 = ajax(<span class="string">"POST"</span>,<span class="string">"xxx.php"</span>,&#123;<span class="attr">key1</span>: <span class="string">'value1'</span>, <span class="attr">key2</span>: <span class="string">'value2'</span>&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br><span class="line">alert(result2);</span><br></pre></td></tr></table></figure>
+<p>说明：</p>
+<ul>
+<li>函数有返回值，没有把函数写死</li>
+<li>但是使用了同步的策略，这是非常不好的</li>
+</ul>
+<p><br><br></p>
+<h2 id="Version-5"><a href="#Version-5" class="headerlink" title="Version 5"></a>Version 5</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 封装者</span></span><br><span class="line">  <span class="comment">// =============================</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">ajax</span> (<span class="params">method, url, params, done</span>) </span>&#123;</span><br><span class="line">    method = method.toUpperCase()</span><br><span class="line">    <span class="keyword">var</span> xhr = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest)&#123;</span><br><span class="line">xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"> &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">'Microsoft.XMLHttp'</span>);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> params === <span class="string">'object'</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> tempArr = []</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> params) &#123;</span><br><span class="line">        <span class="keyword">var</span> value = params[key]</span><br><span class="line">        tempArr.push(key + <span class="string">'='</span> + value)</span><br><span class="line">      &#125;</span><br><span class="line">      params = tempArr.join(<span class="string">'&amp;'</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (method === <span class="string">'GET'</span>) &#123;</span><br><span class="line">      url += <span class="string">'?'</span> + params</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    xhr.open(method, url, <span class="literal">true</span>)<span class="comment">//async默认为true，即为异步策略</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> data = <span class="literal">null</span></span><br><span class="line">    <span class="keyword">if</span> (method === <span class="string">'POST'</span>) &#123;</span><br><span class="line">      xhr.setRequestHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/x-www-form-urlencoded'</span>)</span><br><span class="line">      data = params</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">this</span>.readyState !== <span class="number">4</span>) <span class="keyword">return</span></span><br><span class="line">      <span class="comment">// 不应该在封装的函数中主观的处理响应结果</span></span><br><span class="line">      <span class="comment">// console.log(this.responseText)</span></span><br><span class="line">      <span class="comment">// 你说我太主观，那么你告诉我应该做什么</span></span><br><span class="line">      done(<span class="keyword">this</span>.responseText)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    xhr.send(data)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 调用者</span></span><br><span class="line">  <span class="comment">// ============================</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> onDone = <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res)</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ajax(<span class="string">'get'</span>, <span class="string">'time.php'</span>, &#123;&#125;, onDone)</span><br></pre></td></tr></table></figure>
+<p><strong>说明：</strong></p>
+<p><strong>为什么return出来的是undefined？为什么取不出一个正确的return值？</strong>因为Ajax是异步的操作，在获取数据完成之前，就已经执行了return res(计划中获取到的数据)，所以是无法正确return出我们想要的结果的。</p>
+<p>既然取不出一个return值，那么换个思路，使用<strong>回调函数</strong>让封装者替我们实现我们想要的效果.</p>
+<p>使用的是异步策略，在异步的情况下使用回调函数时比较多的。</p>
+<p>但是这段代码还是比较凌乱的</p>
+<p><br><br></p>
+<h2 id="Version-6"><a href="#Version-6" class="headerlink" title="Version 6"></a>Version 6</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajaxFunc</span>(<span class="params">method,url,data,callback,flag</span>)</span>&#123;</span><br><span class="line">		flag = flag||<span class="literal">true</span>;<span class="comment">//默认采用异步模式</span></span><br><span class="line">		method = method.toUpperCase();</span><br><span class="line">		<span class="keyword">var</span> xhr = <span class="literal">null</span>;</span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest)&#123;</span><br><span class="line">			xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">		&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">			xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">'Microsoft.XMLHttp'</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//当参数以json格式传入时，转化成字符串&amp;格式</span></span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">typeof</span> data === <span class="string">'object'</span>) &#123;</span><br><span class="line">			<span class="keyword">var</span> tempArr = []</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> data) &#123;</span><br><span class="line">			<span class="keyword">var</span> value = data[key]</span><br><span class="line">			tempArr.push(key + <span class="string">'='</span> + value)</span><br><span class="line">			&#125;</span><br><span class="line">			data = tempArr.join(<span class="string">'&amp;'</span>)</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span>(method == <span class="string">'GET'</span>)&#123;</span><br><span class="line">			url +=(<span class="string">'?'</span>+ data);</span><br><span class="line">			xhr.open(method,url,flag);</span><br><span class="line">			xhr.send();</span><br><span class="line"></span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(method == <span class="string">'POST'</span>)&#123;</span><br><span class="line">			xhr.open(method,url,flag);</span><br><span class="line">			xhr.setRequestHeader(<span class="string">'Content-type'</span>,<span class="string">'application/x-www-form-urlencoded'</span>);</span><br><span class="line">			xhr.send(data);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(<span class="keyword">this</span>.readyState == <span class="number">4</span>)&#123;</span><br><span class="line">				<span class="keyword">if</span>(<span class="keyword">this</span>.status == <span class="number">200</span>)&#123;</span><br><span class="line">					callback(<span class="keyword">this</span>.responseText);</span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="built_in">console</span>.log(<span class="string">"ERROR!"</span>);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"><span class="comment">//测试代码：</span></span><br><span class="line">ajaxFunc(<span class="string">'GET'</span>, <span class="string">'post.php'</span>, <span class="string">""</span>, myfun1, <span class="literal">true</span>);</span><br><span class="line">ajaxFunc(<span class="string">'POST'</span>, <span class="string">'post.php'</span>, <span class="string">"username=jiji&amp;age=450"</span>, myfun2, <span class="literal">true</span>);</span><br><span class="line">ajaxFunc(<span class="string">'POST'</span>, <span class="string">'post.php'</span>, &#123;<span class="attr">username</span>: <span class="string">'jiji'</span>,<span class="attr">age</span>: <span class="number">45</span>&#125;, myfun2, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<p>这个是Ajax比较像样的封装函数了。</p>
+<p><br><br></p>
+<p>(完)</p>
+<p><br><br></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2019/03/07/03处理机调度与死锁.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]2019/03/07/03处理机调度与死锁.html" itemprop="url">处理机调度与死锁</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-07T00:00:00+08:00">
+                2019-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-处理机调度"><a href="#1-处理机调度" class="headerlink" title="1. 处理机调度"></a>1. 处理机调度</h1><h2 id="1-1-概念"><a href="#1-1-概念" class="headerlink" title="1.1 概念"></a>1.1 概念</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qn1rcznjj30yg0iuwsp.jpg" alt=""></p>
+<h2 id="1-2-处理机调度的层级"><a href="#1-2-处理机调度的层级" class="headerlink" title="1.2 处理机调度的层级"></a>1.2 处理机调度的层级</h2><h4 id="高级调度（作业调度）"><a href="#高级调度（作业调度）" class="headerlink" title="高级调度（作业调度）"></a>高级调度（作业调度）</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qn7g121ij30w70ij4di.jpg" alt=""></p>
+<h4 id="中级调度（内存调度）"><a href="#中级调度（内存调度）" class="headerlink" title="中级调度（内存调度）"></a>中级调度（内存调度）</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qnc0pbvlj30wf0ibtoi.jpg" alt=""></p>
+<h4 id="低级调度（进程调度）"><a href="#低级调度（进程调度）" class="headerlink" title="低级调度（进程调度）"></a>低级调度（进程调度）</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qnf09rtjj30yz0j0wt7.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qnglyoguj30vh0eo466.jpg" alt=""></p>
+<h4 id="三者对比"><a href="#三者对比" class="headerlink" title="三者对比"></a>三者对比</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qnnrgywcj30tg0edwqg.jpg" alt=""></p>
+<h1 id="2-进程调度"><a href="#2-进程调度" class="headerlink" title="2. 进程调度"></a>2. 进程调度</h1><h2 id="2-1-进程调度的时机"><a href="#2-1-进程调度的时机" class="headerlink" title="2.1 进程调度的时机"></a>2.1 进程调度的时机</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qnwfh3koj311y0lbqnb.jpg" alt=""></p>
+<h2 id="2-2-进程调度的方式"><a href="#2-2-进程调度的方式" class="headerlink" title="2.2 进程调度的方式"></a>2.2 进程调度的方式</h2><p>抢占式与非抢占式</p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qnzipw35j30y60hwk4h.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qo2jvefuj30xs0g37fy.jpg" alt=""></p>
+<h1 id="3-调度算法的评价指标"><a href="#3-调度算法的评价指标" class="headerlink" title="3. 调度算法的评价指标"></a>3. 调度算法的评价指标</h1><h2 id="3-1-CPU利用率"><a href="#3-1-CPU利用率" class="headerlink" title="3.1 CPU利用率"></a>3.1 CPU利用率</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qo86gipvj311y0lbwzf.jpg" alt=""></p>
+<h2 id="3-2-系统吞吐量"><a href="#3-2-系统吞吐量" class="headerlink" title="3.2 系统吞吐量"></a>3.2 系统吞吐量</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qobu3h9gj30tr0etgql.jpg" alt=""></p>
+<h2 id="3-3-周转时间"><a href="#3-3-周转时间" class="headerlink" title="3.3 周转时间"></a>3.3 周转时间</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qog48uogj311y0lbqne.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qogvefzoj311y0lb4c8.jpg" alt=""></p>
+<h2 id="3-4-等待时间"><a href="#3-4-等待时间" class="headerlink" title="3.4 等待时间"></a>3.4 等待时间</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qoospfudj30x00in1dn.jpg" alt=""></p>
+<h2 id="3-5-响应时间"><a href="#3-5-响应时间" class="headerlink" title="3.5 响应时间"></a>3.5 响应时间</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qoq58r6dj30ye06omzt.jpg" alt=""></p>
+<h1 id="4-调度算法"><a href="#4-调度算法" class="headerlink" title="4.调度算法"></a>4.调度算法</h1><h2 id="即可用于作业调度又可用于进程调度的算法："><a href="#即可用于作业调度又可用于进程调度的算法：" class="headerlink" title="即可用于作业调度又可用于进程调度的算法："></a>即可用于作业调度又可用于进程调度的算法：</h2><h2 id="4-1-先来先服务算法（FCFS）"><a href="#4-1-先来先服务算法（FCFS）" class="headerlink" title="4.1  先来先服务算法（FCFS）"></a>4.1  先来先服务算法（FCFS）</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r2jsocr3j311y0lb4ho.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r2npdcghj311y0lbakv.jpg" alt=""></p>
+<h2 id="4-2-短作业优先（SJF）"><a href="#4-2-短作业优先（SJF）" class="headerlink" title="4.2  短作业优先（SJF）"></a>4.2  短作业优先（SJF）</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r2wgvr19j311y0lbww9.jpg" alt=""></p>
+<p>平均等待时间、平均周转时间最少</p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r322qnbxj311y0lbws8.jpg" alt=""></p>
+<h2 id="4-3-高响应比优先（HRRN）"><a href="#4-3-高响应比优先（HRRN）" class="headerlink" title="4.3  高响应比优先（HRRN）"></a>4.3  高响应比优先（HRRN）</h2><p> <img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r395uu82j311y0lbh2w.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r3adxwd6j311y0lb15a.jpg" alt=""></p>
+<h3 id="三者对比-1"><a href="#三者对比-1" class="headerlink" title="三者对比"></a>三者对比</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r3b74deoj311y0lbas1.jpg" alt=""></p>
+<h2 id="4-4-优先级调度算法"><a href="#4-4-优先级调度算法" class="headerlink" title="4.4 优先级调度算法"></a>4.4 优先级调度算法</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r3wndj9pj311y0lb16c.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r3zgw9pjj311y0lb7lr.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r413z5qnj311y0lb4jn.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r41o2tmlj311y0lbakk.jpg" alt=""></p>
+<h2 id="只用于进程调度的算法"><a href="#只用于进程调度的算法" class="headerlink" title="只用于进程调度的算法"></a>只用于进程调度的算法</h2><h2 id="4-5-轮转时间片算法"><a href="#4-5-轮转时间片算法" class="headerlink" title="4.5 轮转时间片算法"></a>4.5 轮转时间片算法</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r3rtvyg0j311y0lbqgr.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r3q2z967j311y0lbdz5.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r3swa9ptj311y0lbk3o.jpg" alt=""></p>
+<h2 id="4-6-多级反馈队列调度算法"><a href="#4-6-多级反馈队列调度算法" class="headerlink" title="4.6 多级反馈队列调度算法"></a>4.6 多级反馈队列调度算法</h2><p>过程见视频，较复杂，注意理解<img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r4b6mv8jj311y0lbdvw.jpg" alt=""></p>
+<h1 id="5-死锁"><a href="#5-死锁" class="headerlink" title="5. 死锁"></a>5. 死锁</h1><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>个进程互相等待对方手里的资源，这些资源都没有被释放，导致各进程都阻塞，无法向前推进的现象。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0saev0rp5j311y0lb7ud.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sai40aw1j30wv0d246u.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0saj2o2t7j311y0lb7jh.jpg" alt=""></p>
+<h3 id="死锁的处理"><a href="#死锁的处理" class="headerlink" title="死锁的处理"></a>死锁的处理</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sarh7ddvj30xj0gqqd8.jpg" alt=""></p>
+<h3 id="1-预防死锁"><a href="#1-预防死锁" class="headerlink" title="1. 预防死锁"></a>1. 预防死锁</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sawzwpzsj311y0lb14f.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sazjmbm5j311y0lbn8r.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sb2rxbw0j311y0lbdvr.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sb3dqekvj311y0lb4dn.jpg" alt=""></p>
+<h3 id="2-避免死锁"><a href="#2-避免死锁" class="headerlink" title="2.  避免死锁"></a>2.  避免死锁</h3><p><strong>安全状态：</strong></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sbft08umj31re0u07ah.jpg" alt=""></p>
+<h3 id="银行家算法"><a href="#银行家算法" class="headerlink" title="银行家算法"></a>银行家算法</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sbhm7ixbj311y0lb1e0.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sbky5t6yj30xr0acwk3.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sbzb5dwmj311y0lbdvt.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sbzvasmgj311y0lb49q.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sc188qr7j311y0lbk1r.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sc5w292uj311y0lbx3y.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sc8aran4j311y0lbk1y.jpg" alt=""></p>
+<h3 id="3-死锁的监测与解除"><a href="#3-死锁的监测与解除" class="headerlink" title="3. 死锁的监测与解除"></a>3. 死锁的监测与解除</h3><p>这部分重要，看视频：<a href="https://www.bilibili.com/video/av40376808?p=32" target="_blank" rel="noopener">https://www.bilibili.com/video/av40376808?p=32</a></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sckz7n0oj311y0lbtjq.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2019/03/06/02进程的描述与控制.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]2019/03/06/02进程的描述与控制.html" itemprop="url">进程的描述与控制</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-06T00:00:00+08:00">
+                2019-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><h2 id="1-前趋图和程序执行"><a href="#1-前趋图和程序执行" class="headerlink" title="1. 前趋图和程序执行"></a>1. 前趋图和程序执行</h2><h3 id="1-1-前趋图"><a href="#1-1-前趋图" class="headerlink" title="1.1 前趋图"></a>1.1 前趋图</h3><p>见课本p32、p33</p>
+<h3 id="1-2-程序顺序执行"><a href="#1-2-程序顺序执行" class="headerlink" title="1.2 程序顺序执行"></a>1.2 程序顺序执行</h3><p>程序执行有固定的时序，</p>
+<p><strong>特征：</strong> 顺序性、可再现性、封闭性</p>
+<h3 id="1-3-程序并发执行"><a href="#1-3-程序并发执行" class="headerlink" title="1.3 程序并发执行"></a>1.3 程序并发执行</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0publkgx4j30q40bewfa.jpg" alt="      "></p>
+<p>与顺序执行的特征相反： 间断性、不可再现性、非封闭性（由资源共享造成）</p>
+<p>结合pdf第9页左右例子理解</p>
+<h2 id="2-进程的描述"><a href="#2-进程的描述" class="headerlink" title="2. 进程的描述"></a>2. 进程的描述</h2><h3 id="2-1-进程的定义与特征"><a href="#2-1-进程的定义与特征" class="headerlink" title="2.1 进程的定义与特征"></a>2.1 进程的定义与特征</h3><h4 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h4><p>是程序的一次执行过程，是进程实体的运行过程，是系统进行资源分配和调度 的一个独立单位。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pw2y75xxj30ya0i6k3r.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pw75wembj30uv0ivtha.jpg" alt=""></p>
+<h4 id="特征："><a href="#特征：" class="headerlink" title="特征："></a>特征：</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pwls8evtj310d0kzk7h.jpg" alt=""></p>
+<h4 id="进程和程序的区别："><a href="#进程和程序的区别：" class="headerlink" title="进程和程序的区别："></a>进程和程序的区别：</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pumkycuaj30ov0d7acu.jpg" alt=""></p>
+<h3 id="2-2-进程的状态及转换"><a href="#2-2-进程的状态及转换" class="headerlink" title="2.2 进程的状态及转换"></a>2.2 进程的状态及转换</h3><h4 id="基本状态："><a href="#基本状态：" class="headerlink" title="基本状态："></a>基本状态：</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0puoshfafj30el0br3z2.jpg" alt=""></p>
+<h4 id="创建状态和终止状态"><a href="#创建状态和终止状态" class="headerlink" title="创建状态和终止状态"></a>创建状态和终止状态</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pwt7tdmbj30zj0k1ne6.jpg" alt=""></p>
+<h3 id="2-3-挂起操作与激活操作"><a href="#2-3-挂起操作与激活操作" class="headerlink" title="2.3 挂起操作与激活操作"></a>2.3 挂起操作与激活操作</h3><p>见书本p38\p39</p>
+<h3 id="2-4-进程控制块PCB"><a href="#2-4-进程控制块PCB" class="headerlink" title="2.4 进程控制块PCB"></a>2.4 进程控制块PCB</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pv2jjpexj30ow1nnqgj.jpg" alt=""></p>
+<h2 id="3-进程控制"><a href="#3-进程控制" class="headerlink" title="3. 进程控制"></a>3. 进程控制</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pwv8sr4dj30yn0jx11q.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0px2pngb0j311y0lbkaj.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0px6rffx3j311y0lc7iw.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pxc7k4t4j311y0lcgzx.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pxlzge2pj311y0lbtt8.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pxny9oswj311y0lbwsi.jpg" alt=""></p>
+<h2 id="4-进程同步"><a href="#4-进程同步" class="headerlink" title="4. 进程同步"></a>4. 进程同步</h2><h3 id="4-1-进程同步（进程的直接制约关系）"><a href="#4-1-进程同步（进程的直接制约关系）" class="headerlink" title="4.1 进程同步（进程的直接制约关系）"></a>4.1 进程同步（进程的直接制约关系）</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r4z2trshj311y0lban2.jpg" alt=""></p>
+<h3 id="4-2-进程互斥（进程的间接制约关系）"><a href="#4-2-进程互斥（进程的间接制约关系）" class="headerlink" title="4.2 进程互斥（进程的间接制约关系）"></a>4.2 进程互斥（进程的间接制约关系）</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r50gtecyj311y0lbk8u.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r5160ahej311y0lbdv0.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r52a2mpvj30sd0fstg7.jpg" alt=""></p>
+<h3 id="4-3-硬件同步机制（进程互斥的硬件方法）"><a href="#4-3-硬件同步机制（进程互斥的硬件方法）" class="headerlink" title="4.3 硬件同步机制（进程互斥的硬件方法）"></a>4.3 硬件同步机制（进程互斥的硬件方法）</h3><h4 id="关中断"><a href="#关中断" class="headerlink" title="关中断"></a>关中断</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0rvfs46pdj311y0lbqe2.jpg" alt=""></p>
+<h4 id="TestAndSet指令"><a href="#TestAndSet指令" class="headerlink" title="TestAndSet指令"></a>TestAndSet指令</h4><p>简称TS指令或TSL指令</p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0rvloygu5j311y0lbtox.jpg" alt=""></p>
+<h4 id="Swap指令"><a href="#Swap指令" class="headerlink" title="Swap指令"></a>Swap指令</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0rvnnbwdrj311y0lb17l.jpg" alt=""></p>
+<h3 id="4-4读者-写者问题"><a href="#4-4读者-写者问题" class="headerlink" title="4.4读者-写者问题"></a>4.4读者-写者问题</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r59jvg0nj311y0lbasa.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r5ih7bjqj311y0lb1fj.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0r5t5rjxfj311y0lbqee.jpg" alt=""></p>
+<h3 id="4-5-哲学家进餐问题"><a href="#4-5-哲学家进餐问题" class="headerlink" title="4.5 哲学家进餐问题"></a>4.5 哲学家进餐问题</h3><p><a href="https://www.bilibili.com/video/av40376808?p=20" target="_blank" rel="noopener">https://www.bilibili.com/video/av40376808?p=20</a></p>
+<h3 id="4-6-信号量机制"><a href="#4-6-信号量机制" class="headerlink" title="4.6 信号量机制"></a>4.6 信号量机制</h3><h4 id="整形信号量"><a href="#整形信号量" class="headerlink" title="整形信号量"></a>整形信号量</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s7nzlu76j311y0lbwx0.jpg" alt=""></p>
+<h4 id="记录型信号量"><a href="#记录型信号量" class="headerlink" title="记录型信号量"></a>记录型信号量</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s89nuj9fj311y0la19h.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s7w0at66j311y0lbngk.jpg" alt=""></p>
+<h4 id="信号量机制实现进程互斥"><a href="#信号量机制实现进程互斥" class="headerlink" title="信号量机制实现进程互斥"></a>信号量机制实现进程互斥</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s81qzpn7j311y0lb7oj.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s84ho17hj311y0lbwtw.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s85q4vzbj311y0lbap7.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s86jdp0mj311y0lb4ge.jpg" alt=""></p>
+<h3 id="4-7-生产者消费者问题"><a href="#4-7-生产者消费者问题" class="headerlink" title="4.7 生产者消费者问题"></a>4.7 生产者消费者问题</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s8ykmm7nj30ud0jiaga.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s8slzfkxj311y0lbtzn.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s8twoliuj30xn0560xb.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s8uh02lkj311y0lbnlx.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s91zhzvsj311y0lbatk.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s94en3cfj311y0lbh2v.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s95ciaasj311y0lbwr3.jpg" alt=""></p>
+<h2 id="5-管程"><a href="#5-管程" class="headerlink" title="5. 管程"></a>5. 管程</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s8at0ft2j311y0lbqdo.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s8ccvbmuj30o70ffafx.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s8i3pf46j311y0lbneb.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s8jct50gj311y0lbncx.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0s8jyzcsoj311y0lb4a3.jpg" alt=""></p>
+<h2 id="6-进程通信"><a href="#6-进程通信" class="headerlink" title="6. 进程通信"></a>6. 进程通信</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pxsey6f2j311y0lbk29.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pxvb7o6tj311y0lbdtv.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pxy26zsij311y0lbh03.jpg" alt=""></p>
+<h2 id="7-线程"><a href="#7-线程" class="headerlink" title="7. 线程"></a>7. 线程</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pydawsr8j311y0lbtro.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pyfqf1d0j30yy0jjqil.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pyitai0jj311y0lbwtz.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pyl12f9qj30re0ksajl.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pyq0moqsj311y0lbdpo.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pypjsb9kj311y0lb47v.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0ql8dox1bj30vi0jktjc.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qmlg8cbej30yb0k5aj0.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qmm2uwxrj30zo0k1qcp.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qmn9b6hbj30x40jm7d2.jpg" alt=""></p>
+<h2 id="8-进程、线程和作业的概念区分"><a href="#8-进程、线程和作业的概念区分" class="headerlink" title="8. 进程、线程和作业的概念区分"></a>8. 进程、线程和作业的概念区分</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qomkpz36j30oq0kygow.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2019/03/05/01OS引言.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]2019/03/05/01OS引言.html" itemprop="url">操作系统引言</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-05T00:00:00+08:00">
+                2019-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><h2 id="1-操作系统的定义："><a href="#1-操作系统的定义：" class="headerlink" title="1. 操作系统的定义："></a>1. 操作系统的定义：</h2><p>​    操作系统是直接控制和管理计算机硬件、软件资源的最 基本的系统软件，用以方便用户充分、有效的利用这些资源 并增强整个计算机的处理能力</p>
+<h2 id="2-操作系统的目标-amp-作用"><a href="#2-操作系统的目标-amp-作用" class="headerlink" title="2. 操作系统的目标&amp;作用"></a>2. 操作系统的目标&amp;作用</h2><h3 id="2-1-目标："><a href="#2-1-目标：" class="headerlink" title="2.1 目标："></a>2.1 目标：</h3><p><strong>方便性、有效性、</strong>可扩充性、开放性</p>
+<h3 id="2-2-作用："><a href="#2-2-作用：" class="headerlink" title="2.2 作用："></a>2.2 作用：</h3><p>​        1.OS作为用户于计算机硬件系统之间的接口</p>
+<p>​        2.作为计算机资源的管理者</p>
+<p>​        3. 作为扩展机器实现了对计算机资源的抽象    </p>
+<h2 id="3-单批道处理系统"><a href="#3-单批道处理系统" class="headerlink" title="3. 单批道处理系统"></a>3. 单批道处理系统</h2><p>概念：系统对作业的处理都是成批进行的、且内存中始终只保持 一道作业，称为单道批处理系统（simple batch system）。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pssg5tfej30hx0acn0h.jpg" alt=""><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0psu5ylsqj30la0c8q54.jpg" alt=""></p>
+<h2 id="4-多批道处理系统"><a href="#4-多批道处理系统" class="headerlink" title="4. 多批道处理系统"></a>4. 多批道处理系统</h2><h3 id="4-1-基本概念"><a href="#4-1-基本概念" class="headerlink" title="4.1 基本概念"></a>4.1 基本概念</h3><p>多道：内存中同时存放几个作业； </p>
+<p>宏观上并行运行：都处于运行状态，但都未运行完；</p>
+<p>微观上串行运行：各作业交替使用CPU</p>
+<h3 id="4-2-特征"><a href="#4-2-特征" class="headerlink" title="4.2 特征"></a>4.2 特征</h3><p>多道性、无序性、调度性（作业调度、进程调度）</p>
+<h3 id="4-3-多道批处理系统的优缺点"><a href="#4-3-多道批处理系统的优缺点" class="headerlink" title="4.3 多道批处理系统的优缺点"></a>4.3 多道批处理系统的优缺点</h3><p>优点： 资源利用率高：CPU和内存利用率较高； 作业吞吐量大：单位时间内完成的工作总量大； </p>
+<p>缺点：  用户交互性差：整个作业完成后或中间出错时，才与用户交互，不利于调试和修改； </p>
+<p>​    作业平均周转时间长：短作业的周转时间显著增长</p>
+<h2 id="5-分时系统"><a href="#5-分时系统" class="headerlink" title="5. 分时系统"></a>5. 分时系统</h2><h3 id="5-1-概念："><a href="#5-1-概念：" class="headerlink" title="5.1 概念："></a>5.1 概念：</h3><p>指一台主机上连接了多个带有显示器和键盘 的终端，同时允许多个用户共享主机中的资源，各 个用户都可通过自己的终端以交互方式使用计算机。 </p>
+<h3 id="5-2-分时的目的："><a href="#5-2-分时的目的：" class="headerlink" title="5.2 分时的目的："></a>5.2 分时的目的：</h3><p>多个程序分时共享硬件和软件资源(即： 多任务)。多个用户分享使用同一台计算机(即：多用户) 。 </p>
+<h3 id="5-3-分时的定义："><a href="#5-3-分时的定义：" class="headerlink" title="5.3 分时的定义："></a>5.3 分时的定义：</h3><p>把计算机的系统资源（尤其是CPU时间） 进行时间上的分割，每个时间段称为一个时间片 （time slice），每个用户依次轮流使用时间片。</p>
+<h2 id="6-批处理系统和分时系统的区别"><a href="#6-批处理系统和分时系统的区别" class="headerlink" title="6. 批处理系统和分时系统的区别"></a>6. 批处理系统和分时系统的区别</h2><h3 id="6-1-批处理系统"><a href="#6-1-批处理系统" class="headerlink" title="6.1 批处理系统"></a>6.1 批处理系统</h3><p>从字面上理解，就是一批一批的处理任务的一种系统，严格的定义，就是指<strong>用户将一批作业提交给操作系统后就不再干预，由操作系统控制它们自动运行</strong>。这种采用批量处理作业技术的操作系统称为批处理操作系统。简单地理解就是我手中有一大堆作业（相当一个程序）要运行，我一个一个的放入内存中执行效率会很慢，因为我要人为的去装载程序（早期的机器会把程序写到磁带中，然后人为地放到专门处理程序的机器中），所以我一次性放一批的作业，让操作系统自己去运行它，而我不需要干涉，这样我就省了很多力气 ，如下图 </p>
+<p><img src="https://img-blog.csdn.net/20170329153105707?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzAxMzc2MTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<h3 id="6-2-分时系统"><a href="#6-2-分时系统" class="headerlink" title="6.2 分时系统"></a>6.2 分时系统</h3><p>分时操作系统：“分时”的含义是指多个用户使用同一台计算机，多个程序分时（分时间片）共享硬件和软件资源。分时操作系统是指在一台主机上连接多个带有显示器和键盘的终端，同时允许多个用户通过主机的终端，以交互方式使用计算机，共享主机中的资源。，<strong>分时操作系统将CPU的时间划分成若干个片段，称为时间片</strong>，操作系统以时间片为单位，轮流为每个终端用户服务 ，如下图 </p>
+<p><img src="https://img-blog.csdn.net/20170329152411531?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzAxMzc2MTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<h3 id="6-3-总结"><a href="#6-3-总结" class="headerlink" title="6.3 总结"></a>6.3 总结</h3><p>  从他们的定义我们大概可以总结出：<br>批处理系统没有人机交互，而分时系统允许多个用户同时使用<br>批处理系统中允许程序长时间地占用CPU，而分时系统不允许</p>
+<p>多道程序按不按时间片来分配时间 多道程序没有时间片的概念  </p>
+<h2 id="7-操作系统的基本特征"><a href="#7-操作系统的基本特征" class="headerlink" title="7. 操作系统的基本特征"></a>7. 操作系统的基本特征</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0ptfk7v13j30l20f7wj4.jpg" alt=""></p>
+<h2 id="8-操作系统的主要功能"><a href="#8-操作系统的主要功能" class="headerlink" title="8. 操作系统的主要功能"></a>8. 操作系统的主要功能</h2><h3 id="8-1-处理机管理"><a href="#8-1-处理机管理" class="headerlink" title="8.1 处理机管理"></a>8.1 处理机管理</h3><p>也可以理解为进程管理</p>
+<p>它又分为 【进程控制】【进程同步】 【进程通信】 【调度】</p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0ptomyfnqj30mm0vwtjm.jpg" alt=""></p>
+<h3 id="8-2-存储管理"><a href="#8-2-存储管理" class="headerlink" title="8.2 存储管理"></a>8.2 存储管理</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0ptpxeuk6j30m70eggpw.jpg" alt=""></p>
+<h3 id="8-3-设备管理"><a href="#8-3-设备管理" class="headerlink" title="8.3 设备管理"></a>8.3 设备管理</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0ptslx1sdj30na0esn25.jpg" alt=""></p>
+<h3 id="8-4-文件管理"><a href="#8-4-文件管理" class="headerlink" title="8.4 文件管理"></a>8.4 文件管理</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0ptty0c21j30mg0ap76f.jpg" alt=""></p>
+<h3 id="8-5-用户接口"><a href="#8-5-用户接口" class="headerlink" title="8.5 用户接口"></a>8.5 用户接口</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0ptzk5gwgj30kd0er0vh.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2019/03/05/正则表达式验证密码的强度.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]2019/03/05/正则表达式验证密码的强度.html" itemprop="url">正则表达式验证密码的强度</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-05T00:00:00+08:00">
+                2019-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>密码: 数字,字母,特殊符号</p>
+<p>密码: 只有数字- 或者是只有字母,或者是只有特殊符号—1级—弱</p>
+<p>两两组合: 数字和字母, 数字和特殊符号, 字母和特殊符号   —–2级—-中</p>
+<p>三者都有: 数字和字母和特殊符号——3级—–强</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">  &lt;title&gt;Document&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br><span class="line">&lt;style type=<span class="string">"text/css"</span>&gt;</span><br><span class="line">  #dv&#123;</span><br><span class="line">    width: <span class="number">300</span>px;</span><br><span class="line">    height:<span class="number">200</span>px;</span><br><span class="line">    position: absolute;</span><br><span class="line">    left:<span class="number">300</span>px;</span><br><span class="line">    top:<span class="number">100</span>px;</span><br><span class="line">  &#125;</span><br><span class="line">  .strengthLv0 &#123;</span><br><span class="line">    height: <span class="number">6</span>px;</span><br><span class="line">    width: <span class="number">120</span>px;</span><br><span class="line">    border: 1px solid #ccc;</span><br><span class="line">    padding: <span class="number">2</span>px;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  .strengthLv1 &#123;</span><br><span class="line">    background: red;</span><br><span class="line">    height: <span class="number">6</span>px;</span><br><span class="line">    width: <span class="number">40</span>px;</span><br><span class="line">    border: 1px solid #ccc;</span><br><span class="line">    padding: <span class="number">2</span>px;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  .strengthLv2 &#123;</span><br><span class="line">    background: orange;</span><br><span class="line">    height: <span class="number">6</span>px;</span><br><span class="line">    width: <span class="number">80</span>px;</span><br><span class="line">    border: 1px solid #ccc;</span><br><span class="line">    padding: <span class="number">2</span>px;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  .strengthLv3 &#123;</span><br><span class="line">    background: green;</span><br><span class="line">    height: <span class="number">6</span>px;</span><br><span class="line">    width: <span class="number">120</span>px;</span><br><span class="line">    border: 1px solid #ccc;</span><br><span class="line">    padding: <span class="number">2</span>px;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;<span class="regexp">/style&gt;</span></span><br><span class="line"><span class="regexp">&lt;body&gt;</span></span><br><span class="line"><span class="regexp">&lt;div id="dv"&gt;</span></span><br><span class="line"><span class="regexp">  &lt;label for="pwd"&gt;密码&lt;/</span>label&gt;</span><br><span class="line">  &lt;input type=<span class="string">"text"</span> id=<span class="string">"pwd"</span> maxlength=<span class="string">"16"</span>&gt;<span class="xml"><span class="comment">&lt;!--课外话题--&gt;</span></span></span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;em&gt;密码强度：&lt;/em&gt;</span><br><span class="line">    &lt;em id="strength"&gt;&lt;/em&gt;</span><br><span class="line">    &lt;div id="strengthLevel" class="strengthLv0"&gt;&lt;/div&gt;</span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">my$</span>(<span class="params">id</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">document</span>.getElementById(id);</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">  <span class="comment">//获取文本框注册键盘抬起事件</span></span><br><span class="line">  my$(<span class="string">"pwd"</span>).onkeyup=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//每次键盘抬起都要获取文本框中的内容,验证文本框中有什么东西,得到一个级别,然后下面的div显示对应的颜色</span></span><br><span class="line">    <span class="comment">//如果密码的长度是小于6的,没有必要判断</span></span><br><span class="line"><span class="comment">//    if(this.value.length&gt;=6)&#123;</span></span><br><span class="line"><span class="comment">//     var lvl= getLvl(this.value);</span></span><br><span class="line"><span class="comment">//      my$("strengthLevel").className="strengthLv"+lvl;</span></span><br><span class="line"><span class="comment">//    &#125;else&#123;</span></span><br><span class="line"><span class="comment">//      my$("strengthLevel").className="strengthLv0";</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line">    my$(<span class="string">"strengthLevel"</span>).className=<span class="string">"strengthLv"</span>+(<span class="keyword">this</span>.value.length&gt;=<span class="number">6</span>?getLvl(<span class="keyword">this</span>.value) :<span class="number">0</span>);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//给我密码,我返回对应的级别</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">getLvl</span>(<span class="params">pwd</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> lvl=<span class="number">0</span>;<span class="comment">//默认是0级</span></span><br><span class="line">    <span class="comment">//密码中是否有数字,或者是字母,或者是特殊符号</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="regexp">/[0-9]/</span>.test(pwd))&#123;</span><br><span class="line">      lvl++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//判断密码中有没有字母</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="regexp">/[a-zA-Z]/</span>.test(pwd))&#123;</span><br><span class="line">      lvl++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//判断密码中有没有特殊符号</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="regexp">/[^0-9a-zA-Z_]/</span>.test(pwd))&#123;</span><br><span class="line">      lvl++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> lvl;<span class="comment">//最小的值是1,最大值是3</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/  /</span><span class="regexp">/获取文本框注册键盘抬起事件</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/  my$("pwd").onkeyup=function () &#123;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/    /</span><span class="regexp">/每次键盘抬起都要获取文本框中的内容,验证文本框中有什么东西,得到一个级别,然后下面的div显示对应的颜色</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/    /</span><span class="regexp">/如果密码的长度是小于6的,没有必要判断</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/    if(this.value.length&gt;=6)&#123;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/      var lvl=getLvl(this.value);</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/      if(lvl==1)&#123;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/        /</span><span class="regexp">/弱</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/        my$("strengthLevel").className="strengthLv1";</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/      &#125;else if(lvl==2)&#123;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/        my$("strengthLevel").className="strengthLv2";</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/      &#125;else if(lvl==3)&#123;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/        my$("strengthLevel").className="strengthLv3";</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/      &#125;else&#123;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/        my$("strengthLevel").className="strengthLv0";</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/      &#125;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/    &#125;else&#123;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/      my$("strengthLevel").className="strengthLv0";</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/    &#125;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/  &#125;;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/  /</span><span class="regexp">/给我密码,我返回对应的级别</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/  function getLvl(pwd) &#123;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/    var lvl=0;/</span><span class="regexp">/默认是0级</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/    /</span><span class="regexp">/密码中是否有数字,或者是字母,或者是特殊符号</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/    if(/</span>[<span class="number">0</span><span class="number">-9</span>]/.test(pwd))&#123;</span><br><span class="line"><span class="comment">//      lvl++;</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"><span class="comment">//    //判断密码中有没有字母</span></span><br><span class="line"><span class="comment">//    if(/[a-zA-Z]/.test(pwd))&#123;</span></span><br><span class="line"><span class="comment">//      lvl++;</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"><span class="comment">//    //判断密码中有没有特殊符号</span></span><br><span class="line"><span class="comment">//    if(/[^0-9a-zA-Z_]/.test(pwd))&#123;</span></span><br><span class="line"><span class="comment">//      lvl++;</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"><span class="comment">//    return lvl;//1  3</span></span><br><span class="line"><span class="comment">//  &#125;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2019/03/04/继承.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]2019/03/04/继承.html" itemprop="url">继承</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-04T00:00:00+08:00">
+                2019-03-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>继承: 首先继承是一种关系，类(class)与类之间的关系，JS中没有类，但是可以通过构造函数模拟类，然后通过原型来实现继承。继承也是为了数据共享，JS中的继承也是为了实现数据共享。下面介绍三种继承方法。</p>
+<h1 id="通过改变原型指向实现继承"><a href="#通过改变原型指向实现继承" class="headerlink" title="通过改变原型指向实现继承"></a>通过改变原型指向实现继承</h1><p>这是一个Person构造函数，用于构造Person类的对象：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,sex</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name=name;</span><br><span class="line">  <span class="keyword">this</span>.sex=sex;</span><br><span class="line">  <span class="keyword">this</span>.age=age;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.eat=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"人可以吃东西"</span>);</span><br><span class="line">&#125;;</span><br><span class="line">Person.prototype.sleep=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"人在睡觉"</span>);</span><br><span class="line">&#125;;</span><br><span class="line">Person.prototype.play=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"生活就是不一样的玩法而已"</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这是一个Student构造函数，用于构造Student类的对象：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">name,age,sex，score</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name=name;</span><br><span class="line">  <span class="keyword">this</span>.sex=sex;</span><br><span class="line">  <span class="keyword">this</span>.age=age;</span><br><span class="line">  <span class="keyword">this</span>.score = score;</span><br><span class="line">&#125;</span><br><span class="line">Student.prototype.eat=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"吃东西"</span>);</span><br><span class="line">&#125;;</span><br><span class="line">Student.prototype.sleep=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"在睡觉"</span>);</span><br><span class="line">&#125;;</span><br><span class="line">Student.prototype.play=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"在玩耍"</span>);</span><br><span class="line">&#125;;</span><br><span class="line">Student.prototype.study=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"学习很累很累的哦."</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>可以看见，Student构造函数的很多属性和Person构造函数的属性是一致的，这样就造成了一种冗余。因此，可以让Student继承Person来减少冗余：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">score</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">this</span>.score=score;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">//改变学生的原型的指向即可</span></span><br><span class="line">   Student.prototype=<span class="keyword">new</span> Person(<span class="string">"小明"</span>,<span class="number">10</span>,<span class="string">"男"</span>);</span><br><span class="line">   Student.prototype.study=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">"学习很累很累的哦."</span>);</span><br><span class="line">   &#125;;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">var</span> stu=<span class="keyword">new</span> Student(<span class="number">100</span>);<span class="comment">//创建Student实例</span></span><br></pre></td></tr></table></figure>
+<h1 id="借用构造函数来实现继承"><a href="#借用构造函数来实现继承" class="headerlink" title="借用构造函数来实现继承"></a>借用构造函数来实现继承</h1><p>​    为了数据共享,改变原型指向，做到了继承—通过改变原型指向实现的继承，但是这种方法有个<strong>缺陷</strong>：因为改变原型指向的同时实现继承，直接初始化了属性，继承过来的属性的值都是一样的了，所以。这就是问题，只能重新调用对象的属性进行重新赋值，显然这样太麻烦了。</p>
+<p>​    <strong>解决方案</strong>:继承的时候，不用改变原型的指向，直接调用父级的构造函数的方式来为属性赋值就可以了：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, sex, weight</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">this</span>.name = name;</span><br><span class="line">     <span class="keyword">this</span>.age = age;</span><br><span class="line">     <span class="keyword">this</span>.sex = sex;</span><br><span class="line">     <span class="keyword">this</span>.weight = weight;</span><br><span class="line">   &#125;</span><br><span class="line">   Person.prototype.sayHi = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">"您好"</span>);</span><br><span class="line">   &#125;;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">name,age,sex,weight,score</span>) </span>&#123;</span><br><span class="line">     <span class="comment">//借用构造函数</span></span><br><span class="line">     Person.call(<span class="keyword">this</span>,name,age,sex,weight);</span><br><span class="line">     <span class="keyword">this</span>.score = score;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">var</span> stu1 = <span class="keyword">new</span> Student(<span class="string">"小明"</span>,<span class="number">10</span>,<span class="string">"男"</span>,<span class="string">"10kg"</span>,<span class="string">"100"</span>);</span><br><span class="line">   <span class="built_in">console</span>.log(stu1.name, stu1.age, stu1.sex, stu1.weight, stu1.score);</span><br><span class="line"></span><br><span class="line">   <span class="keyword">var</span> stu2 = <span class="keyword">new</span> Student(<span class="string">"小红"</span>,<span class="number">20</span>,<span class="string">"女"</span>,<span class="string">"20kg"</span>,<span class="string">"120"</span>);</span><br><span class="line">   <span class="built_in">console</span>.log(stu2.name, stu2.age, stu2.sex, stu2.weight, stu2.score);</span><br><span class="line"></span><br><span class="line">   <span class="keyword">var</span> stu3 = <span class="keyword">new</span> Student(<span class="string">"小丽"</span>,<span class="number">30</span>,<span class="string">"保密"</span>,<span class="string">"30kg"</span>,<span class="string">"130"</span>);</span><br><span class="line">   <span class="built_in">console</span>.log(stu3.name, stu3.age, stu3.sex, stu3.weight, stu3.score);</span><br><span class="line"></span><br><span class="line">stu3.sayHi();<span class="comment">//报错！无法调用父级构造函数的方法，因为无法继承方法</span></span><br></pre></td></tr></table></figure>
+<p><strong>事实上，这个方法却带来了另一个缺陷:父级类别中的方法不能继承!!!</strong></p>
+<h1 id="组合继承"><a href="#组合继承" class="headerlink" title="组合继承"></a>组合继承</h1><p>​    原型实现继承</p>
+<p>​    借用构造函数实现继承</p>
+<p>​    组合继承:原型继承+借用构造函数继承</p>
+<p>​    <strong>组合继承的方法是比较好的一种方式，避免了上述两种方式的缺陷。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,sex</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name=name;</span><br><span class="line">  <span class="keyword">this</span>.age=age;</span><br><span class="line">  <span class="keyword">this</span>.sex=sex;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.sayHi=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"很高兴见到你"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">name,age,sex,score</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//借用构造函数:属性值重复的问题</span></span><br><span class="line">  Person.call(<span class="keyword">this</span>,name,age,sex);</span><br><span class="line">  <span class="keyword">this</span>.score=score;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//改变原型指向----继承</span></span><br><span class="line">Student.prototype=<span class="keyword">new</span> Person();<span class="comment">//不传参数值。</span></span><br><span class="line">Student.prototype.eat=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"吃东西"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> stu=<span class="keyword">new</span> Student(<span class="string">"小黑"</span>,<span class="number">20</span>,<span class="string">"男"</span>,<span class="string">"100分"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(stu.name,stu.age,stu.sex,stu.score);</span><br><span class="line">stu.sayHi();</span><br><span class="line">stu.eat();</span><br><span class="line"><span class="keyword">var</span> stu2=<span class="keyword">new</span> Student(<span class="string">"小白"</span>,<span class="number">18</span>,<span class="string">"男人"</span>,<span class="string">"85分"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(stu2.name,stu2.age,stu2.sex,stu2.score);</span><br><span class="line">stu2.sayHi();</span><br><span class="line">stu2.eat();</span><br><span class="line"></span><br><span class="line"><span class="comment">//属性和方法都被继承了</span></span><br></pre></td></tr></table></figure>
+<h1 id="拷贝继承"><a href="#拷贝继承" class="headerlink" title="拷贝继承"></a>拷贝继承</h1><p><strong>拷贝继承：</strong>把一个对象中的属性或者方法直接复制到另一个对象中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.age=<span class="number">10</span>;</span><br><span class="line">Person.prototype.sex=<span class="string">"男"</span>;</span><br><span class="line">Person.prototype.height=<span class="number">100</span>;</span><br><span class="line">Person.prototype.play=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"玩的好开心"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> obj2=&#123;&#125;;</span><br><span class="line"><span class="comment">//Person的构造中有原型prototype,prototype就是一个对象,那么里面,age,sex,height,play都是该对象中的属性或者方法</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> Person.prototype)&#123;</span><br><span class="line">  obj2[key]=Person.prototype[key];</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.dir(obj2);</span><br><span class="line">obj2.play();</span><br></pre></td></tr></table></figure>
+<p><br><br></p>
+<p>（完）</p>
+<p><br><br></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2019/02/28/dianshang01.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]2019/02/28/dianshang01.html" itemprop="url">JS电商上线项目</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-28T00:00:00+08:00">
+                2019-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="架构设计"><a href="#架构设计" class="headerlink" title="架构设计"></a>架构设计</h1><ul>
+<li><p>前后端完全分离</p>
+</li>
+<li><p>分层架构</p>
+<p>逻辑层–数据层–工具层</p>
+<p>通过层级的划分来进行系统的解耦，提高系统可扩展性和可维护性</p>
+</li>
+<li><p>模块化</p>
+<p>达到进一步解耦的效果，让系统通过组件的拼装来完成业务的实现。</p>
+<p>模块化的另一个好处：支持团队的并行开发，提高整个团队的效率</p>
+</li>
+</ul>
+<p><br></p>
+<h2 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h2><p>HTML+CSS+JavaScript+jQuery（Ajax和DOM操作）</p>
+<p><br></p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><ul>
+<li><p>webpack</p>
+<p>对代码进行基于CommonJs的模块化打包集成</p>
+</li>
+<li><p>node.js</p>
+</li>
+<li><p>npm</p>
+</li>
+<li><p>shell脚本</p>
+<p>用于制作自动化脚本发布工具</p>
+</li>
+<li><p>Charles</p>
+<p>用于请求劫持</p>
+</li>
+<li><p>Git</p>
+<p><br></p>
+</li>
+</ul>
+<h1 id="开发安排"><a href="#开发安排" class="headerlink" title="开发安排"></a>开发安排</h1><h2 id="准备部分"><a href="#准备部分" class="headerlink" title="准备部分"></a>准备部分</h2><ul>
+<li>基础框架的搭建<ul>
+<li>双平台的开发环境安装</li>
+<li>git仓库的规范化用法</li>
+<li>webpack脚手架搭建实战</li>
+</ul>
+</li>
+<li><p>通用模块</p>
+<ul>
+<li><p>可高复用工具类设计与封装</p>
+</li>
+<li><p>通用模块设计与独立打包方法</p>
+</li>
+<li><p>高逼格UI开发经验与技巧</p>
+<p><br></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="业务部分"><a href="#业务部分" class="headerlink" title="业务部分"></a>业务部分</h2><ul>
+<li>用户模块<ul>
+<li>数据安全性处理方案</li>
+<li>表单同步/异步验证</li>
+<li>基于JavaScript的小型SPA开发</li>
+</ul>
+</li>
+<li>商品模块<ul>
+<li>jQuery插件模块化改造</li>
+<li>独立组建抽离技巧</li>
+<li>多功能列表开发</li>
+</ul>
+</li>
+<li>购物车模块<ul>
+<li>商品状态随时验证方法</li>
+<li>模块内部方法调用方式</li>
+<li>非form提交时的数据验证</li>
+</ul>
+</li>
+<li>订单模块<ul>
+<li>modal式组件封装思想</li>
+<li>城市级联操作</li>
+<li>复杂表单回填</li>
+</ul>
+</li>
+<li>支付模块<ul>
+<li>支付宝支付功能对接</li>
+<li>支付状态动态监测</li>
+<li>支付成功回执处理</li>
+</ul>
+</li>
+<li>管理后台<ul>
+<li>管理后天实现思路</li>
+<li>React框架及其组件化</li>
+<li>React-Router的使用</li>
+</ul>
+</li>
+<li>访问数据分析<ul>
+<li>PV / UV</li>
+<li>流量来源监控</li>
+<li>用户特征分析</li>
+</ul>
+</li>
+<li>SEO优化<ul>
+<li>SEO原理</li>
+<li>关键词的设计</li>
+<li>SEO监控</li>
+</ul>
+</li>
+<li>线上部署<ul>
+<li>线上服务器环境搭建</li>
+<li>自动化发布脚本编写</li>
+<li>域名规划与nginx配置</li>
+</ul>
+</li>
+<li>可用性监控<ul>
+<li>外部监控原理</li>
+<li>第三方监控的设置</li>
+<li>更高级的监控方式</li>
+</ul>
+</li>
+</ul>
+<p><br></p>
+<h1 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h1><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0mjkhkl8tj30q90dcdol.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0mjnb9yh9j30ob09un0z.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0mjorrwkij30o40bm780.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0mjpfza5ij30j30a2mzz.jpg" alt=""></p>
+<p><br><br></p>
+<h1 id="架构设计与技术选型"><a href="#架构设计与技术选型" class="headerlink" title="架构设计与技术选型"></a>架构设计与技术选型</h1><h2 id="架构设计-1"><a href="#架构设计-1" class="headerlink" title="架构设计"></a>架构设计</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0mjtko8v5j30kn08s0uy.jpg" alt=""><br></p>
+<h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0mjvdkhrzj30k20a80v1.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0mjyk0guij30lh0a8aev.jpg" alt=""></p>
+<p>（了解一下这几种模块化方案，本项目采用common JS）</p>
+<p><br><br></p>
+<p>一个web应用的入口式网页页面，而每一个页面都有一个主模块，用来组织各个子模块的逻辑关系，从而形成一个功能完整的页面，我们可以把主模块和各个子模块放在同一层，称之为<strong>逻辑层</strong>，而逻辑层需要和<strong>后端服务</strong>进行数据交互。我们把这些数据交互的方法都划分到一个个的service模块里，我们把这些service模块又划分为一个层，称之为<strong>数据层</strong>，所有的数据交换都要由数据层来和服务器进行，不允许业务模块和服务器直接进行跨层的对接。最后我们需要划分一个最底层的层级，用来提供支持整个系统的通用工具，称之为<strong>工具层</strong>。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0mk3e6bomj30n60de7a2.jpg" alt=""></p>
+<p><br></p>
+<h2 id="技术选型-1"><a href="#技术选型-1" class="headerlink" title="技术选型"></a>技术选型</h2><h3 id="需要考虑的东西"><a href="#需要考虑的东西" class="headerlink" title="需要考虑的东西"></a>需要考虑的东西</h3><ul>
+<li><p>软件过程模型</p>
+<ul>
+<li>瀑布模型</li>
+<li>螺旋模型</li>
+<li>敏捷开发</li>
+</ul>
+<p>软件过程的不同所带来的开发过程也不同</p>
+</li>
+<li><p>前后端分离</p>
+<p>分离方式的不同会影响到开发效率</p>
+</li>
+<li><p>构建工具</p>
+</li>
+<li><p>框架</p>
+</li>
+<li><p>代码版本控制软件</p>
+</li>
+<li><p>发布上线的方案</p>
+</li>
+</ul>
+<p><br></p>
+<h3 id="本项目的选择"><a href="#本项目的选择" class="headerlink" title="本项目的选择"></a>本项目的选择</h3><ul>
+<li><p>软件过程：敏捷开发</p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0mkp9cropj30li0aywi2.jpg" alt=""></p>
+</li>
+<li><p>前后端采用完全分离的方式</p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0ml71m3xtj30ik0ajmze.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0ml5apemcj30if0a0ad2.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0ml7o2i58j30jr09amzx.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0ml87sncyj30iu0ayn07.jpg" alt=""></p>
+</li>
+<li><p>框架选型</p>
+<p>使用 jQuery 来进行 Ajax 操作和 DOM 操作</p>
+</li>
+<li><p>构建工具</p>
+<p>webpack</p>
+</li>
+<li><p>版本控制</p>
+<p>Git</p>
+</li>
+<li><p>发布上线</p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0mlejuhmtj30dl0bzdin.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0mlfpuajvj30dk0c6tbk.jpg" alt=""></p>
+</li>
+</ul>
+<p><br><br></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>使用敏捷开发思想</li>
+<li>前后端完全分离</li>
+<li>commonJs + webpack 实现模块化</li>
+<li>框架使用 jQuery</li>
+<li>版本控制 git</li>
+</ul>
+<p><br><br></p>
+<h1 id="前后端配合方式和数据接口定义"><a href="#前后端配合方式和数据接口定义" class="headerlink" title="前后端配合方式和数据接口定义"></a>前后端配合方式和数据接口定义</h1><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0n3843zlvj30ld0d4jss.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0n39a2hx3j30l90d60un.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2019/02/25/导航细线边框的实现.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]2019/02/25/导航细线边框的实现.html" itemprop="url">导航细线边框的实现</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-25T00:00:00+08:00">
+                2019-02-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>要实现如下边框：</p>
+<p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0wjv0k2coj30aq08x74s.jpg" alt=""></p>
+<p>一般不要直接给每个盒子加border：1px solid #ccc，这样会使中间的边框线重合变成了2px的线，太粗，不好看。</p>
+<h2 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h2><p>只给盒子的下边框和右边框加border,贴边的消除border</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.nav-item</span> &#123;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/*border: 1rpx solid #ccc;/*不建议这样写，这样会造成中间的分割线为2rpx*/</span></span><br><span class="line">  <span class="attribute">border-right</span>: <span class="number">1</span>rpx solid <span class="number">#ccc</span>;</span><br><span class="line">  <span class="attribute">border-bottom</span>: <span class="number">1</span>rpx solid <span class="number">#ccc</span>;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.nav-item</span><span class="selector-pseudo">:nth-child(3n)</span>&#123;</span><br><span class="line">  <span class="attribute">border-right</span>: <span class="number">0</span> none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h2><p>使用伪元素加定位</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.nav-item</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">1px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: red;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.nav-item</span><span class="selector-pseudo">:nth-child(3n)</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>更好的方式是将上述代码封装起来，以便多次调用：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.bdr</span>&#123;    </span><br><span class="line">    <span class="comment">/* 2.3.子绝父相 */</span></span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.bdr</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="comment">/* 2.1.通过伪元素绘制一像素的右边框 */</span></span><br><span class="line">    <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">1</span>rpx;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#ddd</span>;</span><br><span class="line">    <span class="comment">/* 2.2.定位，不占位置 */</span></span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2019/02/20/常见浏览器内核.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]2019/02/20/常见浏览器内核.html" itemprop="url">常见浏览器内核</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-20T00:00:00+08:00">
+                2019-02-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="常见浏览器内核介绍"><a href="#常见浏览器内核介绍" class="headerlink" title="常见浏览器内核介绍"></a>常见浏览器内核介绍</h1><p>浏览器是网页运行的平台，常用的浏览器有IE、火狐（Firefox）、谷歌（Chrome）、Safari和Opera等。我们平时称为五大浏览器。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006ttwEMgy1g19n2tsnswj30ci08qdj8.jpg" alt=""></p>
+<p>​             </p>
+<blockquote>
+<p>浏览器内核又可以分成两部分：渲染引擎(layout engineer 或者 Rendering Engine)和 JS 引擎。<br>渲染引擎 它负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。<br>JS 引擎 则是解析 Javascript 语言，执行 javascript语言来实现网页的动态效果。</p>
+<p>最开始渲染引擎和 JS 引擎并没有区分的很明确，后来 JS 引擎越来越独立，内核就倾向于只指渲染引擎。有一个网页标准计划小组制作了一个 ACID 来测试引擎的兼容性和性能。内核的种类很多，如加上没什么人使用的非商业的免费内核，可能会有10多种，但是常见的浏览器内核可以分这四种：Trident、Gecko、Blink、Webkit。</p>
+</blockquote>
+<h2 id="Trident-IE内核"><a href="#Trident-IE内核" class="headerlink" title="Trident  (IE内核)"></a>Trident  (IE内核)</h2><p>国内很多的双核浏览器的其中一核便是 Trident  /‘traɪdnt/ [三叉戟]，美其名曰 “兼容模式”。</p>
+<p>代表： IE、傲游、世界之窗浏览器、Avant、腾讯TT、猎豹安全浏览器、360极速浏览器、百度浏览器等。</p>
+<p>Window10 发布后，IE 将其内置浏览器命名为 Edge，Edge 最显著的特点就是新内核 EdgeHTML。</p>
+<h2 id="Gecko-firefox"><a href="#Gecko-firefox" class="headerlink" title="Gecko(firefox)"></a>Gecko(firefox)</h2><p>Gecko /‘gɛko/[壁虎]： Mozilla FireFox(火狐浏览器) 采用该内核，Gecko 的特点是代码完全公开，因此，其可开发程度很高，全世界的程序员都可以为其编写代码，增加功能。 可惜这几年已经没落了， 比如 打开速度慢、升级频繁、猪一样的队友flash、神一样的对手chrome。</p>
+<h2 id="webkit-Safari"><a href="#webkit-Safari" class="headerlink" title="webkit(Safari)"></a>webkit(Safari)</h2><p> Safari 是苹果公司开发的浏览器，所用浏览器内核的名称是大名鼎鼎的 WebKit。</p>
+<p> 现在很多人错误地把 webkit 叫做 chrome内核（即使 chrome内核已经是 blink 了），苹果感觉像被别人抢了媳妇，都哭晕再厕所里面了。</p>
+<p> 代表浏览器：傲游浏览器3、 Apple Safari (Win/Mac/iPhone/iPad)、Symbian手机浏览器、Android 默认浏览器，</p>
+<h2 id="Chromium-Blink-chrome"><a href="#Chromium-Blink-chrome" class="headerlink" title="Chromium/Blink(chrome)"></a>Chromium/Blink(chrome)</h2><p>   在 Chromium 项目中研发 Blink 渲染引擎（即浏览器核心），内置于 Chrome 浏览器之中。Blink 其实是 WebKit 的分支。 </p>
+<p>​     大部分国产浏览器最新版都采用Blink内核。二次开发</p>
+<h2 id="Presto-Opera"><a href="#Presto-Opera" class="headerlink" title="Presto(Opera)"></a>Presto(Opera)</h2><p>  Presto（已经废弃） 是挪威产浏览器 opera 的 “前任” 内核，为何说是 “前任”，因为最新的 opera 浏览器早已将之抛弃从而投入到了谷歌怀抱了。  </p>
+<p><br><br></p>
+<p>移动端的浏览器内核主要说的是系统内置浏览器的内核。</p>
+<p>Android手机而言，使用率最高的就是Webkit内核，大部分国产浏览器宣称的自己的内核，基本上也是属于webkit二次开发。</p>
+<p>iOS以及WP7平台上，由于系统原因，系统大部分自带浏览器内核，一般是Safari或者IE内核Trident的</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Dunteng Lin">
+            
+              <p class="site-author-name" itemprop="name">Dunteng Lin</p>
+              <p class="site-description motion-element" itemprop="description">都会好的  总会有的</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dunteng Lin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
 </html>
-
-

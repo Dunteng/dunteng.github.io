@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Vue,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="我这篇文章也放在我的GitHub上，里面还有相应的代码。建议移步GitHub阅读本文章。 本文代码 前导~state部分的全部代码： 点击 应用（一）代码： 点击 getters 应用（二）代码： 点击 mutations 应用（三）代码：点击 actions 应用（四）代码：点击   前导结合代码案例学习，本文的知识点会依附在这个代码里讲解，下面先来看一下这个代码的介绍，主要就是一个父组件Ind">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vuex笔记">
+<meta property="og:url" content="https://dunteng.github.io/2019/06/03/Vuex笔记.html">
+<meta property="og:site_name" content="Dunteng&#39;s Blog">
+<meta property="og:description" content="我这篇文章也放在我的GitHub上，里面还有相应的代码。建议移步GitHub阅读本文章。 本文代码 前导~state部分的全部代码： 点击 应用（一）代码： 点击 getters 应用（二）代码： 点击 mutations 应用（三）代码：点击 actions 应用（四）代码：点击   前导结合代码案例学习，本文的知识点会依附在这个代码里讲解，下面先来看一下这个代码的介绍，主要就是一个父组件Ind">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562291573640.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562292413010.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562292792863.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562293651685.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562294928788.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562295563445.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562297668974.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562307401416.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562335007899.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562337035921.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562337084677.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562337274020.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/dfagaha.GIF">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562376986538.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/faga.GIF">
+<meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/dfagaga.GIF">
+<meta property="og:updated_time" content="2019-07-06T03:56:34.281Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vuex笔记">
+<meta name="twitter:description" content="我这篇文章也放在我的GitHub上，里面还有相应的代码。建议移步GitHub阅读本文章。 本文代码 前导~state部分的全部代码： 点击 应用（一）代码： 点击 getters 应用（二）代码： 点击 mutations 应用（三）代码：点击 actions 应用（四）代码：点击   前导结合代码案例学习，本文的知识点会依附在这个代码里讲解，下面先来看一下这个代码的介绍，主要就是一个父组件Ind">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562291573640.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'GX48388M0Z',
+      apiKey: '24910416df90ea04217402b818109cef',
+      indexName: 'index',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://dunteng.github.io/2019/06/03/Vuex笔记.html">
+
+
+
+
+
+  <title>Vuex笔记 | Dunteng's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6ffc4435fb9941ca00fb4c7e08d8fca2";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Dunteng's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/2019/06/03/Vuex笔记.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Vuex笔记</h1>
+        
+
+        <div class="post-meta">
+		
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-03T00:00:00+08:00">
+                2019-06-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/03/Vuex笔记.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/03/Vuex笔记.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>我这篇文章也放在我的GitHub上，里面还有相应的代码。建议移步<a href="https://github.com/Dunteng/learnVue/tree/master/%E5%AD%A6%E4%B9%A0Vuex#%E6%9C%AC%E6%96%87%E4%BB%A3%E7%A0%81" target="_blank" rel="noopener">GitHub</a>阅读本文章。</p>
+<h1 id="本文代码"><a href="#本文代码" class="headerlink" title="本文代码"></a>本文代码</h1><ul>
+<li>前导~state部分的全部代码： <a href="https://github.com/Dunteng/learnVue/tree/v1/%E5%AD%A6%E4%B9%A0Vuex/app" target="_blank" rel="noopener">点击</a></li>
+<li>应用（一）代码： <a href="https://github.com/Dunteng/learnVue/tree/v2/%E5%AD%A6%E4%B9%A0Vuex/app" target="_blank" rel="noopener">点击</a></li>
+<li>getters 应用（二）代码： <a href="https://github.com/Dunteng/learnVue/tree/v3/%E5%AD%A6%E4%B9%A0Vuex/app" target="_blank" rel="noopener">点击</a></li>
+<li>mutations 应用（三）代码：<a href="https://github.com/Dunteng/learnVue/tree/v4/%E5%AD%A6%E4%B9%A0Vuex/app" target="_blank" rel="noopener">点击</a></li>
+<li>actions 应用（四）代码：<a href="https://github.com/Dunteng/learnVue/tree/v5/%E5%AD%A6%E4%B9%A0Vuex/app" target="_blank" rel="noopener">点击</a></li>
+</ul>
+<p><br><br></p>
+<h1 id="前导"><a href="#前导" class="headerlink" title="前导"></a>前导</h1><p>结合代码案例学习，本文的知识点会依附在这个代码里讲解，下面先来看一下这个代码的介绍，主要就是一个父组件Index.vue，两个子组件AddStudent.vue和StudentList.vue，之间有组件通讯。</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562291573640.png" alt="1562291573640"></p>
+<p><br></p>
+<h2 id="父组件-Index-vue"><a href="#父组件-Index-vue" class="headerlink" title="父组件 Index.vue"></a>父组件 Index.vue</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;index&quot;&gt;</span><br><span class="line">    rock!我是index.vue</span><br><span class="line">    &lt;add-student @add=&quot;add&quot;&gt;&lt;/add-student&gt;</span><br><span class="line">    &lt;student-list :student=&quot;student&quot;&gt;&lt;/student-list&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import AddStudent from &quot;../components/AddStudent&quot;;</span><br><span class="line">import StudentList from &quot;../components/StudentList&quot;;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      student: []</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    add(name) &#123;</span><br><span class="line">      this.student.push(name);</span><br><span class="line">      console.log(this.student);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    AddStudent,</span><br><span class="line">    StudentList</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.index &#123;</span><br><span class="line">  background-color: rgb(72, 138, 182);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="子组件-AddStudent-vue"><a href="#子组件-AddStudent-vue" class="headerlink" title="子组件 AddStudent.vue"></a>子组件 AddStudent.vue</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;AddStudent&quot;&gt;</span><br><span class="line">    &lt;h4&gt;我是addStudent&lt;/h4&gt;</span><br><span class="line">    &lt;span&gt;添加学生&lt;/span&gt;</span><br><span class="line">    &lt;input id=&quot;input&quot; type=&quot;text&quot; v-model=&quot;name&quot; /&gt;</span><br><span class="line">    &lt;button @click=&quot;add&quot;&gt;添加&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      name: &quot;&quot;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    add() &#123;</span><br><span class="line">      this.$emit(&quot;add&quot;, this.name);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.AddStudent &#123;</span><br><span class="line">  border: 2px solid green;</span><br><span class="line">  background-color: green;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="子组件-Student-List-vue"><a href="#子组件-Student-List-vue" class="headerlink" title="子组件 Student List.vue"></a>子组件 Student List.vue</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;StudentList&quot;&gt;</span><br><span class="line">    &lt;h4&gt;我是StudentList&lt;/h4&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &lt;li v-for=&quot;(item, index) in student&quot; :key=&quot;index+item&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;&#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  props: [&quot;student&quot;]</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.StudentList &#123;</span><br><span class="line">  border: 2px solid red;</span><br><span class="line">  background-color: red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p><br><br></p>
+<h1 id="state"><a href="#state" class="headerlink" title="state"></a>state</h1><h2 id="store-js"><a href="#store-js" class="headerlink" title="store.js"></a>store.js</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    name: <span class="string">'dunteng'</span>,</span><br><span class="line">    age: <span class="number">20</span>,</span><br><span class="line">    look: <span class="string">'handsome'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line">  actions: &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="store-state-xxx"><a href="#store-state-xxx" class="headerlink" title="$store.state.xxx"></a>$store.state.xxx</h2><p>vuex 里的 state 相当于一个公共数据池。</p>
+<p>在 AddStudent.vue 中通过如下方式可以获取到：</p>
+<ol>
+<li><p>使用 $store.state.name 获取到</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562292413010.png" alt="1562292413010"></p>
+<p>然后我修改一下add方法使得点击button按钮后修改 $store.state.name ，如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">add() &#123;</span><br><span class="line">  <span class="comment">// this.$emit("add", this.name);</span></span><br><span class="line">  <span class="keyword">this</span>.$store.state.name += <span class="string">" lin"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是<code></code>显示的部分并没有成功修改只有<code></code>才有被修改，这是因为<code>storeName</code>是在data中被定义的，之后<code>$store.state.name</code>和它是没关系的，影响不到。所以应该用<code>computed</code>来获取 state 的数据。</p>
+</li>
+<li><p>computed 获取 this.$store.state.name</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562292792863.png" alt="1562292792863"></p>
+<p>这样，只要 state 里的数据发生改变，通过 computed 获取到的就能相应其改变。</p>
+</li>
+</ol>
+<p><br></p>
+<h2 id="mapState"><a href="#mapState" class="headerlink" title="mapState"></a>mapState</h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>像上述那样拿到 state 中的 name ，继续获取到 state 中的其他数据：</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562293651685.png" alt="1562293651685"></p>
+<p>如果同时另一个组件也要同样的这些数据，那么就要在 StudentList 组件中重复上述的操作，这样是可行的，但是如果还有七八九十个组件也要这些数据，那么这样的操作很繁琐，冗余很大。</p>
+<p>这就需要用到 <strong>mapState方法</strong> 了。这个方法的返回是一个<strong>对象</strong>，对象的每个key对应的value都是一个函数，有一点点像下面这个：</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562294928788.png" alt="1562294928788"></p>
+<p><br></p>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p>先引入才能使用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;mapState&#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br></pre></td></tr></table></figure>
+<p>然后结合 computed ，将 state 中的数据作为参数传入，</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">computed: mapState([<span class="string">"name"</span>, <span class="string">"age"</span>, <span class="string">"look"</span>]),</span><br></pre></td></tr></table></figure>
+<p>而在当前组件中获得的数据名称和 state 中的一样。</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562295563445.png" alt="1562295563445"></p>
+<p>但是结果只显示了 age 和 look ，没有显示 name ，因为在 data 中定义了一个 name 属性，而 data 的优先级比 computed 高，所以无法正常获取到。</p>
+<p>所以需要我们在使用 mapState 的时候重命名，如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed: mapState(&#123;</span><br><span class="line">  mapStateName: <span class="function"><span class="params">state</span> =&gt;</span> state.name,</span><br><span class="line">  mapStateAge: <span class="function"><span class="params">state</span> =&gt;</span> state.age,</span><br><span class="line">  mapStateOther: <span class="function"><span class="params">()</span> =&gt;</span> <span class="string">"你好吗"</span> <span class="comment">//我们甚至可以定义与state无关的变量</span></span><br><span class="line">&#125;),</span><br></pre></td></tr></table></figure>
+<p>但是除了 mapState ，我们在 computed 中也需要定义其他的计算属性，咋整？</p>
+<p>像下面这样写是会报错的！</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562297668974.png" alt="1562297668974"></p>
+<p>上面说了 mapState 返回的是一个<strong>对象</strong>，所以我们可以使用扩展运算符，如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  ...mapState(&#123;</span><br><span class="line">    mapStateName: <span class="function"><span class="params">state</span> =&gt;</span> state.name,</span><br><span class="line">    mapStateAge: <span class="function"><span class="params">state</span> =&gt;</span> state.age,</span><br><span class="line">    mapStateOther: <span class="function"><span class="params">()</span> =&gt;</span> <span class="string">"你好吗"</span></span><br><span class="line">  &#125;),</span><br><span class="line">  a()&#123;</span><br><span class="line">    retrun <span class="keyword">this</span>.$store.state.age+<span class="number">666</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="应用（一）"><a href="#应用（一）" class="headerlink" title="应用（一）"></a>应用（一）</h2><p><a href="https://github.com/Dunteng/learnVue/tree/v2/%E5%AD%A6%E4%B9%A0Vuex/app" target="_blank" rel="noopener">【代码】</a></p>
+<p>原案例中的两个子组件之间的传值是通过父组件来实现的，下面我们利用 vuex 的 state 来存储他们的公共资源。</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562307401416.png" alt="1562307401416"></p>
+<p><br></p>
+<h3 id="父组件-Index-vue-1"><a href="#父组件-Index-vue-1" class="headerlink" title="父组件 Index.vue"></a>父组件 Index.vue</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;index&quot;&gt;</span><br><span class="line">    rock!我是index.vue</span><br><span class="line">    &lt;add-student&gt;&lt;/add-student&gt;</span><br><span class="line">    &lt;student-list&gt;&lt;/student-list&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import AddStudent from &quot;../components/AddStudent&quot;;</span><br><span class="line">import StudentList from &quot;../components/StudentList&quot;;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;&#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;&#125;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    AddStudent,</span><br><span class="line">    StudentList</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.index &#123;</span><br><span class="line">  background-color: rgb(72, 138, 182);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="子组件-AddStudent-vue-1"><a href="#子组件-AddStudent-vue-1" class="headerlink" title="子组件 AddStudent.vue"></a>子组件 AddStudent.vue</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;AddStudent&quot;&gt;</span><br><span class="line">    &lt;h4&gt;我是addStudent&lt;/h4&gt;</span><br><span class="line">    &lt;span&gt;添加学生&lt;/span&gt;</span><br><span class="line">    &lt;input id=&quot;input&quot; type=&quot;text&quot; v-model=&quot;name&quot; /&gt;</span><br><span class="line">    &lt;button @click=&quot;add&quot;&gt;添加&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import &#123; mapState &#125; from &quot;vuex&quot;;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      name: &quot;&quot;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    add() &#123;</span><br><span class="line">      // this.$emit(&quot;add&quot;, this.name);</span><br><span class="line">      this.$store.state.studentlist.push(this.name);</span><br><span class="line">      console.log(this.$store.state.studentlist);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.AddStudent &#123;</span><br><span class="line">  border: 2px solid green;</span><br><span class="line">  background-color: green;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="子组件-StudentList-vue"><a href="#子组件-StudentList-vue" class="headerlink" title="子组件 StudentList.vue"></a>子组件 StudentList.vue</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;StudentList&quot;&gt;</span><br><span class="line">    &lt;h4&gt;我是StudentList&lt;/h4&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &lt;li v-for=&quot;(item, index) in studentlist&quot; :key=&quot;index+item&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import &#123; mapState &#125; from &quot;vuex&quot;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;&#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    ...mapState([&quot;studentlist&quot;]) //记得加引号。。。</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.StudentList &#123;</span><br><span class="line">  border: 2px solid red;</span><br><span class="line">  background-color: red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p><br><br></p>
+<h1 id="getters"><a href="#getters" class="headerlink" title="getters"></a>getters</h1><h2 id="应用（二）"><a href="#应用（二）" class="headerlink" title="应用（二）"></a>应用（二）</h2><p>在应用（一）的基础上，要求输出：</p>
+<blockquote>
+<p>索引为0的： **姓名</p>
+<p>索引为1和2的：姓名**</p>
+<p>索引大于2的：++姓名++</p>
+</blockquote>
+<p>效果图：</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562335007899.png" alt="1562335007899"></p>
+<p><br></p>
+<h3 id="不用getters的方案"><a href="#不用getters的方案" class="headerlink" title="不用getters的方案"></a>不用getters的方案</h3><p>在 StudentList.vue中的 <strong>computed</strong> 中进行数据处理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  <span class="comment">// ...mapState(["studentlist"]) //记得加引号。。。</span></span><br><span class="line">  studentlist() &#123;</span><br><span class="line">    <span class="keyword">var</span> list = [];</span><br><span class="line">    <span class="keyword">this</span>.$store.state.studentlist.forEach(<span class="function">(<span class="params">element, index</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (index == <span class="number">0</span>) &#123;</span><br><span class="line">        element = <span class="string">"**"</span> + element;</span><br><span class="line">        list.push(element);</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (index == <span class="number">1</span> || index == <span class="number">2</span>) &#123;</span><br><span class="line">        element = element + <span class="string">"**"</span>;</span><br><span class="line">        list.push(element);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        element = <span class="string">"++"</span> + element + <span class="string">"++"</span>;</span><br><span class="line">        list.push(element);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="使用getters的方案"><a href="#使用getters的方案" class="headerlink" title="使用getters的方案"></a>使用getters的方案</h3><p>现在 store.js 中写 getters 代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">getters: &#123;</span><br><span class="line">  <span class="comment">//相当于计算属性</span></span><br><span class="line">  newstudentlist(state) &#123;</span><br><span class="line">    <span class="keyword">return</span> state.studentlist.map(<span class="function">(<span class="params">ele, index</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (index == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'**'</span> + ele</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (index &lt; <span class="number">3</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> ele + <span class="string">'**'</span></span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'++'</span> + ele + <span class="string">'++'</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>在 StudentList 中直接使用 newstudentlist：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;StudentList&quot;&gt;</span><br><span class="line">    &lt;h4&gt;我是StudentList&lt;/h4&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &lt;li v-for=&quot;(item, index) in newstudentlist&quot; :key=&quot;index+item&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import &#123; mapState &#125; from &quot;vuex&quot;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;&#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    newstudentlist() &#123;</span><br><span class="line">      return this.$store.getters.newstudentlist;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="mapGetters"><a href="#mapGetters" class="headerlink" title="mapGetters"></a>mapGetters</h3><p>和 mapState 类似的便捷方法</p>
+<p>StudentList 中先引入 mapGetters ：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; mapState, mapGetters &#125; <span class="keyword">from</span> <span class="string">"vuex"</span>;</span><br><span class="line">。。。</span><br><span class="line">  computed: &#123;</span><br><span class="line">    <span class="comment">// newstudentlist() &#123;</span></span><br><span class="line">    <span class="comment">//   return this.$store.getters.newstudentlist;</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    ...mapGetters([<span class="string">"newstudentlist"</span>])</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>也可以使用对象的方式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; mapState, mapGetters &#125; <span class="keyword">from</span> <span class="string">"vuex"</span>;</span><br><span class="line">。。。</span><br><span class="line">  computed: &#123;</span><br><span class="line">    <span class="comment">// newstudentlist() &#123;</span></span><br><span class="line">    <span class="comment">//   return this.$store.getters.newstudentlist;</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//...mapGetters(["newstudentlist"])</span></span><br><span class="line">    </span><br><span class="line">    ...mapGetters(&#123;</span><br><span class="line">      newstudentlist: <span class="string">"newstudentlist"</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="补充一点：getters自身可以作为参数传入getters属性的方法中"><a href="#补充一点：getters自身可以作为参数传入getters属性的方法中" class="headerlink" title="补充一点：getters自身可以作为参数传入getters属性的方法中"></a>补充一点：getters自身可以作为参数传入getters属性的方法中</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">getters: &#123;</span><br><span class="line">  <span class="comment">//相当于计算属性</span></span><br><span class="line">  newstudentlist(state, getters) &#123;<span class="comment">//传入了getters作为参数</span></span><br><span class="line">    <span class="keyword">return</span> state.studentlist.map(<span class="function">(<span class="params">ele, index</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (index == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'**'</span> + ele + getters.aaa<span class="comment">//使用了getters中的aaa</span></span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (index &lt; <span class="number">3</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> ele + <span class="string">'**'</span></span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'++'</span> + ele + <span class="string">'++'</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  aaa() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">666</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p><br><br></p>
+<h1 id="mutations"><a href="#mutations" class="headerlink" title="mutations"></a>mutations</h1><h2 id="关于严格模式"><a href="#关于严格模式" class="headerlink" title="关于严格模式"></a>关于严格模式</h2><p>上述应用程序代码写的是不规范的，当我们开启严格模式时就会报警告了。</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562337035921.png" alt="1562337035921"></p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562337084677.png" alt="1562337084677"></p>
+<p>报错信息提示不要在 <strong>mutation</strong> 处理程序之外对vuex存储状态<strong>state</strong>进行更改。而我们恰恰就在 Addstudent.vue 的 add 方法中对 $store.state.studentlist 进行了更改：</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562337274020.png" alt="1562337274020"></p>
+<p>【记住：凡是要修改 <strong>state</strong> 的都要通过 <strong>mutation</strong> 来修改。 】</p>
+<p><br></p>
+<h2 id="应用（三）"><a href="#应用（三）" class="headerlink" title="应用（三）"></a>应用（三）</h2><p><a href="https://github.com/Dunteng/learnVue/tree/v4/%E5%AD%A6%E4%B9%A0Vuex/app" target="_blank" rel="noopener">【这部分代码】</a></p>
+<p>先在 store.js 中编写 mutations ：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mutations: &#123;</span><br><span class="line">  changeStudent(state, param) &#123;</span><br><span class="line">    state.studentlist.push(param)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>第二个参数接受传入的外部参数。</p>
+<p>在 AddStudent.vue 中：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">  add() &#123;</span><br><span class="line">    <span class="keyword">this</span>.$store.commit(<span class="string">"changeStudent"</span>, <span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意写法，对象是 $store ，使用了 <strong>commit</strong>。</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/dfagaha.GIF" alt="dfagaha"></p>
+<p><br></p>
+<p>在 mutation 属性中智能传递两个参数，如果我们想传递多个参数，可以把参数写进一个对象，然后这个对象作为参数写入 mutation 中。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mutations: &#123;</span><br><span class="line">  changeStudent(state, &#123; name, number &#125;) &#123;<span class="comment">//这里注意对象参数里面的元素命名形参和实参必须保持一致</span></span><br><span class="line">    state.studentlist.push(name + number)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>在 AddStudent.vue 中：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">  add() &#123;</span><br><span class="line">    <span class="keyword">this</span>.$store.commit(<span class="string">"changeStudent"</span>, &#123; <span class="attr">name</span>: <span class="keyword">this</span>.name, <span class="attr">number</span>: <span class="number">12</span> &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>【注意：注意对象参数里面的元素命名形参和实参必须保持一致】</p>
+<p><br></p>
+<h2 id="mapMutations"><a href="#mapMutations" class="headerlink" title="mapMutations"></a>mapMutations</h2><p>和 mapGetters 一样， mutations 也有便捷操作。</p>
+<p>在 AddStudent.vue 中，先引入 mapMutations</p>
+<p>然后在 methods 定义：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">  add() &#123;</span><br><span class="line">    <span class="comment">// this.$emit("add", this.name);</span></span><br><span class="line">    <span class="comment">// this.$store.state.studentlist.push(this.name);</span></span><br><span class="line">    <span class="comment">// console.log(this.$store.state.studentlist);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// this.$store.commit("changeStudent", &#123; name: this.name, number: 12 &#125;);//mutations</span></span><br><span class="line">    </span><br><span class="line">  &#125;,</span><br><span class="line">  ...mapMutations([<span class="string">'changeStudent'</span>])    <span class="comment">//mutations里的方法叫什么这里就填什么</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样在 AddStudent.vue 中就有了 changeStudent 这一方法，直接使用即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;AddStudent&quot;&gt;</span><br><span class="line">    &lt;h4&gt;我是addStudent&lt;/h4&gt;</span><br><span class="line">    &lt;span&gt;添加学生&lt;/span&gt;</span><br><span class="line">    &lt;input id=&quot;input&quot; type=&quot;text&quot; v-model=&quot;name&quot; /&gt;</span><br><span class="line">    &lt;!-- &lt;button @click=&quot;add&quot;&gt;添加&lt;/button&gt; --&gt;</span><br><span class="line">    &lt;button @click=&quot;changeStudent(&#123;name,number:18&#125;)&quot;&gt;添加&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<p>如果想要<strong>重命名</strong>，如下操作：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">  add() &#123;</span><br><span class="line">    <span class="comment">// this.$emit("add", this.name);</span></span><br><span class="line">    <span class="comment">// this.$store.state.studentlist.push(this.name);</span></span><br><span class="line">    <span class="comment">// console.log(this.$store.state.studentlist);</span></span><br><span class="line">    <span class="comment">// this.$store.commit("changeStudent", &#123; name: this.name, number: 12 &#125;);//mutations</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// ...mapMutations(['changeStudent'])    //mutations里的方法叫什么这里就填什么</span></span><br><span class="line">  ...mapMutations(&#123;</span><br><span class="line">    newChangeStudent: <span class="string">"changeStudent"</span> <span class="comment">//重命名</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后在标签里触发这个 newChangeStudent 即可。</p>
+<p><br><br></p>
+<h1 id="actions"><a href="#actions" class="headerlink" title="actions"></a>actions</h1><h2 id="异步操作下的情况"><a href="#异步操作下的情况" class="headerlink" title="异步操作下的情况"></a>异步操作下的情况</h2><p>我们尝试在 mutations 中模拟一下异步操作，实现点击后过了1秒再执行 mutations 中的动作：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mutations: &#123;</span><br><span class="line">  changeStudent(state, &#123; name, number &#125;) &#123;<span class="comment">//这里注意对象参数里面的元素命名形参和实参必须保持一致</span></span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      state.studentlist.push(name + number)</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>然后发现控制台报错：</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562376986538.png" alt="1562376986538"></p>
+<p>还是之前见过的报错信息，提示不要在 <strong>mutation</strong> 处理程序之外对vuex存储状态<strong>state</strong>进行更改。而我们在 mutations 里面的 setTimeout 下对 state 进行了修改，作用域不在 mutations 下，因此报错。</p>
+<p>还有一点非常糟糕的是：如果我们这样写了，在点击按钮的时候用极端的时间点击了很多次，当后来我们想要调试的时候，回不到正确的 state 。我们通过 vue Devtool 调试，当我想要看第三次点击时的 state 时，结果左边跳到了初试的 state 状态，因为我的第三次点击时，第一次点击还不到1秒，state 还尚未被修改！如下图所示</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/faga.GIF" alt="faga"></p>
+<p>于是我们可以使用 vuex 中的异步操作 <strong>actions</strong>。</p>
+<p>mutations 是用来执行修改 state 中数据的操作，actions 也是，但是特别的是，actions 专门用来进行<strong>异步</strong>的修改操作。<br></p>
+<h2 id="应用（四）"><a href="#应用（四）" class="headerlink" title="应用（四）"></a>应用（四）</h2><p>在 store.js 中：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mutations: &#123;</span><br><span class="line">  changeStudent(state, &#123; name, number &#125;) &#123;<span class="comment">//这里注意对象参数里面的元素命名形参和实参必须保持一致</span></span><br><span class="line">    state.studentlist.push(name + number)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line">actions: &#123;</span><br><span class="line">  changeStudent(ctx, &#123; name, number &#125;) &#123;</span><br><span class="line">    <span class="comment">//这个参数ctx是上下文对象，相当于当前的$store</span></span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      ctx.commit(<span class="string">'changeStudent'</span>, &#123; name, number &#125;)<span class="comment">//这里调用了mutations 中的changeStudent方法</span></span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在 AddStudent.vue 中，通过 <strong>dispatch</strong> 来触发 actions ：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">  add() &#123;</span><br><span class="line">    <span class="comment">// this.$emit("add", this.name);</span></span><br><span class="line">    <span class="comment">// this.$store.state.studentlist.push(this.name);</span></span><br><span class="line">    <span class="comment">// console.log(this.$store.state.studentlist);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// this.$store.commit("changeStudent", &#123; name: this.name, number: 12 &#125;);//mutations</span></span><br><span class="line">    <span class="keyword">this</span>.$store.dispatch(<span class="string">'changeStudent'</span>,&#123;<span class="attr">name</span>:<span class="keyword">this</span>.name,<span class="attr">number</span>:<span class="number">12</span>&#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/dfagaga.GIF" alt="dfagaga"></p>
+<p>在这个例子中，使用了 actions ，每次点击按钮的时候它都不是立即就执行 changeStudent 方法，而是每次都等候1秒再执行了，这就和用 mutations 内部 setTimeout 不一样，不是楞头地立即执行，导致 state 混乱。<br></p>
+<h2 id="mapActions"><a href="#mapActions" class="headerlink" title="mapActions"></a>mapActions</h2><p>同样的，actions 也有便捷操作。mapActions 返回的也是一个对象，里面都是函数。</p>
+<p>在 AddStudent.vue 的 methods 中创建 mapActions：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">  ...mapActions([<span class="string">"changeStudent"</span>])<span class="comment">//actions里面的方法叫什么这里就写什么</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样 AddStudent.vue 中就有了 changeStudent 这样一个方法，可以像普通方法那样使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;AddStudent&quot;&gt;</span><br><span class="line">    &lt;h4&gt;我是addStudent&lt;/h4&gt;</span><br><span class="line">    &lt;span&gt;添加学生&lt;/span&gt;</span><br><span class="line">    &lt;input id=&quot;input&quot; type=&quot;text&quot; v-model=&quot;name&quot; /&gt;</span><br><span class="line">    &lt;button @click=&quot;changeStudent(&#123;name,number:6&#125;)&quot;&gt;添加&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<p>如果要<strong>重命名</strong>，如下操作：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">  ...mapActions(&#123;</span><br><span class="line">    newChangeStudent: <span class="string">"changeStudent"</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后在标签中触发 newChangeStudent 方法即可。</p>
+<p><br></p>
+<p><br></p>
+<h1 id="Modules"><a href="#Modules" class="headerlink" title="Modules"></a>Modules</h1><p>未完待续</p>
+<p><br><br></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vue/" rel="tag"># Vue</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/01/01Vue音乐播放器.html" rel="next" title="Vue音乐播放器（一）">
+                <i class="fa fa-chevron-left"></i> Vue音乐播放器（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/05/02Vue音乐播放器.html" rel="prev" title="Vue音乐播放器(二)">
+                Vue音乐播放器(二) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  
+  </article>
+  
+
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Dunteng Lin">
+            
+              <p class="site-author-name" itemprop="name">Dunteng Lin</p>
+              <p class="site-description motion-element" itemprop="description">都会好的  总会有的</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/dunteng" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:yourname@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/dunteng_lin" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#本文代码"><span class="nav-number">1.</span> <span class="nav-text">本文代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前导"><span class="nav-number">2.</span> <span class="nav-text">前导</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#父组件-Index-vue"><span class="nav-number">2.1.</span> <span class="nav-text">父组件 Index.vue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子组件-AddStudent-vue"><span class="nav-number">2.2.</span> <span class="nav-text">子组件 AddStudent.vue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子组件-Student-List-vue"><span class="nav-number">2.3.</span> <span class="nav-text">子组件 Student List.vue</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#state"><span class="nav-number">3.</span> <span class="nav-text">state</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#store-js"><span class="nav-number">3.1.</span> <span class="nav-text">store.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#store-state-xxx"><span class="nav-number">3.2.</span> <span class="nav-text">$store.state.xxx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mapState"><span class="nav-number">3.3.</span> <span class="nav-text">mapState</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">3.3.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-number">3.3.2.</span> <span class="nav-text">用法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用（一）"><span class="nav-number">3.4.</span> <span class="nav-text">应用（一）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#父组件-Index-vue-1"><span class="nav-number">3.4.1.</span> <span class="nav-text">父组件 Index.vue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子组件-AddStudent-vue-1"><span class="nav-number">3.4.2.</span> <span class="nav-text">子组件 AddStudent.vue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子组件-StudentList-vue"><span class="nav-number">3.4.3.</span> <span class="nav-text">子组件 StudentList.vue</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#getters"><span class="nav-number">4.</span> <span class="nav-text">getters</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#应用（二）"><span class="nav-number">4.1.</span> <span class="nav-text">应用（二）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#不用getters的方案"><span class="nav-number">4.1.1.</span> <span class="nav-text">不用getters的方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用getters的方案"><span class="nav-number">4.1.2.</span> <span class="nav-text">使用getters的方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapGetters"><span class="nav-number">4.1.3.</span> <span class="nav-text">mapGetters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充一点：getters自身可以作为参数传入getters属性的方法中"><span class="nav-number">4.1.4.</span> <span class="nav-text">补充一点：getters自身可以作为参数传入getters属性的方法中</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mutations"><span class="nav-number">5.</span> <span class="nav-text">mutations</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于严格模式"><span class="nav-number">5.1.</span> <span class="nav-text">关于严格模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用（三）"><span class="nav-number">5.2.</span> <span class="nav-text">应用（三）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mapMutations"><span class="nav-number">5.3.</span> <span class="nav-text">mapMutations</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#actions"><span class="nav-number">6.</span> <span class="nav-text">actions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#异步操作下的情况"><span class="nav-number">6.1.</span> <span class="nav-text">异步操作下的情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用（四）"><span class="nav-number">6.2.</span> <span class="nav-text">应用（四）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mapActions"><span class="nav-number">6.3.</span> <span class="nav-text">mapActions</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Modules"><span class="nav-number">7.</span> <span class="nav-text">Modules</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dunteng Lin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'J29bT1MHDnsDl0O48fRK6u7D-gzGzoHsz',
+        appKey: '2ftsHD4VBWJQVASwv65waJNL',
+        placeholder: '欢迎评论，请在上方留下你的昵称和邮箱以便收到我的回复通知~',
+        avatar:'retro',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

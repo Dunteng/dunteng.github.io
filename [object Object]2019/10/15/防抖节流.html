@@ -87,12 +87,12 @@
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
 <meta property="og:description" content="背景问题在前端开发中有一部分的用户行为会频繁的触发事件，从而频繁地执行函数，而对于DOM操作、资源加载等耗费性能的处理，很可能导致界面卡顿，甚至浏览器崩溃（本质是因为js是单线程的）。 函数节流（throttle）和函数防抖（debounce）可以解决问题。 防抖函数防抖就是在函数需要频繁触发情况时，只有等足够空闲的事件，才执行，为了避免又有事件触发。  常见应用场景：搜索框实时搜索请求数据、拖拽">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/1571146823113.png">
+<meta property="og:image" content="https://dunteng.github.io/[object%20Object]2019/10/15/防抖节流.htm/Users/Administrator/AppData/Roaming/Typora/typora-user-images/1571146823113.png">
 <meta property="og:updated_time" content="2019-10-17T13:57:16.054Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="防抖节流">
 <meta name="twitter:description" content="背景问题在前端开发中有一部分的用户行为会频繁的触发事件，从而频繁地执行函数，而对于DOM操作、资源加载等耗费性能的处理，很可能导致界面卡顿，甚至浏览器崩溃（本质是因为js是单线程的）。 函数节流（throttle）和函数防抖（debounce）可以解决问题。 防抖函数防抖就是在函数需要频繁触发情况时，只有等足够空闲的事件，才执行，为了避免又有事件触发。  常见应用场景：搜索框实时搜索请求数据、拖拽">
-<meta name="twitter:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/1571146823113.png">
+<meta name="twitter:image" content="https://dunteng.github.io/[object%20Object]2019/10/15/防抖节流.htm/Users/Administrator/AppData/Roaming/Typora/typora-user-images/1571146823113.png">
 
 
 
@@ -350,6 +350,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/[object Object]2019/10/15/防抖节流.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/[object Object]2019/10/15/防抖节流.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -400,7 +410,7 @@
 <ul>
 <li><p>代码实现</p>
 <p>模拟抢红包的功能👇</p>
-<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1571146823113.png" alt="1571146823113"></p>
+<p><img src="/[object Object]2019/10/15/防抖节流.htm/Users\Administrator\AppData\Roaming\Typora\typora-user-images\1571146823113.png" alt="1571146823113"></p>
 <p>这种代码如果被人注入恶意脚本，使得按钮点击事件疯狂触发，服务器和客户端都受不了。为了避免这种情况，使用节流操作。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">我抢到<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"show"</span>&gt;</span>0<span class="tag">&lt;/<span class="name">span</span>&gt;</span>个红包！</span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line"><span class="keyword">var</span> oSpan = <span class="built_in">document</span>.getElementById(<span class="string">'show'</span>);</span><br><span class="line"><span class="keyword">var</span> oBtn = <span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>);</span><br><span class="line">  </span><br><span class="line"><span class="comment">// oBtn.onclick = function () &#123;</span></span><br><span class="line"><span class="comment">//   oSpan.innerText = parseInt(oSpan.innerText) + 1;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line">oBtn.onclick = throttle(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  oSpan.innerText = <span class="built_in">parseInt</span>(oSpan.innerText) + <span class="number">1</span>;</span><br><span class="line">&#125;, <span class="number">1000</span>)</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">handler, wait</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> lastTime = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> nowTime = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</span><br><span class="line">    <span class="keyword">if</span> (nowTime - lastTime &gt; wait) &#123;</span><br><span class="line">      handler();</span><br><span class="line">      lastTime = nowTime;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -482,6 +492,9 @@
 
           
 
+  
+    <div class="comments" id="comments">
+    </div>
   
 
 
@@ -789,6 +802,28 @@
 
 
 
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'J29bT1MHDnsDl0O48fRK6u7D-gzGzoHsz',
+        appKey: '2ftsHD4VBWJQVASwv65waJNL',
+        placeholder: 'ヾﾉ≧∀≦)o快来评论一下吧!',
+        avatar:'retro',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
 
 
   
@@ -1067,7 +1102,7 @@
             }
           }
 
-          if ('auto' === 'manual') {
+          if ('auto' === 'auto') {
             input.addEventListener('input', inputEventFunction);
           } else {
             $('.search-icon').click(inputEventFunction);

@@ -349,6 +349,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/[object Object]2019/06/01/01Vue音乐播放器.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/[object Object]2019/06/01/01Vue音乐播放器.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -535,6 +545,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/[object Object]2019/05/12/Vue父子组件传值和非父子组件传值.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/[object Object]2019/05/12/Vue父子组件传值和非父子组件传值.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -676,6 +696,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/[object Object]2019/05/11/vue写个日历组件.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/[object Object]2019/05/11/vue写个日历组件.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -713,131 +743,6 @@
 <p>JavaScript部分：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">'#app'</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">      year: <span class="literal">null</span>,</span><br><span class="line">      month: <span class="literal">null</span>,</span><br><span class="line">      day: <span class="literal">null</span>,</span><br><span class="line">      curDate: <span class="literal">null</span>,</span><br><span class="line">      activeDay: <span class="literal">null</span></span><br><span class="line">    &#125;,</span><br><span class="line">    created () &#123;</span><br><span class="line">      <span class="keyword">this</span>.getInitTime();</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      getInitTime () &#123;</span><br><span class="line">        <span class="keyword">const</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">        <span class="keyword">this</span>.year = date.getFullYear();</span><br><span class="line">        <span class="keyword">this</span>.month = date.getMonth() + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">this</span>.day = date.getDate();</span><br><span class="line">        <span class="keyword">this</span>.curDate = <span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.year&#125;</span>-<span class="subst">$&#123;<span class="keyword">this</span>.month&#125;</span>-<span class="subst">$&#123;<span class="keyword">this</span>.day&#125;</span>`</span>;</span><br><span class="line">      &#125;,</span><br><span class="line">      computedDay (month) &#123;</span><br><span class="line">        <span class="keyword">const</span> day = <span class="keyword">this</span>.day;</span><br><span class="line">        <span class="keyword">const</span> year = <span class="keyword">this</span>.year;</span><br><span class="line">        <span class="keyword">const</span> allDay = <span class="keyword">new</span> <span class="built_in">Date</span>(year, month, <span class="number">0</span>).getDate();</span><br><span class="line">        <span class="keyword">if</span>(day &gt; allDay) &#123;</span><br><span class="line">          <span class="keyword">this</span>.day = allDay;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      handlePrev () &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.month === <span class="number">1</span>) &#123;</span><br><span class="line">          <span class="keyword">this</span>.month = <span class="number">12</span>;</span><br><span class="line">          <span class="keyword">this</span>.year --;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">this</span>.month --;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.computedDay(<span class="keyword">this</span>.month);</span><br><span class="line">      &#125;,</span><br><span class="line">      handleNext () &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.month === <span class="number">12</span>) &#123;</span><br><span class="line">          <span class="keyword">this</span>.month = <span class="number">1</span>;</span><br><span class="line">          <span class="keyword">this</span>.year ++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">this</span>.month ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.computedDay(<span class="keyword">this</span>.month);</span><br><span class="line">      &#125;,</span><br><span class="line">      handleChooseDay (e) &#123;</span><br><span class="line">        <span class="keyword">this</span>.day = e.target.dataset.day;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    computed: &#123;</span><br><span class="line">      beginDay () &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">this</span>.year, <span class="keyword">this</span>.month - <span class="number">1</span>, <span class="number">1</span>).getDay();</span><br><span class="line">      &#125;,</span><br><span class="line">      curDays () &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">this</span>.year, <span class="keyword">this</span>.month, <span class="number">0</span>).getDate();</span><br><span class="line">      &#125;,</span><br><span class="line">      prevDays () &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">this</span>.year, <span class="keyword">this</span>.month - <span class="number">1</span>, <span class="number">0</span>).getDate();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 <p><br><br><br></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2019/05/10/啥是前端工程化模块化组件化.html">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dunteng Lin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dunteng's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/[object Object]2019/05/10/啥是前端工程化模块化组件化.html" itemprop="url">啥是前端工程化、模块化、组件化？</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-10T00:00:00+08:00">
-                2019-05-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="工程化"><a href="#工程化" class="headerlink" title="工程化"></a>工程化</h3><p><strong>前端工程化</strong>是根据业务特点，将前端开发流程规范化，标准化，它包括了开发流程，技术选型，代码规范，构建发布等，用于提升前端工程师的<strong>开发效率和代码质量</strong>。前端工程化是一种思想，模块化和组件化可以看作是工程化的具体体现。</p>
-<h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><p>模块化最直观的一点就是<strong>封装模块，代码复用</strong>，比如封装轮播图的模块。</p>
-<h3 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h3><p>组件化可以看作是页面上 UI 的拆分，比如一个导航条、下拉列表、侧边栏等等，都可以看作是组件化。</p>
-<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/1558253536.jpg" alt=""></p>
-<p>模块化和组件化都有一个特点：<strong>高内聚，低耦合</strong>    </p>
-<p>（完）</p>
 
           
         
@@ -930,6 +835,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/[object Object]2019/05/10/webpack笔记.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/[object Object]2019/05/10/webpack笔记.html" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1161,6 +1076,141 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2019/05/10/啥是前端工程化模块化组件化.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]2019/05/10/啥是前端工程化模块化组件化.html" itemprop="url">啥是前端工程化、模块化、组件化？</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-10T00:00:00+08:00">
+                2019-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/[object Object]2019/05/10/啥是前端工程化模块化组件化.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/[object Object]2019/05/10/啥是前端工程化模块化组件化.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="工程化"><a href="#工程化" class="headerlink" title="工程化"></a>工程化</h3><p><strong>前端工程化</strong>是根据业务特点，将前端开发流程规范化，标准化，它包括了开发流程，技术选型，代码规范，构建发布等，用于提升前端工程师的<strong>开发效率和代码质量</strong>。前端工程化是一种思想，模块化和组件化可以看作是工程化的具体体现。</p>
+<h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><p>模块化最直观的一点就是<strong>封装模块，代码复用</strong>，比如封装轮播图的模块。</p>
+<h3 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h3><p>组件化可以看作是页面上 UI 的拆分，比如一个导航条、下拉列表、侧边栏等等，都可以看作是组件化。</p>
+<p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/1558253536.jpg" alt=""></p>
+<p>模块化和组件化都有一个特点：<strong>高内聚，低耦合</strong>    </p>
+<p>（完）</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/[object Object]2019/04/03/ES6数据劫持.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1205,6 +1255,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/[object Object]2019/04/03/ES6数据劫持.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/[object Object]2019/04/03/ES6数据劫持.html" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1337,6 +1397,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/[object Object]2019/04/01/箭头函数看这篇就够了.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/[object Object]2019/04/01/箭头函数看这篇就够了.html" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1492,6 +1562,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/[object Object]2019/03/29/jsonp实现百度搜索框功能.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/[object Object]2019/03/29/jsonp实现百度搜索框功能.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -1631,6 +1711,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/[object Object]2019/03/20/jQ.Ajax实现瀑布流相册.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/[object Object]2019/03/20/jQ.Ajax实现瀑布流相册.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -1756,6 +1846,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/[object Object]2019/03/16/JS实现简单的Cookie操作.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/[object Object]2019/03/16/JS实现简单的Cookie操作.html" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -2114,6 +2214,28 @@
 
 
 
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'J29bT1MHDnsDl0O48fRK6u7D-gzGzoHsz',
+        appKey: '2ftsHD4VBWJQVASwv65waJNL',
+        placeholder: 'ヾﾉ≧∀≦)o快来评论一下吧!',
+        avatar:'retro',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
 
 
   
@@ -2392,7 +2514,7 @@
             }
           }
 
-          if ('auto' === 'manual') {
+          if ('auto' === 'auto') {
             input.addEventListener('input', inputEventFunction);
           } else {
             $('.search-icon').click(inputEventFunction);

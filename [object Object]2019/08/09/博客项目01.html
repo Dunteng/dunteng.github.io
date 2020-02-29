@@ -99,7 +99,7 @@
 <meta property="og:image" content="https://pic2.zhimg.com/v2-57572abfa8a419ba3b66a943cb10bb89_r.jpg">
 <meta property="og:image" content="https://pic4.zhimg.com/v2-4d74bfe8b3e17764cdb3f9b169adf35f_r.jpg">
 <meta property="og:image" content="https://pic2.zhimg.com/v2-56e73521abea3d3b2fe61889ff4f082d_r.jpg">
-<meta property="og:updated_time" content="2019-10-27T13:12:25.625Z">
+<meta property="og:updated_time" content="2020-02-29T15:51:11.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一、博客项目大作战之数据库建表">
 <meta name="twitter:description" content="功能分析  持久层之数据库建表创建数据库my_blog👇   创建表blog👇 用于存储博客文章，特别注意要设置编码格式为utf8mb4，否则emoji无法正常显示。 views为文章浏览次数，ctime为创建时间，utime为修改时间。  设置表的索引👇   创建表every_day👇  设置索引👇   创建表tags👇  设置索引👇   创建表tag_blog_mapping（t">
@@ -339,6 +339,7 @@
         
 
         <div class="post-meta">
+		
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -376,6 +377,11 @@
           
           
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
           
 
           
@@ -487,7 +493,10 @@
   
   
   
+  
   </article>
+  
+
 
 
 
@@ -668,6 +677,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
@@ -814,11 +843,11 @@
 
 
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
+    var guest = 'nick,mail';
     guest = guest.split(',').filter(item=>{
       return GUEST.indexOf(item)>-1;
     });
@@ -828,7 +857,7 @@
         notify: true,
         appId: 'J29bT1MHDnsDl0O48fRK6u7D-gzGzoHsz',
         appKey: '2ftsHD4VBWJQVASwv65waJNL',
-        placeholder: 'ヾﾉ≧∀≦)o快来评论一下吧!',
+        placeholder: '欢迎评论，请在上方留下你的昵称和邮箱以便收到我的回复通知~',
         avatar:'retro',
         guest_info:guest,
         pageSize:'10' || 10,

@@ -53,13 +53,13 @@
 <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/dahuangmao-06.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon1.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon1.png?v=5.1.4">
 
 
   <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
@@ -87,17 +87,18 @@
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
 <meta property="og:description" content="前言之前一直用的anchor主题，每个页面都有一个大的背景图，虽然好看，但是加载图片很慢我实在受不了了。改邪归正使用next主题。 安装Next下载主题在博客根目录 1git clone https://github.com/iissnan/hexo-theme-next themes/next 启用主题修改站点配置文件_config.yml 1234# Extensions## Plug">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-8d4d74d009d5263641b9072d00384021_r.jpg">
 <meta property="og:image" content="https://theme-next.iissnan.com/uploads/five-minutes-setup/analytics-baidu-id.png">
 <meta property="og:image" content="https:////upload-images.jianshu.io/upload_images/4109786-db52b8ea81a285e0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/596/format/webp">
 <meta property="og:image" content="https:////upload-images.jianshu.io/upload_images/4109786-6846e60c8f4f72e3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/594/format/webp">
 <meta property="og:image" content="https:////upload-images.jianshu.io/upload_images/4109786-9a3440a275690e77.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/565/format/webp">
 <meta property="og:image" content="https://pic3.zhimg.com/80/v2-dc06c4fbe78620ec529decc8d5193d8a_720w.jpg">
 <meta property="og:image" content="https:////upload-images.jianshu.io/upload_images/4109786-8bd8a493cd24ae3e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/430/format/webp">
-<meta property="og:updated_time" content="2020-03-02T06:35:23.418Z">
+<meta property="og:updated_time" content="2020-03-02T07:40:27.894Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博客更换next主题">
 <meta name="twitter:description" content="前言之前一直用的anchor主题，每个页面都有一个大的背景图，虽然好看，但是加载图片很慢我实在受不了了。改邪归正使用next主题。 安装Next下载主题在博客根目录 1git clone https://github.com/iissnan/hexo-theme-next themes/next 启用主题修改站点配置文件_config.yml 1234# Extensions## Plug">
-<meta name="twitter:image" content="https://theme-next.iissnan.com/uploads/five-minutes-setup/analytics-baidu-id.png">
+<meta name="twitter:image" content="https://pic2.zhimg.com/v2-8d4d74d009d5263641b9072d00384021_r.jpg">
 
 
 
@@ -398,11 +399,6 @@
           
 
           
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
 
           
 
@@ -443,6 +439,13 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">scheme: Pisces</span><br></pre></td></tr></table></figure>
 <h3 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h3><p>在站点配置文件，设置language</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">language: zh-Hans</span><br><span class="line"># 注意不要设置为zh-CN，这是无效的。（坑点</span><br></pre></td></tr></table></figure>
+<h3 id="修改主题颜色"><a href="#修改主题颜色" class="headerlink" title="修改主题颜色"></a>修改主题颜色</h3><p>Next的配色文件是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\Hexo\themes\next\source\css\_variables\base.styl</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+<p>里边是现有的配色方案，自定义的话只要修改一下参数的定义值就好了。我把默认的黑色改成了一个 浅青色：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// $black-deep   = #222 原本的黑色</span><br><span class="line">$black-deep   = #C0D3C8</span><br></pre></td></tr></table></figure>
+<p><img src="https://pic2.zhimg.com/v2-8d4d74d009d5263641b9072d00384021_r.jpg" alt=""></p>
+<h3 id="设置网站icon"><a href="#设置网站icon" class="headerlink" title="设置网站icon"></a>设置网站icon</h3><p>把图标放在<code>/themes/next/source/images</code>里，并且修改主题配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: /images/icon1.png</span><br><span class="line">  medium: /images/icon1.png</span><br><span class="line">  apple_touch_icon: /images/dahuangmao-06.png</span><br><span class="line">  safari_pinned_tab: /images/logo.svg</span><br></pre></td></tr></table></figure>
 <h3 id="设置菜单"><a href="#设置菜单" class="headerlink" title="设置菜单"></a>设置菜单</h3><p>菜单配置包括三个部分，第一是菜单项（名称和链接），第二是菜单项的显示文本，第三是菜单项对应的图标。 NexT 使用的是 Font Awesome 提供的图标， <a href="https://fontawesome.com/?from=io" target="_blank" rel="noopener">Font Awesome</a> 提供了 600+ 的图标，可以满足绝大的多数的场景，同时无须担心在 Retina 屏幕下 图标模糊的问题。</p>
 <p>主题配置文件</p>
 <p><strong>设定菜单内容</strong></p>
@@ -581,10 +584,22 @@
 <h3 id="删除底部页脚"><a href="#删除底部页脚" class="headerlink" title="删除底部页脚"></a>删除底部页脚</h3><p>找到<code>/themes/next/layout/_partials/footer.swig文件</code><br> 内容如下:</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"copyright"</span> &gt;</span></span><br><span class="line">  &#123;% set current = date(Date.now(), "YYYY") %&#125;</span><br><span class="line">  © &#123;% if theme.since and theme.since != current %&#125; &#123;&#123; theme.since &#125;&#125; - &#123;% endif %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">itemprop</span>=<span class="string">"copyrightYear"</span>&gt;</span>&#123;&#123; current &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"with-love"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-heart"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"author"</span> <span class="attr">itemprop</span>=<span class="string">"copyrightHolder"</span>&gt;</span>&#123;&#123; config.author &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"powered-by"</span>&gt;</span></span><br><span class="line">  &#123;&#123; __('footer.powered', '<span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"theme-link"</span> <span class="attr">href</span>=<span class="string">"https://hexo.io"</span>&gt;</span>Hexo<span class="tag">&lt;/<span class="name">a</span>&gt;</span>') &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"theme-info"</span>&gt;</span></span><br><span class="line">  &#123;&#123; __('footer.theme') &#125;&#125; -</span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"theme-link"</span> <span class="attr">href</span>=<span class="string">"https://github.com/iissnan/hexo-theme-next"</span>&gt;</span></span><br><span class="line">    NexT.&#123;&#123; theme.scheme &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>删除class 为powered-by的div和theme-info的div即可</p>
+<h3 id="显示页脚运行时间"><a href="#显示页脚运行时间" class="headerlink" title="显示页脚运行时间"></a>显示页脚运行时间</h3><ul>
+<li>在 \themes\next\layout_partials\footer.swig 增加</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- if config.symbols_count_time.total_time %&#125;</span><br><span class="line"></span><br><span class="line">--- 增加 ---</span><br><span class="line">&lt;div id=&quot;sitetime&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script language=javascript&gt;</span><br><span class="line">	function siteTime()&#123;</span><br><span class="line">		window.setTimeout(&quot;siteTime()&quot;, 1000);</span><br><span class="line">		var seconds = 1000;</span><br><span class="line">		var minutes = seconds * 60;</span><br><span class="line">		var hours = minutes * 60;</span><br><span class="line">		var days = hours * 24;</span><br><span class="line">		var years = days * 365;</span><br><span class="line">		var today = new Date();</span><br><span class="line">		var todayYear = today.getFullYear();</span><br><span class="line">		var todayMonth = today.getMonth()+1;</span><br><span class="line">		var todayDate = today.getDate();</span><br><span class="line">		var todayHour = today.getHours();</span><br><span class="line">		var todayMinute = today.getMinutes();</span><br><span class="line">		var todaySecond = today.getSeconds();</span><br><span class="line">		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)</span><br><span class="line">		year - 作为date对象的年份，为4位年份值</span><br><span class="line">		month - 0-11之间的整数，做为date对象的月份</span><br><span class="line">		day - 1-31之间的整数，做为date对象的天数</span><br><span class="line">		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数</span><br><span class="line">		minutes - 0-59之间的整数，做为date对象的分钟数</span><br><span class="line">		seconds - 0-59之间的整数，做为date对象的秒数</span><br><span class="line">		microseconds - 0-999之间的整数，做为date对象的毫秒数 */</span><br><span class="line">		var t1 = Date.UTC(2017,08,12,15,15,47); //建站时间</span><br><span class="line">		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);</span><br><span class="line">		var diff = t2-t1;</span><br><span class="line">		var diffYears = Math.floor(diff/years);</span><br><span class="line">		var diffDays = Math.floor((diff/days)-diffYears*365);</span><br><span class="line">		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);</span><br><span class="line">		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);</span><br><span class="line">		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);</span><br><span class="line">		document.getElementById(&quot;sitetime&quot;).innerHTML=&quot; 已运行&quot;+diffYears+&quot; 年 &quot;+diffDays+&quot; 天 &quot;+diffHours+&quot; 小时 &quot;+diffMinutes+&quot; 分钟 &quot;+diffSeconds+&quot; 秒&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">	siteTime();</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">--- 增加 ---</span><br><span class="line"></span><br><span class="line">&#123;%- if theme.footer.powered.enable %&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="阅读全文"><a href="#阅读全文" class="headerlink" title="阅读全文"></a>阅读全文</h3><ul>
+<li>在文章加</li>
+<li>修改 主题配置文件 -&gt; auto_excerpt -&gt; length</li>
+</ul>
 <p><br><br></p>
+<h3 id="404页面"><a href="#404页面" class="headerlink" title="404页面"></a>404页面</h3><p>原来小小的举动也可以为公益事业献出自己的一份爱心，何乐而不为呢？</p>
+<p>-新建 404.html 页面，放到主题的 source 目录下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html;charset=utf-8;&quot;/&gt;</span><br><span class="line">  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;</span><br><span class="line">  &lt;meta name=&quot;robots&quot; content=&quot;all&quot; /&gt;</span><br><span class="line">  &lt;meta name=&quot;robots&quot; content=&quot;index,follow&quot;/&gt;</span><br><span class="line">  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://qzone.qq.com/gy/404/style/404style.css&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;script type=&quot;text/plain&quot; src=&quot;http://www.qq.com/404/search_children.js&quot;</span><br><span class="line">          charset=&quot;utf-8&quot; homePageUrl=&quot;/&quot;</span><br><span class="line">          homePageName=&quot;回到我的主页&quot;&gt;</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">  &lt;script src=&quot;https://qzone.qq.com/gy/404/data.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script src=&quot;https://qzone.qq.com/gy/404/page.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 <p>【参考文章】：</p>
 <ul>
 <li><a href="http://super-wei.top/2019/01/24/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E9%85%8D%E7%BD%AEnext%E4%B8%BB%E9%A2%98/" target="_blank" rel="noopener">配置next主题 from super-wei.top</a></li>
+<li><a href="http://super-wei.top/2019/08/24/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/Next7.x%E5%8D%87%E7%BA%A7%E5%8F%8A%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/" target="_blank" rel="noopener">Next7.x升级及相关配置 from super-wei.top</a></li>
 </ul>
 
       
@@ -711,7 +726,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -722,7 +737,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -733,7 +748,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -788,7 +803,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Next"><span class="nav-number">2.</span> <span class="nav-text">安装Next</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载主题"><span class="nav-number">2.1.</span> <span class="nav-text">下载主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启用主题"><span class="nav-number">2.2.</span> <span class="nav-text">启用主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证主题"><span class="nav-number">2.3.</span> <span class="nav-text">验证主题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题设定"><span class="nav-number">3.</span> <span class="nav-text">主题设定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选择皮肤"><span class="nav-number">3.1.</span> <span class="nav-text">选择皮肤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置语言"><span class="nav-number">3.2.</span> <span class="nav-text">设置语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置菜单"><span class="nav-number">3.3.</span> <span class="nav-text">设置菜单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建分类"><span class="nav-number">3.4.</span> <span class="nav-text">创建分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生成分类页"><span class="nav-number">3.4.1.</span> <span class="nav-text">生成分类页</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建标签"><span class="nav-number">3.5.</span> <span class="nav-text">创建标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生成标签页"><span class="nav-number">3.5.1.</span> <span class="nav-text">生成标签页</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建新文章"><span class="nav-number">3.6.</span> <span class="nav-text">创建新文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置头像"><span class="nav-number">3.7.</span> <span class="nav-text">设置头像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置作者昵称"><span class="nav-number">3.8.</span> <span class="nav-text">设置作者昵称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#站点描述"><span class="nav-number">3.9.</span> <span class="nav-text">站点描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#百度统计"><span class="nav-number">3.10.</span> <span class="nav-text">百度统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#侧边栏社交链接"><span class="nav-number">3.11.</span> <span class="nav-text">侧边栏社交链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#腾讯公益404页面"><span class="nav-number">3.12.</span> <span class="nav-text">腾讯公益404页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#站点建立时间"><span class="nav-number">3.13.</span> <span class="nav-text">站点建立时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#站内搜索"><span class="nav-number">3.14.</span> <span class="nav-text">站内搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Valine评论功能"><span class="nav-number">3.15.</span> <span class="nav-text">Valine评论功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#置顶功能"><span class="nav-number">3.16.</span> <span class="nav-text">置顶功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除底部页脚"><span class="nav-number">3.17.</span> <span class="nav-text">删除底部页脚</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Next"><span class="nav-number">2.</span> <span class="nav-text">安装Next</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载主题"><span class="nav-number">2.1.</span> <span class="nav-text">下载主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启用主题"><span class="nav-number">2.2.</span> <span class="nav-text">启用主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证主题"><span class="nav-number">2.3.</span> <span class="nav-text">验证主题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题设定"><span class="nav-number">3.</span> <span class="nav-text">主题设定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选择皮肤"><span class="nav-number">3.1.</span> <span class="nav-text">选择皮肤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置语言"><span class="nav-number">3.2.</span> <span class="nav-text">设置语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改主题颜色"><span class="nav-number">3.3.</span> <span class="nav-text">修改主题颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置网站icon"><span class="nav-number">3.4.</span> <span class="nav-text">设置网站icon</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置菜单"><span class="nav-number">3.5.</span> <span class="nav-text">设置菜单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建分类"><span class="nav-number">3.6.</span> <span class="nav-text">创建分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生成分类页"><span class="nav-number">3.6.1.</span> <span class="nav-text">生成分类页</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建标签"><span class="nav-number">3.7.</span> <span class="nav-text">创建标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生成标签页"><span class="nav-number">3.7.1.</span> <span class="nav-text">生成标签页</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建新文章"><span class="nav-number">3.8.</span> <span class="nav-text">创建新文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置头像"><span class="nav-number">3.9.</span> <span class="nav-text">设置头像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置作者昵称"><span class="nav-number">3.10.</span> <span class="nav-text">设置作者昵称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#站点描述"><span class="nav-number">3.11.</span> <span class="nav-text">站点描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#百度统计"><span class="nav-number">3.12.</span> <span class="nav-text">百度统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#侧边栏社交链接"><span class="nav-number">3.13.</span> <span class="nav-text">侧边栏社交链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#腾讯公益404页面"><span class="nav-number">3.14.</span> <span class="nav-text">腾讯公益404页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#站点建立时间"><span class="nav-number">3.15.</span> <span class="nav-text">站点建立时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#站内搜索"><span class="nav-number">3.16.</span> <span class="nav-text">站内搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Valine评论功能"><span class="nav-number">3.17.</span> <span class="nav-text">Valine评论功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#置顶功能"><span class="nav-number">3.18.</span> <span class="nav-text">置顶功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除底部页脚"><span class="nav-number">3.19.</span> <span class="nav-text">删除底部页脚</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示页脚运行时间"><span class="nav-number">3.20.</span> <span class="nav-text">显示页脚运行时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阅读全文"><span class="nav-number">3.21.</span> <span class="nav-text">阅读全文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#404页面"><span class="nav-number">3.22.</span> <span class="nav-text">404页面</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -808,7 +823,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright" style="font-size:10px;">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -823,17 +838,43 @@
 
 
 
+<div id="sitetime" style="font-size:10px;"></div>
+<script language="javascript">
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2017,08,12,15,15,47); //建站时间
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}
+	siteTime();
+</script>
         
-<div class="busuanzi-count">
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-
-
-
-</div>
-
 
 
 

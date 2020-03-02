@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="1. 处理机调度1.1 概念 1.2 处理机调度的层级高级调度（作业调度） 中级调度（内存调度） 低级调度（进程调度）  三者对比 2. 进程调度2.1 进程调度的时机 2.2 进程调度的方式抢占式与非抢占式   3. 调度算法的评价指标3.1 CPU利用率 3.2 系统吞吐量 3.3 周转时间  3.4 等待时间 3.5 响应时间 4.调度算法即可用于作业调度又可用于进程调度的算法：4.1  先">
+<meta name="description" content="1. 处理机调度1.1 概念 1.2 处理机调度的层级高级调度（作业调度） 中级调度（内存调度） 低级调度（进程调度）  三者对比 2. 进程调度2.1 进程调度的时机 2.2 进程调度的方式抢占式与非抢占式   3. 调度算法的评价指标3.1 CPU利用率 3.2 系统吞吐量 3.3 周转时间  3.4 等待时间 3.5 响应时间 4.调度算法即可用于作业调度又可用于进程调度的算法：4.">
 <meta name="keywords" content="操作系统">
 <meta property="og:type" content="article">
 <meta property="og:title" content="处理机调度与死锁">
 <meta property="og:url" content="https://dunteng.github.io/2019/03/07/03处理机调度与死锁.html">
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
-<meta property="og:description" content="1. 处理机调度1.1 概念 1.2 处理机调度的层级高级调度（作业调度） 中级调度（内存调度） 低级调度（进程调度）  三者对比 2. 进程调度2.1 进程调度的时机 2.2 进程调度的方式抢占式与非抢占式   3. 调度算法的评价指标3.1 CPU利用率 3.2 系统吞吐量 3.3 周转时间  3.4 等待时间 3.5 响应时间 4.调度算法即可用于作业调度又可用于进程调度的算法：4.1  先">
+<meta property="og:description" content="1. 处理机调度1.1 概念 1.2 处理机调度的层级高级调度（作业调度） 中级调度（内存调度） 低级调度（进程调度）  三者对比 2. 进程调度2.1 进程调度的时机 2.2 进程调度的方式抢占式与非抢占式   3. 调度算法的评价指标3.1 CPU利用率 3.2 系统吞吐量 3.3 周转时间  3.4 等待时间 3.5 响应时间 4.调度算法即可用于作业调度又可用于进程调度的算法：4.">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qn1rcznjj30yg0iuwsp.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qn7g121ij30w70ij4di.jpg">
@@ -134,10 +134,10 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sc5w292uj311y0lbx3y.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sc8aran4j311y0lbk1y.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006ttwEMgy1g0sckz7n0oj311y0lbtjq.jpg">
-<meta property="og:updated_time" content="2019-03-23T03:37:29.125Z">
+<meta property="og:updated_time" content="2020-03-01T19:11:16.810Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="处理机调度与死锁">
-<meta name="twitter:description" content="1. 处理机调度1.1 概念 1.2 处理机调度的层级高级调度（作业调度） 中级调度（内存调度） 低级调度（进程调度）  三者对比 2. 进程调度2.1 进程调度的时机 2.2 进程调度的方式抢占式与非抢占式   3. 调度算法的评价指标3.1 CPU利用率 3.2 系统吞吐量 3.3 周转时间  3.4 等待时间 3.5 响应时间 4.调度算法即可用于作业调度又可用于进程调度的算法：4.1  先">
+<meta name="twitter:description" content="1. 处理机调度1.1 概念 1.2 处理机调度的层级高级调度（作业调度） 中级调度（内存调度） 低级调度（进程调度）  三者对比 2. 进程调度2.1 进程调度的时机 2.2 进程调度的方式抢占式与非抢占式   3. 调度算法的评价指标3.1 CPU利用率 3.2 系统吞吐量 3.3 周转时间  3.4 等待时间 3.5 响应时间 4.调度算法即可用于作业调度又可用于进程调度的算法：4.">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qn1rcznjj30yg0iuwsp.jpg">
 
 
@@ -394,6 +394,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/操作系统/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -436,7 +458,11 @@
       
 
       
-        <h1 id="1-处理机调度"><a href="#1-处理机调度" class="headerlink" title="1. 处理机调度"></a>1. 处理机调度</h1><h2 id="1-1-概念"><a href="#1-1-概念" class="headerlink" title="1.1 概念"></a>1.1 概念</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qn1rcznjj30yg0iuwsp.jpg" alt=""></p>
+        <meta name="referrer" content="no-referrer">
+
+
+
+<h1 id="1-处理机调度"><a href="#1-处理机调度" class="headerlink" title="1. 处理机调度"></a>1. 处理机调度</h1><h2 id="1-1-概念"><a href="#1-1-概念" class="headerlink" title="1.1 概念"></a>1.1 概念</h2><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qn1rcznjj30yg0iuwsp.jpg" alt=""></p>
 <h2 id="1-2-处理机调度的层级"><a href="#1-2-处理机调度的层级" class="headerlink" title="1.2 处理机调度的层级"></a>1.2 处理机调度的层级</h2><h4 id="高级调度（作业调度）"><a href="#高级调度（作业调度）" class="headerlink" title="高级调度（作业调度）"></a>高级调度（作业调度）</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qn7g121ij30w70ij4di.jpg" alt=""></p>
 <h4 id="中级调度（内存调度）"><a href="#中级调度（内存调度）" class="headerlink" title="中级调度（内存调度）"></a>中级调度（内存调度）</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qnc0pbvlj30wf0ibtoi.jpg" alt=""></p>
 <h4 id="低级调度（进程调度）"><a href="#低级调度（进程调度）" class="headerlink" title="低级调度（进程调度）"></a>低级调度（进程调度）</h4><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qnf09rtjj30yz0j0wt7.jpg" alt=""></p>
@@ -615,7 +641,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -626,7 +652,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -637,7 +663,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -722,15 +748,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 

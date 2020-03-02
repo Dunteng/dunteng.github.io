@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="html/css,">
+  <meta name="keywords" content="html/css,清除浮动,">
 
 
 
@@ -79,21 +79,21 @@
 
 
 
-<meta name="description" content="为什么要清除浮动由于浮动元素不再占用原文档流的位置，所以它会对后面的元素排版产生影响，为了解决这些问题，此时就需要在该元素中清除浮动。 准确地说，并不是清除浮动，而是清除浮动后造成的影响 如果浮动一开始就是一个美丽的错误，那么请用正确的方法挽救它。 清除浮动本质我们一般不直接给定父级元素的高度，更希望子元素可以撑起父级元素。 清除浮动主要为了解决父级元素高度为0，因为子级浮动引起无法撑起父级元素的">
-<meta name="keywords" content="html&#x2F;css">
+<meta name="description" content="为什么要清除浮动由于浮动元素不再占用原文档流的位置，所以它会对后面的元素排版产生影响，为了解决这些问题，此时就需要在该元素中清除浮动。 准确地说，并不是清除浮动，而是清除浮动后造成的影响 如果浮动一开始就是一个美丽的错误，那么请用正确的方法挽救它。 清除浮动本质我们一般不直接给定父级元素的高度，更希望子元素可以撑起父级元素。 清除浮动主要为了解决父级元素高度为0，因为子级浮动引起无法撑起父">
+<meta name="keywords" content="html&#x2F;css,清除浮动">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈清除（闭合）浮动">
 <meta property="og:url" content="https://dunteng.github.io/2018/12/05/浅谈清除（闭合）浮动.html">
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
-<meta property="og:description" content="为什么要清除浮动由于浮动元素不再占用原文档流的位置，所以它会对后面的元素排版产生影响，为了解决这些问题，此时就需要在该元素中清除浮动。 准确地说，并不是清除浮动，而是清除浮动后造成的影响 如果浮动一开始就是一个美丽的错误，那么请用正确的方法挽救它。 清除浮动本质我们一般不直接给定父级元素的高度，更希望子元素可以撑起父级元素。 清除浮动主要为了解决父级元素高度为0，因为子级浮动引起无法撑起父级元素的">
+<meta property="og:description" content="为什么要清除浮动由于浮动元素不再占用原文档流的位置，所以它会对后面的元素排版产生影响，为了解决这些问题，此时就需要在该元素中清除浮动。 准确地说，并不是清除浮动，而是清除浮动后造成的影响 如果浮动一开始就是一个美丽的错误，那么请用正确的方法挽救它。 清除浮动本质我们一般不直接给定父级元素的高度，更希望子元素可以撑起父级元素。 清除浮动主要为了解决父级元素高度为0，因为子级浮动引起无法撑起父">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wx3.sinaimg.cn/large/006ttwEMgy1fy35tsuml3j30gp09hdh5.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/large/006ttwEMgy1fy35ts9v92j30gq05iwfn.jpg">
 <meta property="og:image" content="http://wx2.sinaimg.cn/large/006ttwEMgy1fy35tt9hxkj30u80ho41p.jpg">
-<meta property="og:updated_time" content="2019-03-23T03:32:03.411Z">
+<meta property="og:updated_time" content="2020-03-01T19:16:58.783Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈清除（闭合）浮动">
-<meta name="twitter:description" content="为什么要清除浮动由于浮动元素不再占用原文档流的位置，所以它会对后面的元素排版产生影响，为了解决这些问题，此时就需要在该元素中清除浮动。 准确地说，并不是清除浮动，而是清除浮动后造成的影响 如果浮动一开始就是一个美丽的错误，那么请用正确的方法挽救它。 清除浮动本质我们一般不直接给定父级元素的高度，更希望子元素可以撑起父级元素。 清除浮动主要为了解决父级元素高度为0，因为子级浮动引起无法撑起父级元素的">
+<meta name="twitter:description" content="为什么要清除浮动由于浮动元素不再占用原文档流的位置，所以它会对后面的元素排版产生影响，为了解决这些问题，此时就需要在该元素中清除浮动。 准确地说，并不是清除浮动，而是清除浮动后造成的影响 如果浮动一开始就是一个美丽的错误，那么请用正确的方法挽救它。 清除浮动本质我们一般不直接给定父级元素的高度，更希望子元素可以撑起父级元素。 清除浮动主要为了解决父级元素高度为0，因为子级浮动引起无法撑起父">
 <meta name="twitter:image" content="http://wx3.sinaimg.cn/large/006ttwEMgy1fy35tsuml3j30gp09hdh5.jpg">
 
 
@@ -350,6 +350,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -392,7 +414,11 @@
       
 
       
-        <h2 id="为什么要清除浮动"><a href="#为什么要清除浮动" class="headerlink" title="为什么要清除浮动"></a>为什么要清除浮动</h2><p>由于浮动元素不再占用原文档流的位置，所以它会对后面的元素排版产生影响，为了解决这些问题，此时就需要在该元素中清除浮动。</p>
+        <meta name="referrer" content="no-referrer">
+
+
+
+<h2 id="为什么要清除浮动"><a href="#为什么要清除浮动" class="headerlink" title="为什么要清除浮动"></a>为什么要清除浮动</h2><p>由于浮动元素不再占用原文档流的位置，所以它会对后面的元素排版产生影响，为了解决这些问题，此时就需要在该元素中清除浮动。</p>
 <p>准确地说，并不是清除浮动，而是<strong>清除浮动后造成的影响</strong></p>
 <p>如果浮动一开始就是一个美丽的错误，那么请用正确的方法挽救它。</p>
 <h2 id="清除浮动本质"><a href="#清除浮动本质" class="headerlink" title="清除浮动本质"></a>清除浮动本质</h2><p>我们一般不直接给定父级元素的高度，更希望子元素可以撑起父级元素。</p>
@@ -465,6 +491,8 @@
           
             <a href="/tags/html-css/" rel="tag"># html/css</a>
           
+            <a href="/tags/清除浮动/" rel="tag"># 清除浮动</a>
+          
         </div>
       
 
@@ -476,8 +504,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/30/ABOUT ME.html" rel="next" title="你好哇~">
-                <i class="fa fa-chevron-left"></i> 你好哇~
+              <a href="/2018/08/22/数组.html" rel="next" title="数组常用方法">
+                <i class="fa fa-chevron-left"></i> 数组常用方法
               </a>
             
           </div>
@@ -486,8 +514,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/12/05/前端开发仿站小工具.html" rel="prev" title="前端开发仿站小工具">
-                前端开发仿站小工具 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/12/06/绝对定位盒子水平居中.html" rel="prev" title="绝对定位的盒子水平/垂直居中">
+                绝对定位的盒子水平/垂直居中 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -573,7 +601,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -584,7 +612,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -595,7 +623,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -680,15 +708,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 

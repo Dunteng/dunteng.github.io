@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript,">
+  <meta name="keywords" content="JavaScript,Ajax,">
 
 
 
@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="为了一步步地理清封装步骤，我打算逐步封装ajax函数的功能，分成了以下6个版本： Version 1123456789101112131415    function ajax (method, url, params) &amp;#123;      xhr.open(method, url)      xhr.setRequestHeader(&apos;Content-Type&apos;, &apos;application/">
-<meta name="keywords" content="JavaScript">
+<meta name="description" content="为了一步步地理清封装步骤，我打算逐步封装ajax函数的功能，分成了以下6个版本： Version 1123456789101112131415    function ajax (method, url, params) &amp;#123;      xhr.open(method, url)      xhr.setRequestHeader(&apos;Content-Type&apos;, &apos;applicat">
+<meta name="keywords" content="JavaScript,Ajax">
 <meta property="og:type" content="article">
 <meta property="og:title" content="优化AJAX的JS封装代码">
 <meta property="og:url" content="https://dunteng.github.io/2019/03/13/依此优化AJAX的封装代码.html">
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
-<meta property="og:description" content="为了一步步地理清封装步骤，我打算逐步封装ajax函数的功能，分成了以下6个版本： Version 1123456789101112131415    function ajax (method, url, params) &amp;#123;      xhr.open(method, url)      xhr.setRequestHeader(&apos;Content-Type&apos;, &apos;application/">
+<meta property="og:description" content="为了一步步地理清封装步骤，我打算逐步封装ajax函数的功能，分成了以下6个版本： Version 1123456789101112131415    function ajax (method, url, params) &amp;#123;      xhr.open(method, url)      xhr.setRequestHeader(&apos;Content-Type&apos;, &apos;applicat">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/ajaxreturn1.jpg">
-<meta property="og:updated_time" content="2019-06-23T08:54:07.368Z">
+<meta property="og:updated_time" content="2020-03-01T18:25:18.061Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="优化AJAX的JS封装代码">
-<meta name="twitter:description" content="为了一步步地理清封装步骤，我打算逐步封装ajax函数的功能，分成了以下6个版本： Version 1123456789101112131415    function ajax (method, url, params) &amp;#123;      xhr.open(method, url)      xhr.setRequestHeader(&apos;Content-Type&apos;, &apos;application/">
+<meta name="twitter:description" content="为了一步步地理清封装步骤，我打算逐步封装ajax函数的功能，分成了以下6个版本： Version 1123456789101112131415    function ajax (method, url, params) &amp;#123;      xhr.open(method, url)      xhr.setRequestHeader(&apos;Content-Type&apos;, &apos;applicat">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/ajaxreturn1.jpg">
 
 
@@ -348,6 +348,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ajax/" itemprop="url" rel="index">
+                    <span itemprop="name">Ajax</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -390,7 +412,11 @@
       
 
       
-        <p>为了一步步地理清封装步骤，我打算逐步封装ajax函数的功能，分成了以下6个版本：</p>
+        <meta name="referrer" content="no-referrer">
+
+
+
+<p>为了一步步地理清封装步骤，我打算逐步封装ajax函数的功能，分成了以下6个版本：</p>
 <h2 id="Version-1"><a href="#Version-1" class="headerlink" title="Version 1"></a>Version 1</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">ajax</span> (<span class="params">method, url, params</span>) </span>&#123;</span><br><span class="line">      xhr.open(method, url)</span><br><span class="line">      xhr.setRequestHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/x-www-form-urlencoded'</span>) <span class="comment">//针对post的设置请求头</span></span><br><span class="line"></span><br><span class="line">      params = params || <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">      xhr.send(params)</span><br><span class="line">      xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.readyState !== <span class="number">4</span>) <span class="keyword">return</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.responseText)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">ajax(<span class="string">'GET'</span>,<span class="string">'xxx.php'</span>,<span class="string">'id=1'</span>);</span><br><span class="line">ajax(<span class="string">'POST'</span>,<span class="string">'xxx.php'</span>,<span class="string">'key1=value1&amp;key2=value2'</span>);</span><br></pre></td></tr></table></figure>
 <p><strong>说明：</strong> </p>
 <ul>
@@ -455,6 +481,8 @@
         <div class="post-tags">
           
             <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/Ajax/" rel="tag"># Ajax</a>
           
         </div>
       
@@ -564,7 +592,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -575,7 +603,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -586,7 +614,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -671,15 +699,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 

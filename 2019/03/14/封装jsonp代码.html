@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript,">
+  <meta name="keywords" content="JavaScript,跨域,jsonp,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="jsonp的封装代码： 1234567891011121314151617181920212223242526272829303132function jsonp (url, params, callback) &amp;#123;  var funcName = &apos;jsonp_&apos; + Date.now() + Math.random().toString().substr(2, 5)  if (type">
-<meta name="keywords" content="JavaScript">
+<meta name="description" content="jsonp的封装代码： 1234567891011121314151617181920212223242526272829303132function jsonp (url, params, callback) &amp;#123;  var funcName = &apos;jsonp_&apos; + Date.now() + Math.random().toString().substr(2, 5)  if (">
+<meta name="keywords" content="JavaScript,跨域,jsonp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="封装Jsonp代码">
 <meta property="og:url" content="https://dunteng.github.io/2019/03/14/封装jsonp代码.html">
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
-<meta property="og:description" content="jsonp的封装代码： 1234567891011121314151617181920212223242526272829303132function jsonp (url, params, callback) &amp;#123;  var funcName = &apos;jsonp_&apos; + Date.now() + Math.random().toString().substr(2, 5)  if (type">
+<meta property="og:description" content="jsonp的封装代码： 1234567891011121314151617181920212223242526272829303132function jsonp (url, params, callback) &amp;#123;  var funcName = &apos;jsonp_&apos; + Date.now() + Math.random().toString().substr(2, 5)  if (">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-21T02:41:22.667Z">
+<meta property="og:updated_time" content="2020-03-01T18:57:08.506Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="封装Jsonp代码">
-<meta name="twitter:description" content="jsonp的封装代码： 1234567891011121314151617181920212223242526272829303132function jsonp (url, params, callback) &amp;#123;  var funcName = &apos;jsonp_&apos; + Date.now() + Math.random().toString().substr(2, 5)  if (type">
+<meta name="twitter:description" content="jsonp的封装代码： 1234567891011121314151617181920212223242526272829303132function jsonp (url, params, callback) &amp;#123;  var funcName = &apos;jsonp_&apos; + Date.now() + Math.random().toString().substr(2, 5)  if (">
 
 
 
@@ -346,6 +346,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/跨域/" itemprop="url" rel="index">
+                    <span itemprop="name">跨域</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -388,7 +410,11 @@
       
 
       
-        <p>jsonp的封装代码：</p>
+        <meta name="referrer" content="no-referrer">
+
+
+
+<p>jsonp的封装代码：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsonp</span> (<span class="params">url, params, callback</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> funcName = <span class="string">'jsonp_'</span> + <span class="built_in">Date</span>.now() + <span class="built_in">Math</span>.random().toString().substr(<span class="number">2</span>, <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> params === <span class="string">'object'</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> tempArr = []</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> params) &#123;</span><br><span class="line">      <span class="keyword">var</span> value = params[key]</span><br><span class="line">      tempArr.push(key + <span class="string">'='</span> + value)</span><br><span class="line">    &#125;</span><br><span class="line">    params = tempArr.join(<span class="string">'&amp;'</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>)</span><br><span class="line">  script.src = url + <span class="string">'?'</span> + params + <span class="string">'&amp;callback='</span> + funcName</span><br><span class="line">  <span class="built_in">document</span>.body.appendChild(script)</span><br><span class="line"></span><br><span class="line">  <span class="built_in">window</span>[funcName] = <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    callback(data)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span> <span class="built_in">window</span>[funcName]</span><br><span class="line">    <span class="built_in">document</span>.body.removeChild(script)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">jsonp(<span class="string">'http://localhost/jsonp/server.php'</span>, &#123; <span class="attr">id</span>: <span class="number">123</span> &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(res)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">jsonp(<span class="string">'http://localhost/jsonp/server.php'</span>, &#123; <span class="attr">id</span>: <span class="number">123</span> &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(res)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>例子中的server.php代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">$conn = mysqli_connect(&apos;localhost&apos;, &apos;root&apos;, &apos;123456&apos;, &apos;demo&apos;);</span><br><span class="line"></span><br><span class="line">$query = mysqli_query($conn, &apos;select * from users&apos;);</span><br><span class="line"></span><br><span class="line">while ($row = mysqli_fetch_assoc($query)) &#123;</span><br><span class="line">  $data[] = $row;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (empty($_GET[&apos;callback&apos;])) &#123;</span><br><span class="line">  header(&apos;Content-Type: application/json&apos;);</span><br><span class="line">  echo json_encode($data);</span><br><span class="line">  exit();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 如果客户端采用的是 script 标记对我发送的请求</span><br><span class="line">// 一定要返回一段 JavaScript</span><br><span class="line">header(&apos;Content-Type: application/javascript&apos;);</span><br><span class="line">$result = json_encode($data);</span><br><span class="line"></span><br><span class="line">$callback_name = $_GET[&apos;callback&apos;];</span><br><span class="line"></span><br><span class="line">echo &quot;typeof &#123;$callback_name&#125; === &apos;function&apos; &amp;&amp; &#123;$callback_name&#125;(&#123;$result&#125;)&quot;;</span><br></pre></td></tr></table></figure>
@@ -413,6 +439,10 @@
         <div class="post-tags">
           
             <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/跨域/" rel="tag"># 跨域</a>
+          
+            <a href="/tags/jsonp/" rel="tag"># jsonp</a>
           
         </div>
       
@@ -513,7 +543,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -524,7 +554,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -535,7 +565,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -604,15 +634,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 

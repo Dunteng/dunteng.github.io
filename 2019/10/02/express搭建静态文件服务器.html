@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="后端,node.js,">
 
 
 
@@ -79,19 +79,20 @@
 
 
 
-<meta name="description" content="搭建静态文件服务器之前用过原生的node.js来写服务器👉（net服务器，http服务器） 今天用express，比起原生node.js来太简单了！ 先npm init初始化项目文件夹，运行npm install express --save安装express. index.js服务器启动文件👇 12345var express = require(&apos;express&apos;);var app = n">
+<meta name="description" content="搭建静态文件服务器之前用过原生的node.js来写服务器👉（net服务器，http服务器） 今天用express，比起原生node.js来太简单了！ 先npm init初始化项目文件夹，运行npm install express --save安装express. index.js服务器启动文件👇 12345var express = require(&apos;express&apos;);var app =">
+<meta name="keywords" content="后端,node.js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用express搭建静态文件服务器">
 <meta property="og:url" content="https://dunteng.github.io/2019/10/02/express搭建静态文件服务器.html">
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
-<meta property="og:description" content="搭建静态文件服务器之前用过原生的node.js来写服务器👉（net服务器，http服务器） 今天用express，比起原生node.js来太简单了！ 先npm init初始化项目文件夹，运行npm install express --save安装express. index.js服务器启动文件👇 12345var express = require(&apos;express&apos;);var app = n">
+<meta property="og:description" content="搭建静态文件服务器之前用过原生的node.js来写服务器👉（net服务器，http服务器） 今天用express，比起原生node.js来太简单了！ 先npm init初始化项目文件夹，运行npm install express --save安装express. index.js服务器启动文件👇 12345var express = require(&apos;express&apos;);var app =">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://pic2.zhimg.com/v2-30bad54d291afaa93d00b03e257fb535_r.jpg">
 <meta property="og:image" content="https://pic3.zhimg.com/v2-6380ca214c7bf0c61be476f8cc1fbf0a_r.jpg">
-<meta property="og:updated_time" content="2019-10-25T13:15:38.028Z">
+<meta property="og:updated_time" content="2020-03-01T17:26:51.526Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用express搭建静态文件服务器">
-<meta name="twitter:description" content="搭建静态文件服务器之前用过原生的node.js来写服务器👉（net服务器，http服务器） 今天用express，比起原生node.js来太简单了！ 先npm init初始化项目文件夹，运行npm install express --save安装express. index.js服务器启动文件👇 12345var express = require(&apos;express&apos;);var app = n">
+<meta name="twitter:description" content="搭建静态文件服务器之前用过原生的node.js来写服务器👉（net服务器，http服务器） 今天用express，比起原生node.js来太简单了！ 先npm init初始化项目文件夹，运行npm install express --save安装express. index.js服务器启动文件👇 12345var express = require(&apos;express&apos;);var app =">
 <meta name="twitter:image" content="https://pic2.zhimg.com/v2-30bad54d291afaa93d00b03e257fb535_r.jpg">
 
 
@@ -348,6 +349,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/node-js/" itemprop="url" rel="index">
+                    <span itemprop="name">node.js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -390,7 +413,9 @@
       
 
       
-        <h2 id="搭建静态文件服务器"><a href="#搭建静态文件服务器" class="headerlink" title="搭建静态文件服务器"></a>搭建静态文件服务器</h2><p>之前用过原生的node.js来写服务器👉（<a href="https://dunteng.github.io/[object%20Object]2019/09/30/net%E6%A8%A1%E5%9D%97%E5%86%99%E5%BE%AE%E5%9E%8Bnode%E6%9C%8D%E5%8A%A1%E5%99%A8.html">net服务器</a>，<a href="https://dunteng.github.io/[object%20Object]2019/10/01/%E4%BD%BF%E7%94%A8http%E6%A8%A1%E5%9D%97%E9%87%8D%E6%9E%84%E5%BE%AE%E5%9E%8B%E6%9C%8D%E5%8A%A1%E5%99%A8.html">http服务器</a>）</p>
+        <meta name="referrer" content="no-referrer">
+
+<h2 id="搭建静态文件服务器"><a href="#搭建静态文件服务器" class="headerlink" title="搭建静态文件服务器"></a>搭建静态文件服务器</h2><p>之前用过原生的node.js来写服务器👉（<a href="https://dunteng.github.io/[object%20Object]2019/09/30/net%E6%A8%A1%E5%9D%97%E5%86%99%E5%BE%AE%E5%9E%8Bnode%E6%9C%8D%E5%8A%A1%E5%99%A8.html">net服务器</a>，<a href="https://dunteng.github.io/[object%20Object]2019/10/01/%E4%BD%BF%E7%94%A8http%E6%A8%A1%E5%9D%97%E9%87%8D%E6%9E%84%E5%BE%AE%E5%9E%8B%E6%9C%8D%E5%8A%A1%E5%99%A8.html">http服务器</a>）</p>
 <p>今天用express，比起<strong>原生node.js</strong>来太简单了！</p>
 <p>先<code>npm init</code>初始化项目文件夹，运行<code>npm install express --save</code>安装express.</p>
 <p>index.js服务器启动文件👇</p>
@@ -419,6 +444,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/后端/" rel="tag"># 后端</a>
+          
+            <a href="/tags/node-js/" rel="tag"># node.js</a>
+          
+        </div>
+      
 
       
       
@@ -428,8 +461,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/01/使用http模块重构微型服务器.html" rel="next" title="使用http模块重构微型服务器">
-                <i class="fa fa-chevron-left"></i> 使用http模块重构微型服务器
+              <a href="/2019/10/01/MySQL基本的增删改查操作.html" rel="next" title="MySQL基本的增删改查操作">
+                <i class="fa fa-chevron-left"></i> MySQL基本的增删改查操作
               </a>
             
           </div>
@@ -525,7 +558,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -536,7 +569,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -547,7 +580,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -632,15 +665,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 

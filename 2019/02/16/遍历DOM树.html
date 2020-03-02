@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="代码： 123456789101112131415161718192021222324252627282930313233343536373839404142//  第一个函数:给我根节点,我会找到所有的子节点:forDOM(根节点)//  获取这个根节点的子节点//  var children=根节点的.children//  调用第二个函数//  第二个函数:给我所有的子节点,我把每个子节点的">
+<meta name="description" content="代码： 123456789101112131415161718192021222324252627282930313233343536373839404142//  第一个函数:给我根节点,我会找到所有的子节点:forDOM(根节点)//  获取这个根节点的子节点//  var children=根节点的.children//  调用第二个函数//  第二个函数:给我所有的子节点,我把每个子节">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="遍历DOM树">
 <meta property="og:url" content="https://dunteng.github.io/2019/02/16/遍历DOM树.html">
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
-<meta property="og:description" content="代码： 123456789101112131415161718192021222324252627282930313233343536373839404142//  第一个函数:给我根节点,我会找到所有的子节点:forDOM(根节点)//  获取这个根节点的子节点//  var children=根节点的.children//  调用第二个函数//  第二个函数:给我所有的子节点,我把每个子节点的">
+<meta property="og:description" content="代码： 123456789101112131415161718192021222324252627282930313233343536373839404142//  第一个函数:给我根节点,我会找到所有的子节点:forDOM(根节点)//  获取这个根节点的子节点//  var children=根节点的.children//  调用第二个函数//  第二个函数:给我所有的子节点,我把每个子节">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-21T02:49:21.795Z">
+<meta property="og:updated_time" content="2020-03-01T18:51:54.206Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="遍历DOM树">
-<meta name="twitter:description" content="代码： 123456789101112131415161718192021222324252627282930313233343536373839404142//  第一个函数:给我根节点,我会找到所有的子节点:forDOM(根节点)//  获取这个根节点的子节点//  var children=根节点的.children//  调用第二个函数//  第二个函数:给我所有的子节点,我把每个子节点的">
+<meta name="twitter:description" content="代码： 123456789101112131415161718192021222324252627282930313233343536373839404142//  第一个函数:给我根节点,我会找到所有的子节点:forDOM(根节点)//  获取这个根节点的子节点//  var children=根节点的.children//  调用第二个函数//  第二个函数:给我所有的子节点,我把每个子节">
 
 
 
@@ -346,6 +346,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -388,7 +410,9 @@
       
 
       
-        <p>代码：</p>
+        <meta name="referrer" content="no-referrer">
+
+<p>代码：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  第一个函数:给我根节点,我会找到所有的子节点:forDOM(根节点)</span></span><br><span class="line"><span class="comment">//  获取这个根节点的子节点</span></span><br><span class="line"><span class="comment">//  var children=根节点的.children</span></span><br><span class="line"><span class="comment">//  调用第二个函数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//  第二个函数:给我所有的子节点,我把每个子节点的名字显示出来(children)</span></span><br><span class="line"><span class="comment">//  for(var i=0;i&lt;children.length;i++)&#123;</span></span><br><span class="line"><span class="comment">//    每个子节点</span></span><br><span class="line"><span class="comment">//    var child=children[i];</span></span><br><span class="line"><span class="comment">//    f1(child);给我节点,我显示该节点的名字</span></span><br><span class="line"><span class="comment">//    child是子节点,但是如果child里面还有子节点,此时child就是爹了</span></span><br><span class="line"><span class="comment">//    child.children&amp;&amp;第一个函数(child)</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">//获取页面中的根节点--根标签</span></span><br><span class="line">  <span class="keyword">var</span> root=<span class="built_in">document</span>.documentElement;<span class="comment">//html</span></span><br><span class="line">  <span class="comment">//函数遍历DOM树</span></span><br><span class="line">  <span class="comment">//根据根节点,调用fn的函数,显示的是根节点的名字</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">forDOM</span>(<span class="params">root1</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//调用f1,显示的是节点的名字</span></span><br><span class="line">   <span class="comment">// f1(root1);</span></span><br><span class="line">    <span class="comment">//获取根节点中所有的子节点</span></span><br><span class="line">    <span class="keyword">var</span> children=root1.children;</span><br><span class="line">    <span class="comment">//调用遍历所有子节点的函数</span></span><br><span class="line">    forChildren(children);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//给我所有的子节点,我把这个子节点中的所有的子节点显示出来</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">forChildren</span>(<span class="params">children</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//遍历所有的子节点</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;children.length;i++)&#123;</span><br><span class="line">      <span class="comment">//每个子节点</span></span><br><span class="line">      <span class="keyword">var</span> child=children[i];</span><br><span class="line">      <span class="comment">//显示每个子节点的名字</span></span><br><span class="line">      f1(child);</span><br><span class="line">      <span class="comment">//判断child下面有没有子节点,如果还有子节点,那么就继续的遍历</span></span><br><span class="line">      child.children&amp;&amp;forDOM(child);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//函数调用,传入根节点</span></span><br><span class="line">  forDOM(root);</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">node</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"节点的名字:"</span>+node.nodeName);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <p><br><br><br><br><br></p>
 <p>( 完 )</p>
@@ -510,7 +534,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -521,7 +545,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -532,7 +556,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -601,15 +625,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 

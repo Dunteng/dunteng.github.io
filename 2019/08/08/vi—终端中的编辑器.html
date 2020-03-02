@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Linux,">
+  <meta name="keywords" content="Linux,vi/vim,">
 
 
 
@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="vi —— 终端中的编辑器目标 vi 简介 打开和新建文件 三种工作模式 常用命令 分屏命令 常用命令速查图  01. vi 简介1.1 学习 vi 的目的 在工作中，要对 服务器 上的文件进行 简单 的修改，可以使用 ssh 远程登录到服务器上，并且使用 vi 进行快速的编辑即可 常见需要修改的文件包括： 源程序 配置文件，例如 ssh 的配置文件 ~/.ssh/config      在没有图">
-<meta name="keywords" content="Linux">
+<meta name="description" content="vi —— 终端中的编辑器目标 vi 简介 打开和新建文件 三种工作模式 常用命令 分屏命令 常用命令速查图  01. vi 简介1.1 学习 vi 的目的 在工作中，要对 服务器 上的文件进行 简单 的修改，可以使用 ssh 远程登录到服务器上，并且使用 vi 进行快速的编辑即可 常见需要修改的文件包括： 源程序 配置文件，例如 ssh 的配置文件 ~/.ssh/config">
+<meta name="keywords" content="Linux,vi&#x2F;vim">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vi编辑器教程">
 <meta property="og:url" content="https://dunteng.github.io/2019/08/08/vi—终端中的编辑器.html">
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
-<meta property="og:description" content="vi —— 终端中的编辑器目标 vi 简介 打开和新建文件 三种工作模式 常用命令 分屏命令 常用命令速查图  01. vi 简介1.1 学习 vi 的目的 在工作中，要对 服务器 上的文件进行 简单 的修改，可以使用 ssh 远程登录到服务器上，并且使用 vi 进行快速的编辑即可 常见需要修改的文件包括： 源程序 配置文件，例如 ssh 的配置文件 ~/.ssh/config      在没有图">
+<meta property="og:description" content="vi —— 终端中的编辑器目标 vi 简介 打开和新建文件 三种工作模式 常用命令 分屏命令 常用命令速查图  01. vi 简介1.1 学习 vi 的目的 在工作中，要对 服务器 上的文件进行 简单 的修改，可以使用 ssh 远程登录到服务器上，并且使用 vi 进行快速的编辑即可 常见需要修改的文件包括： 源程序 配置文件，例如 ssh 的配置文件 ~/.ssh/config">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vi/001_vi%E9%94%AE%E7%9B%98.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vi/002_%E5%88%A0%E9%99%A4%E4%BA%A4%E6%8D%A2%E6%96%87%E4%BB%B6.png">
@@ -93,10 +93,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vi/005_%E7%A7%BB%E5%8A%A8%E5%85%89%E6%A0%87.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vi/004_%E6%8F%92%E5%85%A5%E5%91%BD%E4%BB%A4.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vi/vim.png">
-<meta property="og:updated_time" content="2019-09-10T17:35:01.222Z">
+<meta property="og:updated_time" content="2020-03-01T18:08:18.459Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vi编辑器教程">
-<meta name="twitter:description" content="vi —— 终端中的编辑器目标 vi 简介 打开和新建文件 三种工作模式 常用命令 分屏命令 常用命令速查图  01. vi 简介1.1 学习 vi 的目的 在工作中，要对 服务器 上的文件进行 简单 的修改，可以使用 ssh 远程登录到服务器上，并且使用 vi 进行快速的编辑即可 常见需要修改的文件包括： 源程序 配置文件，例如 ssh 的配置文件 ~/.ssh/config      在没有图">
+<meta name="twitter:description" content="vi —— 终端中的编辑器目标 vi 简介 打开和新建文件 三种工作模式 常用命令 分屏命令 常用命令速查图  01. vi 简介1.1 学习 vi 的目的 在工作中，要对 服务器 上的文件进行 简单 的修改，可以使用 ssh 远程登录到服务器上，并且使用 vi 进行快速的编辑即可 常见需要修改的文件包括： 源程序 配置文件，例如 ssh 的配置文件 ~/.ssh/config">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vi/001_vi%E9%94%AE%E7%9B%98.png">
 
 
@@ -353,6 +353,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/vi-vim/" itemprop="url" rel="index">
+                    <span itemprop="name">vi/vim</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -395,7 +417,11 @@
       
 
       
-        <h1 id="vi-——-终端中的编辑器"><a href="#vi-——-终端中的编辑器" class="headerlink" title="vi —— 终端中的编辑器"></a><code>vi</code> —— 终端中的编辑器</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+        <meta name="referrer" content="no-referrer">
+
+
+
+<h1 id="vi-——-终端中的编辑器"><a href="#vi-——-终端中的编辑器" class="headerlink" title="vi —— 终端中的编辑器"></a><code>vi</code> —— 终端中的编辑器</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
 <li><code>vi</code> 简介</li>
 <li>打开和新建文件</li>
 <li>三种工作模式</li>
@@ -1349,6 +1375,8 @@
           
             <a href="/tags/Linux/" rel="tag"># Linux</a>
           
+            <a href="/tags/vi-vim/" rel="tag"># vi/vim</a>
+          
         </div>
       
 
@@ -1457,7 +1485,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1468,7 +1496,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1479,7 +1507,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1564,15 +1592,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 

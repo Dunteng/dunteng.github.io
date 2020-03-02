@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="案例代码 实现如下的一个案例：  简介该页面是一个父组件Form.vue，添加学生的这个input框部分是一个子组件addStudent.vue，下面的 li 显示学生的这部分是另一个子组件StudentList.vue。我们需要把addStudent.vue的数据传给StudentList.vue，但是他们是非父子组件关系。 因此需要先让 addStudent.vue 把数据传给它的父组件 Fo">
+<meta name="description" content="案例代码 实现如下的一个案例：  简介该页面是一个父组件Form.vue，添加学生的这个input框部分是一个子组件addStudent.vue，下面的 li 显示学生的这部分是另一个子组件StudentList.vue。我们需要把addStudent.vue的数据传给StudentList.vue，但是他们是非父子组件关系。 因此需要先让 addStudent.vue 把数据传给它的父组">
 <meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue父子组件传值和非父子组件传值">
 <meta property="og:url" content="https://dunteng.github.io/2019/05/12/Vue父子组件传值和非父子组件传值.html">
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
-<meta property="og:description" content="案例代码 实现如下的一个案例：  简介该页面是一个父组件Form.vue，添加学生的这个input框部分是一个子组件addStudent.vue，下面的 li 显示学生的这部分是另一个子组件StudentList.vue。我们需要把addStudent.vue的数据传给StudentList.vue，但是他们是非父子组件关系。 因此需要先让 addStudent.vue 把数据传给它的父组件 Fo">
+<meta property="og:description" content="案例代码 实现如下的一个案例：  简介该页面是一个父组件Form.vue，添加学生的这个input框部分是一个子组件addStudent.vue，下面的 li 显示学生的这部分是另一个子组件StudentList.vue。我们需要把addStudent.vue的数据传给StudentList.vue，但是他们是非父子组件关系。 因此需要先让 addStudent.vue 把数据传给它的父组">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/demo/comp46546.GIF">
-<meta property="og:updated_time" content="2019-07-04T10:03:25.132Z">
+<meta property="og:updated_time" content="2020-03-01T18:17:09.585Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue父子组件传值和非父子组件传值">
-<meta name="twitter:description" content="案例代码 实现如下的一个案例：  简介该页面是一个父组件Form.vue，添加学生的这个input框部分是一个子组件addStudent.vue，下面的 li 显示学生的这部分是另一个子组件StudentList.vue。我们需要把addStudent.vue的数据传给StudentList.vue，但是他们是非父子组件关系。 因此需要先让 addStudent.vue 把数据传给它的父组件 Fo">
+<meta name="twitter:description" content="案例代码 实现如下的一个案例：  简介该页面是一个父组件Form.vue，添加学生的这个input框部分是一个子组件addStudent.vue，下面的 li 显示学生的这部分是另一个子组件StudentList.vue。我们需要把addStudent.vue的数据传给StudentList.vue，但是他们是非父子组件关系。 因此需要先让 addStudent.vue 把数据传给它的父组">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/demo/comp46546.GIF">
 
 
@@ -348,6 +348,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -390,7 +412,11 @@
       
 
       
-        <p><a href="https://github.com/Dunteng/demo/tree/master/Vue/%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC%E5%92%8C%E9%9D%9E%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC" target="_blank" rel="noopener">案例代码</a></p>
+        <meta name="referrer" content="no-referrer">
+
+
+
+<p><a href="https://github.com/Dunteng/demo/tree/master/Vue/%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC%E5%92%8C%E9%9D%9E%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC" target="_blank" rel="noopener">案例代码</a></p>
 <p>实现如下的一个案例：</p>
 <p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/demo/comp46546.GIF" alt=""></p>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>该页面是一个<strong>父组件Form.vue</strong>，添加学生的这个input框部分是一个<strong>子组件addStudent.vue</strong>，下面的 li 显示学生的这部分是另一个<strong>子组件StudentList.vue</strong>。我们需要把addStudent.vue的数据传给StudentList.vue，但是他们是<strong>非父子组件关系</strong>。</p>
@@ -539,7 +565,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -550,7 +576,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -561,7 +587,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -646,15 +672,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 

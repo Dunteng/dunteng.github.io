@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript,">
+  <meta name="keywords" content="JavaScript,Ajax,jQuery,瀑布流,">
 
 
 
@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content=".本文使用jQuery的ajax技术读取数据，为了实现跨域采用了代理的方法。ajax直接访问的url为服务器中的getPics.php文件，在php文件中访问了目标接口http://www.wookmark.com/api/json/popular 效果看一下：  JS核心代码： 12345678910111213141516171819202122232425262728293031323334">
-<meta name="keywords" content="JavaScript">
+<meta name="description" content=".本文使用jQuery的ajax技术读取数据，为了实现跨域采用了代理的方法。ajax直接访问的url为服务器中的getPics.php文件，在php文件中访问了目标接口http://www.wookmark.com/api/json/popular 效果看一下：  JS核心代码： 1234567891011121314151617181920212223242526272829303132">
+<meta name="keywords" content="JavaScript,Ajax,jQuery,瀑布流">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQ.Ajax实现瀑布流相册">
 <meta property="og:url" content="https://dunteng.github.io/2019/03/20/jQ.Ajax实现瀑布流相册.html">
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
-<meta property="og:description" content=".本文使用jQuery的ajax技术读取数据，为了实现跨域采用了代理的方法。ajax直接访问的url为服务器中的getPics.php文件，在php文件中访问了目标接口http://www.wookmark.com/api/json/popular 效果看一下：  JS核心代码： 12345678910111213141516171819202122232425262728293031323334">
+<meta property="og:description" content=".本文使用jQuery的ajax技术读取数据，为了实现跨域采用了代理的方法。ajax直接访问的url为服务器中的getPics.php文件，在php文件中访问了目标接口http://www.wookmark.com/api/json/popular 效果看一下：  JS核心代码： 1234567891011121314151617181920212223242526272829303132">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/Dunteng/images/blob/master/BlogImages/illustration/006ttwEMgy1g1jzyydu1hg30s60lcqvg.gif?raw=true">
-<meta property="og:updated_time" content="2019-05-21T02:09:13.072Z">
+<meta property="og:updated_time" content="2020-03-01T19:03:10.934Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQ.Ajax实现瀑布流相册">
-<meta name="twitter:description" content=".本文使用jQuery的ajax技术读取数据，为了实现跨域采用了代理的方法。ajax直接访问的url为服务器中的getPics.php文件，在php文件中访问了目标接口http://www.wookmark.com/api/json/popular 效果看一下：  JS核心代码： 12345678910111213141516171819202122232425262728293031323334">
+<meta name="twitter:description" content=".本文使用jQuery的ajax技术读取数据，为了实现跨域采用了代理的方法。ajax直接访问的url为服务器中的getPics.php文件，在php文件中访问了目标接口http://www.wookmark.com/api/json/popular 效果看一下：  JS核心代码： 1234567891011121314151617181920212223242526272829303132">
 <meta name="twitter:image" content="https://github.com/Dunteng/images/blob/master/BlogImages/illustration/006ttwEMgy1g1jzyydu1hg30s60lcqvg.gif?raw=true">
 
 
@@ -348,6 +348,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/项目/" itemprop="url" rel="index">
+                    <span itemprop="name">项目</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -390,7 +412,11 @@
       
 
       
-        <p>.本文使用jQuery的ajax技术读取数据，为了实现跨域采用了代理的方法。ajax直接访问的url为服务器中的getPics.php文件，在php文件中访问了目标接口<a href="http://www.wookmark.com/api/json/popular" target="_blank" rel="noopener">http://www.wookmark.com/api/json/popular</a></p>
+        <meta name="referrer" content="no-referrer">
+
+
+
+<p>.本文使用jQuery的ajax技术读取数据，为了实现跨域采用了代理的方法。ajax直接访问的url为服务器中的getPics.php文件，在php文件中访问了目标接口<a href="http://www.wookmark.com/api/json/popular" target="_blank" rel="noopener">http://www.wookmark.com/api/json/popular</a></p>
 <p>效果看一下：</p>
 <p><img src="https://github.com/Dunteng/images/blob/master/BlogImages/illustration/006ttwEMgy1g1jzyydu1hg30s60lcqvg.gif?raw=true" alt=""></p>
 <p><br><br><strong>JS核心代码</strong>：</p>
@@ -415,6 +441,12 @@
         <div class="post-tags">
           
             <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/Ajax/" rel="tag"># Ajax</a>
+          
+            <a href="/tags/jQuery/" rel="tag"># jQuery</a>
+          
+            <a href="/tags/瀑布流/" rel="tag"># 瀑布流</a>
           
         </div>
       
@@ -515,7 +547,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -526,7 +558,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -537,7 +569,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -606,15 +638,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 

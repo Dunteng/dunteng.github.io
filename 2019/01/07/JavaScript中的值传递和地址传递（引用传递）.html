@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="简单类型和复杂类型我们先来理清一下几种数据类型。原始的数据类型就有： number,string,boolean,undefined, null,object。进一步划分为值类型和引用类型。 值类型：简单数据类型，基本数据类型，在存储时，变量中存储的是值本身，因此叫做值类型。 引用类型：复杂数据类型，在存储时，变量中存储的仅仅是地址（引用），因此叫做引用数据类型。 1、基本类型(又称简单类型、值类">
+<meta name="description" content="简单类型和复杂类型我们先来理清一下几种数据类型。原始的数据类型就有： number,string,boolean,undefined, null,object。进一步划分为值类型和引用类型。 值类型：简单数据类型，基本数据类型，在存储时，变量中存储的是值本身，因此叫做值类型。 引用类型：复杂数据类型，在存储时，变量中存储的仅仅是地址（引用），因此叫做引用数据类型。 1、基本类型(又称简单类">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript中的值传递和地址传递（引用传递）">
 <meta property="og:url" content="https://dunteng.github.io/2019/01/07/JavaScript中的值传递和地址传递（引用传递）.html">
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
-<meta property="og:description" content="简单类型和复杂类型我们先来理清一下几种数据类型。原始的数据类型就有： number,string,boolean,undefined, null,object。进一步划分为值类型和引用类型。 值类型：简单数据类型，基本数据类型，在存储时，变量中存储的是值本身，因此叫做值类型。 引用类型：复杂数据类型，在存储时，变量中存储的仅仅是地址（引用），因此叫做引用数据类型。 1、基本类型(又称简单类型、值类">
+<meta property="og:description" content="简单类型和复杂类型我们先来理清一下几种数据类型。原始的数据类型就有： number,string,boolean,undefined, null,object。进一步划分为值类型和引用类型。 值类型：简单数据类型，基本数据类型，在存储时，变量中存储的是值本身，因此叫做值类型。 引用类型：复杂数据类型，在存储时，变量中存储的仅仅是地址（引用），因此叫做引用数据类型。 1、基本类型(又称简单类">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgkaitpicj30n70fgt8v.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgkbgb44oj30p00cz3zh.jpg">
@@ -96,10 +96,10 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgjtae7g3j306p045q2r.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgjvexo2gj305i04fmwz.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgjqnz30gj30bf0ajaa5.jpg">
-<meta property="og:updated_time" content="2019-05-21T03:27:51.000Z">
+<meta property="og:updated_time" content="2020-03-01T18:41:44.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript中的值传递和地址传递（引用传递）">
-<meta name="twitter:description" content="简单类型和复杂类型我们先来理清一下几种数据类型。原始的数据类型就有： number,string,boolean,undefined, null,object。进一步划分为值类型和引用类型。 值类型：简单数据类型，基本数据类型，在存储时，变量中存储的是值本身，因此叫做值类型。 引用类型：复杂数据类型，在存储时，变量中存储的仅仅是地址（引用），因此叫做引用数据类型。 1、基本类型(又称简单类型、值类">
+<meta name="twitter:description" content="简单类型和复杂类型我们先来理清一下几种数据类型。原始的数据类型就有： number,string,boolean,undefined, null,object。进一步划分为值类型和引用类型。 值类型：简单数据类型，基本数据类型，在存储时，变量中存储的是值本身，因此叫做值类型。 引用类型：复杂数据类型，在存储时，变量中存储的仅仅是地址（引用），因此叫做引用数据类型。 1、基本类型(又称简单类">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006ttwEMgy1fzgkaitpicj30n70fgt8v.jpg">
 
 
@@ -356,6 +356,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -398,7 +420,11 @@
       
 
       
-        <h2 id="简单类型和复杂类型"><a href="#简单类型和复杂类型" class="headerlink" title="简单类型和复杂类型"></a>简单类型和复杂类型</h2><p>我们先来理清一下几种数据类型。原始的数据类型就有： number,string,boolean,undefined, null,object。进一步划分为值类型和引用类型。</p>
+        <meta name="referrer" content="no-referrer">
+
+
+
+<h2 id="简单类型和复杂类型"><a href="#简单类型和复杂类型" class="headerlink" title="简单类型和复杂类型"></a>简单类型和复杂类型</h2><p>我们先来理清一下几种数据类型。原始的数据类型就有： number,string,boolean,undefined, null,object。进一步划分为值类型和引用类型。</p>
 <p><strong>值类型：</strong>简单数据类型，基本数据类型，在存储时，变量中存储的是值本身，因此叫做值类型。</p>
 <p><strong>引用类型：</strong>复杂数据类型，在存储时，变量中存储的仅仅是地址（引用），因此叫做引用数据类型。</p>
 <p>1、基本类型(又称简单类型、值类型): number,string,boolean</p>
@@ -562,7 +588,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -573,7 +599,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -584,7 +610,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -669,15 +695,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 

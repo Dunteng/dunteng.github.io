@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript,">
+  <meta name="keywords" content="JavaScript,小案例,跨域,jsonp,">
 
 
 
@@ -79,21 +79,21 @@
 
 
 
-<meta name="description" content="由于ajax的同源策略，我们无法跨域请求数据，但是jsonp技术很好地解决了这个问题。本文利用百度搜索框接口结合jsonp技术实现获取百度关键字数据并完成百度搜索框功能：   我们可以直接在百度的搜索框上获取到它的接口，比如我们点击百度搜索文本框的时候，在chrome的network里可以看到它向一个url发起了请求，这个url也就是我们所需要的接口  把这个url取出来：https://sp0.">
-<meta name="keywords" content="JavaScript">
+<meta name="description" content="由于ajax的同源策略，我们无法跨域请求数据，但是jsonp技术很好地解决了这个问题。本文利用百度搜索框接口结合jsonp技术实现获取百度关键字数据并完成百度搜索框功能：   我们可以直接在百度的搜索框上获取到它的接口，比如我们点击百度搜索文本框的时候，在chrome的network里可以看到它向一个url发起了请求，这个url也就是我们所需要的接口  把这个url取出来：https://">
+<meta name="keywords" content="JavaScript,小案例,跨域,jsonp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jsonp实现百度搜索框功能">
 <meta property="og:url" content="https://dunteng.github.io/2019/03/29/jsonp实现百度搜索框功能.html">
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
-<meta property="og:description" content="由于ajax的同源策略，我们无法跨域请求数据，但是jsonp技术很好地解决了这个问题。本文利用百度搜索框接口结合jsonp技术实现获取百度关键字数据并完成百度搜索框功能：   我们可以直接在百度的搜索框上获取到它的接口，比如我们点击百度搜索文本框的时候，在chrome的network里可以看到它向一个url发起了请求，这个url也就是我们所需要的接口  把这个url取出来：https://sp0.">
+<meta property="og:description" content="由于ajax的同源策略，我们无法跨域请求数据，但是jsonp技术很好地解决了这个问题。本文利用百度搜索框接口结合jsonp技术实现获取百度关键字数据并完成百度搜索框功能：   我们可以直接在百度的搜索框上获取到它的接口，比如我们点击百度搜索文本框的时候，在chrome的network里可以看到它向一个url发起了请求，这个url也就是我们所需要的接口  把这个url取出来：https://">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/006ttwEMly1g1jhdx8mg6g30dg08m124.gif">
 <meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/006ttwEMly1g1jhovvqxvj311y0hdjso.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/006ttwEMly1g1jht01m2bj30eh064jrl.jpg">
-<meta property="og:updated_time" content="2019-05-21T02:38:22.654Z">
+<meta property="og:updated_time" content="2020-03-01T19:00:24.761Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jsonp实现百度搜索框功能">
-<meta name="twitter:description" content="由于ajax的同源策略，我们无法跨域请求数据，但是jsonp技术很好地解决了这个问题。本文利用百度搜索框接口结合jsonp技术实现获取百度关键字数据并完成百度搜索框功能：   我们可以直接在百度的搜索框上获取到它的接口，比如我们点击百度搜索文本框的时候，在chrome的network里可以看到它向一个url发起了请求，这个url也就是我们所需要的接口  把这个url取出来：https://sp0.">
+<meta name="twitter:description" content="由于ajax的同源策略，我们无法跨域请求数据，但是jsonp技术很好地解决了这个问题。本文利用百度搜索框接口结合jsonp技术实现获取百度关键字数据并完成百度搜索框功能：   我们可以直接在百度的搜索框上获取到它的接口，比如我们点击百度搜索文本框的时候，在chrome的network里可以看到它向一个url发起了请求，这个url也就是我们所需要的接口  把这个url取出来：https://">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/006ttwEMly1g1jhdx8mg6g30dg08m124.gif">
 
 
@@ -350,6 +350,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/跨域/" itemprop="url" rel="index">
+                    <span itemprop="name">跨域</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -392,7 +414,11 @@
       
 
       
-        <p>由于ajax的同源策略，我们无法跨域请求数据，但是jsonp技术很好地解决了这个问题。本文利用百度搜索框接口结合jsonp技术实现获取百度关键字数据并完成百度搜索框功能：</p>
+        <meta name="referrer" content="no-referrer">
+
+
+
+<p>由于ajax的同源策略，我们无法跨域请求数据，但是jsonp技术很好地解决了这个问题。本文利用百度搜索框接口结合jsonp技术实现获取百度关键字数据并完成百度搜索框功能：</p>
 <p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/006ttwEMly1g1jhdx8mg6g30dg08m124.gif" alt=""></p>
 <p><br></p>
 <p>我们可以直接在百度的搜索框上获取到它的接口，比如我们点击百度搜索文本框的时候，在chrome的network里可以看到它向一个url发起了请求，这个url也就是我们所需要的接口</p>
@@ -430,6 +456,12 @@
         <div class="post-tags">
           
             <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/小案例/" rel="tag"># 小案例</a>
+          
+            <a href="/tags/跨域/" rel="tag"># 跨域</a>
+          
+            <a href="/tags/jsonp/" rel="tag"># jsonp</a>
           
         </div>
       
@@ -530,7 +562,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -541,7 +573,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -552,7 +584,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -621,15 +653,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 

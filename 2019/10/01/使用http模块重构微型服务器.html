@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="node.js,">
+  <meta name="keywords" content="后端,node.js,">
 
 
 
@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="之前写过一个用net模块构建的微型服务器，👉链接 现在用http模块来重构一下。👉GitHub仓库 http模块的初步使用配置文件server.conf，用以配置服务器信息👇 123port=12306page_path=pagestatic_file_type=.html|.js|.css|.jpg|.png|.gif|.ico|.json 其中的静态资源信息用以后面判断请求是静态资源还是">
-<meta name="keywords" content="node.js">
+<meta name="description" content="之前写过一个用net模块构建的微型服务器，👉链接 现在用http模块来重构一下。👉GitHub仓库 http模块的初步使用配置文件server.conf，用以配置服务器信息👇 123port=12306page_path=pagestatic_file_type=.html|.js|.css|.jpg|.png|.gif|.ico|.json 其中的静态资源信息用以后面判断请求是静态资源">
+<meta name="keywords" content="后端,node.js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用http模块重构微型服务器">
 <meta property="og:url" content="https://dunteng.github.io/2019/10/01/使用http模块重构微型服务器.html">
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
-<meta property="og:description" content="之前写过一个用net模块构建的微型服务器，👉链接 现在用http模块来重构一下。👉GitHub仓库 http模块的初步使用配置文件server.conf，用以配置服务器信息👇 123port=12306page_path=pagestatic_file_type=.html|.js|.css|.jpg|.png|.gif|.ico|.json 其中的静态资源信息用以后面判断请求是静态资源还是">
+<meta property="og:description" content="之前写过一个用net模块构建的微型服务器，👉链接 现在用http模块来重构一下。👉GitHub仓库 http模块的初步使用配置文件server.conf，用以配置服务器信息👇 123port=12306page_path=pagestatic_file_type=.html|.js|.css|.jpg|.png|.gif|.ico|.json 其中的静态资源信息用以后面判断请求是静态资源">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://pic4.zhimg.com/v2-87d153cd7dc81bf29e2c1ccc5145f72b_r.jpg">
 <meta property="og:image" content="https://pic1.zhimg.com/v2-bccefe3e22d1c4410b99c644ccf30b68_r.jpg">
@@ -102,10 +102,10 @@
 <meta property="og:image" content="https://pic2.zhimg.com/v2-096a3a28f5252ad840ea67cf43d99ae9_r.jpg">
 <meta property="og:image" content="https://pic1.zhimg.com/v2-f2b1bfe8ff194a6a0529face2f7dc03c_r.jpg">
 <meta property="og:image" content="https://pic4.zhimg.com/v2-e733e42fed98df821d04c6ecc97ee5a3_r.jpg">
-<meta property="og:updated_time" content="2019-10-24T06:48:06.501Z">
+<meta property="og:updated_time" content="2020-03-01T17:30:25.979Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用http模块重构微型服务器">
-<meta name="twitter:description" content="之前写过一个用net模块构建的微型服务器，👉链接 现在用http模块来重构一下。👉GitHub仓库 http模块的初步使用配置文件server.conf，用以配置服务器信息👇 123port=12306page_path=pagestatic_file_type=.html|.js|.css|.jpg|.png|.gif|.ico|.json 其中的静态资源信息用以后面判断请求是静态资源还是">
+<meta name="twitter:description" content="之前写过一个用net模块构建的微型服务器，👉链接 现在用http模块来重构一下。👉GitHub仓库 http模块的初步使用配置文件server.conf，用以配置服务器信息👇 123port=12306page_path=pagestatic_file_type=.html|.js|.css|.jpg|.png|.gif|.ico|.json 其中的静态资源信息用以后面判断请求是静态资源">
 <meta name="twitter:image" content="https://pic4.zhimg.com/v2-87d153cd7dc81bf29e2c1ccc5145f72b_r.jpg">
 
 
@@ -362,6 +362,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/node-js/" itemprop="url" rel="index">
+                    <span itemprop="name">node.js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -404,7 +426,9 @@
       
 
       
-        <p>之前写过一个用net模块构建的微型服务器，👉<a href="https://dunteng.github.io/[object%20Object]2019/09/30/%E5%86%99%E4%B8%80%E4%B8%AA%E5%BE%AE%E5%9E%8Bnode%E6%9C%8D%E5%8A%A1%E5%99%A8.html">链接</a></p>
+        <meta name="referrer" content="no-referrer">
+
+<p>之前写过一个用net模块构建的微型服务器，👉<a href="https://dunteng.github.io/[object%20Object]2019/09/30/%E5%86%99%E4%B8%80%E4%B8%AA%E5%BE%AE%E5%9E%8Bnode%E6%9C%8D%E5%8A%A1%E5%99%A8.html">链接</a></p>
 <p>现在用http模块来重构一下。👉<a href="https://github.com/Dunteng/node.js/tree/master/http%E9%87%8D%E6%9E%84%E5%BE%AE%E5%9E%8B%E6%9C%8D%E5%8A%A1%E5%99%A8" target="_blank" rel="noopener">GitHub仓库</a></p>
 <h2 id="http模块的初步使用"><a href="#http模块的初步使用" class="headerlink" title="http模块的初步使用"></a>http模块的初步使用</h2><p><strong>配置文件server.conf，用以配置服务器信息</strong>👇</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">port=<span class="number">12306</span></span><br><span class="line">page_path=page</span><br><span class="line">static_file_type=.html|.js|.css|.jpg|.png|.gif|.ico|.json</span><br></pre></td></tr></table></figure>
@@ -501,6 +525,8 @@
       
         <div class="post-tags">
           
+            <a href="/tags/后端/" rel="tag"># 后端</a>
+          
             <a href="/tags/node-js/" rel="tag"># node.js</a>
           
         </div>
@@ -514,8 +540,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/01/MySQL基本的增删改查操作.html" rel="next" title="MySQL基本的增删改查操作">
-                <i class="fa fa-chevron-left"></i> MySQL基本的增删改查操作
+              <a href="/2019/09/30/net模块写微型node服务器.html" rel="next" title="写一个微型node服务器">
+                <i class="fa fa-chevron-left"></i> 写一个微型node服务器
               </a>
             
           </div>
@@ -524,8 +550,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/10/02/express搭建静态文件服务器.html" rel="prev" title="使用express搭建静态文件服务器">
-                使用express搭建静态文件服务器 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/10/01/MySQL基本的增删改查操作.html" rel="prev" title="MySQL基本的增删改查操作">
+                MySQL基本的增删改查操作 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -611,7 +637,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -622,7 +648,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -633,7 +659,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -718,15 +744,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 

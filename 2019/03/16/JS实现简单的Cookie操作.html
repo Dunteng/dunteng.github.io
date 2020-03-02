@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript,">
+  <meta name="keywords" content="JavaScript,小案例,Cookie,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Cookie是由服务器端生成，发送给User-Agent（一般是浏览器），（服务器告诉浏览器设置一下cookie），浏览器会将Cookie以key/value保存到某个目录下的文本文件内，下次请求同一网站时就发送该Cookie给服务器（前提是浏览器设置为启用cookie）。Cookie就是一个小型文件（浏览器对cookie的内存大小是有限制的——-用来记录一些信息）。 Cookie实际上主要是we">
-<meta name="keywords" content="JavaScript">
+<meta name="description" content="Cookie是由服务器端生成，发送给User-Agent（一般是浏览器），（服务器告诉浏览器设置一下cookie），浏览器会将Cookie以key/value保存到某个目录下的文本文件内，下次请求同一网站时就发送该Cookie给服务器（前提是浏览器设置为启用cookie）。Cookie就是一个小型文件（浏览器对cookie的内存大小是有限制的——-用来记录一些信息）。 Cookie实际上主">
+<meta name="keywords" content="JavaScript,小案例,Cookie">
 <meta property="og:type" content="article">
 <meta property="og:title" content="拖拽方块记录Cookie">
 <meta property="og:url" content="https://dunteng.github.io/2019/03/16/JS实现简单的Cookie操作.html">
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
-<meta property="og:description" content="Cookie是由服务器端生成，发送给User-Agent（一般是浏览器），（服务器告诉浏览器设置一下cookie），浏览器会将Cookie以key/value保存到某个目录下的文本文件内，下次请求同一网站时就发送该Cookie给服务器（前提是浏览器设置为启用cookie）。Cookie就是一个小型文件（浏览器对cookie的内存大小是有限制的——-用来记录一些信息）。 Cookie实际上主要是we">
+<meta property="og:description" content="Cookie是由服务器端生成，发送给User-Agent（一般是浏览器），（服务器告诉浏览器设置一下cookie），浏览器会将Cookie以key/value保存到某个目录下的文本文件内，下次请求同一网站时就发送该Cookie给服务器（前提是浏览器设置为启用cookie）。Cookie就是一个小型文件（浏览器对cookie的内存大小是有限制的——-用来记录一些信息）。 Cookie实际上主">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-21T02:31:36.491Z">
+<meta property="og:updated_time" content="2020-03-01T19:01:31.749Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="拖拽方块记录Cookie">
-<meta name="twitter:description" content="Cookie是由服务器端生成，发送给User-Agent（一般是浏览器），（服务器告诉浏览器设置一下cookie），浏览器会将Cookie以key/value保存到某个目录下的文本文件内，下次请求同一网站时就发送该Cookie给服务器（前提是浏览器设置为启用cookie）。Cookie就是一个小型文件（浏览器对cookie的内存大小是有限制的——-用来记录一些信息）。 Cookie实际上主要是we">
+<meta name="twitter:description" content="Cookie是由服务器端生成，发送给User-Agent（一般是浏览器），（服务器告诉浏览器设置一下cookie），浏览器会将Cookie以key/value保存到某个目录下的文本文件内，下次请求同一网站时就发送该Cookie给服务器（前提是浏览器设置为启用cookie）。Cookie就是一个小型文件（浏览器对cookie的内存大小是有限制的——-用来记录一些信息）。 Cookie实际上主">
 
 
 
@@ -346,6 +346,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/项目/" itemprop="url" rel="index">
+                    <span itemprop="name">项目</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -388,7 +410,11 @@
       
 
       
-        <p>Cookie是由服务器端生成，发送给User-Agent（一般是浏览器），（服务器告诉浏览器设置一下cookie），浏览器会将Cookie以key/value保存到某个目录下的文本文件内，下次请求同一网站时就发送该Cookie给服务器（前提是浏览器设置为启用cookie）。Cookie就是一个小型文件（浏览器对cookie的内存大小是有限制的——-用来记录一些信息）。</p>
+        <meta name="referrer" content="no-referrer">
+
+
+
+<p>Cookie是由服务器端生成，发送给User-Agent（一般是浏览器），（服务器告诉浏览器设置一下cookie），浏览器会将Cookie以key/value保存到某个目录下的文本文件内，下次请求同一网站时就发送该Cookie给服务器（前提是浏览器设置为启用cookie）。Cookie就是一个小型文件（浏览器对cookie的内存大小是有限制的——-用来记录一些信息）。</p>
 <p>Cookie实际上主要是web服务器开发人员设置的，前端开发人员较少使用cookie。但是我们得学会简单操作cookie （大概流程如下）</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> manageCookie = &#123;</span><br><span class="line">	setCookie: <span class="function"><span class="keyword">function</span> (<span class="params">name, value, time</span>) </span>&#123; </span><br><span class="line">		<span class="built_in">document</span>.cookie = name+<span class="string">'='</span>+value+<span class="string">';max-age='</span>+time;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>;<span class="comment">//返回manageCookie用于实现链式函数调用</span></span><br><span class="line">	 &#125;,</span><br><span class="line">	 removeCookie: <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">		 <span class="keyword">return</span> <span class="keyword">this</span>.setCookie(name,<span class="string">''</span>,<span class="number">-1</span>) <span class="comment">//直接把max-age设置为负数使之过期，浏览器会自动删除过期cookie</span></span><br><span class="line">	 &#125;,</span><br><span class="line">	 getCookie: <span class="function"><span class="keyword">function</span>(<span class="params">name, callback</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> allCookieArr = <span class="built_in">document</span>.cookie.split(<span class="string">', '</span>);<span class="comment">//注意用逗号和一个空格来切分cookie值！</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt;allCookieArr.length; i++)&#123;</span><br><span class="line">			<span class="keyword">var</span> itemCookieArr = allCookieArr[i].split(<span class="string">'='</span>);</span><br><span class="line">			<span class="keyword">if</span>(itemCookieArr[<span class="number">0</span>]==name)&#123;</span><br><span class="line">				callback(itemCookieArr[<span class="number">1</span>]);</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">this</span>;<span class="comment">//同样也是返回manageCookie实现链式调用</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		callback(<span class="literal">undefined</span>);<span class="comment">//如果循环结束都没有找到name对应的值，则调用undefined</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>;<span class="comment">//返回manageCookie实现链式调用</span></span><br><span class="line">	 &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">manageCookie</span><br><span class="line">	.setCookie(<span class="string">'color'</span>, <span class="string">'red'</span>, <span class="number">10000</span>)</span><br><span class="line">	.setCookie(<span class="string">'dunteng'</span>, <span class="string">'great'</span>, <span class="string">'10000000'</span>)</span><br><span class="line">	.removeCookie(<span class="string">'color'</span>)</span><br><span class="line">	.getCookie(<span class="string">'dunteng'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(data)</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
 <p><br><br></p>
@@ -413,6 +439,10 @@
         <div class="post-tags">
           
             <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/小案例/" rel="tag"># 小案例</a>
+          
+            <a href="/tags/Cookie/" rel="tag"># Cookie</a>
           
         </div>
       
@@ -513,7 +543,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -524,7 +554,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -535,7 +565,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -604,15 +634,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 

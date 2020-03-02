@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="数据库,">
+  <meta name="keywords" content="数据库,MySQL,">
 
 
 
@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445//增insert into student(name, age, stu_num, class)value (&apos;卡卡西&apos;,28,6600,1);//改update student set name=&apos;鸣人&apos; where id = 1;">
-<meta name="keywords" content="数据库">
+<meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445//增insert into student(name, age, stu_num, class)value (&apos;卡卡西&apos;,28,6600,1);//改update student set name=&apos;鸣人&apos; where id">
+<meta name="keywords" content="数据库,MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL基本的增删改查操作">
 <meta property="og:url" content="https://dunteng.github.io/2019/10/01/MySQL基本的增删改查操作.html">
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
-<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445//增insert into student(name, age, stu_num, class)value (&apos;卡卡西&apos;,28,6600,1);//改update student set name=&apos;鸣人&apos; where id = 1;">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445//增insert into student(name, age, stu_num, class)value (&apos;卡卡西&apos;,28,6600,1);//改update student set name=&apos;鸣人&apos; where id">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://pic1.zhimg.com/v2-8dc902e921dfc2f2d189f2940dbbc3a7_1200x500.jpg">
-<meta property="og:updated_time" content="2019-10-22T17:20:02.797Z">
+<meta property="og:updated_time" content="2020-03-01T17:32:32.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL基本的增删改查操作">
-<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445//增insert into student(name, age, stu_num, class)value (&apos;卡卡西&apos;,28,6600,1);//改update student set name=&apos;鸣人&apos; where id = 1;">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445//增insert into student(name, age, stu_num, class)value (&apos;卡卡西&apos;,28,6600,1);//改update student set name=&apos;鸣人&apos; where id">
 <meta name="twitter:image" content="https://pic1.zhimg.com/v2-8dc902e921dfc2f2d189f2940dbbc3a7_1200x500.jpg">
 
 
@@ -348,6 +348,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端开发/" itemprop="url" rel="index">
+                    <span itemprop="name">后端开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -390,7 +412,11 @@
       
 
       
-        <p><img src="https://pic1.zhimg.com/v2-8dc902e921dfc2f2d189f2940dbbc3a7_1200x500.jpg" alt=""></p>
+        <meta name="referrer" content="no-referrer">
+
+
+
+<p><img src="https://pic1.zhimg.com/v2-8dc902e921dfc2f2d189f2940dbbc3a7_1200x500.jpg" alt=""></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//增</span></span><br><span class="line">insert into student(name, age, stu_num, <span class="class"><span class="keyword">class</span>)</span></span><br><span class="line"><span class="class"><span class="title">value</span> ('卡卡西',28,6600,1)</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//改</span></span><br><span class="line">update student set name=<span class="string">'鸣人'</span> where id = <span class="number">1</span>;</span><br><span class="line">update student set name = <span class="string">'佐助'</span>, age=<span class="number">18</span>, stu_num=<span class="number">6631</span>, <span class="class"><span class="keyword">class</span></span>=<span class="number">1</span> where id = <span class="number">2</span>;</span><br><span class="line">update student</span><br><span class="line">set  id = <span class="number">3</span>, age=<span class="number">18</span>, stu_num=<span class="number">6632</span>, <span class="class"><span class="keyword">class</span></span>=<span class="number">1</span></span><br><span class="line">where name=<span class="string">'小樱'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//查</span></span><br><span class="line">select * <span class="keyword">from</span> student;  <span class="comment">/*查询表中所有人*/</span></span><br><span class="line"></span><br><span class="line">select  name,age <span class="keyword">from</span> student;  <span class="comment">/*查询表中所有人的名字和年龄*/</span></span><br><span class="line"></span><br><span class="line">select * <span class="keyword">from</span> student where age = <span class="number">18</span>; <span class="comment">/*查询年龄为18的所有人*/</span></span><br><span class="line"></span><br><span class="line">select count(<span class="number">1</span>) <span class="keyword">from</span> student; <span class="comment">/*查询表中所有记录条数（在这里就是表中所有人总数）*/</span></span><br><span class="line"></span><br><span class="line">select count(<span class="number">1</span>) <span class="keyword">from</span> student where age=<span class="number">18</span>; <span class="comment">/*查询表中年龄为18的人数*/</span></span><br><span class="line"></span><br><span class="line">select sum(age) <span class="keyword">from</span> student; <span class="comment">/* 所有人的年龄加起来的总数*/</span></span><br><span class="line"></span><br><span class="line">select avg(age) <span class="keyword">from</span> student;<span class="comment">/*求所有人的平均年龄*/</span></span><br><span class="line"></span><br><span class="line">select  avg(age) <span class="keyword">as</span> avg_age <span class="keyword">from</span> student; <span class="comment">/*给平均数设置别名*/</span></span><br><span class="line"></span><br><span class="line">select <span class="class"><span class="keyword">class</span>, <span class="title">count</span>(1) <span class="title">from</span> <span class="title">student</span> <span class="title">group</span> <span class="title">by</span> <span class="title">class</span></span>; <span class="comment">/*查询每班各有多少人，使用了group by进行分组*/</span></span><br><span class="line"></span><br><span class="line">select name, <span class="class"><span class="keyword">class</span> <span class="title">from</span> <span class="title">student</span> <span class="title">where</span> <span class="title">age</span>!</span>=<span class="number">18</span> and <span class="class"><span class="keyword">class</span></span>=<span class="number">3</span>; <span class="comment">/* 多个条件使用and */</span></span><br><span class="line">select name, <span class="class"><span class="keyword">class</span> <span class="title">from</span> <span class="title">student</span> <span class="title">where</span> <span class="title">age</span></span>=<span class="number">18</span> or stu_num&gt;<span class="number">6640</span>; <span class="comment">/* 或操作使用or */</span></span><br><span class="line"></span><br><span class="line">select * <span class="keyword">from</span> student limit <span class="number">2</span>; <span class="comment">/* 只取前两条记录*/</span></span><br><span class="line"></span><br><span class="line">select * <span class="keyword">from</span> student limit <span class="number">5</span>,<span class="number">3</span>; <span class="comment">/* 前5条记录不看，从第6条记录看起，取出3条记录*/</span></span><br><span class="line"></span><br><span class="line">select * <span class="keyword">from</span> student order by id; <span class="comment">/* 以id进行正序排列 */</span></span><br><span class="line">select * <span class="keyword">from</span> student order by id desc ; <span class="comment">/* 倒序排列 */</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//删</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> student;  <span class="comment">/*删除整个表。危险！！！*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> student where name=<span class="string">'卡卡西'</span>;</span><br></pre></td></tr></table></figure>
 
       
@@ -411,6 +437,8 @@
           
             <a href="/tags/数据库/" rel="tag"># 数据库</a>
           
+            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+          
         </div>
       
 
@@ -422,8 +450,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/30/net模块写微型node服务器.html" rel="next" title="写一个微型node服务器">
-                <i class="fa fa-chevron-left"></i> 写一个微型node服务器
+              <a href="/2019/10/01/使用http模块重构微型服务器.html" rel="next" title="使用http模块重构微型服务器">
+                <i class="fa fa-chevron-left"></i> 使用http模块重构微型服务器
               </a>
             
           </div>
@@ -432,8 +460,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/10/01/使用http模块重构微型服务器.html" rel="prev" title="使用http模块重构微型服务器">
-                使用http模块重构微型服务器 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/10/02/express搭建静态文件服务器.html" rel="prev" title="使用express搭建静态文件服务器">
+                使用express搭建静态文件服务器 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -510,7 +538,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -521,7 +549,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -532,7 +560,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -601,15 +629,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 

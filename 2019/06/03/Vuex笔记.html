@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Vue,">
+  <meta name="keywords" content="Vue,Vuex,">
 
 
 
@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="我这篇文章也放在我的GitHub上，里面还有相应的代码。建议移步GitHub阅读本文章。 本文代码 前导~state部分的全部代码： 点击 应用（一）代码： 点击 getters 应用（二）代码： 点击 mutations 应用（三）代码：点击 actions 应用（四）代码：点击   前导结合代码案例学习，本文的知识点会依附在这个代码里讲解，下面先来看一下这个代码的介绍，主要就是一个父组件Ind">
-<meta name="keywords" content="Vue">
+<meta name="description" content="我这篇文章也放在我的GitHub上，里面还有相应的代码。建议移步GitHub阅读本文章。 本文代码 前导~state部分的全部代码： 点击 应用（一）代码： 点击 getters 应用（二）代码： 点击 mutations 应用（三）代码：点击 actions 应用（四）代码：点击   前导结合代码案例学习，本文的知识点会依附在这个代码里讲解，下面先来看一下这个代码的介绍，主要就是一个父组件I">
+<meta name="keywords" content="Vue,Vuex">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vuex笔记">
 <meta property="og:url" content="https://dunteng.github.io/2019/06/03/Vuex笔记.html">
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
-<meta property="og:description" content="我这篇文章也放在我的GitHub上，里面还有相应的代码。建议移步GitHub阅读本文章。 本文代码 前导~state部分的全部代码： 点击 应用（一）代码： 点击 getters 应用（二）代码： 点击 mutations 应用（三）代码：点击 actions 应用（四）代码：点击   前导结合代码案例学习，本文的知识点会依附在这个代码里讲解，下面先来看一下这个代码的介绍，主要就是一个父组件Ind">
+<meta property="og:description" content="我这篇文章也放在我的GitHub上，里面还有相应的代码。建议移步GitHub阅读本文章。 本文代码 前导~state部分的全部代码： 点击 应用（一）代码： 点击 getters 应用（二）代码： 点击 mutations 应用（三）代码：点击 actions 应用（四）代码：点击   前导结合代码案例学习，本文的知识点会依附在这个代码里讲解，下面先来看一下这个代码的介绍，主要就是一个父组件I">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562291573640.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562292413010.png">
@@ -103,10 +103,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562376986538.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/faga.GIF">
 <meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/dfagaga.GIF">
-<meta property="og:updated_time" content="2019-07-06T03:56:34.281Z">
+<meta property="og:updated_time" content="2020-03-01T18:15:59.297Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vuex笔记">
-<meta name="twitter:description" content="我这篇文章也放在我的GitHub上，里面还有相应的代码。建议移步GitHub阅读本文章。 本文代码 前导~state部分的全部代码： 点击 应用（一）代码： 点击 getters 应用（二）代码： 点击 mutations 应用（三）代码：点击 actions 应用（四）代码：点击   前导结合代码案例学习，本文的知识点会依附在这个代码里讲解，下面先来看一下这个代码的介绍，主要就是一个父组件Ind">
+<meta name="twitter:description" content="我这篇文章也放在我的GitHub上，里面还有相应的代码。建议移步GitHub阅读本文章。 本文代码 前导~state部分的全部代码： 点击 应用（一）代码： 点击 getters 应用（二）代码： 点击 mutations 应用（三）代码：点击 actions 应用（四）代码：点击   前导结合代码案例学习，本文的知识点会依附在这个代码里讲解，下面先来看一下这个代码的介绍，主要就是一个父组件I">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/vuex/1562291573640.png">
 
 
@@ -363,6 +363,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -405,7 +427,9 @@
       
 
       
-        <p>我这篇文章也放在我的GitHub上，里面还有相应的代码。建议移步<a href="https://github.com/Dunteng/learnVue/tree/master/%E5%AD%A6%E4%B9%A0Vuex#%E6%9C%AC%E6%96%87%E4%BB%A3%E7%A0%81" target="_blank" rel="noopener">GitHub</a>阅读本文章。</p>
+        <meta name="referrer" content="no-referrer">
+
+<p>我这篇文章也放在我的GitHub上，里面还有相应的代码。建议移步<a href="https://github.com/Dunteng/learnVue/tree/master/%E5%AD%A6%E4%B9%A0Vuex#%E6%9C%AC%E6%96%87%E4%BB%A3%E7%A0%81" target="_blank" rel="noopener">GitHub</a>阅读本文章。</p>
 <h1 id="本文代码"><a href="#本文代码" class="headerlink" title="本文代码"></a>本文代码</h1><ul>
 <li>前导~state部分的全部代码： <a href="https://github.com/Dunteng/learnVue/tree/v1/%E5%AD%A6%E4%B9%A0Vuex/app" target="_blank" rel="noopener">点击</a></li>
 <li>应用（一）代码： <a href="https://github.com/Dunteng/learnVue/tree/v2/%E5%AD%A6%E4%B9%A0Vuex/app" target="_blank" rel="noopener">点击</a></li>
@@ -574,6 +598,8 @@
           
             <a href="/tags/Vue/" rel="tag"># Vue</a>
           
+            <a href="/tags/Vuex/" rel="tag"># Vuex</a>
+          
         </div>
       
 
@@ -682,7 +708,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -693,7 +719,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -704,7 +730,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -789,15 +815,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 

@@ -329,7 +329,7 @@
         <div class="post-meta">
 		
     <i class="fa fa-thumb-tack"></i>
-    <font color="green">置顶</font>
+    <font color="orange">置顶</font>
     <span class="post-meta-divider">|</span>
 
           <span class="post-time">
@@ -414,9 +414,11 @@
           
           
 
+
+
 前言之前一直用的anchor主题，每个页面都有一个大的背景图，虽然好看，但是加载图片很慢我实在受不了了。改邪归正使用next主题。
 安装Next下载主题在博客根目录
-1git clone https://github.com/iissnan/hexo-theme-next themes/next
+1git clone https://github.com/iissnan/hexo-theme-next themes/ne
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -807,7 +809,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/2019/10/28/预编译-作用域-闭包-立即执行函数.html">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/2019/10/28/对象.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dunteng Lin">
@@ -826,7 +828,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/10/28/预编译-作用域-闭包-立即执行函数.html" itemprop="url">复习预编译-作用域-闭包-立即执行函数</a></h1>
+                <a class="post-title-link" href="/2019/10/28/对象.html" itemprop="url">复习对象</a></h1>
         
 
         <div class="post-meta">
@@ -880,8 +882,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/10/28/预编译-作用域-闭包-立即执行函数.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/28/预编译-作用域-闭包-立即执行函数.html" itemprop="commentCount"></span>
+                <a href="/2019/10/28/对象.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/28/对象.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -913,25 +915,19 @@
           
           
 
+对象创建方法
+对象字面量
+1var obj = &#123; &#125;;
 
+系统自带的构造函数Object()
+1var obj = new Object();
 
-函数定义👉点击
-【补充】：
-
-注意区分什么是函数声明、什么是函数表示，不要混淆。
-
-命定表达式
-
-函数按照上面的方式定义后，只有test才是函数，test1不是一个函数，但是test1是test的name，可以通过test.name得到。
-
-
-参数、返回值👉点击
-
-预编译JavaScri
+自定义构造函数
+123456789101112// 与普通函数区别：1、函数名大驼峰命名；2、定义属性和方法为纯语句functi
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/10/28/预编译-作用域-闭包-立即执行函数.html#more" rel="contents">
+            <a class="btn" href="/2019/10/28/对象.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1155,7 +1151,7 @@ new Array
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/2019/10/28/对象.html">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/2019/10/28/预编译-作用域-闭包-立即执行函数.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dunteng Lin">
@@ -1174,7 +1170,7 @@ new Array
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/10/28/对象.html" itemprop="url">复习对象</a></h1>
+                <a class="post-title-link" href="/2019/10/28/预编译-作用域-闭包-立即执行函数.html" itemprop="url">复习预编译-作用域-闭包-立即执行函数</a></h1>
         
 
         <div class="post-meta">
@@ -1198,6 +1194,28 @@ new Array
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1206,8 +1224,8 @@ new Array
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/10/28/对象.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/28/对象.html" itemprop="commentCount"></span>
+                <a href="/2019/10/28/预编译-作用域-闭包-立即执行函数.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/28/预编译-作用域-闭包-立即执行函数.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1237,19 +1255,27 @@ new Array
       
         
           
-          对象创建方法
-对象字面量
-1var obj = &#123; &#125;;
+          
 
-系统自带的构造函数Object()
-1var obj = new Object();
 
-自定义构造函数
-123456789101112// 与普通函数区别：1、函数名大驼峰命名；2、定义属性和方法为纯语句function
+
+函数定义👉点击
+【补充】：
+
+注意区分什么是函数声明、什么是函数表示，不要混淆。
+
+命定表达式
+
+函数按照上面的方式定义后，只有test才是函数，test1不是一个函数，但是test1是test的name，可以通过test.name得到。
+
+
+参数、返回值👉点击
+
+预编译JavaScri
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/10/28/对象.html#more" rel="contents">
+            <a class="btn" href="/2019/10/28/预编译-作用域-闭包-立即执行函数.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1346,6 +1372,28 @@ new Array
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1385,8 +1433,12 @@ new Array
       
         
           
-          页面跳转与传值一、使用router-linkroutes路由：
-1234567891011121314export default new Router(&#123;  routes: [      &#123;        path: '/',        name: 'Index',    
+          
+
+
+
+页面跳转与传值一、使用router-linkroutes路由：
+1234567891011121314export default new Router(&#123;  routes: [      &#123;        path: '/',        name: 'Index',
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1487,6 +1539,28 @@ new Array
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1526,9 +1600,13 @@ new Array
       
         
           
-          背景问题在前端开发中有一部分的用户行为会频繁的触发事件，从而频繁地执行函数，而对于DOM操作、资源加载等耗费性能的处理，很可能导致界面卡顿，甚至浏览器崩溃（本质是因为js是单线程的）。
+          
+
+
+
+背景问题在前端开发中有一部分的用户行为会频繁的触发事件，从而频繁地执行函数，而对于DOM操作、资源加载等耗费性能的处理，很可能导致界面卡顿，甚至浏览器崩溃（本质是因为js是单线程的）。
 函数节流（throttle）和函数防抖（debounce）可以解决问题。
-防抖函数防抖就是在函数需要频繁触发情况时
+防抖函数防抖就是在函数需要频繁触
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1629,6 +1707,28 @@ new Array
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端开发/" itemprop="url" rel="index">
+                    <span itemprop="name">后端开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1668,8 +1768,10 @@ new Array
       
         
           
-          缓存背景由于数据库是建立在硬盘上的，当有大量数据读写数据库时，而硬盘的读写速度慢，导致数据库性能有瓶颈，数据吞吐不够。
-因此在客户端和数据库之前间，加一个缓存，而这个缓存是用内存做的，内存的读写速度非常快。 当要对数据库进行读写时，先访问中间层的缓存，读数据时先看缓存中有无想要的数据，若有直接从缓存
+          
+
+缓存背景由于数据库是建立在硬盘上的，当有大量数据读写数据库时，而硬盘的读写速度慢，导致数据库性能有瓶颈，数据吞吐不够。
+因此在客户端和数据库之前间，加一个缓存，而这个缓存是用内存做的，内存的读写速度非常快。 当要对数据库进行读写时，先访问中间层的缓存，读数据时先看缓存中有无想要的数据，若有直接从
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1885,7 +1987,7 @@ new Array
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1933,7 +2035,7 @@ new Array
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1944,7 +2046,7 @@ new Array
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1955,7 +2057,7 @@ new Array
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2024,15 +2126,7 @@ new Array
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 

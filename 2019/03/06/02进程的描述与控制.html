@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="第二章1. 前趋图和程序执行1.1 前趋图见课本p32、p33 1.2 程序顺序执行程序执行有固定的时序， 特征： 顺序性、可再现性、封闭性 1.3 程序并发执行 与顺序执行的特征相反： 间断性、不可再现性、非封闭性（由资源共享造成） 结合pdf第9页左右例子理解 2. 进程的描述2.1 进程的定义与特征定义：是程序的一次执行过程，是进程实体的运行过程，是系统进行资源分配和调度 的一个独立单位。">
+<meta name="description" content="第二章1. 前趋图和程序执行1.1 前趋图见课本p32、p33 1.2 程序顺序执行程序执行有固定的时序， 特征： 顺序性、可再现性、封闭性 1.3 程序并发执行 与顺序执行的特征相反： 间断性、不可再现性、非封闭性（由资源共享造成） 结合pdf第9页左右例子理解 2. 进程的描述2.1 进程的定义与特征定义：是程序的一次执行过程，是进程实体的运行过程，是系统进行资源分配和调度 的一个独立">
 <meta name="keywords" content="操作系统">
 <meta property="og:type" content="article">
 <meta property="og:title" content="进程的描述与控制">
 <meta property="og:url" content="https://dunteng.github.io/2019/03/06/02进程的描述与控制.html">
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
-<meta property="og:description" content="第二章1. 前趋图和程序执行1.1 前趋图见课本p32、p33 1.2 程序顺序执行程序执行有固定的时序， 特征： 顺序性、可再现性、封闭性 1.3 程序并发执行 与顺序执行的特征相反： 间断性、不可再现性、非封闭性（由资源共享造成） 结合pdf第9页左右例子理解 2. 进程的描述2.1 进程的定义与特征定义：是程序的一次执行过程，是进程实体的运行过程，是系统进行资源分配和调度 的一个独立单位。">
+<meta property="og:description" content="第二章1. 前趋图和程序执行1.1 前趋图见课本p32、p33 1.2 程序顺序执行程序执行有固定的时序， 特征： 顺序性、可再现性、封闭性 1.3 程序并发执行 与顺序执行的特征相反： 间断性、不可再现性、非封闭性（由资源共享造成） 结合pdf第9页左右例子理解 2. 进程的描述2.1 进程的定义与特征定义：是程序的一次执行过程，是进程实体的运行过程，是系统进行资源分配和调度 的一个独立">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006ttwEMgy1g0publkgx4j30q40bewfa.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006ttwEMgy1g0pw2y75xxj30ya0i6k3r.jpg">
@@ -144,10 +144,10 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qmm2uwxrj30zo0k1qcp.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qmn9b6hbj30x40jm7d2.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006ttwEMgy1g0qomkpz36j30oq0kygow.jpg">
-<meta property="og:updated_time" content="2019-03-23T03:34:54.429Z">
+<meta property="og:updated_time" content="2020-03-01T19:12:23.133Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="进程的描述与控制">
-<meta name="twitter:description" content="第二章1. 前趋图和程序执行1.1 前趋图见课本p32、p33 1.2 程序顺序执行程序执行有固定的时序， 特征： 顺序性、可再现性、封闭性 1.3 程序并发执行 与顺序执行的特征相反： 间断性、不可再现性、非封闭性（由资源共享造成） 结合pdf第9页左右例子理解 2. 进程的描述2.1 进程的定义与特征定义：是程序的一次执行过程，是进程实体的运行过程，是系统进行资源分配和调度 的一个独立单位。">
+<meta name="twitter:description" content="第二章1. 前趋图和程序执行1.1 前趋图见课本p32、p33 1.2 程序顺序执行程序执行有固定的时序， 特征： 顺序性、可再现性、封闭性 1.3 程序并发执行 与顺序执行的特征相反： 间断性、不可再现性、非封闭性（由资源共享造成） 结合pdf第9页左右例子理解 2. 进程的描述2.1 进程的定义与特征定义：是程序的一次执行过程，是进程实体的运行过程，是系统进行资源分配和调度 的一个独立">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006ttwEMgy1g0publkgx4j30q40bewfa.jpg">
 
 
@@ -404,6 +404,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/操作系统/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -446,7 +468,11 @@
       
 
       
-        <h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><h2 id="1-前趋图和程序执行"><a href="#1-前趋图和程序执行" class="headerlink" title="1. 前趋图和程序执行"></a>1. 前趋图和程序执行</h2><h3 id="1-1-前趋图"><a href="#1-1-前趋图" class="headerlink" title="1.1 前趋图"></a>1.1 前趋图</h3><p>见课本p32、p33</p>
+        <meta name="referrer" content="no-referrer">
+
+
+
+<h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><h2 id="1-前趋图和程序执行"><a href="#1-前趋图和程序执行" class="headerlink" title="1. 前趋图和程序执行"></a>1. 前趋图和程序执行</h2><h3 id="1-1-前趋图"><a href="#1-1-前趋图" class="headerlink" title="1.1 前趋图"></a>1.1 前趋图</h3><p>见课本p32、p33</p>
 <h3 id="1-2-程序顺序执行"><a href="#1-2-程序顺序执行" class="headerlink" title="1.2 程序顺序执行"></a>1.2 程序顺序执行</h3><p>程序执行有固定的时序，</p>
 <p><strong>特征：</strong> 顺序性、可再现性、封闭性</p>
 <h3 id="1-3-程序并发执行"><a href="#1-3-程序并发执行" class="headerlink" title="1.3 程序并发执行"></a>1.3 程序并发执行</h3><p><img src="http://ww1.sinaimg.cn/large/006ttwEMgy1g0publkgx4j30q40bewfa.jpg" alt="      "></p>
@@ -639,7 +665,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -650,7 +676,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -661,7 +687,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -746,15 +772,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 

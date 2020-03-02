@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="继承: 首先继承是一种关系，类(class)与类之间的关系，JS中没有类，但是可以通过构造函数模拟类，然后通过原型来实现继承。继承也是为了数据共享，JS中的继承也是为了实现数据共享。下面介绍三种继承方法。 通过改变原型指向实现继承这是一个Person构造函数，用于构造Person类的对象： 1234567891011121314function Person(name,age,sex) &amp;#123">
+<meta name="description" content="继承: 首先继承是一种关系，类(class)与类之间的关系，JS中没有类，但是可以通过构造函数模拟类，然后通过原型来实现继承。继承也是为了数据共享，JS中的继承也是为了实现数据共享。下面介绍三种继承方法。 通过改变原型指向实现继承这是一个Person构造函数，用于构造Person类的对象： 1234567891011121314function Person(name,age,sex) &amp;">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="继承">
 <meta property="og:url" content="https://dunteng.github.io/2019/03/04/继承.html">
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
-<meta property="og:description" content="继承: 首先继承是一种关系，类(class)与类之间的关系，JS中没有类，但是可以通过构造函数模拟类，然后通过原型来实现继承。继承也是为了数据共享，JS中的继承也是为了实现数据共享。下面介绍三种继承方法。 通过改变原型指向实现继承这是一个Person构造函数，用于构造Person类的对象： 1234567891011121314function Person(name,age,sex) &amp;#123">
+<meta property="og:description" content="继承: 首先继承是一种关系，类(class)与类之间的关系，JS中没有类，但是可以通过构造函数模拟类，然后通过原型来实现继承。继承也是为了数据共享，JS中的继承也是为了实现数据共享。下面介绍三种继承方法。 通过改变原型指向实现继承这是一个Person构造函数，用于构造Person类的对象： 1234567891011121314function Person(name,age,sex) &amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-22T07:01:37.030Z">
+<meta property="og:updated_time" content="2020-03-01T19:17:35.606Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="继承">
-<meta name="twitter:description" content="继承: 首先继承是一种关系，类(class)与类之间的关系，JS中没有类，但是可以通过构造函数模拟类，然后通过原型来实现继承。继承也是为了数据共享，JS中的继承也是为了实现数据共享。下面介绍三种继承方法。 通过改变原型指向实现继承这是一个Person构造函数，用于构造Person类的对象： 1234567891011121314function Person(name,age,sex) &amp;#123">
+<meta name="twitter:description" content="继承: 首先继承是一种关系，类(class)与类之间的关系，JS中没有类，但是可以通过构造函数模拟类，然后通过原型来实现继承。继承也是为了数据共享，JS中的继承也是为了实现数据共享。下面介绍三种继承方法。 通过改变原型指向实现继承这是一个Person构造函数，用于构造Person类的对象： 1234567891011121314function Person(name,age,sex) &amp;">
 
 
 
@@ -346,6 +346,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -388,7 +410,11 @@
       
 
       
-        <p>继承: 首先继承是一种关系，类(class)与类之间的关系，JS中没有类，但是可以通过构造函数模拟类，然后通过原型来实现继承。继承也是为了数据共享，JS中的继承也是为了实现数据共享。下面介绍三种继承方法。</p>
+        <meta name="referrer" content="no-referrer">
+
+
+
+<p>继承: 首先继承是一种关系，类(class)与类之间的关系，JS中没有类，但是可以通过构造函数模拟类，然后通过原型来实现继承。继承也是为了数据共享，JS中的继承也是为了实现数据共享。下面介绍三种继承方法。</p>
 <h1 id="通过改变原型指向实现继承"><a href="#通过改变原型指向实现继承" class="headerlink" title="通过改变原型指向实现继承"></a>通过改变原型指向实现继承</h1><p>这是一个Person构造函数，用于构造Person类的对象：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,sex</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name=name;</span><br><span class="line">  <span class="keyword">this</span>.sex=sex;</span><br><span class="line">  <span class="keyword">this</span>.age=age;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.eat=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"人可以吃东西"</span>);</span><br><span class="line">&#125;;</span><br><span class="line">Person.prototype.sleep=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"人在睡觉"</span>);</span><br><span class="line">&#125;;</span><br><span class="line">Person.prototype.play=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"生活就是不一样的玩法而已"</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>这是一个Student构造函数，用于构造Student类的对象：</p>
@@ -536,7 +562,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -547,7 +573,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -558,7 +584,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -643,15 +669,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 

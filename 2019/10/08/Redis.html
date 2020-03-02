@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="后端,redis,">
+  <meta name="keywords" content="数据库,后端,redis,">
 
 
 
@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="缓存背景由于数据库是建立在硬盘上的，当有大量数据读写数据库时，而硬盘的读写速度慢，导致数据库性能有瓶颈，数据吞吐不够。 因此在客户端和数据库之前间，加一个缓存，而这个缓存是用内存做的，内存的读写速度非常快。 当要对数据库进行读写时，先访问中间层的缓存，读数据时先看缓存中有无想要的数据，若有直接从缓存拿，若无则再去访问数据库；写数据时，先写进缓存，之后缓存再慢慢同步到数据库。这样就帮数据库有效地拦截">
-<meta name="keywords" content="后端,redis">
+<meta name="description" content="缓存背景由于数据库是建立在硬盘上的，当有大量数据读写数据库时，而硬盘的读写速度慢，导致数据库性能有瓶颈，数据吞吐不够。 因此在客户端和数据库之前间，加一个缓存，而这个缓存是用内存做的，内存的读写速度非常快。 当要对数据库进行读写时，先访问中间层的缓存，读数据时先看缓存中有无想要的数据，若有直接从缓存拿，若无则再去访问数据库；写数据时，先写进缓存，之后缓存再慢慢同步到数据库。这样就帮数据库有效地">
+<meta name="keywords" content="数据库,后端,redis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis">
 <meta property="og:url" content="https://dunteng.github.io/2019/10/08/Redis.html">
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
-<meta property="og:description" content="缓存背景由于数据库是建立在硬盘上的，当有大量数据读写数据库时，而硬盘的读写速度慢，导致数据库性能有瓶颈，数据吞吐不够。 因此在客户端和数据库之前间，加一个缓存，而这个缓存是用内存做的，内存的读写速度非常快。 当要对数据库进行读写时，先访问中间层的缓存，读数据时先看缓存中有无想要的数据，若有直接从缓存拿，若无则再去访问数据库；写数据时，先写进缓存，之后缓存再慢慢同步到数据库。这样就帮数据库有效地拦截">
+<meta property="og:description" content="缓存背景由于数据库是建立在硬盘上的，当有大量数据读写数据库时，而硬盘的读写速度慢，导致数据库性能有瓶颈，数据吞吐不够。 因此在客户端和数据库之前间，加一个缓存，而这个缓存是用内存做的，内存的读写速度非常快。 当要对数据库进行读写时，先访问中间层的缓存，读数据时先看缓存中有无想要的数据，若有直接从缓存拿，若无则再去访问数据库；写数据时，先写进缓存，之后缓存再慢慢同步到数据库。这样就帮数据库有效地">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://pic4.zhimg.com/v2-ae215207d175303dd4e37b37b61a7d33_r.jpg">
 <meta property="og:image" content="https://pic2.zhimg.com/v2-754e178d110a14222ca88e9d52ee724d_r.jpg">
@@ -94,10 +94,10 @@
 <meta property="og:image" content="https://pic4.zhimg.com/80/v2-c2683c7ddec97d9396f726cfbe89c9bb_hd.jpg">
 <meta property="og:image" content="https://pic3.zhimg.com/v2-8dda927023de977c96fdf8b25f4b581e_r.jpg">
 <meta property="og:image" content="https://pic1.zhimg.com/v2-dff48949afd760407a8abce57ff851ec_r.jpg">
-<meta property="og:updated_time" content="2019-10-26T14:31:04.999Z">
+<meta property="og:updated_time" content="2020-03-01T17:23:36.623Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis">
-<meta name="twitter:description" content="缓存背景由于数据库是建立在硬盘上的，当有大量数据读写数据库时，而硬盘的读写速度慢，导致数据库性能有瓶颈，数据吞吐不够。 因此在客户端和数据库之前间，加一个缓存，而这个缓存是用内存做的，内存的读写速度非常快。 当要对数据库进行读写时，先访问中间层的缓存，读数据时先看缓存中有无想要的数据，若有直接从缓存拿，若无则再去访问数据库；写数据时，先写进缓存，之后缓存再慢慢同步到数据库。这样就帮数据库有效地拦截">
+<meta name="twitter:description" content="缓存背景由于数据库是建立在硬盘上的，当有大量数据读写数据库时，而硬盘的读写速度慢，导致数据库性能有瓶颈，数据吞吐不够。 因此在客户端和数据库之前间，加一个缓存，而这个缓存是用内存做的，内存的读写速度非常快。 当要对数据库进行读写时，先访问中间层的缓存，读数据时先看缓存中有无想要的数据，若有直接从缓存拿，若无则再去访问数据库；写数据时，先写进缓存，之后缓存再慢慢同步到数据库。这样就帮数据库有效地">
 <meta name="twitter:image" content="https://pic4.zhimg.com/v2-ae215207d175303dd4e37b37b61a7d33_r.jpg">
 
 
@@ -354,6 +354,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端开发/" itemprop="url" rel="index">
+                    <span itemprop="name">后端开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -396,7 +418,9 @@
       
 
       
-        <h2 id="缓存背景"><a href="#缓存背景" class="headerlink" title="缓存背景"></a>缓存背景</h2><p>由于数据库是建立在硬盘上的，当有大量数据读写数据库时，而硬盘的读写速度慢，导致数据库性能有瓶颈，数据吞吐不够。</p>
+        <meta name="referrer" content="no-referrer">
+
+<h2 id="缓存背景"><a href="#缓存背景" class="headerlink" title="缓存背景"></a>缓存背景</h2><p>由于数据库是建立在硬盘上的，当有大量数据读写数据库时，而硬盘的读写速度慢，导致数据库性能有瓶颈，数据吞吐不够。</p>
 <p>因此在客户端和数据库之前间，加一个<strong>缓存</strong>，而这个缓存是用内存做的，<strong>内存的读写速度非常快</strong>。 当要对数据库进行读写时，先访问中间层的缓存，读数据时先看缓存中有无想要的数据，若有直接从缓存拿，若无则再去访问数据库；写数据时，先写进缓存，之后缓存再慢慢同步到数据库。这样就帮数据库有效地拦截了一些频繁的读写操作。</p>
 <p><img src="https://pic4.zhimg.com/v2-ae215207d175303dd4e37b37b61a7d33_r.jpg" alt=""></p>
 <p>【什么样的数据存入缓存】缓存中存的应是读写数据库非常频繁的数据。</p>
@@ -462,6 +486,8 @@
     <footer class="post-footer">
       
         <div class="post-tags">
+          
+            <a href="/tags/数据库/" rel="tag"># 数据库</a>
           
             <a href="/tags/后端/" rel="tag"># 后端</a>
           
@@ -575,7 +601,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -586,7 +612,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -597,7 +623,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -682,15 +708,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 

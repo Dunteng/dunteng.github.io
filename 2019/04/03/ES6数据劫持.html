@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript,">
+  <meta name="keywords" content="JavaScript,ES6,">
 
 
 
@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="ES5数据劫持VUE的双向数据绑定的基础知识。  对对象的监测 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556var oDiv = document.getElementById(&apos;show&apos;);var oInput = document.">
-<meta name="keywords" content="JavaScript">
+<meta name="description" content="ES5数据劫持VUE的双向数据绑定的基础知识。  对对象的监测 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556var oDiv = document.getElementById(&apos;show&apos;);var oInput = docum">
+<meta name="keywords" content="JavaScript,ES6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES6数据劫持proxy&amp;reflect">
 <meta property="og:url" content="https://dunteng.github.io/2019/04/03/ES6数据劫持.html">
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
-<meta property="og:description" content="ES5数据劫持VUE的双向数据绑定的基础知识。  对对象的监测 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556var oDiv = document.getElementById(&apos;show&apos;);var oInput = document.">
+<meta property="og:description" content="ES5数据劫持VUE的双向数据绑定的基础知识。  对对象的监测 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556var oDiv = document.getElementById(&apos;show&apos;);var oInput = docum">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/006ttwEMgy1g286elh0cuj30fy07twft.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/006ttwEMly1g29c5nx2b1j30ex08hab8.jpg">
-<meta property="og:updated_time" content="2019-05-21T01:17:05.795Z">
+<meta property="og:updated_time" content="2020-03-01T19:06:32.582Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6数据劫持proxy&amp;reflect">
-<meta name="twitter:description" content="ES5数据劫持VUE的双向数据绑定的基础知识。  对对象的监测 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556var oDiv = document.getElementById(&apos;show&apos;);var oInput = document.">
+<meta name="twitter:description" content="ES5数据劫持VUE的双向数据绑定的基础知识。  对对象的监测 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556var oDiv = document.getElementById(&apos;show&apos;);var oInput = docum">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/006ttwEMgy1g286elh0cuj30fy07twft.jpg">
 
 
@@ -349,6 +349,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/ES6/" itemprop="url" rel="index">
+                    <span itemprop="name">ES6</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -391,7 +413,11 @@
       
 
       
-        <h2 id="ES5数据劫持"><a href="#ES5数据劫持" class="headerlink" title="ES5数据劫持"></a>ES5数据劫持</h2><p>VUE的双向数据绑定的基础知识。</p>
+        <meta name="referrer" content="no-referrer">
+
+
+
+<h2 id="ES5数据劫持"><a href="#ES5数据劫持" class="headerlink" title="ES5数据劫持"></a>ES5数据劫持</h2><p>VUE的双向数据绑定的基础知识。</p>
 <p><img src="https://raw.githubusercontent.com/Dunteng/images/master/BlogImages/illustration/006ttwEMgy1g286elh0cuj30fy07twft.jpg" alt=""></p>
 <p><strong>对对象的监测</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oDiv = <span class="built_in">document</span>.getElementById(<span class="string">'show'</span>);</span><br><span class="line"><span class="keyword">var</span> oInput = <span class="built_in">document</span>.getElementById(<span class="string">'demo'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> oData = &#123;</span><br><span class="line">    valueObj: &#123;</span><br><span class="line">        value: <span class="string">'duntengOG'</span>,</span><br><span class="line">        name: <span class="string">'haha'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    sex: <span class="string">'aaa'</span>  </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">oInput.oninput = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    oData.value = <span class="keyword">this</span>.value;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">upDate</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    oDiv.innerText = oData.valueObj.value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">upDate();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 监控对象的某个属性是否发生改变</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Observer</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!data || <span class="keyword">typeof</span> data != <span class="string">'object'</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> data;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">// for (var prop in data) &#123;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    <span class="built_in">Object</span>.keys(data).forEach(<span class="function"><span class="keyword">function</span> (<span class="params">key</span>) </span>&#123;</span><br><span class="line">        definedRective(data, key, data[key]);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">definedRective</span> (<span class="params">data, key, val</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// AO</span></span><br><span class="line">    Observer(val);<span class="comment">//针对对象属性的监测</span></span><br><span class="line">    <span class="built_in">Object</span>.defineProperty(data, key, &#123;</span><br><span class="line">        get () &#123;</span><br><span class="line">            <span class="comment">// console.log('get');</span></span><br><span class="line">            <span class="keyword">return</span> val;</span><br><span class="line">        &#125;,</span><br><span class="line">        set (newValue) &#123;</span><br><span class="line">            <span class="keyword">if</span> (newValue == val) <span class="keyword">return</span>;</span><br><span class="line">            val = newValue;</span><br><span class="line">            upDate();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Observer(oData);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(oData.valueObj);</span><br><span class="line">oData.valueObj.value = <span class="string">'haha'</span>;</span><br></pre></td></tr></table></figure>
@@ -423,6 +449,8 @@
           
             <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
+            <a href="/tags/ES6/" rel="tag"># ES6</a>
+          
         </div>
       
 
@@ -444,8 +472,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/10/啥是前端工程化模块化组件化.html" rel="prev" title="啥是前端工程化、模块化、组件化？">
-                啥是前端工程化、模块化、组件化？ <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/10/webpack笔记.html" rel="prev" title="webpack4复习笔记">
+                webpack4复习笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -531,7 +559,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -542,7 +570,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -553,7 +581,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -638,15 +666,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 

@@ -79,21 +79,22 @@
 
 
 
-<meta name="description" content="console报错先建立项目： 123$ mkdir lesson03$ cd lesson02$ yarn init -y&amp;amp;&amp;amp;yarn add -D eslint 同样的进行初始化，npx eslint --init 这次配置文件我选择用json格式。 很多时候我们使用eslint会报console有错误。 12// ./src/test.jsconsole.log(12">
+<meta name="description" content="console报错事实上在新版本中已经不存在了，但对于初学者来说是很常见的而且会觉得很奇怪（如果使用的是较早版本），同时这个问题解决起来也非常之容易，所以我们还是来说一下这个问题，以此为契机展开对eslint配置的学习。  ​                        (在新版本中no-console已经被取消默认了) 先建立项目： 123$ mkdir lesson03$ cd le">
 <meta name="keywords" content="ESLint">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二、ESLint console报错是怎么回事？">
+<meta property="og:title" content="二、ESLint的console报错是怎么回事？">
 <meta property="og:url" content="https://dunteng.github.io/2020/03/01/ESLint学习笔记2.html">
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
-<meta property="og:description" content="console报错先建立项目： 123$ mkdir lesson03$ cd lesson02$ yarn init -y&amp;amp;&amp;amp;yarn add -D eslint 同样的进行初始化，npx eslint --init 这次配置文件我选择用json格式。 很多时候我们使用eslint会报console有错误。 12// ./src/test.jsconsole.log(12">
+<meta property="og:description" content="console报错事实上在新版本中已经不存在了，但对于初学者来说是很常见的而且会觉得很奇怪（如果使用的是较早版本），同时这个问题解决起来也非常之容易，所以我们还是来说一下这个问题，以此为契机展开对eslint配置的学习。  ​                        (在新版本中no-console已经被取消默认了) 先建立项目： 123$ mkdir lesson03$ cd le">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-69b1f00cbb690f5cbfd23c5ff1ebb08c_r.jpg">
 <meta property="og:image" content="https://pic2.zhimg.com/v2-776898592ed6e8c2cb89cbb21883d94d_r.jpg">
 <meta property="og:image" content="https://pic1.zhimg.com/80/v2-285ae5bd6d1df7aadaa9db1f19297460_720w.png">
-<meta property="og:updated_time" content="2020-03-05T10:46:29.543Z">
+<meta property="og:updated_time" content="2020-03-11T07:52:03.293Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="二、ESLint console报错是怎么回事？">
-<meta name="twitter:description" content="console报错先建立项目： 123$ mkdir lesson03$ cd lesson02$ yarn init -y&amp;amp;&amp;amp;yarn add -D eslint 同样的进行初始化，npx eslint --init 这次配置文件我选择用json格式。 很多时候我们使用eslint会报console有错误。 12// ./src/test.jsconsole.log(12">
-<meta name="twitter:image" content="https://pic2.zhimg.com/v2-776898592ed6e8c2cb89cbb21883d94d_r.jpg">
+<meta name="twitter:title" content="二、ESLint的console报错是怎么回事？">
+<meta name="twitter:description" content="console报错事实上在新版本中已经不存在了，但对于初学者来说是很常见的而且会觉得很奇怪（如果使用的是较早版本），同时这个问题解决起来也非常之容易，所以我们还是来说一下这个问题，以此为契机展开对eslint配置的学习。  ​                        (在新版本中no-console已经被取消默认了) 先建立项目： 123$ mkdir lesson03$ cd le">
+<meta name="twitter:image" content="https://pic1.zhimg.com/v2-69b1f00cbb690f5cbfd23c5ff1ebb08c_r.jpg">
 
 
 
@@ -129,7 +130,7 @@
 
 
 
-  <title>二、ESLint console报错是怎么回事？ | Dunteng's Blog</title>
+  <title>二、ESLint的console报错是怎么回事？ | Dunteng's Blog</title>
   
 
 
@@ -325,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">二、ESLint console报错是怎么回事？</h1>
+          <h1 class="post-title" itemprop="name headline">二、ESLint的console报错是怎么回事？</h1>
         
 
         <div class="post-meta">
@@ -338,7 +339,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-01T00:00:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-01T15:51:45+08:00">
                 2020-03-01
               </time>
             
@@ -412,8 +413,11 @@
 
 
 
-<h2 id="console报错"><a href="#console报错" class="headerlink" title="console报错"></a>console报错</h2><p>先建立项目：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir lesson03</span><br><span class="line">$ cd lesson02</span><br><span class="line">$ yarn init -y&amp;&amp;yarn add -D eslint</span><br></pre></td></tr></table></figure>
+<h2 id="console报错"><a href="#console报错" class="headerlink" title="console报错"></a>console报错</h2><p>事实上在新版本中已经不存在了，但对于初学者来说是很常见的而且会觉得很奇怪（如果使用的是较早版本），同时这个问题解决起来也非常之容易，所以我们还是来说一下这个问题，以此为契机展开对eslint配置的学习。</p>
+<p><img src="https://pic1.zhimg.com/v2-69b1f00cbb690f5cbfd23c5ff1ebb08c_r.jpg" alt=""></p>
+<p>​                        (在新版本中no-console已经被取消默认了)</p>
+<p>先建立项目：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir lesson03</span><br><span class="line">$ cd lesson03</span><br><span class="line">$ yarn init -y&amp;&amp;yarn add -D eslint</span><br></pre></td></tr></table></figure>
 <p>同样的进行初始化，<code>npx eslint --init</code></p>
 <p>这次配置文件我选择用json格式。</p>
 <p>很多时候我们使用eslint会报<code>console</code>有错误。</p>
@@ -470,6 +474,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/02/ESLint学习笔记3.html" rel="prev" title="三、理解ESLint的rules">
+                三、理解ESLint的rules <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -554,7 +562,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">69</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

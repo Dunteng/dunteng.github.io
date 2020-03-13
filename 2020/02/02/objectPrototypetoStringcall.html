@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="常常遇到要判断一个数据是对象还是数组的问题，抽象出来就是判断一个数据的具体类型的问题。要用到一个Object.prototype.toString().call(instance).slice(8,-1)，这个也可以看作是call()的一个常见应用。  12 这很好用，封装起来，项目里直接使用。">
+<meta name="description" content="常常遇到要判断一个数据是对象还是数组的问题，抽象出来就是判断一个数据的具体类型的问题。要用到一个Object.prototype.toString().call(instance).slice(8,-1)，这个也可以看作是call()的一个常见应用。  12345678// utils/getTypes.jsexport default &amp;#123;    // 用于判断一个对象的类型">
 <meta name="keywords" content="JavaScript,面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="判断一个数据的具体类型的方法">
 <meta property="og:url" content="https://dunteng.github.io/2020/02/02/objectPrototypetoStringcall.html">
 <meta property="og:site_name" content="Dunteng&#39;s Blog">
-<meta property="og:description" content="常常遇到要判断一个数据是对象还是数组的问题，抽象出来就是判断一个数据的具体类型的问题。要用到一个Object.prototype.toString().call(instance).slice(8,-1)，这个也可以看作是call()的一个常见应用。  12 这很好用，封装起来，项目里直接使用。">
+<meta property="og:description" content="常常遇到要判断一个数据是对象还是数组的问题，抽象出来就是判断一个数据的具体类型的问题。要用到一个Object.prototype.toString().call(instance).slice(8,-1)，这个也可以看作是call()的一个常见应用。  12345678// utils/getTypes.jsexport default &amp;#123;    // 用于判断一个对象的类型">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://pic1.zhimg.com/v2-c96d39cc1e86c3b920c2851cbdfb93bc_r.jpg">
-<meta property="og:updated_time" content="2020-03-13T14:01:51.258Z">
+<meta property="og:updated_time" content="2020-03-13T14:10:16.846Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="判断一个数据的具体类型的方法">
-<meta name="twitter:description" content="常常遇到要判断一个数据是对象还是数组的问题，抽象出来就是判断一个数据的具体类型的问题。要用到一个Object.prototype.toString().call(instance).slice(8,-1)，这个也可以看作是call()的一个常见应用。  12 这很好用，封装起来，项目里直接使用。">
+<meta name="twitter:description" content="常常遇到要判断一个数据是对象还是数组的问题，抽象出来就是判断一个数据的具体类型的问题。要用到一个Object.prototype.toString().call(instance).slice(8,-1)，这个也可以看作是call()的一个常见应用。  12345678// utils/getTypes.jsexport default &amp;#123;    // 用于判断一个对象的类型">
 <meta name="twitter:image" content="https://pic1.zhimg.com/v2-c96d39cc1e86c3b920c2851cbdfb93bc_r.jpg">
 
 
@@ -411,7 +411,7 @@
 
 <p>常常遇到要判断一个数据是对象还是数组的问题，抽象出来就是判断一个数据的具体类型的问题。要用到一个<code>Object.prototype.toString().call(instance).slice(8,-1)</code>，这个也可以看作是call()的一个常见应用。</p>
 <p><img src="https://pic1.zhimg.com/v2-c96d39cc1e86c3b920c2851cbdfb93bc_r.jpg" alt=""></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// utils/getTypes.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    <span class="comment">// 用于判断一个对象的类型</span></span><br><span class="line">    getTypes: <span class="function"><span class="keyword">function</span> (<span class="params">instance</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(instance).slice(<span class="number">8</span>, <span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>这很好用，封装起来，项目里直接使用。</p>
 
       

@@ -746,8 +746,7 @@ JavaScript 是一个动态的弱类型语言，在开发中比较容易出错。
 
 常常遇到要判断一个数据是对象还是数组的问题，抽象出来就是判断一个数据的具体类型的问题。要用到一个Object.prototype.toString().call(instance).slice(8,-1)，这个也可以看作是call()的一个常见应用。
 
-12
-这很好用，封装起来，项目里直接使用。
+12345678// utils/getT
           ...
           <!--noindex-->
           <div class="post-button text-center">

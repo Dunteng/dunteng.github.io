@@ -638,6 +638,173 @@ JavaScript 是一个动态的弱类型语言，在开发中比较容易出错。
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/2020/02/02/objectPrototypetoStringcall.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/02/objectPrototypetoStringcall.html" itemprop="url">判断一个数据的具体类型的方法</a></h1>
+        
+
+        <div class="post-meta">
+		
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-02T00:00:00+08:00">
+                2020-02-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/02/02/objectPrototypetoStringcall.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/02/objectPrototypetoStringcall.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+
+常常遇到要判断一个数据是对象还是数组的问题，抽象出来就是判断一个数据的具体类型的问题。要用到一个Object.prototype.toString().call(instance).slice(8,-1)，这个也可以看作是call()的一个常见应用。
+
+12
+这很好用，封装起来，项目里直接使用。
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/02/02/objectPrototypetoStringcall.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  
+  </article>
+  
+
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/2019/11/23/小程序云函数路由优化之tcb-router.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -971,7 +1138,7 @@ JavaScript 是一个动态的弱类型语言，在开发中比较容易出错。
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/2019/10/28/对象.html">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/2019/10/28/复习数组.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dunteng Lin">
@@ -990,7 +1157,7 @@ JavaScript 是一个动态的弱类型语言，在开发中比较容易出错。
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/10/28/对象.html" itemprop="url">复习对象</a></h1>
+                <a class="post-title-link" href="/2019/10/28/复习数组.html" itemprop="url">复习数组</a></h1>
         
 
         <div class="post-meta">
@@ -1044,8 +1211,8 @@ JavaScript 是一个动态的弱类型语言，在开发中比较容易出错。
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/10/28/对象.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/28/对象.html" itemprop="commentCount"></span>
+                <a href="/2019/10/28/复习数组.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/28/复习数组.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1077,19 +1244,17 @@ JavaScript 是一个动态的弱类型语言，在开发中比较容易出错。
           
           
 
-对象创建方法
-对象字面量
-1var obj = &#123; &#125;;
+可以先看一下这里的总结👉点击
+数组创建方法
+字面量定义方法
+1var arr = [1,2,3,4]
 
-系统自带的构造函数Object()
-1var obj = new Object();
-
-自定义构造函数
-123456789101112// 与普通函数区别：1、函数名大驼峰命名；2、定义属性和方法为纯语句functi
+new Array
+123var arr = new Array(10);//创建了长度为10的稀松数组，值都为undefinedvar arr = new Array(1,2,3,4); 
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/10/28/对象.html#more" rel="contents">
+            <a class="btn" href="/2019/10/28/复习数组.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1321,7 +1486,7 @@ JavaScript 是一个动态的弱类型语言，在开发中比较容易出错。
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/2019/10/28/复习数组.html">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/2019/10/28/对象.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dunteng Lin">
@@ -1340,7 +1505,7 @@ JavaScript 是一个动态的弱类型语言，在开发中比较容易出错。
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/10/28/复习数组.html" itemprop="url">复习数组</a></h1>
+                <a class="post-title-link" href="/2019/10/28/对象.html" itemprop="url">复习对象</a></h1>
         
 
         <div class="post-meta">
@@ -1394,8 +1559,8 @@ JavaScript 是一个动态的弱类型语言，在开发中比较容易出错。
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/10/28/复习数组.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/28/复习数组.html" itemprop="commentCount"></span>
+                <a href="/2019/10/28/对象.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/28/对象.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1427,17 +1592,19 @@ JavaScript 是一个动态的弱类型语言，在开发中比较容易出错。
           
           
 
-可以先看一下这里的总结👉点击
-数组创建方法
-字面量定义方法
-1var arr = [1,2,3,4]
+对象创建方法
+对象字面量
+1var obj = &#123; &#125;;
 
-new Array
-123var arr = new Array(10);//创建了长度为10的稀松数组，值都为undefinedvar arr = new Array(1,2,3,4); 
+系统自带的构造函数Object()
+1var obj = new Object();
+
+自定义构造函数
+123456789101112// 与普通函数区别：1、函数名大驼峰命名；2、定义属性和方法为纯语句functi
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/10/28/复习数组.html#more" rel="contents">
+            <a class="btn" href="/2019/10/28/对象.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1813,176 +1980,11 @@ new Array
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/2019/10/08/Redis.html">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dunteng Lin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dunteng's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/08/Redis.html" itemprop="url">Redis</a></h1>
-        
-
-        <div class="post-meta">
-		
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-08T00:00:00+08:00">
-                2019-10-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/后端开发/" itemprop="url" rel="index">
-                    <span itemprop="name">后端开发</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/10/08/Redis.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/08/Redis.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-
-缓存背景由于数据库是建立在硬盘上的，当有大量数据读写数据库时，而硬盘的读写速度慢，导致数据库性能有瓶颈，数据吞吐不够。
-因此在客户端和数据库之前间，加一个缓存，而这个缓存是用内存做的，内存的读写速度非常快。 当要对数据库进行读写时，先访问中间层的缓存，读数据时先看缓存中有无想要的数据，若有直接从
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/08/Redis.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  
-  </article>
-  
-
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2030,7 +2032,7 @@ new Array
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">69</span>
+                  <span class="site-state-item-count">71</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2041,7 +2043,7 @@ new Array
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2052,7 +2054,7 @@ new Array
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

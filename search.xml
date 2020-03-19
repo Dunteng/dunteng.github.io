@@ -821,7 +821,7 @@
       <link href="/2019/06/06/%E6%88%91%E7%9A%84%E8%B8%A9%E5%9D%91%E5%90%88%E9%9B%86.html"/>
       <url>/2019/06/06/%E6%88%91%E7%9A%84%E8%B8%A9%E5%9D%91%E5%90%88%E9%9B%86.html</url>
       
-        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><ul><li><a href="https://blog.csdn.net/weixin_42590838/article/details/103800092" target="_blank" rel="noopener">Invalid CSS after “body”: expected 1 selector or at-rule, was “{“</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><ul><li><a href="https://blog.csdn.net/weixin_42590838/article/details/103800092" target="_blank" rel="noopener">Invalid CSS after “body”: expected 1 selector or at-rule, was “{“</a></li><li><a href="http://www.yuxang.com/vue-%e4%b8%ad%e5%9b%be%e7%89%87%e6%b7%bb%e5%8a%a0url-%e7%9a%84%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9/" target="_blank" rel="noopener">vue 中图片添加url 的注意事项</a>  👈讲的是vue中若img src使用的是data中存储图片路径的变量，则必须使用require或import引用；若img src直接写的路径则OK。</li><li><a href="https://segmentfault.com/a/1190000010984731" target="_blank" rel="noopener">node-sass安装失败</a></li></ul>]]></content>
       
       
       <categories>

@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/dahuangmao-06.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon1.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon1.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/dahuangmao-06.png?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="移动端,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="什么是适配？适配：在不同尺寸的手机设备上，页面相对性的达到合理的展示（自适应）或者保持统一效果的等比缩放（看起来差不多）  适配的方法： 1234567891、百分比适配2、viewport缩放3、DPR缩放4、rem适配5、vw、vh适配 百分比适配width：宽度的百分比是相对于父盒子width内容宽的比。没有父盒子就是相对于浏览器的宽。height：高度的百分比是相对于父盒子height">
+<meta name="keywords" content="移动端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="rem适配和vw适配">
+<meta property="og:url" content="https://dunteng.github.io/2020/03/12/mobile.html">
+<meta property="og:site_name" content="Dunteng&#39;s Blog">
+<meta property="og:description" content="什么是适配？适配：在不同尺寸的手机设备上，页面相对性的达到合理的展示（自适应）或者保持统一效果的等比缩放（看起来差不多）  适配的方法： 1234567891、百分比适配2、viewport缩放3、DPR缩放4、rem适配5、vw、vh适配 百分比适配width：宽度的百分比是相对于父盒子width内容宽的比。没有父盒子就是相对于浏览器的宽。height：高度的百分比是相对于父盒子height">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-5d01e09f88352f967f5619cf1665c687_720w.png">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-427dfc82c26c409f773bbd35bb12fc66_720w.png">
+<meta property="og:updated_time" content="2020-04-01T19:03:40.633Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="rem适配和vw适配">
+<meta name="twitter:description" content="什么是适配？适配：在不同尺寸的手机设备上，页面相对性的达到合理的展示（自适应）或者保持统一效果的等比缩放（看起来差不多）  适配的方法： 1234567891、百分比适配2、viewport缩放3、DPR缩放4、rem适配5、vw、vh适配 百分比适配width：宽度的百分比是相对于父盒子width内容宽的比。没有父盒子就是相对于浏览器的宽。height：高度的百分比是相对于父盒子height">
+<meta name="twitter:image" content="https://pic2.zhimg.com/80/v2-5d01e09f88352f967f5619cf1665c687_720w.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'GX48388M0Z',
+      apiKey: '24910416df90ea04217402b818109cef',
+      indexName: 'index',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://dunteng.github.io/2020/03/12/mobile.html">
+
+
+
+
+
+  <title>rem适配和vw适配 | Dunteng's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6ffc4435fb9941ca00fb4c7e08d8fca2";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Dunteng's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/2020/03/12/mobile.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">rem适配和vw适配</h1>
+        
+
+        <div class="post-meta">
+		
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-12T00:00:00+08:00">
+                2020-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/移动端/" itemprop="url" rel="index">
+                    <span itemprop="name">移动端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/12/mobile.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/12/mobile.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <meta name="referrer" content="no-referrer">
+
+<h2 id="什么是适配？"><a href="#什么是适配？" class="headerlink" title="什么是适配？"></a>什么是适配？</h2><p>适配：在不同尺寸的手机设备上，页面相对性的达到合理的展示（自适应）或者保持统一效果的等比缩放（看起来差不多）</p>
+<p> 适配的方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1、百分比适配</span><br><span class="line"></span><br><span class="line">2、viewport缩放</span><br><span class="line"></span><br><span class="line">3、DPR缩放</span><br><span class="line"></span><br><span class="line">4、rem适配</span><br><span class="line"></span><br><span class="line">5、vw、vh适配</span><br></pre></td></tr></table></figure>
+<h2 id="百分比适配"><a href="#百分比适配" class="headerlink" title="百分比适配"></a>百分比适配</h2><p>width：宽度的百分比是相对于父盒子width内容宽的比。没有父盒子就是相对于浏览器的宽。<br>height：高度的百分比是相对于父盒子height内容高的比。<br>padding、margin：padding和margin不管任何方向百分比都是相对于父盒子width内容宽的比。<br>border：不能书写百分数</p>
+<p>子盒子如果绝对定位，width百分比参考的是距离最近，且有定位的父盒子的width（算上padding.）；<br>height百分比参考的是距离最近，且有定位的父盒子的height（算上padding.）；<br>padding,margin百分比参考的是距离最近，且有定位的父盒子的width（算上padding.）；</p>
+<h2 id="viewport缩放适配"><a href="#viewport缩放适配" class="headerlink" title="viewport缩放适配"></a>viewport缩放适配</h2><p>把所有机型的设备独立像素（CSS像素）设置成一致的。</p>
+<p>比如说，一张设计图是按照iPhone6设计的，iPhone6的分辨率是750x1334，其设备独立像素（CSS像素）就是375x667，那么如果项目网页只想在iPhone6这种分辨率的设备里使用的话，我们代码中像素直接按照设计稿那样给定像素大小就行了。但是这样子的页面放到了其他分辨率、其他设备独立像素（CSS像素）的设备中去的时候，页面就乱套了，比如iPhone6 plus的分辨率是828x1472（设备独立像素（CSS像素）是414x736）。</p>
+<p>这时候，如果能将所有机型的设备独立像素（CSS像素）都设置为一致的，比如全设置为iPhone6的375x667，然后代码样式按照375x667的设计稿去给大小，这样网页在所有机型设备中都能做到适配。</p>
+<p>1、viewport需要通过js动态的设置（不能直接把device的值设置成数值）</p>
+<p>2、通过设置比例（初始比例以及缩放比例），把宽度缩放成一致的</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中的initial-scale就是缩放比，缩放比=css像素/viewport视口宽度。</p>
+<p>为了把所有机型的设备独立像素（CSS像素）设置成一致的，就需要设置 initial-scale 的大小。若我们想把所有机型的CSS像素都设置为<strong>iPhone6的标准（375x667）</strong>，通过公式：<strong>缩放比=css像素宽度/viewport视口宽度</strong>，我们已知viewport视口宽度375，只要获取到当前机型的CSS像素宽度就可以知道缩放比  initial-scale 到底要设置为多少了。而当前机型的CSS像素宽度实际上就是html标签的宽度。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,initial-scale=1,user-scalable=no,minimum-scale=1,maximum-scale=1"</span> <span class="attr">id</span>=<span class="string">"view"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">		body&#123;</span></span><br><span class="line"><span class="undefined">			margin: 0;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="css">		<span class="selector-class">.box</span> <span class="selector-tag">div</span>&#123;</span></span><br><span class="line"><span class="css">			<span class="comment">/* width: 25%; */</span></span></span><br><span class="line"><span class="css">			<span class="selector-tag">width</span>: 93<span class="selector-class">.75px</span>;</span></span><br><span class="line"><span class="undefined">			height: 100px;</span></span><br><span class="line"><span class="undefined">			float: left;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="css">		<span class="selector-class">.box</span> <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(1)</span>&#123;</span></span><br><span class="line"><span class="undefined">			background: red;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="css">		<span class="selector-class">.box</span> <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(2)</span>&#123;</span></span><br><span class="line"><span class="undefined">			background: green;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="css">		<span class="selector-class">.box</span> <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(3)</span>&#123;</span></span><br><span class="line"><span class="undefined">			background: blue;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="css">		<span class="selector-class">.box</span> <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(4)</span>&#123;</span></span><br><span class="line"><span class="undefined">			background: yellow;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">		<span class="comment">// 注意这里的script标签必须放在&lt;head&gt;标签里面</span></span></span><br><span class="line"><span class="undefined">		</span></span><br><span class="line"><span class="actionscript">		(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">			<span class="comment">//获取css像素（viewport没有缩放）</span></span></span><br><span class="line"><span class="javascript">			<span class="keyword">var</span> curWidth=<span class="built_in">document</span>.documentElement.clientWidth;</span></span><br><span class="line"><span class="javascript">			<span class="keyword">var</span> curWidth=<span class="built_in">window</span>.innerWidth;</span></span><br><span class="line"><span class="javascript">			<span class="keyword">var</span> curWidth=<span class="built_in">window</span>.screen.width;<span class="comment">// 最好用这个</span></span></span><br><span class="line"><span class="undefined">			</span></span><br><span class="line"><span class="javascript">			<span class="built_in">console</span>.log(curWidth);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">			<span class="keyword">var</span> targetWidth=<span class="number">375</span>;</span></span><br><span class="line"><span class="actionscript">			<span class="keyword">var</span> scale=curWidth/targetWidth;</span></span><br><span class="line"><span class="javascript">			<span class="built_in">console</span>.log(scale);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">			<span class="keyword">var</span> view=<span class="built_in">document</span>.getElementById(<span class="string">'view'</span>);</span></span><br><span class="line"><span class="javascript">			<span class="built_in">console</span>.log(view.content);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">			view.content=<span class="string">'initial-scale='</span>+scale+<span class="string">',user-scalable=no,minimum-scale='</span>+scale+<span class="string">',maximum-scale='</span>+scale+<span class="string">''</span>;</span></span><br><span class="line"><span class="undefined">		&#125;)();</span></span><br><span class="line"><span class="undefined">	</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>若实现没有写<code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no&quot;&gt;</code></p>
+<p>则采用如下代码👇</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="comment">/*</span></span><br><span class="line"><span class="comment">        *iphone 6plus</span></span><br><span class="line"><span class="comment">        *原来的尺寸                            414</span></span><br><span class="line"><span class="comment">        *要变成的尺寸（以iPhone 6为基准）375    375</span></span><br><span class="line"><span class="comment">        *比例                                  414/375</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       <span class="keyword">var</span> curWidth = <span class="built_in">window</span>.screen.width; <span class="comment">//iphone 6plus为414px</span></span><br><span class="line">       <span class="keyword">var</span> targetWidth = <span class="number">375</span>;</span><br><span class="line">       <span class="keyword">var</span> scale = curWidth/targetWidth;</span><br><span class="line">       <span class="keyword">var</span> meta = <span class="built_in">document</span>.createElement(<span class="string">"meta"</span>);</span><br><span class="line">       meta.name = <span class="string">"viewport"</span>;</span><br><span class="line">       meta.content = <span class="string">'initial-scale='</span>+scale+<span class="string">',minimum-scale='</span>+scale+<span class="string">',maximum-scale='</span>+scale+<span class="string">''</span>;</span><br><span class="line">       <span class="built_in">document</span>.head.appendChild(meta);</span><br><span class="line">   &#125;)()</span><br></pre></td></tr></table></figure>
+<p>缺点：</p>
+<ol>
+<li>就像在viewport设置宽度的时候，可以把宽度设置成一个固定值一样，会出现所有的设备看上去都是同样的大小，没有分别了，不太好，厂商特意做出各种大小的手机，还要弄成一样，那人家买大屏机有什么意义</li>
+<li>算出的的值在一些有小数的情况下可能会出现误差</li>
+</ol>
+<h2 id="DPR缩放适配"><a href="#DPR缩放适配" class="headerlink" title="DPR缩放适配"></a>DPR缩放适配</h2><p>根据dpr的值，把视口进行缩放，缩放到物理像素，也就是把css像素的值设置成物理像素，让所有的设备都变成一个css像素对应一个设备像素。比如<strong>iPhone6，设备像素是750x1334，设备独立像素（CSS像素）是375x667</strong>，我们就把视口进行缩放，让设备独立像素也变成750x1334，从而一个css像素对应一个设备像素。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> meta=<span class="built_in">document</span>.querySelector(<span class="string">'meta[name="viewport"]'</span>);</span><br><span class="line"> 	<span class="keyword">var</span> scale=<span class="number">1</span>/<span class="built_in">window</span>.devicePixelRatio;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(!meta)&#123;</span><br><span class="line">		<span class="comment">//这个条件成立说明用户没有写meta标签，我需要创建一个</span></span><br><span class="line">		meta=<span class="built_in">document</span>.createElement(<span class="string">'meta'</span>);</span><br><span class="line">		meta.name=<span class="string">'viewport'</span>;</span><br><span class="line">		meta.content=<span class="string">'width=device-width,initial-scale='</span>+scale+<span class="string">',user-scalable=no,minimum-scale='</span>+scale+<span class="string">',maximum-scale='</span>+scale+<span class="string">''</span>;</span><br><span class="line">		<span class="built_in">document</span>.head.appendChild(meta);</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		meta.setAttribute(<span class="string">'content'</span>,<span class="string">'width=device-width,initial-scale='</span>+scale+<span class="string">',user-scalable=no,minimum-scale='</span>+scale+<span class="string">',maximum-scale='</span>+scale+<span class="string">''</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>缺点：</p>
+<ul>
+<li>宽度还是需要用百分比，感觉没什么卵用。</li>
+</ul>
+<h2 id="rem适配"><a href="#rem适配" class="headerlink" title="rem适配"></a>rem适配</h2><p>讲rem之前先来回顾一下em。</p>
+<p>em 作为font-size的单位时，其代表父元素的字体大小，作为其他属性单位时，代表自身字体大小          </p>
+<p> 1、chrom下有最小字体限制，必需为12px，所以这个值不能小于12</p>
+<p> 2、如果两个一样的元素，但是里面字体不一样，那就不能统一设置了。或者元素字体变化了，就又要统一设置一遍</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.em</span>&#123;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line"></span><br><span class="line">	<span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">10em</span>;	<span class="comment">/* 1em=30px 作为其他属性单位时，代表自身字体大小 */</span></span><br><span class="line">	<span class="attribute">height</span>: <span class="number">10em</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.em</span> <span class="selector-tag">p</span>&#123;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">2em</span>;	<span class="comment">/* 1em=30px 作为font-size的单位时，其代表父元素的字体大小*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>rem   CSS3新增的一个相对单位，是相对于根元素的字体大小，即html的字体大小；</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>&#123;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.rem</span>&#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">10rem</span>;	<span class="comment">/* 1rem=20px; */</span></span><br><span class="line">	<span class="attribute">height</span>: <span class="number">10rem</span>;</span><br><span class="line"></span><br><span class="line">	<span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>rem适配的原理：把所有的设备的宽度都分成相同的若干列，再计算元素宽度所占的份数</p>
+<p>rem适配，如果可以根据不同机型的屏幕宽度（设备独立像素CSS像素）确定根节点html的字体大小（即一列的宽度），而1rem就等于html节点的字体大小（1rem即为一列的宽），进而在构造页面的时候可以把设计稿中的宽度 / 1rem所代表的px的值，从而得出具体多少rem（即元素宽度所占的份数）从而达到适配。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1、元素适配的宽度（算出来的）</span></span><br><span class="line"><span class="comment">	=元素所占的列数*一列的宽</span></span><br><span class="line"><span class="comment">	=元素所占的列数*1rem</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">2、元素在设计稿里的宽度（量出来的）</span></span><br><span class="line"><span class="comment">3、列数（随便给的）</span></span><br><span class="line"><span class="comment">	100</span></span><br><span class="line"><span class="comment">4、一列的宽度（算出来的）</span></span><br><span class="line"><span class="comment">	=屏幕实际的宽度（css像素）/列数</span></span><br><span class="line"><span class="comment">	一列的宽度就是1rem</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">5、元素实际占的列数（算出来的）</span></span><br><span class="line"><span class="comment">	=元素设计稿里的宽/一列的宽</span></span><br><span class="line"><span class="comment">	=元素设计稿里的宽/1rem</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">/*</span></span><br><span class="line"><span class="comment">	var colWidth=屏幕实际的宽度（css像素）/100;</span></span><br><span class="line"><span class="comment">	50*colWidth	//50列所占的宽</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">			</span><br><span class="line"><span class="keyword">var</span> colWidth=<span class="number">0</span>;	<span class="comment">//一列的宽</span></span><br><span class="line"><span class="keyword">var</span> col=<span class="number">100</span>;	<span class="comment">//列数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//分别算出iphone5与iphone6里面一列的宽度</span></span><br><span class="line">colWidth=<span class="number">375</span>/<span class="number">100</span>;	<span class="comment">//3.75px	iphone6	</span></span><br><span class="line">colWidth=<span class="number">320</span>/<span class="number">100</span>;	<span class="comment">//3.2px		iphone5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//假如一个div需要占10列，算出div的分别在两个手机里的宽度</span></span><br><span class="line"><span class="keyword">var</span> divWidth=<span class="number">0</span>;		<span class="comment">//div的宽度</span></span><br><span class="line">divWidth=<span class="number">10</span>*<span class="number">3.75</span>;	<span class="comment">//37.5px	iphone6里div的宽度</span></span><br><span class="line">divWidth=<span class="number">10</span>*<span class="number">3.2</span>;	<span class="comment">//32px		iphone5里div的宽度</span></span><br><span class="line">			</span><br><span class="line"><span class="comment">//根据设计稿里元素的宽算出来它所占的列数</span></span><br><span class="line"><span class="keyword">var</span> divWidth=<span class="number">50</span>;	<span class="comment">//div在设计稿里实际的宽（量出来的）</span></span><br><span class="line"><span class="keyword">var</span> divCol=<span class="number">0</span>;		<span class="comment">//要算出div所占的列数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//以iphone6为例，一列的宽为3.75px，那50px占多少列？</span></span><br><span class="line">divCol=<span class="number">50</span>/<span class="number">3.75</span>;		<span class="comment">//13.333	在iphone6里所占的列数</span></span><br><span class="line">divCol=<span class="number">50</span>/<span class="number">3.2</span>;		<span class="comment">//15.625	在iphone5里所占的列数</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//width: 10rem;	实际切图时候给的值</span></span><br><span class="line"><span class="comment">//元素适配的宽度=元素所占的列数*一列的宽</span></span><br><span class="line"><span class="comment">//元素适配的宽度 =&gt; width</span></span><br><span class="line"><span class="comment">//元素所占的列数 =&gt; 10</span></span><br><span class="line"><span class="comment">//一列的宽 =&gt; rem</span></span><br><span class="line"><span class="comment">/* html&#123;</span></span><br><span class="line"><span class="comment">	font-size:屏幕实际的宽度（css像素）/列数，即一列的宽度</span></span><br><span class="line"><span class="comment">&#125; */</span></span><br></pre></td></tr></table></figure>
+<p>综上可知，rem适配的关键是确定根节点html的字体大小，即所谓的一列的宽度。有两种方式可以确定html的font-sitze，一种通过JS设置，另一种通过媒体查询进行设置。</p>
+<h3 id="JS设置根节点font-size（简易版）"><a href="#JS设置根节点font-size（简易版）" class="headerlink" title="JS设置根节点font-size（简易版）"></a>JS设置根节点font-size（简易版）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">	1、元素适配的宽度=元素所占的列数*1rem</span></span><br><span class="line"><span class="comment">	2、一列的宽度=屏幕实际的宽度（css像素）/列数</span></span><br><span class="line"><span class="comment">	3、元素实际占的列数=元素设计稿里的宽/1rem</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> html=<span class="built_in">document</span>.documentElement;	<span class="comment">//html</span></span><br><span class="line">	<span class="keyword">var</span> width=html.clientWidth;		<span class="comment">//css像素</span></span><br><span class="line">				</span><br><span class="line">	<span class="built_in">console</span>.log(width);</span><br><span class="line">				</span><br><span class="line">	html.style.fontSize=width/<span class="number">16</span>+<span class="string">'px'</span>;	<span class="comment">//把屏幕分成了16列，以iphone为例得出一个列的值为整数</span></span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//iphone5</span></span><br><span class="line"><span class="comment">//1rem=20px;		一列的宽度</span></span><br><span class="line"><span class="comment">//80/1rem=80/20=4;	元素实际占的列数</span></span><br><span class="line"><span class="comment">//4*1rem=4rem;		元素适配的宽度</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//iphone6</span></span><br><span class="line"><span class="comment">//1rem=375/16=23.4375;	一列的宽度</span></span><br><span class="line"><span class="comment">//4*1rem=4*23.4375=93.75;	元素适配的宽度</span></span><br><span class="line"><span class="comment">//4*93.75=375;		css的宽度</span></span><br></pre></td></tr></table></figure>
+<p>这里再多说一嘴关于切图的事，一般设计稿都是按照设备像素大小进行设计的（为了保证图片高清），切图得到的像素大小要先处以设备的DPR，再进行rem的换算。比如IPhone6的设计稿量出来一个div的宽是200px，则代码中给的px是200/DPR=200/2=100px，否则过大，然后再用这个100px进行rem的换算。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//真正切图时候的方法!!!</span></span><br><span class="line"><span class="comment">//1、算rem，还是根据设备实际的设备独立像素css像素算</span></span><br><span class="line"><span class="comment">//2、量出一个元素在设计稿里的尺寸</span></span><br><span class="line"><span class="comment">//3、拿这个尺寸除以DPR值后，再去换算rem</span></span><br></pre></td></tr></table></figure>
+<h3 id="JS设置根节点font-size（最优版）"><a href="#JS设置根节点font-size（最优版）" class="headerlink" title="JS设置根节点font-size（最优版）"></a>JS设置根节点font-size（最优版）</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">			body&#123;</span></span><br><span class="line"><span class="undefined">				margin: 0;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">			div&#123;</span></span><br><span class="line"><span class="undefined">				background: green;</span></span><br><span class="line"><span class="undefined">				float: left;</span></span><br><span class="line"><span class="undefined">				/* </span></span><br><span class="line"><span class="css">					187<span class="selector-class">.5px</span></span></span><br><span class="line"><span class="undefined">				 */</span></span><br><span class="line"><span class="css">				 <span class="selector-tag">width</span>: 1<span class="selector-class">.875rem</span>;</span></span><br><span class="line"><span class="css">				 <span class="selector-tag">height</span>: 1<span class="selector-class">.875rem</span>;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			img&#123;</span></span><br><span class="line"><span class="css">				<span class="selector-tag">width</span>: 7<span class="selector-class">.5rem</span>;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">		</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">		/**</span></span><br><span class="line"><span class="undefined">		* 立即执行函数，确定根节点font-size的大小，这里以iPhone6的750宽度进行设置，</span></span><br><span class="line"><span class="undefined">		* 最终html标签的font-size为50px，由于(clientWidth / designWidth)已经是0.5，所以</span></span><br><span class="line"><span class="undefined">		* 在切图量出来的像素大小不必再除以DPR了，量出187.5px直接可以写1.875rem</span></span><br><span class="line"><span class="javascript">		* @param &#123;<span class="built_in">Object</span>&#125; <span class="built_in">document</span> </span></span><br><span class="line"><span class="javascript">		* @param &#123;<span class="built_in">Object</span>&#125; <span class="built_in">window</span></span></span><br><span class="line"><span class="undefined">		* @param &#123;number=&#125; designWidth 设计稿中设备的物理像素宽度</span></span><br><span class="line"><span class="undefined">		*/</span></span><br><span class="line"><span class="actionscript">			(<span class="function"><span class="keyword">function</span> <span class="params">(doc, win, designWidth)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">			<span class="keyword">var</span> html = doc.documentElement;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">			<span class="function"><span class="keyword">function</span> <span class="title">refreshRem</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">				<span class="keyword">var</span> clientWidth = html.clientWidth;	</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">				<span class="keyword">if</span> (clientWidth &gt;= designWidth) &#123;<span class="comment">//给宽度一个最大值，如果设备的宽度已经超过设计稿的尺寸了，统一按一个值去算（传的第三个参数）</span></span></span><br><span class="line"><span class="actionscript">					html.style.fontSize = <span class="string">'100px'</span>;</span></span><br><span class="line"><span class="actionscript">				&#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="actionscript">					html.style.fontSize = <span class="number">100</span> * (clientWidth / designWidth) + <span class="string">'px'</span>;</span></span><br><span class="line"><span class="undefined">				&#125;</span></span><br><span class="line"><span class="undefined">			&#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">			doc.addEventListener(<span class="string">'DOMContentLoaded'</span>, refreshRem);</span></span><br><span class="line"><span class="javascript">		&#125;)(<span class="built_in">document</span>, <span class="built_in">window</span>, <span class="number">750</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">		</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/img_12.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这个方案有个比较爽的地方就是<strong>设计稿量出来多少，直接小数点前移两位即转化为rem的值</strong>。举个例子，有个div设计稿量出来宽度是187.5px，那么在代码中就应该为187.5/DPR=187.5/2=93.75px，而html的font-size为50px，也就是1rem=50px，那么93.75px=93.75/50=1.875rem，又绕回来了，直接小数点前移两位就得到rem的值。非常方便，免去了手动除以DPR的步骤。</p>
+<h3 id="媒体查询置根节点font-size"><a href="#媒体查询置根节点font-size" class="headerlink" title="媒体查询置根节点font-size"></a>媒体查询置根节点font-size</h3><p>利用CSS3媒体查询来手动设置根节点的font-size，苏宁在用，不过我觉得有点low，不方便。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="selector-tag">html</span> &#123;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">50px</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">24px</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">320px</span>) &#123;</span><br><span class="line">	<span class="selector-tag">html</span> &#123;</span><br><span class="line">		<span class="attribute">font-size</span>:<span class="number">21.33px</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="selector-tag">body</span> &#123;</span><br><span class="line">		<span class="attribute">font-size</span>: <span class="number">12px</span></span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">360px</span>) &#123;</span><br><span class="line">	<span class="selector-tag">html</span> &#123;</span><br><span class="line">		<span class="attribute">font-size</span>:<span class="number">24px</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="selector-tag">body</span> &#123;</span><br><span class="line">		<span class="attribute">font-size</span>: <span class="number">12px</span></span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">375px</span>) &#123;</span><br><span class="line">	<span class="selector-tag">html</span> &#123;</span><br><span class="line">		<span class="attribute">font-size</span>:<span class="number">25px</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="selector-tag">body</span> &#123;</span><br><span class="line">		<span class="attribute">font-size</span>: <span class="number">12px</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">384px</span>) &#123;</span><br><span class="line">	<span class="selector-tag">html</span> &#123;</span><br><span class="line">		<span class="attribute">font-size</span>:<span class="number">25.6px</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="selector-tag">body</span> &#123;</span><br><span class="line">		<span class="attribute">font-size</span>: <span class="number">14px</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">400px</span>) &#123;</span><br><span class="line">	<span class="selector-tag">html</span> &#123;</span><br><span class="line">		<span class="attribute">font-size</span>:<span class="number">26.67px</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="selector-tag">body</span> &#123;</span><br><span class="line">		<span class="attribute">font-size</span>: <span class="number">14px</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">414px</span>) &#123;</span><br><span class="line">	<span class="selector-tag">html</span> &#123;</span><br><span class="line">		<span class="attribute">font-size</span>:<span class="number">27.6px</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="selector-tag">body</span> &#123;</span><br><span class="line">		<span class="attribute">font-size</span>: <span class="number">14px</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">424px</span>) &#123;</span><br><span class="line">	<span class="selector-tag">html</span> &#123;</span><br><span class="line">		<span class="attribute">font-size</span>:<span class="number">28.27px</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="selector-tag">body</span> &#123;</span><br><span class="line">		<span class="attribute">font-size</span>: <span class="number">14px</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">480px</span>) &#123;</span><br><span class="line">	<span class="selector-tag">html</span> &#123;</span><br><span class="line">		<span class="attribute">font-size</span>:<span class="number">32px</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="selector-tag">body</span> &#123;</span><br><span class="line">		<span class="attribute">font-size</span>: <span class="number">15.36px</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">540px</span>) &#123;</span><br><span class="line">	<span class="selector-tag">html</span> &#123;</span><br><span class="line">		<span class="attribute">font-size</span>:<span class="number">36px</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="selector-tag">body</span> &#123;</span><br><span class="line">		<span class="attribute">font-size</span>: <span class="number">17.28px</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">720px</span>) &#123;</span><br><span class="line">	<span class="selector-tag">html</span> &#123;</span><br><span class="line">		<span class="attribute">font-size</span>:<span class="number">48px</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="selector-tag">body</span> &#123;</span><br><span class="line">		<span class="attribute">font-size</span>: <span class="number">23.04px</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">750px</span>) &#123;</span><br><span class="line">	<span class="selector-tag">html</span> &#123;</span><br><span class="line">		<span class="attribute">font-size</span>:<span class="number">50px</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="selector-tag">body</span> &#123;</span><br><span class="line">		<span class="attribute">font-size</span>: <span class="number">24px</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="hotcss适配"><a href="#hotcss适配" class="headerlink" title="hotcss适配"></a>hotcss适配</h3><p>作为一个移动端的项目，必须做好移动端适配，这里使用的方案是<a href="https://github.com/imochen/hotcss" target="_blank" rel="noopener">hotcss</a>，其原理和rem适配原理是一样的，只不过hotcss.js做得更加精细。下面以vue项目举例。</p>
+<p>下载好hotcss文件夹，里面有hotcss.js和px2rem.scss两个文件。hotcss.js在main.js中引入。</p>
+<p>另外将样式重置文件common.css放在assets文件夹中，然后在App.vue中引入。</p>
+<p>px2rem.scss中：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">function</span> px2rem($px)&#123;</span><br><span class="line">	@<span class="keyword">return</span> $px*<span class="number">320</span>/$designWidth/<span class="number">20</span> + rem;</span><br><span class="line">&#125;</span><br><span class="line">// 设置设计图的宽度</span><br><span class="line">$designWidth : 750;</span><br></pre></td></tr></table></figure>
+<p>项目设计图的宽度就是750px。px2rem.scss就是<strong>一个函数</strong>，用于将px转为合适的rem，设计稿量出一个div宽度为200px，则不必再考虑转化为多少的rem，直接使用<code>width: px2rem(200)</code>即可。</p>
+<h4 id="【补充】sass引入公共文件"><a href="#【补充】sass引入公共文件" class="headerlink" title="【补充】sass引入公共文件"></a>【补充】sass引入公共文件</h4><p>对于hotcss中的px2rem.scss文件，每个 .vue 文件都要手动引用它，这样很麻烦，所以我们需要只引用一次px2rem.scss就可以在所有的 .vue 文件中使用，那么要怎么做到呢？</p>
+<p>看一下Vue Cli3的官网文档：<a href="https://cli.vuejs.org/zh/config/#css-requiremoduleextension" target="_blank" rel="noopener">文档一</a>， <a href="https://cli.vuejs.org/zh/guide/css.html#%E5%90%91%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8-loader-%E4%BC%A0%E9%80%92%E9%80%89%E9%A1%B9" target="_blank" rel="noopener">文档二</a></p>
+<p>在项目根路径下新建文件 vue.config.js：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// vue.config.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  css: &#123;</span><br><span class="line">    loaderOptions: &#123;</span><br><span class="line">      <span class="comment">// 给 sass-loader 传递选项</span></span><br><span class="line">      sass: &#123;</span><br><span class="line">        data: <span class="string">`@import "./src/lib/hotcss/px2rem.scss";`</span>  <span class="comment">//注意这个分号不能漏掉</span></span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>配置完成之后，就可以保证所有的页面都可以使用这个px2rem.css而无需每个页面都手动引入。</p>
+<p>每次修改了 vue.config.js 的时候，都要重新启动项目。</p>
+<p>这里我踩了一个坑，在配置sass的时候<a href="https://blog.csdn.net/weixin_42590838/article/details/103800092" target="_blank" rel="noopener">漏了分号</a>。</p>
+<h2 id="vw、vh适配"><a href="#vw、vh适配" class="headerlink" title="vw、vh适配"></a>vw、vh适配</h2><p>vw：Viewport’s width的简写，1vw等于视口宽度的1%<br>vh：Viewport’s height的简写，1vh等于视口高度的1%<br>vmin：取vw和vh中最小的值<br>vmax： 取vw和vh中最大的值<br>vmin 和 vmax 一般很少用到。</p>
+<p>ios 8之前和Android 4.4之前的版本都不支持vw、vh适配，这也是其之前不火的原因，现在设备基本都是很新的系统版本了，除非要考虑很旧的版本的兼容，可以放心使用vw适配。</p>
+<p>1vw浏览器会自动视为视口宽度的1%，其实就和我们手动将视口宽度（设备的宽度）都100列一个道理。</p>
+<p>vw、vh适配一般有两种用法，分别是直接转为vw单位进行使用，另一种是通过vw设置根节点字体大小，页面里的尺寸依然使用rem。</p>
+<h3 id="直接使用vw作为像素单位"><a href="#直接使用vw作为像素单位" class="headerlink" title="直接使用vw作为像素单位"></a>直接使用vw作为像素单位</h3><p>依旧以iPhone（750x1334）为例子，有：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">iphone6</span><br><span class="line"><span class="number">1</span>vw=<span class="number">375</span>/<span class="number">100</span>=<span class="number">3.75</span>px;</span><br><span class="line"></span><br><span class="line">设计稿（<span class="number">750</span>px规格）中要四个盒子平铺一行，则一个div的宽度为<span class="number">187.5</span>px，那么css代码给的px就应该为<span class="number">93.75</span>px, </span><br><span class="line"><span class="number">93.75</span>px/<span class="number">3.75</span>px=<span class="number">25</span>vw</span><br><span class="line">这时候只要给每个div宽度设为<span class="number">25</span>vw就可以实现四个盒子平铺一行，而且做到所有机型都适配</span><br><span class="line"></span><br><span class="line">（iphone6 plus的话则 <span class="number">1</span>vw=<span class="number">414</span>/<span class="number">100</span>=<span class="number">4.14</span>px; 其他机型同理）</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">		body &#123;</span></span><br><span class="line"><span class="undefined">			margin: 0 auto;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">		div &#123;</span></span><br><span class="line"><span class="undefined">			float: left;</span></span><br><span class="line"><span class="css">			<span class="comment">/* width: 25%; */</span></span></span><br><span class="line"><span class="css">			<span class="comment">/* width: 93.75px; */</span></span></span><br><span class="line"><span class="undefined">			width: 25vw;</span></span><br><span class="line"><span class="undefined">			background-color: red;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这样需要每次都手动去换算px转vm，这个过程很麻烦，我们可以模仿hotcss来通过一个函数来替我们换算，我采用scss预处理器来实现这个函数。</p>
+<p>现在VSCode中安装两个插件Sass和EasySass，安装完成之后，每当我新建一个scss文件修改并保存之后都会自动生成对应的css文件。</p>
+<p>新建index.scss文件：</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@function vw(<span class="variable">$px</span>)&#123;</span><br><span class="line">    @return <span class="variable">$px</span> / 750 * 100vw;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: vw(<span class="number">187.5</span>);</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>关键代码就是👇</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* $px是从设计稿量出的大小</span></span><br><span class="line"><span class="comment">* 这个750是默认设计稿是按照750px的物理像素设计的，若是640px的设计稿就换为640即可，其他同理</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">@function vw(<span class="variable">$px</span>)&#123;</span><br><span class="line">    @return <span class="variable">$px</span> / 750 * 100vw;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样，我们直接可以将从750px的设计稿中量出来的宽度187.5放入这个vw函数中，实现类似hotcss那样的便捷的使用。。生成的index.css内容如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">25vw</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: red;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其自动转为了合适的vm。因此随后的所有的宽度都可以使用vm()来进行适配。</p>
+<h3 id="vw设置根节点字体大小，其他使用rem"><a href="#vw设置根节点字体大小，其他使用rem" class="headerlink" title="vw设置根节点字体大小，其他使用rem"></a>vw设置根节点字体大小，其他使用rem</h3><p>相比于前者，这种vw适配方案更加流行。</p>
+<p>在iPhone6（750x1334）为基准的rem适配里，html的fontsize的值设为了50px，具体参见上文中的【JS设置根节点font-size（最优版）】，然后设计稿中量出来多少px，就将小数点前移两位即为对应的多少rem。那么我们可以将50px换为vw，在iPhone6中1vw = 375/100=3.75vw，则50px = 50/3.75=13.333333333333334vw。我们直接将html的fontsize设置为13.333333333333334vw，然后就可以做到所有机型都适配了。如下所示：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">		html &#123;</span></span><br><span class="line"><span class="css">			<span class="selector-tag">font-size</span>: 13<span class="selector-class">.333333333333334vw</span>;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">		body &#123;</span></span><br><span class="line"><span class="undefined">			margin: 0 ;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">		div &#123;</span></span><br><span class="line"><span class="undefined">			float: left;</span></span><br><span class="line"><span class="css">			<span class="selector-tag">width</span>: 1<span class="selector-class">.875rem</span>;</span></span><br><span class="line"><span class="undefined">			background-color: red;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">	</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>相比之下省去了一大段设置html的fontsize大小的JS逻辑代码，更加便捷。</p>
+<h3 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h3><h4 id="字体默认大小过大和图片错位"><a href="#字体默认大小过大和图片错位" class="headerlink" title="字体默认大小过大和图片错位"></a>字体默认大小过大和图片错位</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">		html &#123;</span></span><br><span class="line"><span class="css">			<span class="selector-tag">font-size</span>: 13<span class="selector-class">.333333333333334vw</span>;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">		body &#123;</span></span><br><span class="line"><span class="undefined">			margin: 0;</span></span><br><span class="line"><span class="undefined">			padding: 0;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">		div &#123;</span></span><br><span class="line"><span class="undefined">			width: 2rem;</span></span><br><span class="line"><span class="undefined">			height: 2rem;</span></span><br><span class="line"><span class="undefined">			background-color: red;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span>&gt;</span>你好<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://pic2.zhimg.com/80/v2-5d01e09f88352f967f5619cf1665c687_720w.png" alt=""></p>
+<p>这时因为html的fontsize设置了大小，导致默认字体大小变大。同时这一设置还会造成图片错位的现象。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">		html &#123;</span></span><br><span class="line"><span class="css">			<span class="selector-tag">font-size</span>: 13<span class="selector-class">.333333333333334vw</span>;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">		body &#123;</span></span><br><span class="line"><span class="undefined">			margin: 0;</span></span><br><span class="line"><span class="undefined">			padding: 0;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">		div &#123;</span></span><br><span class="line"><span class="undefined">			width: 2rem;</span></span><br><span class="line"><span class="undefined">			height: 2rem;</span></span><br><span class="line"><span class="undefined">			background-color: red;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">		div img &#123;</span></span><br><span class="line"><span class="css">			<span class="selector-tag">width</span>: 0<span class="selector-class">.5rem</span>;</span></span><br><span class="line"><span class="css">			<span class="selector-tag">height</span>: 0<span class="selector-class">.5rem</span>;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://sponsor-static.segmentfault.com/169d32a59c16fd2f9aeed64f1face530.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://pic4.zhimg.com/80/v2-427dfc82c26c409f773bbd35bb12fc66_720w.png" alt=""></p>
+<p>如上图所示，我并没有给img设置任何padding、margin或者定位等位置信息，它就是发生了错位。这时因为图片默认相对字体对齐，而我们在html中设置了字体大小是一个会非常大的值，所以图片也因此发生了错位。</p>
+<p>解决办法就是<strong>在body中设置默认的字体大小为12px</strong>；这一就不会有上述的情况发生了。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/移动端/" rel="tag"># 移动端</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/11/viewport.html" rel="next" title="viewport的设置">
+                <i class="fa fa-chevron-left"></i> viewport的设置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  
+  </article>
+  
+
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Dunteng Lin">
+            
+              <p class="site-author-name" itemprop="name">Dunteng Lin</p>
+              <p class="site-description motion-element" itemprop="description">都会好的  总会有的</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">76</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/dunteng" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:2568678437@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/dunteng_lin" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是适配？"><span class="nav-number">1.</span> <span class="nav-text">什么是适配？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#百分比适配"><span class="nav-number">2.</span> <span class="nav-text">百分比适配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#viewport缩放适配"><span class="nav-number">3.</span> <span class="nav-text">viewport缩放适配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DPR缩放适配"><span class="nav-number">4.</span> <span class="nav-text">DPR缩放适配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rem适配"><span class="nav-number">5.</span> <span class="nav-text">rem适配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JS设置根节点font-size（简易版）"><span class="nav-number">5.1.</span> <span class="nav-text">JS设置根节点font-size（简易版）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS设置根节点font-size（最优版）"><span class="nav-number">5.2.</span> <span class="nav-text">JS设置根节点font-size（最优版）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#媒体查询置根节点font-size"><span class="nav-number">5.3.</span> <span class="nav-text">媒体查询置根节点font-size</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hotcss适配"><span class="nav-number">5.4.</span> <span class="nav-text">hotcss适配</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#【补充】sass引入公共文件"><span class="nav-number">5.4.1.</span> <span class="nav-text">【补充】sass引入公共文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vw、vh适配"><span class="nav-number">6.</span> <span class="nav-text">vw、vh适配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#直接使用vw作为像素单位"><span class="nav-number">6.1.</span> <span class="nav-text">直接使用vw作为像素单位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vw设置根节点字体大小，其他使用rem"><span class="nav-number">6.2.</span> <span class="nav-text">vw设置根节点字体大小，其他使用rem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存在的问题"><span class="nav-number">6.3.</span> <span class="nav-text">存在的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字体默认大小过大和图片错位"><span class="nav-number">6.3.1.</span> <span class="nav-text">字体默认大小过大和图片错位</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" style="font-size:10px;">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dunteng Lin</span>
+
+  
+</div>
+
+
+
+
+
+
+
+<div id="sitetime" style="font-size:10px;"></div>
+<script language="javascript">
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2017,08,12,15,15,47); //建站时间
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}
+	siteTime();
+</script>
+        
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'J29bT1MHDnsDl0O48fRK6u7D-gzGzoHsz',
+        appKey: '2ftsHD4VBWJQVASwv65waJNL',
+        placeholder: '欢迎评论，请在上方留下你的昵称和邮箱以便收到我的回复通知~',
+        avatar:'retro',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

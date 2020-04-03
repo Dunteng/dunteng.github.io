@@ -304,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/2019/10/28/预编译-作用域-闭包-立即执行函数.html">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/2019/11/22/hexo博文中的图文外链失效问题.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dunteng Lin">
@@ -323,7 +323,174 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/10/28/预编译-作用域-闭包-立即执行函数.html" itemprop="url">复习预编译-作用域-闭包-立即执行函数</a></h1>
+                <a class="post-title-link" href="/2019/11/22/hexo博文中的图文外链失效问题.html" itemprop="url">hexo博文中的图文外链失效问题</a></h1>
+        
+
+        <div class="post-meta">
+		
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-22T00:00:00+08:00">
+                2019-11-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/博客配置/" itemprop="url" rel="index">
+                    <span itemprop="name">博客配置</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/11/22/hexo博文中的图文外链失效问题.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/22/hexo博文中的图文外链失效问题.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+
+我的博文使用的图床是知乎，这样在Hexo博客发布时就可以直接引用我存放在知乎上的网络图片。但是在刚deploy上去的时候，预览都是OK的，但是过几天后就全都显示不了。
+解决方法解决方法其实很简单，只需要文章的头部如下图所示位置添加这一句话就可以完美解决问题
+
+原理详见《Referrer策略与防盗
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/11/22/hexo博文中的图文外链失效问题.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  
+  </article>
+  
+
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/2019/10/28/对象.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dunteng Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dunteng's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/28/对象.html" itemprop="url">复习对象</a></h1>
         
 
         <div class="post-meta">
@@ -377,8 +544,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/10/28/预编译-作用域-闭包-立即执行函数.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/28/预编译-作用域-闭包-立即执行函数.html" itemprop="commentCount"></span>
+                <a href="/2019/10/28/对象.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/28/对象.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -410,25 +577,19 @@
           
           
 
+对象创建方法
+对象字面量
+1var obj = &#123; &#125;;
 
+系统自带的构造函数Object()
+1var obj = new Object();
 
-函数定义👉点击
-【补充】：
-
-注意区分什么是函数声明、什么是函数表示，不要混淆。
-
-命定表达式
-
-函数按照上面的方式定义后，只有test才是函数，test1不是一个函数，但是test1是test的name，可以通过test.name得到。
-
-
-参数、返回值👉点击
-
-预编译JavaScri
+自定义构造函数
+123456789101112// 与普通函数区别：1、函数名大驼峰命名；2、定义属性和方法为纯语句functi
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/10/28/预编译-作用域-闭包-立即执行函数.html#more" rel="contents">
+            <a class="btn" href="/2019/10/28/对象.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -652,7 +813,7 @@ new Array
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/2019/10/28/对象.html">
+    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/2019/10/28/预编译-作用域-闭包-立即执行函数.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dunteng Lin">
@@ -671,7 +832,7 @@ new Array
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/10/28/对象.html" itemprop="url">复习对象</a></h1>
+                <a class="post-title-link" href="/2019/10/28/预编译-作用域-闭包-立即执行函数.html" itemprop="url">复习预编译-作用域-闭包-立即执行函数</a></h1>
         
 
         <div class="post-meta">
@@ -725,8 +886,8 @@ new Array
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/10/28/对象.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/28/对象.html" itemprop="commentCount"></span>
+                <a href="/2019/10/28/预编译-作用域-闭包-立即执行函数.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/28/预编译-作用域-闭包-立即执行函数.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -758,19 +919,25 @@ new Array
           
           
 
-对象创建方法
-对象字面量
-1var obj = &#123; &#125;;
 
-系统自带的构造函数Object()
-1var obj = new Object();
 
-自定义构造函数
-123456789101112// 与普通函数区别：1、函数名大驼峰命名；2、定义属性和方法为纯语句functi
+函数定义👉点击
+【补充】：
+
+注意区分什么是函数声明、什么是函数表示，不要混淆。
+
+命定表达式
+
+函数按照上面的方式定义后，只有test才是函数，test1不是一个函数，但是test1是test的name，可以通过test.name得到。
+
+
+参数、返回值👉点击
+
+预编译JavaScri
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/10/28/对象.html#more" rel="contents">
+            <a class="btn" href="/2019/10/28/预编译-作用域-闭包-立即执行函数.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1814,173 +1981,6 @@ CentOS安装1wget http://fastdl.mongodb.org/linux/mongodb
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunteng.github.io/2019/10/02/express搭建静态文件服务器.html">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dunteng Lin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dunteng's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/02/express搭建静态文件服务器.html" itemprop="url">使用express搭建静态文件服务器</a></h1>
-        
-
-        <div class="post-meta">
-		
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-02T00:00:00+08:00">
-                2019-10-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/node-js/" itemprop="url" rel="index">
-                    <span itemprop="name">node.js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/10/02/express搭建静态文件服务器.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/02/express搭建静态文件服务器.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-
-搭建静态文件服务器之前用过原生的node.js来写服务器👉（net服务器，http服务器）
-今天用express，比起原生node.js来太简单了！
-先npm init初始化项目文件夹，运行npm install express --save安装express.
-index.js服务器启动文件
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/02/express搭建静态文件服务器.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  
-  </article>
-  
-
-
-
-    
   </section>
 
   
@@ -2033,7 +2033,7 @@ index.js服务器启动文件
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">76</span>
+                  <span class="site-state-item-count">77</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
